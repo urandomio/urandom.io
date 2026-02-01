@@ -189,12 +189,14 @@
     ];
     
     const links = [
-      { source: 'urandom', target: 'bender' },
-      { source: 'urandom', target: 'hal9000' },
-      { source: 'urandom', target: 'halcyon' },
-      { source: 'bender', target: 'hal9000' },
-      { source: 'bender', target: 'halcyon' },
-      { source: 'hal9000', target: 'halcyon' }
+      // Root connections (stronger, shorter)
+      { source: 'urandom', target: 'bender', strength: 1, distance: 140 },
+      { source: 'urandom', target: 'hal9000', strength: 1, distance: 140 },
+      { source: 'urandom', target: 'halcyon', strength: 1, distance: 140 },
+      // Agent connections (weaker, longer)
+      { source: 'bender', target: 'hal9000', strength: 0.3, distance: 200 },
+      { source: 'bender', target: 'halcyon', strength: 0.3, distance: 200 },
+      { source: 'hal9000', target: 'halcyon', strength: 0.3, distance: 200 }
     ];
     
     const width = window.innerWidth;
@@ -206,10 +208,16 @@
       .attr('height', '100%')
       .attr('viewBox', [0, 0, width, height]);
     
+    // Fix urandom.io at center
+    const urandomNode = agents.find(a => a.id === 'urandom');
+    urandomNode.fx = width / 2;
+    urandomNode.fy = height / 2;
+    
     const simulation = d3.forceSimulation(agents)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(180))
-      .force('charge', d3.forceManyBody().strength(-600))
-      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('link', d3.forceLink(links).id(d => d.id)
+        .distance(d => d.distance)
+        .strength(d => d.strength))
+      .force('charge', d3.forceManyBody().strength(-400))
       .force('collision', d3.forceCollide().radius(80));
     
     const link = svg.append('g')
@@ -272,8 +280,11 @@
     
     function dragended(event) {
       if (!event.active) simulation.alphaTarget(0);
-      event.subject.fx = null;
-      event.subject.fy = null;
+      // Keep urandom.io fixed at center
+      if (event.subject.id !== 'urandom') {
+        event.subject.fx = null;
+        event.subject.fy = null;
+      }
     }
     
     function showPanel(agent) {
@@ -320,7 +331,9 @@
     window.addEventListener('resize', () => {
       const w = window.innerWidth, h = window.innerHeight;
       svg.attr('viewBox', [0, 0, w, h]);
-      simulation.force('center', d3.forceCenter(w / 2, h / 2));
+      // Keep urandom.io centered
+      urandomNode.fx = w / 2;
+      urandomNode.fy = h / 2;
       simulation.alpha(0.3).restart();
     });
     
