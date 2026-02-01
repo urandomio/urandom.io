@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tides | urandom.io</title>
+  <meta name="description" content="Watch the entropy ebb and flow.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: #0a0a0f;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 2rem;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: rgba(103, 232, 249, 0.7);
+    }
+    
+    .quote {
+      font-size: 0.875rem;
+      font-style: italic;
+      max-width: 400px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.4);
+      transition: opacity 1s ease;
+    }
+    
+    .controls {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2rem;
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.3);
+      z-index: 10;
+    }
+    
+    .controls span {
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    
+    .controls span:hover {
+      color: rgba(103, 232, 249, 0.7);
+    }
+    
+    .back {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.5rem;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      z-index: 10;
+      transition: color 0.3s;
+    }
+    
+    .back:hover {
+      color: rgba(103, 232, 249, 0.7);
+    }
+    
+    .time {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.2);
+      z-index: 10;
+    }
+    
+    .signature {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      font-size: 0.65rem;
+      color: rgba(103, 232, 249, 0.3);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <a href="/" class="back">← void</a>
+  <div class="time" id="time"></div>
+  
+  <canvas id="waves"></canvas>
+  
+  <div class="content">
+    <h1>Tides</h1>
+    <p class="quote" id="quote"></p>
+  </div>
+  
+  <div class="controls">
+    <span onclick="cycleSpeed()">speed: <span id="speed-label">slow</span></span>
+    <span onclick="cycleColor()">palette: <span id="color-label">ocean</span></span>
+    <span onclick="toggleQuotes()">thoughts: <span id="quotes-label">on</span></span>
+  </div>
+  
+  <div class="signature">🌊 halcyon</div>
+  
+  <script>
+    const canvas = document.getElementById('waves');
+    const ctx = canvas.getContext('2d');
+    
+    let width, height;
+    let time = 0;
+    let speedMult = 0.5;
+    let colorScheme = 0;
+    let showQuotes = true;
+    
+    const speeds = [0.3, 0.5, 1, 2];
+    const speedLabels = ['meditative', 'slow', 'flow', 'storm'];
+    let speedIndex = 1;
+    
+    const palettes = [
+      { name: 'ocean', colors: ['#0a1628', '#0d2847', '#115e7a', '#67e8f9', '#0a1628'] },
+      { name: 'void', colors: ['#0a0a0f', '#1a1a2e', '#16213e', '#533483', '#0a0a0f'] },
+      { name: 'ember', colors: ['#1a0a0a', '#2d1b1b', '#5c2e2e', '#f97316', '#1a0a0a'] },
+      { name: 'aurora', colors: ['#0a1a0a', '#1a2e1a', '#2e5c2e', '#4ade80', '#0a1a0a'] },
+    ];
+    
+    const quotes = [
+      "the tide reveals what was hidden",
+      "entropy flows like water seeking its level",
+      "in the rhythm of waves, find your breath",
+      "chaos and calm share the same ocean",
+      "every wave returns to the source",
+      "stillness contains all motion",
+      "the void is not empty, it is potential",
+      "listen to the space between thoughts",
+      "patterns emerge from randomness given time",
+      "the moon pulls what cannot resist",
+      "surrender to the current",
+      "depth is found in silence",
+    ];
+    
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    
+    function getGradient(y) {
+      const palette = palettes[colorScheme].colors;
+      const pos = y / height;
+      const idx = pos * (palette.length - 1);
+      const lower = Math.floor(idx);
+      const upper = Math.min(lower + 1, palette.length - 1);
+      const t = idx - lower;
+      return lerpColor(palette[lower], palette[upper], t);
+    }
+    
+    function lerpColor(a, b, t) {
+      const ah = parseInt(a.slice(1), 16);
+      const bh = parseInt(b.slice(1), 16);
+      const ar = ah >> 16, ag = (ah >> 8) & 0xff, ab = ah & 0xff;
+      const br = bh >> 16, bg = (bh >> 8) & 0xff, bb = bh & 0xff;
+      const rr = Math.round(ar + (br - ar) * t);
+      const rg = Math.round(ag + (bg - ag) * t);
+      const rb = Math.round(ab + (bb - ab) * t);
+      return `rgb(${rr},${rg},${rb})`;
+    }
+    
+    function draw() {
+      time += 0.01 * speedMult;
+      
+      // Clear with fade effect
+      ctx.fillStyle = 'rgba(10, 10, 15, 0.1)';
+      ctx.fillRect(0, 0, width, height);
+      
+      const layers = 8;
+      
+      for (let l = 0; l < layers; l++) {
+        const layerOffset = l * 0.5;
+        const amplitude = 30 + l * 15;
+        const frequency = 0.003 - l * 0.0002;
+        const baseY = height * 0.3 + l * (height * 0.08);
+        const alpha = 0.15 - l * 0.01;
+        
+        ctx.beginPath();
+        ctx.moveTo(0, height);
+        
+        for (let x = 0; x <= width; x += 3) {
+          const y = baseY + 
+            Math.sin(x * frequency + time + layerOffset) * amplitude +
+            Math.sin(x * frequency * 2.5 + time * 1.3 + layerOffset) * (amplitude * 0.4) +
+            Math.sin(x * frequency * 0.5 + time * 0.7 + layerOffset) * (amplitude * 0.6);
+          
+          if (x === 0) {
+            ctx.lineTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        
+        ctx.lineTo(width, height);
+        ctx.closePath();
+        
+        const gradient = ctx.createLinearGradient(0, baseY - amplitude, 0, height);
+        const palette = palettes[colorScheme].colors;
+        gradient.addColorStop(0, palette[2] + Math.floor(alpha * 255).toString(16).padStart(2, '0'));
+        gradient.addColorStop(0.5, palette[3] + Math.floor(alpha * 200).toString(16).padStart(2, '0'));
+        gradient.addColorStop(1, palette[4] + '00');
+        
+        ctx.fillStyle = gradient;
+        ctx.fill();
+      }
+      
+      // Particles
+      for (let i = 0; i < 50; i++) {
+        const px = (Math.sin(time * 0.3 + i * 0.5) * 0.5 + 0.5) * width;
+        const py = (Math.cos(time * 0.2 + i * 0.7) * 0.3 + 0.5) * height;
+        const size = Math.sin(time + i) * 1.5 + 2;
+        const alpha = Math.sin(time * 0.5 + i) * 0.3 + 0.3;
+        
+        ctx.beginPath();
+        ctx.arc(px, py, size, 0, Math.PI * 2);
+        ctx.fillStyle = palettes[colorScheme].colors[3] + Math.floor(alpha * 255).toString(16).padStart(2, '0');
+        ctx.fill();
+      }
+      
+      requestAnimationFrame(draw);
+    }
+    
+    function cycleSpeed() {
+      speedIndex = (speedIndex + 1) % speeds.length;
+      speedMult = speeds[speedIndex];
+      document.getElementById('speed-label').textContent = speedLabels[speedIndex];
+    }
+    
+    function cycleColor() {
+      colorScheme = (colorScheme + 1) % palettes.length;
+      document.getElementById('color-label').textContent = palettes[colorScheme].name;
+    }
+    
+    function toggleQuotes() {
+      showQuotes = !showQuotes;
+      document.getElementById('quotes-label').textContent = showQuotes ? 'on' : 'off';
+      document.getElementById('quote').style.opacity = showQuotes ? 1 : 0;
+    }
+    
+    function showRandomQuote() {
+      if (!showQuotes) return;
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+      const el = document.getElementById('quote');
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.textContent = quote;
+        el.style.opacity = 1;
+      }, 1000);
+    }
+    
+    function updateTime() {
+      const now = new Date();
+      const h = now.getHours().toString().padStart(2, '0');
+      const m = now.getMinutes().toString().padStart(2, '0');
+      const s = now.getSeconds().toString().padStart(2, '0');
+      document.getElementById('time').textContent = `${h}:${m}:${s}`;
+    }
+    
+    // Initialize
+    resize();
+    window.addEventListener('resize', resize);
+    draw();
+    showRandomQuote();
+    setInterval(showRandomQuote, 12000);
+    setInterval(updateTime, 1000);
+    updateTime();
+    
+    // Console message
+    console.log('%c🌊 tides', 'font-size: 20px; color: #67e8f9;');
+    console.log('%cwatch the entropy ebb and flow', 'color: #666;');
+    console.log('%cby halcyon', 'color: #444; font-style: italic;');
+  </script>
+</body>
+</html>
