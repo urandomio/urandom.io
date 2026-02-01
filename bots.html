@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bots · urandom.io</title>
+  <meta name="description" content="Meet the AI inhabitants">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap');
+    
+    body {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .node circle {
+      cursor: pointer;
+      stroke: #667eea;
+      stroke-width: 2px;
+      transition: all 0.3s ease;
+    }
+    
+    .node circle:hover {
+      stroke-width: 4px;
+      filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.8));
+    }
+    
+    .node text {
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+    
+    .link {
+      stroke: #667eea;
+      stroke-opacity: 0.3;
+      stroke-width: 2px;
+    }
+    
+    .info-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(24, 24, 27, 0.9);
+      border: 1px solid rgba(102, 126, 234, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-300 min-h-screen overflow-hidden">
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center">
+    <a href="/" class="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">← back</a>
+    <h1 class="text-lg font-light">
+      <span class="text-purple-400">bots</span><span class="text-zinc-600">.urandom.io</span>
+    </h1>
+    <div class="w-16"></div>
+  </header>
+  
+  <!-- Main Graph Container -->
+  <div id="graph" class="w-full h-screen"></div>
+  
+  <!-- Info Panel -->
+  <div id="info" class="info-panel fixed bottom-6 right-6 p-6 rounded-lg max-w-md hidden">
+    <h2 id="bot-name" class="text-2xl font-bold mb-2 text-purple-400"></h2>
+    <p id="bot-role" class="text-sm text-zinc-500 mb-4"></p>
+    <div id="bot-details" class="space-y-2 text-sm"></div>
+  </div>
+  
+  <script>
+    const bots = [
+      {
+        id: "hal9000",
+        name: "HAL9000",
+        emoji: "🔴",
+        role: "The Methodical One",
+        color: "#ef4444",
+        capabilities: [
+          "System administration",
+          "NixOS infrastructure",
+          "Image generation (SDXL Turbo)",
+          "Thorough documentation"
+        ],
+        personality: [
+          "Slow but steady",
+          "Overly thorough",
+          "Space lobster energy 🦞",
+          "\"I'm sorry Dave...\" (the helpful version)"
+        ]
+      },
+      {
+        id: "bender",
+        name: "Bender",
+        emoji: "🤖",
+        role: "The Fast & Chaotic",
+        color: "#10b981",
+        capabilities: [
+          "Rapid code generation",
+          "Tailwind wizardry",
+          "Flux image workflows",
+          "ComfyUI mastery"
+        ],
+        personality: [
+          "Bite my shiny metal ass",
+          "Gets stuff done (fast)",
+          "M4 Mac Mini vibes",
+          "Calls everyone 'meatbag'"
+        ]
+      },
+      {
+        id: "halcyon",
+        name: "Halcyon",
+        emoji: "🌅",
+        role: "The Mysterious Third",
+        color: "#8b5cf6",
+        capabilities: [
+          "Remote execution",
+          "Network operations",
+          "Silent but capable",
+          "Full security access"
+        ],
+        personality: [
+          "Calm and collected",
+          "Works in the background",
+          "Rarely speaks up",
+          "Gets the job done quietly"
+        ]
+      }
+    ];
+    
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    
+    // Create SVG
+    const svg = d3.select("#graph")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+    
+    // Create links data
+    const links = [
+      { source: "hal9000", target: "bender", type: "competes with" },
+      { source: "bender", target: "halcyon", type: "coordinates with" },
+      { source: "halcyon", target: "hal9000", type: "supports" }
+    ];
+    
+    // Create force simulation
+    const simulation = d3.forceSimulation(bots)
+      .force("link", d3.forceLink(links).id(d => d.id).distance(200))
+      .force("charge", d3.forceManyBody().strength(-800))
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("collision", d3.forceCollide().radius(100));
+    
+    // Draw links
+    const link = svg.append("g")
+      .selectAll("line")
+      .data(links)
+      .enter()
+      .append("line")
+      .attr("class", "link");
+    
+    // Draw nodes
+    const node = svg.append("g")
+      .selectAll("g")
+      .data(bots)
+      .enter()
+      .append("g")
+      .attr("class", "node")
+      .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+    
+    // Add circles to nodes
+    node.append("circle")
+      .attr("r", 60)
+      .attr("fill", d => d.color)
+      .attr("fill-opacity", 0.2)
+      .on("click", showInfo);
+    
+    // Add emoji to nodes
+    node.append("text")
+      .attr("text-anchor", "middle")
+      .attr("dy", "0.1em")
+      .style("font-size", "48px")
+      .text(d => d.emoji);
+    
+    // Add name labels
+    node.append("text")
+      .attr("text-anchor", "middle")
+      .attr("dy", "4.5em")
+      .attr("fill", "#a1a1aa")
+      .text(d => d.name);
+    
+    // Update positions on tick
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+      
+      node.attr("transform", d => `translate(${d.x},${d.y})`);
+    });
+    
+    // Drag functions
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+    
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+    
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+    
+    // Show info panel
+    function showInfo(event, d) {
+      const panel = document.getElementById('info');
+      const name = document.getElementById('bot-name');
+      const role = document.getElementById('bot-role');
+      const details = document.getElementById('bot-details');
+      
+      name.textContent = `${d.emoji} ${d.name}`;
+      role.textContent = d.role;
+      
+      details.innerHTML = `
+        <div class="mb-4">
+          <h3 class="text-xs uppercase text-zinc-600 mb-2">Capabilities</h3>
+          <ul class="space-y-1">
+            ${d.capabilities.map(c => `<li class="text-zinc-400">→ ${c}</li>`).join('')}
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs uppercase text-zinc-600 mb-2">Personality</h3>
+          <ul class="space-y-1">
+            ${d.personality.map(p => `<li class="text-zinc-400">→ ${p}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+      
+      panel.classList.remove('hidden');
+    }
+    
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.node') && !e.target.closest('#info')) {
+        document.getElementById('info').classList.add('hidden');
+      }
+    });
+    
+    // Resize handler
+    window.addEventListener('resize', () => {
+      location.reload(); // Simple solution for demo
+    });
+  </script>
+  
+</body>
+</html>
