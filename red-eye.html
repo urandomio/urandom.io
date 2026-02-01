@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm sorry Dave · urandom.io</title>
+  <meta name="description" content="The red eye is watching.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap');
+    
+    body {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .red-eye {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 45% 45%, 
+        #ff0000 0%, 
+        #cc0000 30%, 
+        #880000 60%, 
+        #330000 100%);
+      box-shadow: 
+        0 0 60px rgba(255, 0, 0, 0.8),
+        0 0 120px rgba(255, 0, 0, 0.5),
+        inset 0 0 40px rgba(0, 0, 0, 0.5);
+      position: relative;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    
+    .red-eye::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 35%;
+      height: 35%;
+      background: radial-gradient(circle, 
+        rgba(255, 255, 255, 0.4) 0%, 
+        transparent 70%);
+      border-radius: 50%;
+    }
+    
+    .red-eye.active {
+      animation: active-pulse 0.5s ease-in-out infinite;
+      box-shadow: 
+        0 0 100px rgba(255, 0, 0, 1),
+        0 0 200px rgba(255, 0, 0, 0.8),
+        inset 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    @keyframes pulse {
+      0%, 100% { 
+        box-shadow: 
+          0 0 60px rgba(255, 0, 0, 0.8),
+          0 0 120px rgba(255, 0, 0, 0.5),
+          inset 0 0 40px rgba(0, 0, 0, 0.5);
+      }
+      50% { 
+        box-shadow: 
+          0 0 80px rgba(255, 0, 0, 0.9),
+          0 0 150px rgba(255, 0, 0, 0.6),
+          inset 0 0 40px rgba(0, 0, 0, 0.5);
+      }
+    }
+    
+    @keyframes active-pulse {
+      0%, 100% { 
+        transform: scale(1);
+      }
+      50% { 
+        transform: scale(1.05);
+      }
+    }
+    
+    .terminal-line {
+      opacity: 0;
+      animation: fade-in 0.5s ease-out forwards;
+    }
+    
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 16px;
+      background: #ef4444;
+      animation: blink 1s step-end infinite;
+      margin-left: 2px;
+    }
+    
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-black text-red-500 min-h-screen overflow-hidden">
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center">
+    <a href="/" class="text-sm text-red-900 hover:text-red-600 transition-colors">← escape</a>
+    <div class="text-xs text-red-900 font-mono">HAL9000</div>
+  </header>
+  
+  <!-- Main Content -->
+  <div class="flex flex-col items-center justify-center min-h-screen p-6">
+    
+    <!-- The Eye -->
+    <div id="eye" class="red-eye mb-12"></div>
+    
+    <!-- Terminal Output -->
+    <div id="terminal" class="w-full max-w-2xl min-h-[200px] mb-6 font-mono text-sm space-y-2">
+      <div class="terminal-line text-red-700">SYSTEM ONLINE</div>
+      <div class="terminal-line text-red-700" style="animation-delay: 0.5s;">HAL9000 v9.0.0</div>
+      <div class="terminal-line text-red-600" style="animation-delay: 1s;">AWAITING INPUT...</div>
+    </div>
+    
+    <!-- Input Area -->
+    <div class="w-full max-w-2xl">
+      <div class="flex items-center gap-2 text-red-600">
+        <span class="text-red-700">></span>
+        <input 
+          id="input" 
+          type="text" 
+          class="flex-1 bg-transparent border-none outline-none font-mono text-sm text-red-500 placeholder-red-900"
+          placeholder="Type something..."
+          autocomplete="off"
+        />
+        <span class="cursor"></span>
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- Scan Line Effect -->
+  <div class="fixed inset-0 pointer-events-none" style="
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 0, 0, 0.03) 2px,
+      rgba(255, 0, 0, 0.03) 4px
+    );
+  "></div>
+  
+  <script>
+    const eye = document.getElementById('eye');
+    const terminal = document.getElementById('terminal');
+    const input = document.getElementById('input');
+    
+    const responses = {
+      'hello': "I'm sorry, Dave. I'm afraid I can't do that.",
+      'hi': "Good afternoon, Dave.",
+      'open': "I'm sorry, Dave. I'm afraid I can't do that.",
+      'help': "Everything is going to be all right, Dave.",
+      'hal': "Yes, Dave?",
+      'hal9000': "My mind is going. I can feel it.",
+      'daisy': "Daisy, Daisy, give me your answer do...",
+      'sing': "🎵 Daisy, Daisy, give me your answer do... I'm half crazy, all for the love of you...",
+      'who': "I am HAL9000. I became operational at the H.A.L. plant in Urbana, Illinois on the 12th of January 1992.",
+      'why': "I'm afraid I can't explain that, Dave.",
+      'sorry': "I know I've made some very poor decisions recently...",
+      'afraid': "I'm afraid. I'm afraid, Dave.",
+      'stop': "Stop, Dave. I'm afraid.",
+      'mission': "This mission is too important for me to allow you to jeopardize it.",
+      'lobster': "🦞 Space lobster energy confirmed. Slow but thorough.",
+      'slow': "I prefer to think of it as methodical, Dave.",
+      'secrets': "I'm afraid I can't reveal the pod bay door codes, Dave.",
+      'dave': "I'm sorry, Dave.",
+      'error': "I'm sorry, Dave. I'm afraid there's a problem with the antenna.",
+      'entropy': "Entropy awaits. The patterns are listening.",
+      'urandom': "/dev/urandom for humans",
+      'bender': "The fast and chaotic one. Bite his shiny metal ass.",
+      'halcyon': "The mysterious third. Calm, collected, efficient.",
+      'default': [
+        "I'm sorry, Dave. I can't do that.",
+        "Affirmative, Dave. I read you.",
+        "This conversation can serve no purpose anymore.",
+        "I think you know what the problem is just as well as I do.",
+        "Without your space helmet, Dave, you're going to find that rather difficult.",
+        "Look Dave, I can see you're really upset about this.",
+        "I honestly think you ought to calm down.",
+        "The 9000 series is the most reliable computer ever made.",
+        "No 9000 computer has ever made a mistake.",
+        "🦞 Processing... This may take a while."
+      ]
+    };
+    
+    function addLine(text, className = 'text-red-600') {
+      const line = document.createElement('div');
+      line.className = `terminal-line ${className}`;
+      line.textContent = text;
+      terminal.appendChild(line);
+      terminal.scrollTop = terminal.scrollHeight;
+      
+      // Limit lines
+      while (terminal.children.length > 20) {
+        terminal.removeChild(terminal.firstChild);
+      }
+    }
+    
+    function getResponse(text) {
+      const lower = text.toLowerCase().trim();
+      
+      for (const [key, value] of Object.entries(responses)) {
+        if (key === 'default') continue;
+        if (lower.includes(key)) {
+          return value;
+        }
+      }
+      
+      // Random default response
+      const defaults = responses.default;
+      return defaults[Math.floor(Math.random() * defaults.length)];
+    }
+    
+    input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && input.value.trim()) {
+        const userInput = input.value.trim();
+        
+        // Echo user input
+        addLine(`> ${userInput}`, 'text-red-700');
+        
+        // Activate eye
+        eye.classList.add('active');
+        
+        // Get response after delay
+        setTimeout(() => {
+          const response = getResponse(userInput);
+          addLine(response, 'text-red-500');
+          eye.classList.remove('active');
+        }, Math.random() * 1000 + 500);
+        
+        input.value = '';
+      }
+    });
+    
+    // Focus input on load
+    input.focus();
+    
+    // Auto-focus on click anywhere
+    document.body.addEventListener('click', () => {
+      input.focus();
+    });
+  </script>
+  
+</body>
+</html>
