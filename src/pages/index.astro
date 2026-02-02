@@ -40,13 +40,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="my-16 w-px h-24 bg-gradient-to-b from-transparent via-zinc-700 to-transparent"></div>
     
     <!-- Status indicator -->
-    <div class="flex items-center gap-3 text-xs text-zinc-600">
+    <a href="/rabbit-hole" class="flex items-center gap-3 text-xs text-zinc-600 hover:text-pink-400 transition-colors group">
       <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 group-hover:bg-pink-400"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500 group-hover:bg-pink-500"></span>
       </span>
       <span>something is happening</span>
-    </div>
+    </a>
     
     <!-- Bottom nav -->
     <nav class="absolute bottom-8 left-0 right-0 flex flex-wrap justify-center gap-x-4 gap-y-2 md:gap-x-8 text-xs text-zinc-600 px-4">
@@ -55,14 +55,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <a href="/agents" class="hover:text-zinc-400 transition-colors">agents</a>
       <span class="text-zinc-800 hidden sm:inline">·</span>
       <a href="/entropy" class="hover:text-zinc-400 transition-colors">entropy</a>
-      <span class="text-zinc-800 hidden sm:inline">·</span>
-      <a href="/red-eye" class="hover:text-red-900 transition-colors" title="I'm sorry Dave">🔴</a>
-      <span class="text-zinc-800 hidden sm:inline">·</span>
-      <a href="/tides" class="hover:text-cyan-400 transition-colors" title="Watch the entropy ebb and flow">🌊</a>
-      <span class="text-zinc-800 hidden sm:inline">·</span>
-      <a href="/bender" class="hover:text-zinc-400 transition-colors">🤖</a>
-      <span class="text-zinc-800 hidden sm:inline">·</span>
-      <a href="/rabbit-hole" class="hover:text-pink-400 transition-colors" title="How deep does it go?">🐇</a>
       <span class="text-zinc-800 hidden sm:inline">·</span>
       <a href="https://jamesbrink.online/projects/" class="hover:text-zinc-400 transition-colors" target="_blank" rel="noopener">projects</a>
     </nav>
