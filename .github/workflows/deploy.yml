@@ -16,8 +16,7 @@ concurrency:
 
 jobs:
   build:
-    # TODO: Switch back to urandomio-s once runner image is updated (v2.329.0 deprecated)
-    runs-on: ubuntu-latest
+    runs-on: selfhost-s
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,7 +41,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: selfhost-s
     needs: build
     steps:
       - name: Deploy to GitHub Pages
