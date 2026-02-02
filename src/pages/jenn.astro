@@ -150,12 +150,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .timeline-date {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #667eea;
-      margin-bottom: 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #8e8e93;
+      margin-bottom: 1rem;
       margin-left: 1rem;
       position: relative;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .timeline-date::before {
@@ -164,18 +167,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       left: -2.5rem;
       top: 50%;
       transform: translateY(-50%);
-      width: 12px;
-      height: 12px;
+      width: 8px;
+      height: 8px;
       background: #667eea;
       border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
     }
 
     .message-bubble {
-      max-width: 85%;
-      margin-bottom: 1rem;
+      max-width: 75%;
+      margin-bottom: 0.75rem;
       margin-left: 1rem;
       animation: slideIn 0.3s ease-out;
+      display: flex;
+      flex-direction: column;
     }
 
     @keyframes slideIn {
@@ -196,19 +201,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .message-bubble .message-content {
       background: #3a3a3c;
       color: #fff;
-      border-radius: 20px;
+      border-radius: 18px;
       border-bottom-left-radius: 4px;
-      padding: 14px 18px;
-      margin-bottom: 4px;
-      font-size: 1.05rem;
-      line-height: 1.4;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      padding: 10px 14px;
+      margin-bottom: 2px;
+      font-size: 1rem;
+      line-height: 1.35;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      max-width: 75%;
+      word-wrap: break-word;
     }
 
     .message-time {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #8e8e93;
-      padding: 0 12px;
+      padding: 0 14px;
+      margin-top: 2px;
+      font-weight: 400;
     }
 
     .stat-card {

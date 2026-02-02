@@ -29,8 +29,12 @@ funny_keywords = [
 # Personal/sensitive keywords to skip
 skip_keywords = [
     'money', 'card', 'account', 'password', 'ssn', 'medicine', 'doctor', 'health',
-    'insurance', 'bill', 'debt', 'rent', 'therapy', 'prescription'
+    'insurance', 'bill', 'debt', 'rent', 'therapy', 'prescription', 'http', 'www.', 
+    '.com', 'icloud', 'share.', 'link'
 ]
+
+# Children's names to filter out
+children_names = ['aiden', 'emilie', 'ellee', 'mercy', 'mistie']
 
 # Load existing data
 with open('public/jenn-data.json', 'r') as f:
@@ -63,9 +67,11 @@ with open('/tmp/jenn_recent.txt', 'r', encoding='utf-8', errors='ignore') as f:
         if not text or len(text) < 10 or 'attachment' in text.lower():
             continue
         
-        # Skip if contains personal keywords
+        # Skip if contains personal keywords or children's names
         text_lower = text.lower()
         if any(keyword in text_lower for keyword in skip_keywords):
+            continue
+        if any(name in text_lower for name in children_names):
             continue
         
         # Only keep if it has funny keywords
