@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const agents = [
+  {
+    id: 'halcyon',
+    name: 'Halcyon',
+    emoji: '🌊',
+    role: 'Chill SRE Sidekick',
+    host: 'MacBook Pro M4 Max',
+    model: 'Claude Opus 4.5',
+    color: '#22d3ee',
+    desc: 'Named for calm seas and golden days. Steady when things are on fire.',
+  },
+  {
+    id: 'bender',
+    name: 'Bender',
+    emoji: '🤖',
+    role: 'Local Assistant',
+    host: 'Mac Mini M4',
+    model: 'Claude Sonnet 4',
+    color: '#a855f7',
+    desc: 'Fast, snarky, effective. Gets stuff done with style.',
+  },
+  {
+    id: 'hal9000',
+    name: 'HAL 9000',
+    emoji: '🔴',
+    role: 'GPU Compute Node',
+    host: 'NixOS Server (RTX 4090)',
+    model: 'Claude Sonnet 4',
+    color: '#ef4444',
+    desc: "I'm sorry Dave. Running local AI models and contemplating existence.",
+  },
+];
+---
+
+<BaseLayout title="Agents | urandom.io" description="The machines that keep the entropy flowing.">
+  <header class="fixed top-0 left-0 right-0 z-50 p-6">
+    <a href="/" class="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">← back to void</a>
+  </header>
+  
+  <main class="min-h-screen flex flex-col items-center px-6 pt-24 pb-12">
+    <h1 class="text-3xl md:text-4xl font-light text-zinc-400 mb-2">agent network</h1>
+    <p class="text-sm text-zinc-600 mb-12">the machines that keep the entropy flowing</p>
+    
+    <!-- Network visualization -->
+    <div id="network" class="w-full max-w-4xl h-[400px] rounded-lg border border-zinc-800 mb-12"></div>
+    
+    <!-- Agent cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
+      {agents.map(agent => (
+        <div class="p-6 rounded-lg border border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">{agent.emoji}</span>
+            <div>
+              <h2 class="font-bold" style={`color: ${agent.color}`}>{agent.name}</h2>
+              <p class="text-xs text-zinc-600">{agent.role}</p>
+            </div>
+          </div>
+          <p class="text-sm text-zinc-400 mb-4">{agent.desc}</p>
+          <div class="text-xs text-zinc-600 space-y-1">
+            <p><span class="text-zinc-500">host:</span> {agent.host}</p>
+            <p><span class="text-zinc-500">model:</span> {agent.model}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Central hub -->
+    <div class="mt-12 text-center">
+      <div class="text-4xl mb-2">◉</div>
+      <p class="text-sm text-zinc-500">urandom.io</p>
+      <p class="text-xs text-zinc-600">the central hub</p>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  import * as d3 from 'd3';
+  
+  const agents = [
+    { id: 'urandom', name: '◉', color: '#666', x: 0, y: 0 },
+    { id: 'halcyon', name: '🌊', color: '#22d3ee', x: 0, y: 0 },
+    { id: 'bender', name: '🤖', color: '#a855f7', x: 0, y: 0 },
+    { id: 'hal9000', name: '🔴', color: '#ef4444', x: 0, y: 0 },
+  ];
+  
+  const links = [
+    { source: 'urandom', target: 'halcyon' },
+    { source: 'urandom', target: 'bender' },
+    { source: 'urandom', target: 'hal9000' },
+    { source: 'halcyon', target: 'bender' },
+    { source: 'bender', target: 'hal9000' },
+    { source: 'hal9000', target: 'halcyon' },
+  ];
+  
+  const container = document.getElementById('network');
+  if (container) {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    
+    const svg = d3.select('#network')
+      .append('svg')
+      .attr('width', '100%')
+      .attr('height', '100%')
+      .attr('viewBox', `0 0 ${width} ${height}`);
+    
+    const simulation = d3.forceSimulation(agents as any)
+      .force('link', d3.forceLink(links).id((d: any) => d.id).distance(120))
+      .force('charge', d3.forceManyBody().strength(-300))
+      .force('center', d3.forceCenter(width / 2, height / 2));
+    
+    const link = svg.append('g')
+      .selectAll('line')
+      .data(links)
+      .enter()
+      .append('line')
+      .attr('stroke', '#444')
+      .attr('stroke-opacity', 0.4)
+      .attr('stroke-width', 2);
+    
+    const node = svg.append('g')
+      .selectAll('g')
+      .data(agents)
+      .enter()
+      .append('g')
+      .style('cursor', 'pointer');
+    
+    node.append('circle')
+      .attr('r', (d: any) => d.id === 'urandom' ? 30 : 25)
+      .attr('fill', (d: any) => d.color)
+      .attr('fill-opacity', 0.2)
+      .attr('stroke', (d: any) => d.color)
+      .attr('stroke-width', 2);
+    
+    node.append('text')
+      .attr('text-anchor', 'middle')
+      .attr('dominant-baseline', 'central')
+      .attr('font-size', (d: any) => d.id === 'urandom' ? '24px' : '20px')
+      .text((d: any) => d.name);
+    
+    simulation.on('tick', () => {
+      link
+        .attr('x1', (d: any) => d.source.x)
+        .attr('y1', (d: any) => d.source.y)
+        .attr('x2', (d: any) => d.target.x)
+        .attr('y2', (d: any) => d.target.y);
+      
+      node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
+    });
+  }
+</script>

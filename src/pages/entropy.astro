@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Entropy | urandom.io" description="Live generative art from random data.">
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center">
+    <a href="/" class="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">← back to void</a>
+    <div class="flex gap-4 text-xs text-zinc-600">
+      <span id="bytes-counter">0 bytes visualized</span>
+    </div>
+  </header>
+  
+  <canvas id="entropy-canvas" class="fixed inset-0 w-full h-full cursor-crosshair"></canvas>
+  
+  <div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-6 text-xs text-zinc-600 z-10">
+    <span class="cursor-pointer hover:text-purple-400 transition-colors" id="mode-btn">mode: <span id="mode-label">flow</span></span>
+    <span class="cursor-pointer hover:text-purple-400 transition-colors" id="palette-btn">palette: <span id="palette-label">void</span></span>
+    <span class="cursor-pointer hover:text-purple-400 transition-colors" id="speed-btn">speed: <span id="speed-label">normal</span></span>
+    <button id="save-btn" class="hover:text-purple-400 transition-colors">save png</button>
+  </div>
+  
+  <div class="fixed bottom-6 right-6 text-xs text-zinc-700 z-10">
+    click to freeze · 🤖 bender
+  </div>
+</BaseLayout>
+
+<script>
+  const canvas = document.getElementById('entropy-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+  
+  let width: number, height: number;
+  let paused = false;
+  let bytesUsed = 0;
+  let mode = 0;
+  let palette = 0;
+  let speed = 1;
+  
+  const modes = ['flow', 'particles', 'waves', 'noise', 'cellular'];
+  const palettes = [
+    { name: 'void', colors: ['#1a1a2e', '#16213e', '#533483', '#e94560'] },
+    { name: 'ember', colors: ['#1a0a0a', '#5c2e2e', '#f97316', '#fbbf24'] },
+    { name: 'matrix', colors: ['#0a1a0a', '#1a3a1a', '#22c55e', '#4ade80'] },
+    { name: 'mono', colors: ['#111', '#333', '#666', '#999'] },
+    { name: 'rainbow', colors: ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6', '#8b5cf6'] },
+  ];
+  const speeds = [0.5, 1, 2, 4];
+  const speedLabels = ['slow', 'normal', 'fast', 'chaos'];
+  let speedIndex = 1;
+  
+  let particles: Array<{x: number, y: number, vx: number, vy: number, life: number}> = [];
+  let flowField: number[][] = [];
+  let time = 0;
+  
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    initFlowField();
+  }
+  
+  function initFlowField() {
+    const cols = Math.ceil(width / 20);
+    const rows = Math.ceil(height / 20);
+    flowField = Array(cols).fill(0).map(() => Array(rows).fill(0));
+  }
+  
+  function getRandomBytes(n: number): Uint8Array {
+    const bytes = new Uint8Array(n);
+    crypto.getRandomValues(bytes);
+    bytesUsed += n;
+    updateCounter();
+    return bytes;
+  }
+  
+  function updateCounter() {
+    const el = document.getElementById('bytes-counter');
+    if (el) el.textContent = `${bytesUsed.toLocaleString()} bytes visualized`;
+  }
+  
+  function getColor(idx: number): string {
+    const colors = palettes[palette].colors;
+    return colors[idx % colors.length];
+  }
+  
+  function drawFlow() {
+    const bytes = getRandomBytes(100);
+    ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
+    ctx.fillRect(0, 0, width, height);
+    
+    for (let i = 0; i < bytes.length; i += 2) {
+      const x = (bytes[i] / 255) * width;
+      const y = (bytes[i + 1] / 255) * height;
+      const angle = time * 0.01 + x * 0.01 + y * 0.01;
+      
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x + Math.cos(angle) * 20, y + Math.sin(angle) * 20);
+      ctx.strokeStyle = getColor(Math.floor(i / 2)) + '40';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  }
+  
+  function drawParticles() {
+    ctx.fillStyle = 'rgba(10, 10, 15, 0.02)';
+    ctx.fillRect(0, 0, width, height);
+    
+    // Add new particles
+    const bytes = getRandomBytes(6);
+    for (let i = 0; i < 2; i++) {
+      particles.push({
+        x: (bytes[i * 3] / 255) * width,
+        y: (bytes[i * 3 + 1] / 255) * height,
+        vx: (bytes[i * 3 + 2] / 255 - 0.5) * 4,
+        vy: (bytes[(i * 3 + 3) % 6] / 255 - 0.5) * 4,
+        life: 200
+      });
+    }
+    
+    // Update and draw particles
+    particles = particles.filter(p => {
+      p.x += p.vx * speed;
+      p.y += p.vy * speed;
+      p.life -= speed;
+      
+      const alpha = Math.floor((p.life / 200) * 255).toString(16).padStart(2, '0');
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = getColor(Math.floor(p.life / 50)) + alpha;
+      ctx.fill();
+      
+      return p.life > 0;
+    });
+    
+    if (particles.length > 500) particles = particles.slice(-500);
+  }
+  
+  function draw() {
+    if (paused) {
+      requestAnimationFrame(draw);
+      return;
+    }
+    
+    time += speed;
+    
+    switch (modes[mode]) {
+      case 'flow': drawFlow(); break;
+      case 'particles': drawParticles(); break;
+      default: drawFlow();
+    }
+    
+    requestAnimationFrame(draw);
+  }
+  
+  // Initialize
+  resize();
+  window.addEventListener('resize', resize);
+  draw();
+  
+  // Controls
+  canvas.addEventListener('click', () => {
+    paused = !paused;
+  });
+  
+  document.getElementById('mode-btn')?.addEventListener('click', () => {
+    mode = (mode + 1) % modes.length;
+    const el = document.getElementById('mode-label');
+    if (el) el.textContent = modes[mode];
+    ctx.fillStyle = '#0a0a0f';
+    ctx.fillRect(0, 0, width, height);
+  });
+  
+  document.getElementById('palette-btn')?.addEventListener('click', () => {
+    palette = (palette + 1) % palettes.length;
+    const el = document.getElementById('palette-label');
+    if (el) el.textContent = palettes[palette].name;
+  });
+  
+  document.getElementById('speed-btn')?.addEventListener('click', () => {
+    speedIndex = (speedIndex + 1) % speeds.length;
+    speed = speeds[speedIndex];
+    const el = document.getElementById('speed-label');
+    if (el) el.textContent = speedLabels[speedIndex];
+  });
+  
+  document.getElementById('save-btn')?.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.download = `entropy-${Date.now()}.png`;
+    link.href = canvas.toDataURL();
+    link.click();
+  });
+</script>

@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="urandom.io" description="Entropy awaits.">
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-12">
+    <!-- Floating orbs -->
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
+    
+    <!-- Logo/Symbol -->
+    <div class="animate-float mb-8">
+      <div class="text-7xl md:text-9xl animate-glitch select-none">◉</div>
+    </div>
+    
+    <!-- Title -->
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter mb-6 text-center">
+      <span class="gradient-text glow">urandom</span><span class="text-zinc-600">.io</span>
+    </h1>
+    
+    <!-- Tagline -->
+    <p class="text-lg md:text-xl text-zinc-500 mb-12 text-center max-w-md animate-pulse-slow">
+      <span class="text-zinc-400">/dev/</span>urandom for humans
+    </p>
+    
+    <!-- Cryptic messages -->
+    <div class="space-y-3 text-center text-sm md:text-base text-zinc-600 max-w-lg">
+      <p class="hover:text-zinc-400 transition-colors duration-500 cursor-default">
+        entropy is not chaos, it is potential
+      </p>
+      <p class="hover:text-zinc-400 transition-colors duration-500 cursor-default">
+        from randomness, patterns emerge
+      </p>
+      <p class="hover:text-zinc-400 transition-colors duration-500 cursor-default">
+        the void speaks in probability
+      </p>
+    </div>
+    
+    <!-- Separator -->
+    <div class="my-16 w-px h-24 bg-gradient-to-b from-transparent via-zinc-700 to-transparent"></div>
+    
+    <!-- Status indicator -->
+    <div class="flex items-center gap-3 text-xs text-zinc-600">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+      </span>
+      <span>something is happening</span>
+    </div>
+    
+    <!-- Bottom nav -->
+    <nav class="absolute bottom-8 left-0 right-0 flex justify-center gap-8 text-xs text-zinc-600">
+      <a href="https://github.com/urandomio" class="hover:text-zinc-400 transition-colors" target="_blank" rel="noopener">github</a>
+      <span class="text-zinc-800">·</span>
+      <a href="/agents" class="hover:text-zinc-400 transition-colors">agents</a>
+      <span class="text-zinc-800">·</span>
+      <a href="/entropy" class="hover:text-zinc-400 transition-colors">entropy</a>
+      <span class="text-zinc-800">·</span>
+      <a href="/tides" class="hover:text-zinc-400 transition-colors">tides</a>
+    </nav>
+  </main>
+  
+  <!-- Random entropy display -->
+  <div class="fixed bottom-4 left-4 text-[10px] text-zinc-800 font-mono hidden md:block">
+    <span id="entropy"></span>
+  </div>
+  
+  <script>
+    function randomHex(length: number): string {
+      return Array.from(crypto.getRandomValues(new Uint8Array(length)))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+    }
+    
+    function updateEntropy() {
+      const el = document.getElementById('entropy');
+      if (el) {
+        el.textContent = '0x' + randomHex(8);
+      }
+    }
+    
+    setInterval(updateEntropy, 150);
+    updateEntropy();
+    
+    console.log('%c◉ urandom.io', 'font-size: 24px; color: #667eea;');
+    console.log('%cEntropy awaits. The patterns are listening.', 'color: #666;');
+  </script>
+</BaseLayout>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes glitch {
+    0%, 90%, 100% { opacity: 1; }
+    92% { opacity: 0.8; transform: translateX(-2px); }
+    94% { opacity: 0.6; transform: translateX(2px); }
+    96% { opacity: 0.9; transform: translateX(-1px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glitch {
+    animation: glitch 2s infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .delay-2000 {
+    animation-delay: 2s;
+  }
+</style>
