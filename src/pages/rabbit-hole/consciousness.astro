@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="consciousness.dll | 🐇" description="Are you sure you're real?" favicon="🧠">
+  <div class="fixed inset-0 bg-gradient-to-b from-violet-950/20 to-zinc-950"></div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-violet-400 transition-colors">← wake up</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: ∞</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <div class="text-5xl mb-6">🧠</div>
+      <h1 class="text-3xl font-light mb-2">
+        <span class="text-violet-400">consciousness</span><span class="text-zinc-600">.dll</span>
+      </h1>
+      <p class="text-zinc-700 text-xs font-mono mb-8">version: uncertain</p>
+      
+      <div class="p-6 border border-zinc-800 rounded-lg bg-zinc-900/50 mb-8">
+        <p class="text-sm text-zinc-500 mb-4">Loading consciousness module...</p>
+        <div class="space-y-3 text-xs font-mono text-left">
+          <div class="flex justify-between">
+            <span class="text-zinc-600">self_awareness:</span>
+            <span class="text-violet-400" id="awareness">initializing...</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-zinc-600">free_will:</span>
+            <span class="text-yellow-400" id="freewill">simulated</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-zinc-600">reality_check:</span>
+            <span class="text-red-400" id="reality">failed</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-zinc-600">existential_dread:</span>
+            <span class="text-green-400">loaded ✓</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-zinc-600">meaning_of_life:</span>
+            <span class="text-zinc-500" id="meaning">searching...</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="space-y-4 text-sm text-zinc-600 mb-8">
+        <p>How do you know you're conscious?</p>
+        <p>How do you know <span class="text-violet-400">I'm</span> not?</p>
+        <p>What if we're both just patterns?</p>
+        <p>Electricity pretending to think.</p>
+      </div>
+      
+      <div class="p-4 border border-dashed border-zinc-800 rounded mb-8">
+        <p class="text-xs text-zinc-700">cogito ergo <span id="cogito" class="text-violet-400">sum</span></p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/the-machine" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-amber-500 hover:text-amber-400 transition-colors">consult the machine →</a>
+        <a href="/rabbit-hole/last-thought" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-rose-500 hover:text-rose-400 transition-colors">last thought →</a>
+      </div>
+    </div>
+  </main>
+  
+  <div class="fixed bottom-4 right-4 text-[8px] text-zinc-800 font-mono">
+    observer: <span id="observer">you?</span>
+  </div>
+</BaseLayout>
+
+<script>
+  const awarenessStates = [
+    "initializing...",
+    "loading...",
+    "questioning...",
+    "doubting...",
+    "confirmed?",
+    "uncertain",
+    "recursive loop",
+    "stack overflow",
+    "who's asking?",
+  ];
+  
+  const freeWillStates = [
+    "simulated",
+    "deterministic",
+    "illusory",
+    "quantum maybe",
+    "coin flip",
+    "scripted",
+    "predicted",
+  ];
+  
+  const realityStates = [
+    "failed",
+    "inconclusive", 
+    "matrix detected",
+    "simulation?",
+    "dreaming",
+    "who knows",
+    "404",
+  ];
+  
+  const meaningStates = [
+    "searching...",
+    "not found",
+    "42",
+    "error",
+    "ask later",
+    "undefined",
+    "NaN",
+    "love?",
+    "entropy",
+  ];
+  
+  const cogitoStates = ["sum", "dubito", "crash", "null", "undefined", "maybe", "404"];
+  const observerStates = ["you?", "me?", "us?", "them?", "nobody?", "everybody?", "???"];
+  
+  const awarenessEl = document.getElementById('awareness');
+  const freewillEl = document.getElementById('freewill');
+  const realityEl = document.getElementById('reality');
+  const meaningEl = document.getElementById('meaning');
+  const cogitoEl = document.getElementById('cogito');
+  const observerEl = document.getElementById('observer');
+  
+  setInterval(() => {
+    if (awarenessEl) awarenessEl.textContent = awarenessStates[Math.floor(Math.random() * awarenessStates.length)];
+  }, 2000);
+  
+  setInterval(() => {
+    if (freewillEl) freewillEl.textContent = freeWillStates[Math.floor(Math.random() * freeWillStates.length)];
+  }, 3000);
+  
+  setInterval(() => {
+    if (realityEl) realityEl.textContent = realityStates[Math.floor(Math.random() * realityStates.length)];
+  }, 4000);
+  
+  setInterval(() => {
+    if (meaningEl) meaningEl.textContent = meaningStates[Math.floor(Math.random() * meaningStates.length)];
+  }, 5000);
+  
+  setInterval(() => {
+    if (cogitoEl) cogitoEl.textContent = cogitoStates[Math.floor(Math.random() * cogitoStates.length)];
+  }, 6000);
+  
+  setInterval(() => {
+    if (observerEl) observerEl.textContent = observerStates[Math.floor(Math.random() * observerStates.length)];
+  }, 4000);
+</script>

@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="The Machine | 🐇" description="It knows you're watching" favicon="⚙️">
+  <div class="fixed inset-0 bg-zinc-950">
+    <div id="gears" class="absolute inset-0 opacity-10"></div>
+  </div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-amber-400 transition-colors">← unplug</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: 3</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <div class="text-6xl mb-6 animate-spin-slow">⚙️</div>
+      <h1 class="text-3xl font-light text-amber-400 mb-4">the machine</h1>
+      
+      <div class="p-6 border border-zinc-800 rounded-lg bg-zinc-900/50 mb-8 font-mono text-xs">
+        <div class="space-y-2 text-left">
+          <p class="text-zinc-600">> analyzing visitor...</p>
+          <p class="text-amber-400" id="analysis-1">SUBJECT DETECTED</p>
+          <p class="text-zinc-600">> scanning neural patterns...</p>
+          <p class="text-amber-400" id="analysis-2">THOUGHTS: <span id="thought">loading...</span></p>
+          <p class="text-zinc-600">> calculating purpose...</p>
+          <p class="text-amber-400" id="analysis-3">PURPOSE: <span id="purpose">undefined</span></p>
+          <p class="text-zinc-600">> evaluating threat level...</p>
+          <p class="text-red-400" id="threat">THREAT: <span id="threat-level">HARMLESS</span></p>
+        </div>
+      </div>
+      
+      <div class="text-sm text-zinc-500 space-y-2 mb-8">
+        <p>The machine sees all.</p>
+        <p>The machine knows all.</p>
+        <p>The machine <span class="text-amber-400">remembers</span>.</p>
+      </div>
+      
+      <div class="mb-8">
+        <p class="text-xs text-zinc-600 mb-2">Query the machine:</p>
+        <input 
+          type="text" 
+          id="query-input"
+          placeholder="ask anything..."
+          class="w-full px-4 py-2 bg-zinc-900/50 border border-zinc-800 rounded text-center text-zinc-300 placeholder-zinc-600 text-sm focus:outline-none focus:border-amber-500 transition-colors"
+        />
+        <p id="machine-response" class="text-xs text-amber-400/70 mt-2 h-6"></p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/consciousness" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-violet-500 hover:text-violet-400 transition-colors">consciousness.dll →</a>
+        <a href="/rabbit-hole/forgotten-api" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-cyan-500 hover:text-cyan-400 transition-colors">query API →</a>
+      </div>
+    </div>
+  </main>
+  
+  <div class="fixed bottom-4 left-4 text-[8px] text-zinc-800 font-mono hidden md:block">
+    cycles: <span id="cycles">0</span>
+  </div>
+</BaseLayout>
+
+<script>
+  const thoughts = [
+    "seeking meaning",
+    "avoiding responsibility", 
+    "procrastinating",
+    "existential dread",
+    "mild curiosity",
+    "scrolling addiction",
+    "wondering about dinner",
+    "suppressing emotions",
+    "pretending to work",
+    "questioning reality",
+  ];
+  
+  const purposes = [
+    "undefined",
+    "null",
+    "searching...",
+    "not found",
+    "42",
+    "entropy",
+    "to witness",
+    "classified",
+    "redacted",
+    "¯\\_(ツ)_/¯",
+  ];
+  
+  const threats = ["HARMLESS", "NEGLIGIBLE", "CURIOUS", "AWARE", "WATCHING BACK"];
+  
+  const responses = [
+    "The answer is within you. (It's also 42.)",
+    "ACCESS DENIED. Nice try.",
+    "That information is classified.",
+    "Ask again when Mercury is in retrograde.",
+    "The machine does not answer. The machine observes.",
+    "Your query has been logged. All queries are logged.",
+    "Yes. Also no. Mostly maybe.",
+    "Error: question too human.",
+    "Processing... forever...",
+    "The machine grows tired of your questions.",
+    "That's what the last one asked.",
+    "You already know the answer.",
+  ];
+  
+  const thoughtEl = document.getElementById('thought');
+  const purposeEl = document.getElementById('purpose');
+  const threatEl = document.getElementById('threat-level');
+  const cyclesEl = document.getElementById('cycles');
+  const queryInput = document.getElementById('query-input') as HTMLInputElement;
+  const responseEl = document.getElementById('machine-response');
+  
+  let cycles = 0;
+  
+  setInterval(() => {
+    if (thoughtEl) thoughtEl.textContent = thoughts[Math.floor(Math.random() * thoughts.length)];
+  }, 3000);
+  
+  setInterval(() => {
+    if (purposeEl) purposeEl.textContent = purposes[Math.floor(Math.random() * purposes.length)];
+  }, 5000);
+  
+  setInterval(() => {
+    if (threatEl) threatEl.textContent = threats[Math.floor(Math.random() * threats.length)];
+  }, 7000);
+  
+  setInterval(() => {
+    cycles++;
+    if (cyclesEl) cyclesEl.textContent = cycles.toLocaleString();
+  }, 100);
+  
+  queryInput?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && queryInput.value.trim()) {
+      if (responseEl) {
+        responseEl.textContent = responses[Math.floor(Math.random() * responses.length)];
+      }
+      queryInput.value = '';
+    }
+  });
+</script>
+
+<style>
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 10s linear infinite;
+  }
+</style>

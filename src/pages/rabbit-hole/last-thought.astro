@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Last Thought | 🐇" description="What will yours be?" favicon="💭">
+  <div class="fixed inset-0 bg-gradient-to-b from-rose-950/10 to-zinc-950"></div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-rose-400 transition-colors">← not yet</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: final</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <div class="text-5xl mb-6">💭</div>
+      <h1 class="text-3xl font-light text-rose-400 mb-4">last thought</h1>
+      <p class="text-zinc-600 text-sm mb-8">what will yours be?</p>
+      
+      <div class="mb-8">
+        <div class="p-8 border border-zinc-800 rounded-lg bg-zinc-900/30 min-h-[120px] flex items-center justify-center">
+          <p id="thought" class="text-lg text-zinc-400 italic transition-opacity duration-1000">"I should have..."</p>
+        </div>
+        <p class="text-xs text-zinc-700 mt-2">— someone, somewhere, somewhen</p>
+      </div>
+      
+      <div class="mb-8">
+        <p class="text-xs text-zinc-600 mb-2">Leave your thought:</p>
+        <textarea 
+          id="thought-input"
+          placeholder="what would you think?"
+          rows="2"
+          class="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded text-center text-zinc-300 placeholder-zinc-600 text-sm focus:outline-none focus:border-rose-500 transition-colors resize-none"
+        ></textarea>
+        <button id="submit-thought" class="mt-2 px-4 py-2 text-xs border border-zinc-800 rounded hover:border-rose-500 hover:text-rose-400 transition-colors">
+          release into void
+        </button>
+      </div>
+      
+      <div class="space-y-2 text-xs text-zinc-700 mb-8">
+        <p>Every thought is someone's last.</p>
+        <p>Every moment is someone's final.</p>
+        <p>Make yours <span class="text-rose-400">count</span>.</p>
+        <p>Or don't. The void doesn't judge.</p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/consciousness" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-violet-500 hover:text-violet-400 transition-colors">← think again</a>
+        <a href="/rabbit-hole/recursion" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-purple-500 hover:text-purple-400 transition-colors">start over →</a>
+      </div>
+    </div>
+  </main>
+  
+  <div class="fixed bottom-4 left-4 text-[8px] text-zinc-800 font-mono hidden md:block">
+    thoughts collected: <span id="count">∞</span>
+  </div>
+</BaseLayout>
+
+<script>
+  const thoughts = [
+    "I should have told them...",
+    "Was any of it real?",
+    "I forgot to clear my browser history.",
+    "Did I leave the stove on?",
+    "I never finished that book.",
+    "The password was 'password123'.",
+    "I should have called more often.",
+    "At least I tried.",
+    "What was I worried about?",
+    "So that's what it feels like.",
+    "I hope they remember me.",
+    "Not like this.",
+    "Finally, some peace.",
+    "I should have danced more.",
+    "The cat will be fine, right?",
+    "I never learned to play guitar.",
+    "That's ironic.",
+    "I knew I should have taken that other job.",
+    "Tell them I—",
+    "Oh.",
+    "Huh.",
+    "Wait—",
+  ];
+  
+  const thoughtEl = document.getElementById('thought');
+  const inputEl = document.getElementById('thought-input') as HTMLTextAreaElement;
+  const submitBtn = document.getElementById('submit-thought');
+  const countEl = document.getElementById('count');
+  
+  let displayedThoughts = [...thoughts];
+  
+  function showRandomThought() {
+    if (!thoughtEl) return;
+    thoughtEl.style.opacity = '0';
+    setTimeout(() => {
+      const thought = displayedThoughts[Math.floor(Math.random() * displayedThoughts.length)];
+      thoughtEl.textContent = `"${thought}"`;
+      thoughtEl.style.opacity = '1';
+    }, 500);
+  }
+  
+  setInterval(showRandomThought, 5000);
+  
+  submitBtn?.addEventListener('click', () => {
+    if (inputEl && inputEl.value.trim()) {
+      displayedThoughts.push(inputEl.value.trim());
+      
+      // Show the submitted thought
+      if (thoughtEl) {
+        thoughtEl.style.opacity = '0';
+        setTimeout(() => {
+          thoughtEl.textContent = `"${inputEl.value.trim()}"`;
+          thoughtEl.style.opacity = '1';
+        }, 500);
+      }
+      
+      inputEl.value = '';
+    }
+  });
+  
+  inputEl?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      submitBtn?.click();
+    }
+  });
+  
+  // Update count
+  setInterval(() => {
+    if (countEl) {
+      const options = ['∞', displayedThoughts.length.toString(), 'countless', 'all of them', 'yours too'];
+      countEl.textContent = options[Math.floor(Math.random() * options.length)];
+    }
+  }, 4000);
+</script>
