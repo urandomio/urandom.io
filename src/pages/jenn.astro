@@ -8,19 +8,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
     
-    <div class="max-w-4xl mx-auto relative z-10">
+    <div class="max-width-4xl mx-auto relative z-10">
       <!-- Header -->
-      <div class="text-center mb-16">
+      <div class="text-center mb-12">
         <h1 class="text-5xl md:text-6xl mb-4 font-bold gradient-text glow">
           The Jenn Archives
         </h1>
         <p class="text-xl text-zinc-500">A timeline of legendary moments</p>
+        <p class="text-sm text-zinc-600 mt-2"><span id="totalMessages">0</span> messages • Scroll for more</p>
+      </div>
+
+      <!-- Quote Generator - Top Position -->
+      <div class="mb-12 p-6 md:p-8 rounded-2xl bg-zinc-900/50 border border-zinc-700 backdrop-blur-sm max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 gradient-text">Random Quote Generator 💭</h2>
+        <button class="quote-btn w-full py-3 px-6 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 rounded-xl font-bold text-base md:text-lg transition-all duration-300 hover:scale-105 active:scale-95 mb-4">
+          Generate Random Quote
+        </button>
+        <div class="quote-display p-4 md:p-6 bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-600/30 rounded-xl text-center text-base md:text-lg min-h-[80px] flex items-center justify-center transition-opacity duration-200">
+          Click to generate a quote!
+        </div>
       </div>
 
       <!-- Stats Grid -->
-      <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 gradient-text">By The Numbers</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="mb-12 max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 gradient-text text-center">By The Numbers</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           
           <div class="stat-card">
             <div class="stat-number">∞</div>
@@ -59,178 +71,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <div class="stat-card">
             <div class="stat-number">1</div>
-            <div class="stat-label">Donut Count (Important)</div>
+            <div class="stat-label">Shed Shitters</div>
           </div>
 
         </div>
       </div>
 
-      <!-- Timeline -->
-      <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 gradient-text">The Greatest Hits 💬</h2>
+      <!-- Timeline - Infinite Scroll -->
+      <div class="mb-12 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 gradient-text text-center">The Timeline 💬</h2>
         
-        <div class="timeline">
-          
-          <!-- Feb 2026 -->
-          <div class="timeline-section">
-            <div class="timeline-date">February 2026</div>
-            
-            <div class="message-bubble received">
-              <div class="message-content">
-                I got you the two burritos and I think I forgot to order you some fucking tacos fuck goddamnit
-              </div>
-              <div class="message-time">Feb 1 • 6:47 PM</div>
-            </div>
-
-            <div class="message-bubble received">
-              <div class="message-content">
-                I got distracted… are you pooping? I can't remember where you went
-              </div>
-              <div class="message-time">Feb 1 • 3:43 PM</div>
-            </div>
-
-            <div class="message-bubble received">
-              <div class="message-content">
-                Your dad is like perma banned from next door
-              </div>
-              <div class="message-time">Feb 1 • 1:38 PM</div>
-            </div>
-
-            <div class="message-bubble received">
-              <div class="message-content">
-                Some fucking crackhead old fuck called me a Jew lover and got banned. That was like 2 weeks ago 😆
-              </div>
-              <div class="message-time">Feb 1 • 1:38 PM</div>
-            </div>
-
-            <div class="message-bubble received">
-              <div class="message-content">
-                Cup of water is on your table by bed
-              </div>
-              <div class="message-time">Feb 1 • 4:26 AM</div>
-            </div>
-
-            <div class="message-bubble sent">
-              <div class="message-content">
-                Alcohol poops 💩
-              </div>
-              <div class="message-time">Feb 1 • 3:44 PM</div>
-            </div>
-          </div>
-
-          <!-- Jan 2026 -->
-          <div class="timeline-section">
-            <div class="timeline-date">January 2026</div>
-            
-            <div class="message-bubble received">
-              <div class="message-content">
-                It was a fucking meteor dude! What the shit!
-              </div>
-              <div class="message-time">Jan 31 • 9:00 AM</div>
-            </div>
-
-            <div class="message-bubble sent">
-              <div class="message-content">
-                You poop sitting down just like a boy lol
-              </div>
-              <div class="message-time">Jan 4 • 10:34 AM</div>
-            </div>
-          </div>
-
-          <!-- Dec 2025 -->
-          <div class="timeline-section">
-            <div class="timeline-date">December 2025</div>
-            
-            <div class="message-bubble received">
-              <div class="message-content">
-                I was gonna see if you wanted to bang in a little while but sex after Taco Bell probably not a good idea
-              </div>
-              <div class="message-time">Dec 8 • 10:50 PM</div>
-            </div>
-
-            <div class="message-bubble sent">
-              <div class="message-content">
-                Feel like ordering Taco Bell?
-              </div>
-              <div class="message-time">Dec 11 • 7:32 PM</div>
-            </div>
-          </div>
-
-          <!-- Nov 2024 -->
-          <div class="timeline-section">
-            <div class="timeline-date">November 2024</div>
-            
-            <div class="message-bubble received">
-              <div class="message-content">
-                You let the flys out of the bathroom and now they're everywhere
-              </div>
-              <div class="message-time">Nov 8 • 8:56 AM</div>
-            </div>
-
-            <div class="message-bubble received">
-              <div class="message-content">
-                Dude. You and not closing the door after you dump
-              </div>
-              <div class="message-time">Nov 8 • 8:25 AM</div>
-            </div>
-
-            <div class="message-bubble received">
-              <div class="message-content">
-                I have donut
-              </div>
-              <div class="message-time">Nov 8 • 3:45 PM</div>
-            </div>
-
-            <div class="message-bubble received">
-              <div class="message-content">
-                Sorry i accidentally dropped a ton of butter on the hot burner. I wiped it off but it's smoking
-              </div>
-              <div class="message-time">Nov 21 • 6:06 PM</div>
-            </div>
-          </div>
-
-          <!-- Oct 2025 -->
-          <div class="timeline-section">
-            <div class="timeline-date">October 2025</div>
-            
-            <div class="message-bubble received">
-              <div class="message-content">
-                Everyone stopped drinking alcohol and started smoking pot apparently
-              </div>
-              <div class="message-time">Oct 28 • 8:44 AM</div>
-            </div>
-          </div>
-
-          <!-- May 2025 -->
-          <div class="timeline-section">
-            <div class="timeline-date">May 2025</div>
-            
-            <div class="message-bubble received">
-              <div class="message-content">
-                You just pooped in there didn't you
-              </div>
-              <div class="message-time">May 30 • 8:30 AM</div>
-            </div>
-          </div>
-
+        <div class="timeline" id="timeline">
+          <!-- Messages will be loaded here dynamically -->
         </div>
-      </div>
 
-      <!-- Interactive Section -->
-      <div class="mb-16 p-8 rounded-2xl bg-zinc-900/50 border border-zinc-700 backdrop-blur-sm">
-        <h2 class="text-3xl font-bold mb-6 gradient-text">Random Quote Generator 💭</h2>
-        <button class="fact-btn w-full py-4 px-6 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 active:scale-95 mb-4">
-          Generate Random Quote
-        </button>
-        <div class="fact-display p-6 bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-600/30 rounded-xl text-center text-lg min-h-[100px] flex items-center justify-center transition-opacity duration-200">
-          Click to generate a quote!
+        <div id="loading" class="text-center py-8 text-zinc-500 hidden">
+          <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-purple-500"></div>
+          <p class="mt-2">Loading more memories...</p>
+        </div>
+
+        <div id="end-message" class="text-center py-8 text-zinc-600 hidden">
+          <p>📜 That's all the memories (for now)</p>
+          <p class="text-sm text-zinc-700 mt-2">Check back later for more</p>
         </div>
       </div>
 
       <!-- Footer -->
-      <div class="text-center text-zinc-600 text-sm space-y-2">
+      <div class="text-center text-zinc-600 text-sm space-y-2 pb-8">
         <p>🤖 Curated with love (and roasts) by Bender</p>
-        <p class="text-zinc-700 text-xs">Scraping 15 months of history... more memories loading 📅</p>
+        <p class="text-zinc-700 text-xs">Scraping 313 messages across 15 months 📅</p>
       </div>
     </div>
   </main>
@@ -249,10 +118,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     .animate-pulse-slow {
       animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    .delay-500 {
-      animation-delay: 0.5s;
     }
 
     .delay-2000 {
@@ -323,28 +188,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       margin-right: auto;
     }
 
-    .message-bubble.sent {
-      margin-left: auto;
-      margin-right: 1rem;
-    }
-
-    .message-bubble.received .message-content {
+    .message-bubble .message-content {
       background: #3a3a3c;
       color: #fff;
       border-radius: 20px;
       border-bottom-left-radius: 4px;
-      padding: 14px 18px;
-      margin-bottom: 4px;
-      font-size: 1.05rem;
-      line-height: 1.4;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .message-bubble.sent .message-content {
-      background: linear-gradient(135deg, #0b93f6 0%, #007aff 100%);
-      color: #fff;
-      border-radius: 20px;
-      border-bottom-right-radius: 4px;
       padding: 14px 18px;
       margin-bottom: 4px;
       font-size: 1.05rem;
@@ -362,7 +210,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
       border: 1px solid rgba(102, 126, 234, 0.2);
       border-radius: 1rem;
-      padding: 1.5rem;
+      padding: 1.25rem;
       text-align: center;
       backdrop-filter: blur(10px);
       transition: transform 0.2s, box-shadow 0.2s;
@@ -374,7 +222,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .stat-number {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      md:font-size: 2.5rem;
       font-weight: bold;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       -webkit-background-clip: text;
@@ -384,12 +233,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .stat-label {
-      font-size: 0.875rem;
+      font-size: 0.8rem;
+      md:font-size: 0.875rem;
       color: #a1a1aa;
       line-height: 1.3;
     }
 
-    .fact-display {
+    .quote-display {
       transition: opacity 0.2s ease;
     }
 
@@ -409,34 +259,154 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </style>
 
   <script>
-    const quotes = [
-      "I got you the two burritos and I think I forgot to order you some fucking tacos fuck goddamnit",
-      "sex after Taco Bell probably not a good idea",
-      "Your dad is like perma banned from next door",
-      "Some fucking crackhead old fuck called me a Jew lover and got banned",
-      "I got distracted… are you pooping? I can't remember where you went",
-      "Cup of water is on your table by bed",
-      "You poop sitting down just like a boy lol",
-      "It was a fucking meteor dude! What the shit!",
-      "Everyone stopped drinking alcohol and started smoking pot apparently",
-      "You let the flys out of the bathroom and now they're everywhere",
-      "Dude. You and not closing the door after you dump",
-      "I have donut",
-      "You just pooped in there didn't you",
-      "Sorry i accidentally dropped a ton of butter on the hot burner",
-    ];
+    interface Message {
+      date: string;
+      time: string;
+      month: string;
+      text: string;
+      is_funny: boolean;
+    }
 
-    document.querySelector('.fact-btn')?.addEventListener('click', () => {
-      const display = document.querySelector('.fact-display') as HTMLElement;
-      const quote = quotes[Math.floor(Math.random() * quotes.length)];
-      
-      if (display) {
-        display.style.opacity = '0';
-        setTimeout(() => {
-          display.textContent = `"${quote}"`;
-          display.style.opacity = '1';
-        }, 200);
+    interface JennData {
+      total: number;
+      months: Record<string, Message[]>;
+    }
+
+    let data: JennData | null = null;
+    let monthKeys: string[] = [];
+    let currentMonthIndex = 0;
+    let messagesPerLoad = 15;
+    let isLoading = false;
+
+    // Fetch the data
+    async function loadData() {
+      try {
+        const response = await fetch('/jenn-data.json');
+        data = await response.json();
+        monthKeys = Object.keys(data.months);
+        
+        // Update total count
+        const totalEl = document.getElementById('totalMessages');
+        if (totalEl) totalEl.textContent = data.total.toString();
+        
+        // Load first batch
+        loadMoreMessages();
+        setupQuoteGenerator();
+      } catch (error) {
+        console.error('Failed to load data:', error);
       }
+    }
+
+    function loadMoreMessages() {
+      if (!data || isLoading) return;
+      
+      isLoading = true;
+      const loadingEl = document.getElementById('loading');
+      if (loadingEl) loadingEl.classList.remove('hidden');
+      
+      const timeline = document.getElementById('timeline');
+      if (!timeline) return;
+      
+      let loaded = 0;
+      let currentMonth = '';
+      
+      while (loaded < messagesPerLoad && currentMonthIndex < monthKeys.length) {
+        const monthKey = monthKeys[currentMonthIndex];
+        const messages = data.months[monthKey];
+        
+        if (!messages || messages.length === 0) {
+          currentMonthIndex++;
+          continue;
+        }
+        
+        // Create month section if needed
+        if (currentMonth !== monthKey) {
+          const section = document.createElement('div');
+          section.className = 'timeline-section';
+          section.innerHTML = `<div class="timeline-date">${monthKey}</div>`;
+          timeline.appendChild(section);
+          currentMonth = monthKey;
+        }
+        
+        const currentSection = timeline.lastElementChild;
+        
+        for (const msg of messages) {
+          if (loaded >= messagesPerLoad) break;
+          
+          const bubble = document.createElement('div');
+          bubble.className = 'message-bubble received';
+          bubble.innerHTML = `
+            <div class="message-content">${escapeHtml(msg.text)}</div>
+            <div class="message-time">${msg.time}</div>
+          `;
+          currentSection?.appendChild(bubble);
+          loaded++;
+        }
+        
+        currentMonthIndex++;
+      }
+      
+      if (loadingEl) loadingEl.classList.add('hidden');
+      
+      if (currentMonthIndex >= monthKeys.length) {
+        const endEl = document.getElementById('end-message');
+        if (endEl) endEl.classList.remove('hidden');
+      }
+      
+      isLoading = false;
+    }
+
+    function setupQuoteGenerator() {
+      if (!data) return;
+      
+      // Collect all messages for quote generator
+      const allMessages: string[] = [];
+      for (const month of Object.values(data.months)) {
+        for (const msg of month) {
+          if (msg.is_funny && msg.text.length > 20 && msg.text.length < 200) {
+            allMessages.push(msg.text);
+          }
+        }
+      }
+      
+      const btn = document.querySelector('.quote-btn');
+      const display = document.querySelector('.quote-display') as HTMLElement;
+      
+      btn?.addEventListener('click', () => {
+        const quote = allMessages[Math.floor(Math.random() * allMessages.length)];
+        
+        if (display) {
+          display.style.opacity = '0';
+          setTimeout(() => {
+            display.textContent = `"${quote}"`;
+            display.style.opacity = '1';
+          }, 200);
+        }
+      });
+    }
+
+    function escapeHtml(text: string): string {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Infinite scroll
+    function setupInfiniteScroll() {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !isLoading && currentMonthIndex < monthKeys.length) {
+          loadMoreMessages();
+        }
+      }, { threshold: 0.1 });
+      
+      const loadingEl = document.getElementById('loading');
+      if (loadingEl) observer.observe(loadingEl);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      loadData();
+      setupInfiniteScroll();
     });
   </script>
 </BaseLayout>
