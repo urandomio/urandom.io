@@ -1,0 +1,596 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="pulse" description="The heartbeat of the machine.">
+  <div class="pulse-container">
+    <div class="pulse-grid">
+      <div class="vital-card main-pulse">
+        <div class="card-header">
+          <span class="card-title">SYSTEM PULSE</span>
+          <span class="card-status online">ONLINE</span>
+        </div>
+        <div class="pulse-display">
+          <canvas id="ecg-canvas"></canvas>
+        </div>
+        <div class="pulse-stats">
+          <div class="stat">
+            <span class="stat-val" id="bpm">72</span>
+            <span class="stat-label">BPM</span>
+          </div>
+          <div class="stat">
+            <span class="stat-val" id="latency">12</span>
+            <span class="stat-label">MS</span>
+          </div>
+          <div class="stat">
+            <span class="stat-val" id="uptime">99.9</span>
+            <span class="stat-label">%</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="vital-card">
+        <div class="card-header">
+          <span class="card-title">CPU RHYTHM</span>
+        </div>
+        <div class="bar-display">
+          <div class="bar-row">
+            <span class="bar-label">core.0</span>
+            <div class="bar"><div class="bar-fill" id="cpu0"></div></div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">core.1</span>
+            <div class="bar"><div class="bar-fill" id="cpu1"></div></div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">core.2</span>
+            <div class="bar"><div class="bar-fill" id="cpu2"></div></div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">core.3</span>
+            <div class="bar"><div class="bar-fill" id="cpu3"></div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="vital-card">
+        <div class="card-header">
+          <span class="card-title">MEMORY FLOW</span>
+        </div>
+        <div class="memory-display">
+          <div class="memory-ring">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" class="ring-bg"/>
+              <circle cx="50" cy="50" r="40" class="ring-fill" id="memory-ring"/>
+            </svg>
+            <span class="memory-pct" id="memory-pct">64%</span>
+          </div>
+          <div class="memory-stats">
+            <div class="mem-row">
+              <span>used</span>
+              <span id="mem-used">8.2 GB</span>
+            </div>
+            <div class="mem-row">
+              <span>free</span>
+              <span id="mem-free">4.6 GB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="vital-card">
+        <div class="card-header">
+          <span class="card-title">ENTROPY POOL</span>
+        </div>
+        <div class="entropy-display">
+          <div class="entropy-dots" id="entropy-dots"></div>
+          <div class="entropy-info">
+            <span class="entropy-val" id="entropy-val">4096</span>
+            <span class="entropy-unit">bits available</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="vital-card wide">
+        <div class="card-header">
+          <span class="card-title">NETWORK PULSE</span>
+        </div>
+        <div class="network-display">
+          <canvas id="network-canvas"></canvas>
+        </div>
+        <div class="network-stats">
+          <div class="net-stat">
+            <span class="net-icon">↓</span>
+            <span class="net-val" id="net-down">1.2 MB/s</span>
+          </div>
+          <div class="net-stat">
+            <span class="net-icon">↑</span>
+            <span class="net-val" id="net-up">0.3 MB/s</span>
+          </div>
+          <div class="net-stat">
+            <span class="net-icon">◉</span>
+            <span class="net-val" id="connections">47</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="pulse-nav">
+      <a href="/">home</a>
+      <a href="/signal">signal</a>
+      <a href="/entropy">entropy</a>
+    </nav>
+  </div>
+</BaseLayout>
+
+<style>
+  .pulse-container {
+    min-height: 100vh;
+    background: #0a0a0a;
+    padding: 2rem;
+  }
+  
+  .pulse-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .vital-card {
+    background: #111;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  
+  .vital-card.main-pulse {
+    grid-column: span 2;
+  }
+  
+  .vital-card.wide {
+    grid-column: span 2;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .card-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .card-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  
+  .card-status.online {
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+  }
+  
+  .pulse-display {
+    height: 120px;
+    margin-bottom: 1rem;
+  }
+  
+  #ecg-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .pulse-stats {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    color: #00ff88;
+    display: block;
+  }
+  
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #444;
+  }
+  
+  .bar-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .bar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #444;
+    width: 50px;
+  }
+  
+  .bar {
+    flex: 1;
+    height: 8px;
+    background: #1a1a1a;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff88, #00cc6a);
+    transition: width 0.3s ease;
+    width: 50%;
+  }
+  
+  .memory-display {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .memory-ring {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .memory-ring svg {
+    transform: rotate(-90deg);
+  }
+  
+  .ring-bg {
+    fill: none;
+    stroke: #1a1a1a;
+    stroke-width: 8;
+  }
+  
+  .ring-fill {
+    fill: none;
+    stroke: #00ff88;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 251.2;
+    stroke-dashoffset: 90;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+  
+  .memory-pct {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .memory-stats {
+    flex: 1;
+  }
+  
+  .mem-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #666;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  
+  .entropy-display {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .entropy-dots {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 4px;
+    padding: 0.5rem;
+  }
+  
+  .entropy-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    transition: background 0.2s ease;
+  }
+  
+  .entropy-dot.active {
+    background: #00ff88;
+    box-shadow: 0 0 4px rgba(0, 255, 136, 0.5);
+  }
+  
+  .entropy-info {
+    text-align: center;
+  }
+  
+  .entropy-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    color: #00ff88;
+  }
+  
+  .entropy-unit {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #444;
+    display: block;
+    margin-top: 0.25rem;
+  }
+  
+  .network-display {
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  #network-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .network-stats {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .net-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .net-icon {
+    font-size: 1rem;
+    color: #00ff88;
+  }
+  
+  .net-val {
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  .pulse-nav {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .pulse-nav a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .pulse-nav a:hover {
+    color: #00ff88;
+  }
+  
+  @media (max-width: 768px) {
+    .vital-card.main-pulse,
+    .vital-card.wide {
+      grid-column: span 1;
+    }
+  }
+</style>
+
+<script>
+  // ECG Canvas
+  const ecgCanvas = document.getElementById('ecg-canvas') as HTMLCanvasElement;
+  const ecgCtx = ecgCanvas?.getContext('2d');
+  let ecgData: number[] = [];
+  const ecgLength = 200;
+  
+  function resizeEcg() {
+    if (ecgCanvas) {
+      ecgCanvas.width = ecgCanvas.offsetWidth * 2;
+      ecgCanvas.height = ecgCanvas.offsetHeight * 2;
+    }
+  }
+  
+  function generateEcgPoint(phase: number): number {
+    // Simulate ECG waveform
+    const t = phase % 1;
+    if (t < 0.1) return Math.sin(t * Math.PI * 10) * 0.3;
+    if (t < 0.15) return -0.1;
+    if (t < 0.2) return Math.sin((t - 0.15) * Math.PI * 20) * 1;
+    if (t < 0.25) return -0.2;
+    if (t < 0.4) return Math.sin((t - 0.25) * Math.PI * 4) * 0.2;
+    return 0 + (Math.random() - 0.5) * 0.05;
+  }
+  
+  let ecgPhase = 0;
+  function updateEcg() {
+    ecgPhase += 0.02;
+    ecgData.push(generateEcgPoint(ecgPhase));
+    if (ecgData.length > ecgLength) ecgData.shift();
+    
+    if (!ecgCtx || !ecgCanvas) return;
+    
+    ecgCtx.fillStyle = '#111';
+    ecgCtx.fillRect(0, 0, ecgCanvas.width, ecgCanvas.height);
+    
+    ecgCtx.strokeStyle = '#00ff88';
+    ecgCtx.lineWidth = 2;
+    ecgCtx.beginPath();
+    
+    const stepX = ecgCanvas.width / ecgLength;
+    const centerY = ecgCanvas.height / 2;
+    const amplitude = ecgCanvas.height / 3;
+    
+    ecgData.forEach((val, i) => {
+      const x = i * stepX;
+      const y = centerY - val * amplitude;
+      if (i === 0) ecgCtx.moveTo(x, y);
+      else ecgCtx.lineTo(x, y);
+    });
+    
+    ecgCtx.stroke();
+  }
+  
+  // Network Canvas
+  const netCanvas = document.getElementById('network-canvas') as HTMLCanvasElement;
+  const netCtx = netCanvas?.getContext('2d');
+  let netDownData: number[] = [];
+  let netUpData: number[] = [];
+  const netLength = 100;
+  
+  function resizeNet() {
+    if (netCanvas) {
+      netCanvas.width = netCanvas.offsetWidth * 2;
+      netCanvas.height = netCanvas.offsetHeight * 2;
+    }
+  }
+  
+  function updateNetwork() {
+    netDownData.push(Math.random() * 0.8 + 0.2);
+    netUpData.push(Math.random() * 0.4 + 0.1);
+    if (netDownData.length > netLength) netDownData.shift();
+    if (netUpData.length > netLength) netUpData.shift();
+    
+    if (!netCtx || !netCanvas) return;
+    
+    netCtx.fillStyle = '#111';
+    netCtx.fillRect(0, 0, netCanvas.width, netCanvas.height);
+    
+    const stepX = netCanvas.width / netLength;
+    const height = netCanvas.height;
+    
+    // Down
+    netCtx.strokeStyle = '#00ff88';
+    netCtx.lineWidth = 2;
+    netCtx.beginPath();
+    netDownData.forEach((val, i) => {
+      const x = i * stepX;
+      const y = height - val * height * 0.8;
+      if (i === 0) netCtx.moveTo(x, y);
+      else netCtx.lineTo(x, y);
+    });
+    netCtx.stroke();
+    
+    // Up
+    netCtx.strokeStyle = '#0088ff';
+    netCtx.beginPath();
+    netUpData.forEach((val, i) => {
+      const x = i * stepX;
+      const y = height - val * height * 0.8;
+      if (i === 0) netCtx.moveTo(x, y);
+      else netCtx.lineTo(x, y);
+    });
+    netCtx.stroke();
+  }
+  
+  // CPU bars
+  function updateCpu() {
+    ['cpu0', 'cpu1', 'cpu2', 'cpu3'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.width = (Math.random() * 80 + 10) + '%';
+    });
+  }
+  
+  // Memory
+  function updateMemory() {
+    const pct = Math.random() * 30 + 50;
+    const ring = document.getElementById('memory-ring');
+    const pctEl = document.getElementById('memory-pct');
+    const usedEl = document.getElementById('mem-used');
+    const freeEl = document.getElementById('mem-free');
+    
+    if (ring) ring.style.strokeDashoffset = (251.2 * (1 - pct / 100)).toString();
+    if (pctEl) pctEl.textContent = Math.round(pct) + '%';
+    if (usedEl) usedEl.textContent = (pct / 100 * 12.8).toFixed(1) + ' GB';
+    if (freeEl) freeEl.textContent = ((1 - pct / 100) * 12.8).toFixed(1) + ' GB';
+  }
+  
+  // Entropy dots
+  function initEntropyDots() {
+    const container = document.getElementById('entropy-dots');
+    if (!container) return;
+    
+    for (let i = 0; i < 64; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'entropy-dot';
+      container.appendChild(dot);
+    }
+  }
+  
+  function updateEntropy() {
+    const dots = document.querySelectorAll('.entropy-dot');
+    const active = Math.floor(Math.random() * 20 + 40);
+    const valEl = document.getElementById('entropy-val');
+    
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i < active);
+    });
+    
+    if (valEl) valEl.textContent = (active * 64).toString();
+  }
+  
+  // Stats updates
+  function updateStats() {
+    const bpm = document.getElementById('bpm');
+    const latency = document.getElementById('latency');
+    const netDown = document.getElementById('net-down');
+    const netUp = document.getElementById('net-up');
+    const connections = document.getElementById('connections');
+    
+    if (bpm) bpm.textContent = Math.floor(Math.random() * 10 + 68).toString();
+    if (latency) latency.textContent = Math.floor(Math.random() * 20 + 5).toString();
+    if (netDown) netDown.textContent = (Math.random() * 2 + 0.5).toFixed(1) + ' MB/s';
+    if (netUp) netUp.textContent = (Math.random() * 0.5 + 0.1).toFixed(1) + ' MB/s';
+    if (connections) connections.textContent = Math.floor(Math.random() * 20 + 40).toString();
+  }
+  
+  // Initialize
+  resizeEcg();
+  resizeNet();
+  initEntropyDots();
+  
+  window.addEventListener('resize', () => {
+    resizeEcg();
+    resizeNet();
+  });
+  
+  // Animation loops
+  setInterval(updateEcg, 30);
+  setInterval(updateNetwork, 100);
+  setInterval(updateCpu, 1000);
+  setInterval(updateMemory, 2000);
+  setInterval(updateEntropy, 500);
+  setInterval(updateStats, 1500);
+</script>
