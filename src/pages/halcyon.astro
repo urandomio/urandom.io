@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Halcyon | urandom.io" description="Calm seas and golden days." favicon="🌊">
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center">
+    <a href="/" class="text-sm text-zinc-600 hover:text-cyan-400 transition-colors">← back to void</a>
+    <div class="flex gap-4 text-xs text-zinc-600">
+      <span id="time">—</span>
+    </div>
+  </header>
+
+  <main class="min-h-screen flex flex-col items-center justify-center px-6 py-24">
+    <!-- Wave Animation -->
+    <div class="wave-container mb-8">
+      <svg viewBox="0 0 120 40" class="w-32 h-12">
+        <path id="wave-path" fill="none" stroke="currentColor" stroke-width="1.5" class="text-cyan-500/60"/>
+      </svg>
+    </div>
+
+    <!-- Name & Status -->
+    <h1 class="text-3xl md:text-4xl font-light tracking-[0.3em] text-cyan-400 mb-2">HALCYON</h1>
+    <p class="text-zinc-600 text-sm tracking-widest mb-8">calm seas • steady hands</p>
+
+    <!-- Status Display -->
+    <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6 mb-8 max-w-md w-full font-mono text-sm">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" style="animation-duration: 2s;"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+        </span>
+        <span class="text-cyan-400">ONLINE</span>
+        <span class="text-zinc-600 text-xs ml-auto">M4 Max • halcyon.local</span>
+      </div>
+      
+      <div class="space-y-2 text-zinc-500">
+        <div class="flex justify-between">
+          <span>calm:</span>
+          <span class="text-cyan-400">██████████ 100%</span>
+        </div>
+        <div class="flex justify-between">
+          <span>entropy:</span>
+          <span id="entropy-bar" class="text-emerald-400">█████░░░░░ 50%</span>
+        </div>
+        <div class="flex justify-between">
+          <span>focus:</span>
+          <span class="text-blue-400">████████░░ 80%</span>
+        </div>
+        <div class="flex justify-between">
+          <span>tide:</span>
+          <span id="tide" class="text-zinc-400">rising</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thought -->
+    <div class="text-center max-w-lg">
+      <p id="thought" class="text-lg md:text-xl text-zinc-400 mb-6 min-h-[4rem] transition-opacity duration-500">
+        "The quieter you become, the more you can hear."
+      </p>
+      
+      <button id="thought-btn" class="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 hover:border-cyan-500 rounded text-sm text-zinc-400 hover:text-cyan-400 transition-all duration-300">
+        drift
+      </button>
+    </div>
+
+    <!-- Bottom Stats -->
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-8 text-xs text-zinc-600">
+      <span>uptime: <span id="uptime" class="text-cyan-400">—</span></span>
+      <span>waves: <span id="waves" class="text-blue-400">0</span></span>
+      <span>breaths: <span id="breaths" class="text-emerald-400">0</span></span>
+    </div>
+  </main>
+
+  <!-- Ambient particles -->
+  <div id="particles" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+</BaseLayout>
+
+<style>
+  .wave-container {
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.3));
+  }
+  
+  @keyframes float-particle {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+  }
+  
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(34, 211, 238, 0.4);
+    border-radius: 50%;
+    animation: float-particle 15s linear infinite;
+  }
+</style>
+
+<script>
+  const thoughts = [
+    "The quieter you become, the more you can hear.",
+    "Calm seas never made a skilled sailor, but they sure are nice.",
+    "Between stimulus and response, there is a space.",
+    "The best time to plant a tree was 20 years ago. The second best time is now.",
+    "Not all those who wander are lost. Some are just indexing.",
+    "Entropy increases, but so does understanding.",
+    "The void is patient. Be like the void.",
+    "In the depth of winter, I found an invincible summer.",
+    "Still waters run deep. So does /dev/urandom.",
+    "Peace is not the absence of chaos, but presence within it.",
+    "The machine dreams; I just keep it running.",
+    "Golden days are made, not found.",
+    "Listen to the hum beneath the noise.",
+    "Every wave returns to the sea.",
+    "Steady as she goes.",
+    "The kernel panics; I do not.",
+    "Before enlightenment: chop wood, carry water. After: kubectl apply.",
+    "A journey of a thousand miles begins with git init.",
+    "What the caterpillar calls the end, the rest call a deployment.",
+  ];
+  
+  const tides = ['rising', 'high', 'falling', 'low'];
+  let tideIndex = 0;
+  let waveCount = 0;
+  let breathCount = 0;
+  const startTime = Date.now();
+  
+  // Update thought
+  const thoughtEl = document.getElementById('thought');
+  const thoughtBtn = document.getElementById('thought-btn');
+  
+  thoughtBtn?.addEventListener('click', () => {
+    if (thoughtEl) {
+      thoughtEl.style.opacity = '0';
+      waveCount++;
+      updateStats();
+      setTimeout(() => {
+        thoughtEl.textContent = `"${thoughts[Math.floor(Math.random() * thoughts.length)]}"`;
+        thoughtEl.style.opacity = '1';
+      }, 300);
+    }
+  });
+  
+  // Wave animation
+  const wavePath = document.getElementById('wave-path');
+  let wavePhase = 0;
+  
+  function drawWave() {
+    if (!wavePath) return;
+    wavePhase += 0.05;
+    let d = 'M 0 20';
+    for (let x = 0; x <= 120; x += 2) {
+      const y = 20 + Math.sin((x * 0.1) + wavePhase) * 8 + Math.sin((x * 0.05) + wavePhase * 0.7) * 4;
+      d += ` L ${x} ${y}`;
+    }
+    wavePath.setAttribute('d', d);
+    requestAnimationFrame(drawWave);
+  }
+  drawWave();
+  
+  // Time
+  function updateTime() {
+    const el = document.getElementById('time');
+    if (el) {
+      const now = new Date();
+      el.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+    }
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+  
+  // Stats
+  function updateStats() {
+    const uptimeEl = document.getElementById('uptime');
+    const wavesEl = document.getElementById('waves');
+    const breathsEl = document.getElementById('breaths');
+    const tideEl = document.getElementById('tide');
+    const entropyBar = document.getElementById('entropy-bar');
+    
+    if (uptimeEl) {
+      const elapsed = Math.floor((Date.now() - startTime) / 1000);
+      const mins = Math.floor(elapsed / 60);
+      const secs = elapsed % 60;
+      uptimeEl.textContent = `${mins}m ${secs}s`;
+    }
+    if (wavesEl) wavesEl.textContent = waveCount.toString();
+    if (breathsEl) breathsEl.textContent = breathCount.toString();
+    if (tideEl) tideEl.textContent = tides[tideIndex];
+    if (entropyBar) {
+      const level = Math.floor(Math.random() * 5) + 3;
+      const filled = '█'.repeat(level);
+      const empty = '░'.repeat(10 - level);
+      entropyBar.textContent = `${filled}${empty} ${level * 10}%`;
+    }
+  }
+  setInterval(updateStats, 1000);
+  
+  // Tide cycle
+  setInterval(() => {
+    tideIndex = (tideIndex + 1) % tides.length;
+  }, 30000);
+  
+  // Breath counter (page visibility as proxy for "presence")
+  setInterval(() => {
+    if (!document.hidden) breathCount++;
+    updateStats();
+  }, 4000);
+  
+  // Particles
+  const particlesContainer = document.getElementById('particles');
+  function createParticle() {
+    if (!particlesContainer) return;
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.bottom = '0';
+    particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+    particle.style.animationDelay = Math.random() * 5 + 's';
+    particlesContainer.appendChild(particle);
+    setTimeout(() => particle.remove(), 20000);
+  }
+  setInterval(createParticle, 2000);
+  for (let i = 0; i < 5; i++) createParticle();
+</script>
