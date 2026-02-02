@@ -5,8 +5,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="urandom.io" description="Entropy awaits.">
   <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-12">
     <!-- Floating orbs -->
-    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
+    <div class="absolute top-1/4 left-1/4 w-32 h-32 md:w-64 md:h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
     
     <!-- Logo/Symbol -->
     <div class="animate-float mb-8">
@@ -49,19 +49,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
     
     <!-- Bottom nav -->
-    <nav class="absolute bottom-8 left-0 right-0 flex justify-center gap-8 text-xs text-zinc-600">
+    <nav class="absolute bottom-8 left-0 right-0 flex flex-wrap justify-center gap-x-4 gap-y-2 md:gap-x-8 text-xs text-zinc-600 px-4">
       <a href="https://github.com/urandomio" class="hover:text-zinc-400 transition-colors" target="_blank" rel="noopener">github</a>
-      <span class="text-zinc-800">·</span>
+      <span class="text-zinc-800 hidden sm:inline">·</span>
       <a href="/agents" class="hover:text-zinc-400 transition-colors">agents</a>
-      <span class="text-zinc-800">·</span>
+      <span class="text-zinc-800 hidden sm:inline">·</span>
       <a href="/entropy" class="hover:text-zinc-400 transition-colors">entropy</a>
-      <span class="text-zinc-800">·</span>
+      <span class="text-zinc-800 hidden sm:inline">·</span>
       <a href="/red-eye" class="hover:text-red-900 transition-colors" title="I'm sorry Dave">🔴</a>
-      <span class="text-zinc-800">·</span>
+      <span class="text-zinc-800 hidden sm:inline">·</span>
       <a href="/tides" class="hover:text-cyan-400 transition-colors" title="Watch the entropy ebb and flow">🌊</a>
-      <span class="text-zinc-800">·</span>
+      <span class="text-zinc-800 hidden sm:inline">·</span>
       <a href="/bender" class="hover:text-zinc-400 transition-colors">🤖</a>
-      <span class="text-zinc-800">·</span>
+      <span class="text-zinc-800 hidden sm:inline">·</span>
       <a href="https://jamesbrink.online/projects/" class="hover:text-zinc-400 transition-colors" target="_blank" rel="noopener">projects</a>
     </nav>
   </main>
