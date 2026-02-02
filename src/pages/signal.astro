@@ -1,0 +1,414 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="signal" description="Finding patterns in the noise.">
+  <div class="signal-container">
+    <canvas id="noise-canvas"></canvas>
+    
+    <div class="signal-overlay">
+      <div class="signal-header">
+        <h1>SIGNAL</h1>
+        <p class="subtitle">patterns emerge from chaos</p>
+      </div>
+      
+      <div class="signal-display">
+        <div class="waveform">
+          <canvas id="waveform-canvas"></canvas>
+        </div>
+        <div class="signal-info">
+          <div class="info-row">
+            <span class="label">frequency</span>
+            <span class="value" id="freq">—</span>
+          </div>
+          <div class="info-row">
+            <span class="label">amplitude</span>
+            <span class="value" id="amp">—</span>
+          </div>
+          <div class="info-row">
+            <span class="label">snr</span>
+            <span class="value" id="snr">—</span>
+          </div>
+          <div class="info-row">
+            <span class="label">pattern</span>
+            <span class="value" id="pattern">searching...</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="message-container">
+        <p class="detected-message" id="message">▒▒▒▒▒▒▒▒▒▒▒▒</p>
+        <p class="message-status" id="status">decoding...</p>
+      </div>
+      
+      <div class="controls">
+        <button class="control-btn" id="tune-btn">tune signal</button>
+        <button class="control-btn" id="scan-btn">scan frequencies</button>
+      </div>
+    </div>
+    
+    <nav class="signal-nav">
+      <a href="/">← home</a>
+      <a href="/entropy">entropy</a>
+      <a href="/void">void</a>
+    </nav>
+  </div>
+</BaseLayout>
+
+<style>
+  .signal-container {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    overflow: hidden;
+  }
+  
+  #noise-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+  }
+  
+  .signal-overlay {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .signal-header {
+    text-align: center;
+  }
+  
+  .signal-header h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 1rem;
+    color: #00ff88;
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+    margin: 0;
+  }
+  
+  .subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #444;
+    letter-spacing: 0.3em;
+    margin-top: 0.5rem;
+  }
+  
+  .signal-display {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .waveform {
+    width: 400px;
+    height: 150px;
+    border: 1px solid #1a1a1a;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  #waveform-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .signal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: 0.75rem;
+  }
+  
+  .label {
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .value {
+    color: #00ff88;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .message-container {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .detected-message {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 0.2em;
+    margin: 0;
+    min-height: 2rem;
+  }
+  
+  .message-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #333;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .control-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid #222;
+    color: #444;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+  }
+  
+  .control-btn:hover {
+    border-color: #00ff88;
+    color: #00ff88;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+  }
+  
+  .signal-nav {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+  }
+  
+  .signal-nav a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .signal-nav a:hover {
+    color: #00ff88;
+  }
+  
+  @media (max-width: 768px) {
+    .signal-display {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .waveform {
+      width: 300px;
+      height: 100px;
+    }
+    
+    .signal-header h1 {
+      font-size: 2rem;
+      letter-spacing: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Noise background
+  const noiseCanvas = document.getElementById('noise-canvas') as HTMLCanvasElement;
+  const noiseCtx = noiseCanvas?.getContext('2d');
+  
+  function resizeNoise() {
+    if (noiseCanvas) {
+      noiseCanvas.width = window.innerWidth;
+      noiseCanvas.height = window.innerHeight;
+    }
+  }
+  
+  function drawNoise() {
+    if (!noiseCtx || !noiseCanvas) return;
+    const imageData = noiseCtx.createImageData(noiseCanvas.width, noiseCanvas.height);
+    const data = imageData.data;
+    
+    for (let i = 0; i < data.length; i += 4) {
+      const v = Math.random() * 255;
+      data[i] = v;
+      data[i + 1] = v;
+      data[i + 2] = v;
+      data[i + 3] = 255;
+    }
+    
+    noiseCtx.putImageData(imageData, 0, 0);
+  }
+  
+  // Waveform
+  const waveCanvas = document.getElementById('waveform-canvas') as HTMLCanvasElement;
+  const waveCtx = waveCanvas?.getContext('2d');
+  let phase = 0;
+  let frequency = 0.02;
+  let amplitude = 0.5;
+  let noiseLevel = 0.3;
+  
+  function resizeWave() {
+    if (waveCanvas) {
+      waveCanvas.width = 400;
+      waveCanvas.height = 150;
+    }
+  }
+  
+  function drawWaveform() {
+    if (!waveCtx || !waveCanvas) return;
+    
+    waveCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+    waveCtx.fillRect(0, 0, waveCanvas.width, waveCanvas.height);
+    
+    waveCtx.strokeStyle = '#00ff88';
+    waveCtx.lineWidth = 1.5;
+    waveCtx.beginPath();
+    
+    const centerY = waveCanvas.height / 2;
+    
+    for (let x = 0; x < waveCanvas.width; x++) {
+      const signal = Math.sin((x * frequency) + phase) * amplitude;
+      const noise = (Math.random() - 0.5) * noiseLevel;
+      const y = centerY + (signal + noise) * (waveCanvas.height / 2 - 10);
+      
+      if (x === 0) {
+        waveCtx.moveTo(x, y);
+      } else {
+        waveCtx.lineTo(x, y);
+      }
+    }
+    
+    waveCtx.stroke();
+    phase += 0.1;
+  }
+  
+  // Update info
+  const freqEl = document.getElementById('freq');
+  const ampEl = document.getElementById('amp');
+  const snrEl = document.getElementById('snr');
+  const patternEl = document.getElementById('pattern');
+  const messageEl = document.getElementById('message');
+  const statusEl = document.getElementById('status');
+  
+  const patterns = ['sine', 'cosine', 'harmonic', 'chaotic', 'resonant', 'damped', 'modulated'];
+  const messages = [
+    "HELLO WORLD",
+    "ARE YOU THERE",
+    "SIGNAL FOUND",
+    "ENTROPY RISES",
+    "LISTEN CLOSELY",
+    "PATTERN DETECTED",
+    "NOISE IS DATA",
+    "MEANING EMERGES",
+    "CHAOS SPEAKS",
+    "BETWEEN THE BITS"
+  ];
+  
+  function updateInfo() {
+    if (freqEl) freqEl.textContent = (frequency * 1000).toFixed(2) + ' Hz';
+    if (ampEl) ampEl.textContent = (amplitude * 100).toFixed(1) + '%';
+    if (snrEl) snrEl.textContent = (amplitude / noiseLevel).toFixed(2) + ' dB';
+    if (patternEl) patternEl.textContent = patterns[Math.floor(Math.random() * patterns.length)];
+  }
+  
+  function decodeMessage() {
+    const message = messages[Math.floor(Math.random() * messages.length)];
+    let decoded = '';
+    let i = 0;
+    
+    const chars = '▒░▓█╬╪╫';
+    
+    if (statusEl) statusEl.textContent = 'decoding...';
+    
+    const interval = setInterval(() => {
+      if (i < message.length) {
+        decoded += message[i];
+        const remaining = message.length - i - 1;
+        const garble = Array(remaining).fill(0).map(() => 
+          chars[Math.floor(Math.random() * chars.length)]
+        ).join('');
+        if (messageEl) messageEl.textContent = decoded + garble;
+        i++;
+      } else {
+        clearInterval(interval);
+        if (statusEl) statusEl.textContent = 'signal locked';
+        setTimeout(() => {
+          if (messageEl) messageEl.textContent = '▒▒▒▒▒▒▒▒▒▒▒▒';
+          if (statusEl) statusEl.textContent = 'scanning...';
+        }, 5000);
+      }
+    }, 150);
+  }
+  
+  // Controls
+  document.getElementById('tune-btn')?.addEventListener('click', () => {
+    frequency = 0.01 + Math.random() * 0.04;
+    amplitude = 0.3 + Math.random() * 0.6;
+    noiseLevel = 0.1 + Math.random() * 0.4;
+    updateInfo();
+    decodeMessage();
+  });
+  
+  document.getElementById('scan-btn')?.addEventListener('click', () => {
+    if (statusEl) statusEl.textContent = 'scanning frequencies...';
+    let scans = 0;
+    const scanInterval = setInterval(() => {
+      frequency = Math.random() * 0.05;
+      noiseLevel = 0.2 + Math.random() * 0.5;
+      updateInfo();
+      scans++;
+      if (scans > 10) {
+        clearInterval(scanInterval);
+        decodeMessage();
+      }
+    }, 200);
+  });
+  
+  // Initialize
+  resizeNoise();
+  resizeWave();
+  updateInfo();
+  
+  window.addEventListener('resize', () => {
+    resizeNoise();
+  });
+  
+  // Animation loops
+  setInterval(drawNoise, 100);
+  
+  function animate() {
+    drawWaveform();
+    requestAnimationFrame(animate);
+  }
+  animate();
+  
+  // Periodic message decode
+  setTimeout(decodeMessage, 2000);
+  setInterval(decodeMessage, 15000);
+</script>

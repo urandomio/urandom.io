@@ -1,0 +1,474 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="glitch" description="Digital decay. Corruption as art.">
+  <div class="glitch-container">
+    <div class="glitch-bg" id="glitch-bg"></div>
+    
+    <div class="content">
+      <h1 class="glitch-text" data-text="GLITCH">GLITCH</h1>
+      
+      <div class="corruption-display">
+        <pre id="corruption">
+██████████████████████████████
+█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█
+█▓░░░░░░░░░░░░░░░░░░░░░░░░░░▓█
+█▓░ MEMORY CORRUPTION ░░░░░▓█
+█▓░░░░░░░░░░░░░░░░░░░░░░░░░░▓█
+█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█
+██████████████████████████████
+        </pre>
+      </div>
+      
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="stat-label">bit errors</span>
+          <span class="stat-value" id="bit-errors">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">corruption</span>
+          <span class="stat-value" id="corruption-pct">0%</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">entropy</span>
+          <span class="stat-value" id="entropy-val">low</span>
+        </div>
+      </div>
+      
+      <div class="glitch-actions">
+        <button class="glitch-btn" id="corrupt-btn">
+          <span class="btn-text">corrupt</span>
+        </button>
+        <button class="glitch-btn" id="restore-btn">
+          <span class="btn-text">restore</span>
+        </button>
+        <button class="glitch-btn danger" id="destroy-btn">
+          <span class="btn-text">destroy</span>
+        </button>
+      </div>
+      
+      <p class="glitch-quote" id="quote">"Errors are not bugs, they are features of entropy."</p>
+    </div>
+    
+    <nav class="glitch-nav">
+      <a href="/" class="nav-link">home</a>
+      <a href="/signal" class="nav-link">signal</a>
+      <a href="/void" class="nav-link">void</a>
+    </nav>
+  </div>
+</BaseLayout>
+
+<style>
+  .glitch-container {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .glitch-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .glitch-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+  
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch-text::before {
+    color: #ff0040;
+    animation: glitch-1 2s infinite linear alternate-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+  
+  .glitch-text::after {
+    color: #00ffff;
+    animation: glitch-2 3s infinite linear alternate-reverse;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+  
+  @keyframes glitch-1 {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-3px); }
+    40% { transform: translateX(3px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(2px); }
+  }
+  
+  @keyframes glitch-2 {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(3px); }
+    40% { transform: translateX(-2px); }
+    60% { transform: translateX(2px); }
+    80% { transform: translateX(-3px); }
+  }
+  
+  .corruption-display {
+    background: #000;
+    border: 1px solid #222;
+    padding: 1rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .corruption-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0040, transparent);
+    animation: scan 3s linear infinite;
+  }
+  
+  @keyframes scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  #corruption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    color: #0f0;
+    margin: 0;
+    white-space: pre;
+  }
+  
+  .stats-row {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid #1a1a1a;
+    border-radius: 4px;
+  }
+  
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .stat-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: #0f0;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .glitch-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .glitch-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid #333;
+    color: #666;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .glitch-btn:hover {
+    border-color: #0f0;
+    color: #0f0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  }
+  
+  .glitch-btn.danger:hover {
+    border-color: #ff0040;
+    color: #ff0040;
+    box-shadow: 0 0 10px rgba(255, 0, 64, 0.3);
+  }
+  
+  .glitch-quote {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #333;
+    font-style: italic;
+    text-align: center;
+    max-width: 400px;
+  }
+  
+  .glitch-nav {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #333;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    color: #0f0;
+  }
+  
+  /* Glitch effect class for intense moments */
+  .intense-glitch {
+    animation: intense 0.1s infinite;
+  }
+  
+  @keyframes intense {
+    0% { transform: translate(0); filter: hue-rotate(0deg); }
+    25% { transform: translate(-2px, 2px); filter: hue-rotate(90deg); }
+    50% { transform: translate(2px, -2px); filter: hue-rotate(180deg); }
+    75% { transform: translate(-2px, -2px); filter: hue-rotate(270deg); }
+    100% { transform: translate(2px, 2px); filter: hue-rotate(360deg); }
+  }
+  
+  @media (max-width: 768px) {
+    .glitch-text {
+      font-size: 2.5rem;
+    }
+    
+    .stats-row {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .corruption-display {
+      transform: scale(0.8);
+    }
+  }
+</style>
+
+<script>
+  const corruptionEl = document.getElementById('corruption');
+  const bitErrorsEl = document.getElementById('bit-errors');
+  const corruptionPctEl = document.getElementById('corruption-pct');
+  const entropyValEl = document.getElementById('entropy-val');
+  const quoteEl = document.getElementById('quote');
+  const glitchBg = document.getElementById('glitch-bg');
+  
+  const originalText = `██████████████████████████████
+█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█
+█▓░░░░░░░░░░░░░░░░░░░░░░░░░░▓█
+█▓░ MEMORY CORRUPTION ░░░░░▓█
+█▓░░░░░░░░░░░░░░░░░░░░░░░░░░▓█
+█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█
+██████████████████████████████`;
+  
+  const glitchChars = '!@#$%^&*()_+-=[]{}|;:,.<>?/~`░▒▓█▀▄▌▐■□▢▣▤▥▦▧▨▩';
+  
+  const quotes = [
+    '"Errors are not bugs, they are features of entropy."',
+    '"Every bit has the right to flip."',
+    '"Corruption is just data expressing itself."',
+    '"In the kingdom of bits, chaos is king."',
+    '"The glitch reveals the truth beneath."',
+    '"Perfection is a temporary state."',
+    '"Embrace the beautiful decay."',
+    '"Order is the dream; chaos is reality."'
+  ];
+  
+  let corruptionLevel = 0;
+  let bitErrors = 0;
+  let currentText = originalText;
+  
+  function corruptText(text: string, amount: number): string {
+    const chars = text.split('');
+    const numCorrupt = Math.floor(chars.length * amount);
+    
+    for (let i = 0; i < numCorrupt; i++) {
+      const idx = Math.floor(Math.random() * chars.length);
+      if (chars[idx] !== '\n') {
+        chars[idx] = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+        bitErrors++;
+      }
+    }
+    
+    return chars.join('');
+  }
+  
+  function updateStats() {
+    if (bitErrorsEl) bitErrorsEl.textContent = bitErrors.toString();
+    if (corruptionPctEl) corruptionPctEl.textContent = Math.min(100, Math.round(corruptionLevel * 100)) + '%';
+    
+    if (entropyValEl) {
+      if (corruptionLevel < 0.2) entropyValEl.textContent = 'low';
+      else if (corruptionLevel < 0.5) entropyValEl.textContent = 'medium';
+      else if (corruptionLevel < 0.8) entropyValEl.textContent = 'high';
+      else entropyValEl.textContent = 'critical';
+    }
+  }
+  
+  function corrupt() {
+    corruptionLevel = Math.min(1, corruptionLevel + 0.1);
+    currentText = corruptText(currentText, 0.05);
+    if (corruptionEl) corruptionEl.textContent = currentText;
+    updateStats();
+    
+    // Visual glitch effect
+    document.body.classList.add('intense-glitch');
+    setTimeout(() => document.body.classList.remove('intense-glitch'), 100);
+  }
+  
+  function restore() {
+    corruptionLevel = Math.max(0, corruptionLevel - 0.3);
+    
+    // Gradually restore
+    const chars = currentText.split('');
+    const origChars = originalText.split('');
+    const numRestore = Math.floor(chars.length * 0.3);
+    
+    for (let i = 0; i < numRestore; i++) {
+      const idx = Math.floor(Math.random() * chars.length);
+      chars[idx] = origChars[idx];
+    }
+    
+    currentText = chars.join('');
+    if (corruptionEl) corruptionEl.textContent = currentText;
+    updateStats();
+  }
+  
+  function destroy() {
+    corruptionLevel = 1;
+    bitErrors += 1000;
+    
+    // Total corruption
+    let destroyedText = '';
+    for (let i = 0; i < originalText.length; i++) {
+      if (originalText[i] === '\n') {
+        destroyedText += '\n';
+      } else {
+        destroyedText += glitchChars[Math.floor(Math.random() * glitchChars.length)];
+      }
+    }
+    
+    currentText = destroyedText;
+    if (corruptionEl) corruptionEl.textContent = currentText;
+    updateStats();
+    
+    // Intense visual effect
+    document.body.classList.add('intense-glitch');
+    setTimeout(() => {
+      document.body.classList.remove('intense-glitch');
+      // Auto-restore after destruction
+      setTimeout(() => {
+        currentText = originalText;
+        corruptionLevel = 0;
+        if (corruptionEl) corruptionEl.textContent = currentText;
+        updateStats();
+      }, 2000);
+    }, 500);
+  }
+  
+  // Random quote rotation
+  function rotateQuote() {
+    if (quoteEl) {
+      quoteEl.style.opacity = '0';
+      setTimeout(() => {
+        quoteEl.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteEl.style.opacity = '1';
+      }, 300);
+    }
+  }
+  
+  // Background glitch effect
+  function drawGlitchBg() {
+    if (!glitchBg) return;
+    
+    const lines: string[] = [];
+    for (let i = 0; i < 50; i++) {
+      if (Math.random() > 0.7) {
+        const width = Math.random() * 100;
+        const color = Math.random() > 0.5 ? '#ff0040' : '#00ffff';
+        lines.push(`<div style="
+          position: absolute;
+          top: ${Math.random() * 100}%;
+          left: ${Math.random() * 100}%;
+          width: ${width}px;
+          height: 2px;
+          background: ${color};
+          opacity: ${Math.random() * 0.5};
+        "></div>`);
+      }
+    }
+    glitchBg.innerHTML = lines.join('');
+  }
+  
+  // Event listeners
+  document.getElementById('corrupt-btn')?.addEventListener('click', corrupt);
+  document.getElementById('restore-btn')?.addEventListener('click', restore);
+  document.getElementById('destroy-btn')?.addEventListener('click', destroy);
+  
+  // Initialize
+  updateStats();
+  setInterval(drawGlitchBg, 200);
+  setInterval(rotateQuote, 8000);
+  
+  // Random ambient corruption
+  setInterval(() => {
+    if (Math.random() > 0.8 && corruptionLevel < 0.3) {
+      const chars = currentText.split('');
+      const idx = Math.floor(Math.random() * chars.length);
+      if (chars[idx] !== '\n') {
+        chars[idx] = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+        currentText = chars.join('');
+        if (corruptionEl) corruptionEl.textContent = currentText;
+        bitErrors++;
+        updateStats();
+      }
+    }
+  }, 2000);
+</script>
