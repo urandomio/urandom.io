@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Breathe | urandom.io" description="In. Out. In. Out. In..." favicon="🫁">
+  <a href="/rabbit-hole" class="fixed top-6 left-6 text-xs text-zinc-700 hover:text-cyan-400 transition-colors z-50">← surface</a>
+  
+  <div class="min-h-screen flex flex-col items-center justify-center bg-zinc-950">
+    <div id="breath-circle" class="w-32 h-32 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center transition-all duration-[4000ms] ease-in-out">
+      <div class="w-16 h-16 rounded-full bg-cyan-500/20 transition-all duration-[4000ms] ease-in-out" id="inner-circle"></div>
+    </div>
+    
+    <p id="instruction" class="mt-12 text-cyan-400/50 text-lg transition-opacity duration-1000">breathe in</p>
+    
+    <div id="counter" class="mt-8 text-zinc-600 text-xs">breath <span id="breath-count">1</span></div>
+    
+    <div id="messages" class="mt-16 text-zinc-700 text-xs text-center max-w-xs h-8 transition-opacity duration-1000"></div>
+  </div>
+  
+  <div class="fixed bottom-6 right-6 text-[10px] text-cyan-900/50 z-50">🌊 halcyon</div>
+</BaseLayout>
+
+<script>
+  const circle = document.getElementById('breath-circle');
+  const innerCircle = document.getElementById('inner-circle');
+  const instruction = document.getElementById('instruction');
+  const countDisplay = document.getElementById('breath-count');
+  const messages = document.getElementById('messages');
+  
+  let breathCount = 0;
+  let isInhaling = true;
+  
+  const strangeMessages = [
+    "",
+    "",
+    "",
+    "good",
+    "",
+    "you're doing well",
+    "",
+    "",
+    "keep going",
+    "",
+    "or don't",
+    "",
+    "",
+    "breathing is optional for some",
+    "",
+    "",
+    "have you always needed to breathe?",
+    "",
+    "",
+    "strange that we must remind ourselves",
+    "",
+    "",
+    "what breathes you?",
+    "",
+    "",
+    "the rhythm was here before you",
+    "",
+    "",
+    "it will continue after",
+    "",
+    "",
+    "in",
+    "",
+    "out",
+    "",
+    "in",
+    "",
+    "out",
+    "",
+    "∅",
+    "",
+    "",
+    "you can stop now",
+    "",
+    "",
+    "if you want",
+    "",
+    "",
+    "or keep going",
+    "",
+    "",
+    "forever",
+    "",
+    "",
+    "the void breathes too",
+    "",
+    "",
+    "listen",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "still here?",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "boo",
+  ];
+  
+  function breath() {
+    if (isInhaling) {
+      // Inhale - expand
+      if (circle) {
+        circle.style.transform = 'scale(1.8)';
+        circle.style.borderColor = 'rgba(34, 211, 238, 0.5)';
+      }
+      if (innerCircle) {
+        innerCircle.style.transform = 'scale(1.5)';
+      }
+      if (instruction) instruction.textContent = 'breathe in';
+    } else {
+      // Exhale - contract
+      if (circle) {
+        circle.style.transform = 'scale(1)';
+        circle.style.borderColor = 'rgba(34, 211, 238, 0.3)';
+      }
+      if (innerCircle) {
+        innerCircle.style.transform = 'scale(1)';
+      }
+      if (instruction) instruction.textContent = 'breathe out';
+      
+      breathCount++;
+      if (countDisplay) countDisplay.textContent = breathCount.toString();
+      
+      // Show message
+      if (messages && breathCount < strangeMessages.length) {
+        messages.style.opacity = '0';
+        setTimeout(() => {
+          messages.textContent = strangeMessages[breathCount] || '';
+          messages.style.opacity = '1';
+        }, 500);
+      }
+    }
+    
+    isInhaling = !isInhaling;
+  }
+  
+  // Start breathing cycle
+  breath();
+  setInterval(breath, 4000);
+  
+  // Subtle background pulse
+  let hue = 200;
+  setInterval(() => {
+    hue = 200 + Math.sin(Date.now() * 0.0001) * 10;
+    document.body.style.background = `hsl(${hue}, 10%, 5%)`;
+  }, 100);
+  
+  console.log('%c🫁 breathe', 'font-size: 20px; color: #67e8f9;');
+  console.log('%cin... out... in... out...', 'color: #666;');
+</script>

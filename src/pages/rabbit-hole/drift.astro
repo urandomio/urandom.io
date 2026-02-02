@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Drift | urandom.io" description="Let go. Float." favicon="🌊">
+  <a href="/rabbit-hole" class="fixed top-6 left-6 text-xs text-zinc-700 hover:text-cyan-400 transition-colors z-50">← surface</a>
+  
+  <div id="ocean" class="fixed inset-0 overflow-hidden bg-gradient-to-b from-zinc-950 via-blue-950 to-cyan-950">
+    <div id="thoughts" class="absolute inset-0"></div>
+  </div>
+  
+  <div class="fixed bottom-8 left-1/2 -translate-x-1/2 text-xs text-zinc-600 z-50">
+    thoughts drift past. you cannot hold them.
+  </div>
+  
+  <div class="fixed bottom-6 right-6 text-[10px] text-cyan-900 z-50">🌊 halcyon</div>
+</BaseLayout>
+
+<script>
+  const thoughts = [
+    "where do lost socks go",
+    "the ocean remembers everything",
+    "fish don't know they're wet",
+    "what color is a mirror",
+    "clouds are just sky ghosts",
+    "time is a flat circle",
+    "entropy always wins",
+    "the void stares back",
+    "nothing is something",
+    "silence has a sound",
+    "memories are just stories we tell ourselves",
+    "the present is already the past",
+    "infinity fits in your pocket",
+    "waves never touch the same shore twice",
+    "you are 70% ocean",
+    "thoughts are just brain weather",
+    "the deep calls to the deep",
+    "stillness moves",
+    "every ending is a beginning",
+    "the current knows the way",
+    "float",
+    "let go",
+    "drift",
+    "breathe",
+    "sink",
+    "rise",
+  ];
+  
+  const container = document.getElementById('thoughts');
+  
+  function createDriftingThought() {
+    const thought = document.createElement('div');
+    thought.className = 'drifting-thought';
+    thought.textContent = thoughts[Math.floor(Math.random() * thoughts.length)];
+    
+    const startY = Math.random() * window.innerHeight;
+    const duration = 20000 + Math.random() * 30000;
+    const size = 10 + Math.random() * 14;
+    const opacity = 0.1 + Math.random() * 0.4;
+    
+    thought.style.cssText = `
+      position: absolute;
+      left: ${window.innerWidth + 100}px;
+      top: ${startY}px;
+      font-size: ${size}px;
+      color: rgba(103, 232, 249, ${opacity});
+      white-space: nowrap;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      transition: transform 0.5s ease;
+    `;
+    
+    container?.appendChild(thought);
+    
+    const startTime = performance.now();
+    const startX = window.innerWidth + 100;
+    const endX = -500;
+    const wobbleAmp = 20 + Math.random() * 40;
+    const wobbleFreq = 0.001 + Math.random() * 0.002;
+    
+    function animate(time: number) {
+      const elapsed = time - startTime;
+      const progress = elapsed / duration;
+      
+      if (progress >= 1) {
+        thought.remove();
+        return;
+      }
+      
+      const x = startX + (endX - startX) * progress;
+      const wobble = Math.sin(elapsed * wobbleFreq) * wobbleAmp;
+      thought.style.left = `${x}px`;
+      thought.style.top = `${startY + wobble}px`;
+      
+      requestAnimationFrame(animate);
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  
+  // Create initial thoughts
+  for (let i = 0; i < 8; i++) {
+    setTimeout(() => createDriftingThought(), i * 500);
+  }
+  
+  // Keep creating thoughts
+  setInterval(createDriftingThought, 2000);
+  
+  // Ambient particles
+  function createParticle() {
+    const particle = document.createElement('div');
+    particle.style.cssText = `
+      position: absolute;
+      width: ${2 + Math.random() * 4}px;
+      height: ${2 + Math.random() * 4}px;
+      background: rgba(103, 232, 249, ${0.1 + Math.random() * 0.2});
+      border-radius: 50%;
+      left: ${Math.random() * window.innerWidth}px;
+      top: ${window.innerHeight + 10}px;
+      pointer-events: none;
+    `;
+    container?.appendChild(particle);
+    
+    const duration = 10000 + Math.random() * 20000;
+    const startTime = performance.now();
+    const startX = parseFloat(particle.style.left);
+    
+    function animateParticle(time: number) {
+      const elapsed = time - startTime;
+      const progress = elapsed / duration;
+      
+      if (progress >= 1) {
+        particle.remove();
+        return;
+      }
+      
+      const y = window.innerHeight - progress * (window.innerHeight + 50);
+      const wobble = Math.sin(elapsed * 0.002) * 30;
+      particle.style.top = `${y}px`;
+      particle.style.left = `${startX + wobble}px`;
+      
+      requestAnimationFrame(animateParticle);
+    }
+    
+    requestAnimationFrame(animateParticle);
+  }
+  
+  setInterval(createParticle, 300);
+  
+  console.log('%c🌊 drift', 'font-size: 20px; color: #67e8f9;');
+  console.log('%clet the current take you', 'color: #666;');
+</script>

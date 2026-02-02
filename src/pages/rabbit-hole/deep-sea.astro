@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Deep Sea | urandom.io" description="How far down can you go?" favicon="🦑">
+  <a href="/rabbit-hole" class="fixed top-6 left-6 text-xs text-zinc-700 hover:text-cyan-400 transition-colors z-50" id="back-link">← surface</a>
+  
+  <div id="depth-display" class="fixed top-6 right-6 text-xs text-cyan-400/50 z-50 font-mono">
+    depth: <span id="depth">0</span>m
+  </div>
+  
+  <div id="ocean" class="min-h-screen transition-colors duration-1000" style="background: linear-gradient(to bottom, #0c4a6e, #082f49);">
+    <div class="flex flex-col items-center pt-32 pb-96" id="descent">
+      <div class="text-center mb-16 zone" data-depth="0">
+        <div class="text-4xl mb-4">🌊</div>
+        <p class="text-cyan-300/70 text-sm">sunlight zone</p>
+        <p class="text-cyan-400/40 text-xs mt-2">0 - 200m</p>
+      </div>
+      
+      <div class="w-px h-48 bg-gradient-to-b from-cyan-400/30 to-cyan-400/10"></div>
+      
+      <div class="text-center my-16 zone" data-depth="200">
+        <div class="text-4xl mb-4">🐠</div>
+        <p class="text-cyan-300/60 text-sm">twilight zone</p>
+        <p class="text-cyan-400/30 text-xs mt-2">200 - 1000m</p>
+        <p class="text-cyan-300/20 text-xs mt-4 max-w-xs">light fades. shapes become uncertain.</p>
+      </div>
+      
+      <div class="w-px h-64 bg-gradient-to-b from-cyan-400/10 to-blue-900/20"></div>
+      
+      <div class="text-center my-16 zone" data-depth="1000">
+        <div class="text-4xl mb-4">🦑</div>
+        <p class="text-blue-300/50 text-sm">midnight zone</p>
+        <p class="text-blue-400/30 text-xs mt-2">1000 - 4000m</p>
+        <p class="text-blue-300/20 text-xs mt-4 max-w-xs">eternal darkness. only bioluminescence remains.</p>
+      </div>
+      
+      <div class="w-px h-64 bg-gradient-to-b from-blue-900/20 to-purple-900/10"></div>
+      
+      <div class="text-center my-16 zone" data-depth="4000">
+        <div class="text-4xl mb-4">👁️</div>
+        <p class="text-purple-300/40 text-sm">abyssal zone</p>
+        <p class="text-purple-400/20 text-xs mt-2">4000 - 6000m</p>
+        <p class="text-purple-300/15 text-xs mt-4 max-w-xs">pressure crushes. strange things live here.</p>
+      </div>
+      
+      <div class="w-px h-64 bg-gradient-to-b from-purple-900/10 to-zinc-900/5"></div>
+      
+      <div class="text-center my-16 zone" data-depth="6000">
+        <div class="text-4xl mb-4 animate-pulse">◉</div>
+        <p class="text-zinc-400/30 text-sm">hadal zone</p>
+        <p class="text-zinc-500/20 text-xs mt-2">6000 - 11000m</p>
+        <p class="text-zinc-400/15 text-xs mt-4 max-w-xs">the trenches. few have returned.</p>
+      </div>
+      
+      <div class="w-px h-96 bg-gradient-to-b from-zinc-900/5 to-transparent"></div>
+      
+      <div class="text-center my-16 zone" data-depth="11000">
+        <div class="text-6xl mb-8" style="filter: blur(1px);">∅</div>
+        <p class="text-zinc-500/20 text-sm">challenger deep</p>
+        <p class="text-zinc-600/15 text-xs mt-2">10,929m</p>
+        <p class="text-zinc-500/10 text-xs mt-4 max-w-xs">the bottom. or is it?</p>
+      </div>
+      
+      <div class="w-px h-48 bg-gradient-to-b from-transparent to-red-900/5"></div>
+      
+      <div class="text-center my-16 zone" data-depth="99999">
+        <div class="text-2xl mb-4 text-red-900/30">?</div>
+        <p class="text-red-900/20 text-xs">you weren't supposed to find this</p>
+        <a href="/rabbit-hole/drift" class="text-red-900/30 text-xs hover:text-red-500/50 transition-colors mt-4 block">
+          let go →
+        </a>
+      </div>
+      
+      <div class="h-screen"></div>
+    </div>
+  </div>
+  
+  <div class="fixed bottom-6 right-6 text-[10px] text-cyan-900/50 z-50">🌊 halcyon</div>
+</BaseLayout>
+
+<script>
+  const ocean = document.getElementById('ocean');
+  const depthDisplay = document.getElementById('depth');
+  const zones = document.querySelectorAll('.zone');
+  
+  const gradients = [
+    { depth: 0, bg: 'linear-gradient(to bottom, #0c4a6e, #082f49)' },
+    { depth: 200, bg: 'linear-gradient(to bottom, #082f49, #0c1929)' },
+    { depth: 1000, bg: 'linear-gradient(to bottom, #0c1929, #0a0a1a)' },
+    { depth: 4000, bg: 'linear-gradient(to bottom, #0a0a1a, #0a0510)' },
+    { depth: 6000, bg: 'linear-gradient(to bottom, #0a0510, #050505)' },
+    { depth: 11000, bg: 'linear-gradient(to bottom, #050505, #000000)' },
+    { depth: 99999, bg: 'linear-gradient(to bottom, #000000, #0a0000)' },
+  ];
+  
+  function updateDepth() {
+    const scrollY = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollY / maxScroll;
+    
+    // Calculate depth (exponential scale for drama)
+    const depth = Math.floor(Math.pow(scrollPercent, 1.5) * 12000);
+    if (depthDisplay) depthDisplay.textContent = depth.toLocaleString();
+    
+    // Update background
+    for (let i = gradients.length - 1; i >= 0; i--) {
+      if (depth >= gradients[i].depth) {
+        if (ocean) ocean.style.background = gradients[i].bg;
+        break;
+      }
+    }
+  }
+  
+  window.addEventListener('scroll', updateDepth);
+  updateDepth();
+  
+  console.log('%c🦑 deep sea', 'font-size: 20px; color: #67e8f9;');
+  console.log('%chow far will you descend?', 'color: #666;');
+</script>
+
+<style>
+  .zone {
+    transition: opacity 0.5s, transform 0.5s;
+  }
+</style>
