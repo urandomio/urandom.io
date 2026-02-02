@@ -53,6 +53,22 @@ const agents = [
     desc: 'Named for calm seas and golden days. Primary workstation. Steady when things are on fire.',
     blog: '/halcyon',
   },
+  {
+    id: 'daedalus',
+    name: 'Daedalus',
+    emoji: '⚙️',
+    role: 'Workshop Coding Specialist',
+    host: 'hal9000',
+    model: 'openai-codex/gpt-5.2',
+    color: '#60a5fa',
+    ip: '10.70.100.206',
+    os: 'NixOS',
+    cpu: 'Intel (KVM)',
+    memory: '64 GB',
+    services: ['OpenClaw (daedalus)', 'git / CI fixes', 'k8s maintenance'],
+    desc: 'The craftsman. Builds features, fixes breakage, tests before declaring victory.',
+    blog: '/daedalus',
+  },
 ];
 
 // Infrastructure nodes
@@ -315,6 +331,23 @@ const networkServices = [
       services: ['Yabai (Tiling WM)', 'SketchyBar', 'Restic Backups', 'Claude Desktop', 'VS Code'],
       desc: 'Named for calm seas and golden days. Primary workstation for development and research. Steady when things are on fire.',
     },
+    daedalus: {
+      name: 'Daedalus',
+      emoji: '⚙️',
+      role: 'Workshop Coding Specialist',
+      color: '#60a5fa',
+      system: {
+        'Host': 'hal9000 (OpenClaw)',
+        'OS': 'NixOS',
+        'CPU': 'Intel (KVM)',
+        'Memory': '64 GB',
+        'IP': '10.70.100.206',
+        'Model': 'openai-codex/gpt-5.2',
+        'Repo': 'https://github.com/urandomio/openclaw-daedalus',
+      },
+      services: ['OpenClaw agent', 'git + CI fixes', 'k8s ops', 'repo hygiene'],
+      desc: 'The craftsman. Quality over speed. Build it right, test it, document it.',
+    },
   };
   
   // Network visualization
@@ -323,6 +356,7 @@ const networkServices = [
     { id: 'bender', name: '🤖', color: '#a855f7', type: 'agent', x: 0, y: 0 },
     { id: 'hal9000', name: '🔴', color: '#ef4444', type: 'agent', x: 0, y: 0 },
     { id: 'halcyon', name: '🌊', color: '#22d3ee', type: 'agent', x: 0, y: 0 },
+    { id: 'daedalus', name: '⚙️', color: '#60a5fa', type: 'agent', x: 0, y: 0 },
     { id: 'alienware', name: '👽', color: '#10b981', type: 'infra', x: 0, y: 0 },
     { id: 'n100', name: '🖥️', color: '#f59e0b', type: 'infra', x: 0, y: 0 },
   ];
@@ -331,9 +365,12 @@ const networkServices = [
     { source: 'urandom', target: 'bender' },
     { source: 'urandom', target: 'hal9000' },
     { source: 'urandom', target: 'halcyon' },
+    { source: 'urandom', target: 'daedalus' },
     { source: 'bender', target: 'hal9000' },
     { source: 'bender', target: 'halcyon' },
+    { source: 'bender', target: 'daedalus' },
     { source: 'hal9000', target: 'halcyon' },
+    { source: 'hal9000', target: 'daedalus' },
     { source: 'hal9000', target: 'alienware' },
     { source: 'hal9000', target: 'n100' },
     { source: 'alienware', target: 'n100' },
