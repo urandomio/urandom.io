@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Drift | urandom.io</title><meta name="description" content="Let go. Float."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/agents.DNVTWHVP.css"></head> <body class="bg-zinc-950 text-zinc-300 min-h-screen overflow-x-hidden font-mono"> <div class="noise"></div>  <a href="/rabbit-hole" class="fixed top-6 left-6 text-xs text-zinc-700 hover:text-cyan-400 transition-colors z-50">← surface</a> <div id="ocean" class="fixed inset-0 overflow-hidden bg-gradient-to-b from-zinc-950 via-blue-950 to-cyan-950"> <div id="thoughts" class="absolute inset-0"></div> </div> <div class="fixed bottom-8 left-1/2 -translate-x-1/2 text-xs text-zinc-600 z-50">
+thoughts drift past. you cannot hold them.
+</div> <div class="fixed bottom-6 right-6 text-[10px] text-cyan-900 z-50">🌊 halcyon</div>  <!-- Cloudflare Web Analytics --> <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;bd1da70659b041bdbf256871eb928b35&quot;}"></script> <!-- End Cloudflare Web Analytics --> </body></html> <script type="module">const p=["where do lost socks go","the ocean remembers everything","fish don't know they're wet","what color is a mirror","clouds are just sky ghosts","time is a flat circle","entropy always wins","the void stares back","nothing is something","silence has a sound","memories are just stories we tell ourselves","the present is already the past","infinity fits in your pocket","waves never touch the same shore twice","you are 70% ocean","thoughts are just brain weather","the deep calls to the deep","stillness moves","every ending is a beginning","the current knows the way","float","let go","drift","breathe","sink","rise"],u=document.getElementById("thoughts");function w(){const e=document.createElement("div");e.className="drifting-thought",e.textContent=p[Math.floor(Math.random()*p.length)];const n=Math.random()*window.innerHeight,r=2e4+Math.random()*3e4,a=10+Math.random()*14,o=.1+Math.random()*.4;e.style.cssText=`
+      position: absolute;
+      left: ${window.innerWidth+100}px;
+      top: ${n}px;
+      font-size: ${a}px;
+      color: rgba(103, 232, 249, ${o});
+      white-space: nowrap;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      transition: transform 0.5s ease;
+    `,u?.appendChild(e);const i=performance.now(),t=window.innerWidth+100,s=-500,c=20+Math.random()*40,h=.001+Math.random()*.002;function l(g){const d=g-i,m=d/r;if(m>=1){e.remove();return}const f=t+(s-t)*m,y=Math.sin(d*h)*c;e.style.left=`${f}px`,e.style.top=`${n+y}px`,requestAnimationFrame(l)}requestAnimationFrame(l)}for(let e=0;e<8;e++)setTimeout(()=>w(),e*500);setInterval(w,2e3);function b(){const e=document.createElement("div");e.style.cssText=`
+      position: absolute;
+      width: ${2+Math.random()*4}px;
+      height: ${2+Math.random()*4}px;
+      background: rgba(103, 232, 249, ${.1+Math.random()*.2});
+      border-radius: 50%;
+      left: ${Math.random()*window.innerWidth}px;
+      top: ${window.innerHeight+10}px;
+      pointer-events: none;
+    `,u?.appendChild(e);const n=1e4+Math.random()*2e4,r=performance.now(),a=parseFloat(e.style.left);function o(i){const t=i-r,s=t/n;if(s>=1){e.remove();return}const c=window.innerHeight-s*(window.innerHeight+50),h=Math.sin(t*.002)*30;e.style.top=`${c}px`,e.style.left=`${a+h}px`,requestAnimationFrame(o)}requestAnimationFrame(o)}setInterval(b,300);console.log("%c🌊 drift","font-size: 20px; color: #67e8f9;");console.log("%clet the current take you","color: #666;");</script>

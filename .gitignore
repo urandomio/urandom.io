@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Nix
+result
+.direnv/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Lock files (using bun)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
