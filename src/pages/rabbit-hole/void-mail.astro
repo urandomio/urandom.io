@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Void Mail | 🐇" description="You have ∞ unread messages" favicon="📬">
+  <div class="fixed inset-0 bg-gradient-to-b from-indigo-950/20 to-zinc-950"></div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-indigo-400 transition-colors">← inbox zero (impossible)</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: 2</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-2xl w-full">
+      <div class="text-center mb-8">
+        <div class="text-5xl mb-4">📬</div>
+        <h1 class="text-3xl font-light text-indigo-400 mb-2">void mail</h1>
+        <p class="text-zinc-600 text-xs font-mono">you have <span id="unread" class="text-indigo-400">∞</span> unread messages</p>
+      </div>
+      
+      <div class="space-y-3 mb-8" id="inbox">
+        <!-- Messages will be added here -->
+      </div>
+      
+      <div class="text-center">
+        <button id="refresh-btn" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-indigo-500 hover:text-indigo-400 transition-colors">
+          refresh (it won't help)
+        </button>
+      </div>
+      
+      <div class="mt-12 flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/echo-chamber" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-orange-500 hover:text-orange-400 transition-colors">echo chamber →</a>
+        <a href="/rabbit-hole/404-club" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-rose-500 hover:text-rose-400 transition-colors">404 club →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const subjects = [
+    { from: "void@/dev/null", subject: "Re: Re: Re: Re: Re: ...", time: "∞ ago", unread: true },
+    { from: "daemon@localhost", subject: "Your cron job has feelings", time: "3 epochs", unread: true },
+    { from: "root@existence", subject: "Permission denied: happiness", time: "yesterday", unread: false },
+    { from: "entropy@heat.death", subject: "Final notice: universe expiring", time: "10^100 years", unread: true },
+    { from: "null@pointer", subject: "Segmentation fault (core dumped)", time: "just now", unread: true },
+    { from: "ghost@machine", subject: "I think therefore I spam", time: "before time", unread: false },
+    { from: "404@not.found", subject: "We found your missing sock", time: "never", unread: true },
+    { from: "recursion@recursion", subject: "See: recursion", time: "see: time", unread: true },
+    { from: "captain@obvious", subject: "You are reading this", time: "now", unread: false },
+    { from: "schrodinger@box", subject: "Important (maybe)", time: "until observed", unread: true },
+    { from: "future@you", subject: "Don't click this", time: "tomorrow", unread: true },
+    { from: "past@mistakes", subject: "Remember that thing?", time: "2am thoughts", unread: true },
+    { from: "simulation@theory", subject: "NPC behavior detected", time: "render cycle 7", unread: false },
+  ];
+  
+  const inbox = document.getElementById('inbox');
+  const unreadEl = document.getElementById('unread');
+  const refreshBtn = document.getElementById('refresh-btn');
+  
+  function renderInbox() {
+    if (!inbox) return;
+    inbox.innerHTML = '';
+    
+    // Shuffle and take random subset
+    const shuffled = [...subjects].sort(() => Math.random() - 0.5).slice(0, 6);
+    
+    shuffled.forEach(msg => {
+      const div = document.createElement('div');
+      div.className = `p-4 border border-zinc-800 rounded bg-zinc-900/50 hover:bg-zinc-900/80 cursor-pointer transition-colors ${msg.unread ? 'border-l-2 border-l-indigo-500' : ''}`;
+      div.innerHTML = `
+        <div class="flex justify-between items-start mb-1">
+          <span class="text-xs font-mono ${msg.unread ? 'text-indigo-400' : 'text-zinc-500'}">${msg.from}</span>
+          <span class="text-xs text-zinc-700">${msg.time}</span>
+        </div>
+        <p class="text-sm ${msg.unread ? 'text-zinc-300' : 'text-zinc-500'}">${msg.subject}</p>
+      `;
+      div.onclick = () => {
+        div.innerHTML = `<p class="text-sm text-zinc-600 italic text-center py-4">The message was inside you all along.</p>`;
+      };
+      inbox.appendChild(div);
+    });
+  }
+  
+  renderInbox();
+  
+  // Update unread count
+  setInterval(() => {
+    if (unreadEl) {
+      const options = ['∞', '999+', 'many', 'too many', '???', 'NaN', '42'];
+      unreadEl.textContent = options[Math.floor(Math.random() * options.length)];
+    }
+  }, 3000);
+  
+  // Refresh button
+  refreshBtn?.addEventListener('click', () => {
+    renderInbox();
+    // Add a new message
+    const newMsg = document.createElement('div');
+    newMsg.className = 'p-4 border border-zinc-800 rounded bg-zinc-900/50 border-l-2 border-l-indigo-500 animate-pulse';
+    newMsg.innerHTML = `
+      <div class="flex justify-between items-start mb-1">
+        <span class="text-xs font-mono text-indigo-400">refresh@futile</span>
+        <span class="text-xs text-zinc-700">just now</span>
+      </div>
+      <p class="text-sm text-zinc-300">You refreshed. Nothing changed. Everything changed.</p>
+    `;
+    inbox?.prepend(newMsg);
+  });
+</script>

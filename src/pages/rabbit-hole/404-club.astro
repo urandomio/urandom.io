@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 Club | 🐇" description="Page not found. You are." favicon="🚫">
+  <div class="fixed inset-0 bg-gradient-to-b from-rose-950/10 to-zinc-950"></div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-rose-400 transition-colors">← 200 OK</a>
+    <span class="text-xs text-zinc-700 font-mono">STATUS: 404</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <div class="text-6xl mb-6">🚫</div>
+      <h1 class="text-4xl font-light mb-2">
+        <span class="text-rose-400">404</span>
+        <span class="text-zinc-600">club</span>
+      </h1>
+      <p class="text-zinc-600 text-sm mb-8">exclusive membership for pages that don't exist</p>
+      
+      <div class="p-6 border border-zinc-800 rounded-lg bg-zinc-900/50 mb-8">
+        <p class="text-xs text-zinc-600 mb-4">MEMBER ROSTER:</p>
+        <div class="space-y-2 text-sm text-left font-mono">
+          <p class="text-rose-400/70">• /meaning-of-life <span class="text-zinc-700 float-right">charter member</span></p>
+          <p class="text-rose-400/70">• /your-potential <span class="text-zinc-700 float-right">since birth</span></p>
+          <p class="text-rose-400/70">• /inbox-zero <span class="text-zinc-700 float-right">mythical</span></p>
+          <p class="text-rose-400/70">• /work-life-balance <span class="text-zinc-700 float-right">404'd in 2020</span></p>
+          <p class="text-rose-400/70">• /reasonable-expectations <span class="text-zinc-700 float-right">never existed</span></p>
+          <p class="text-rose-400/70">• /this-page <span class="text-zinc-700 float-right">wait...</span></p>
+        </div>
+      </div>
+      
+      <div class="text-xs text-zinc-700 space-y-2 mb-8">
+        <p>Error 404: Page not found.</p>
+        <p>But you were found.</p>
+        <p>You're <span class="text-rose-400">here</span>.</p>
+        <p>That's something.</p>
+        <p>Isn't it?</p>
+      </div>
+      
+      <div class="mb-8">
+        <p class="text-xs text-zinc-600 mb-2">Apply for membership:</p>
+        <input 
+          type="text" 
+          id="page-input"
+          placeholder="/your-missing-page"
+          class="w-full px-4 py-2 bg-zinc-900/50 border border-zinc-800 rounded text-center text-zinc-300 placeholder-zinc-600 text-sm focus:outline-none focus:border-rose-500 transition-colors"
+        />
+        <p id="membership-result" class="text-xs text-zinc-700 mt-2"></p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/infinite-scroll" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-cyan-500 hover:text-cyan-400 transition-colors">scroll forever →</a>
+        <a href="/rabbit-hole/liminal" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-red-500 hover:text-red-400 transition-colors">liminal.exe →</a>
+      </div>
+    </div>
+    
+    <div class="fixed bottom-4 right-4 text-[8px] text-zinc-800 font-mono">
+      members: <span id="member-count">∞</span>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const input = document.getElementById('page-input') as HTMLInputElement;
+  const result = document.getElementById('membership-result');
+  const memberCount = document.getElementById('member-count');
+  
+  const responses = [
+    "Membership approved. You now don't exist.",
+    "Welcome to the club. Please don't find your way out.",
+    "404: Membership not found. (That means you're in.)",
+    "Congratulations. You are now nowhere.",
+    "Application accepted. Reality denied.",
+    "You have been 404'd. Enjoy your non-existence.",
+  ];
+  
+  input?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && input.value.trim()) {
+      if (result) {
+        result.textContent = responses[Math.floor(Math.random() * responses.length)];
+        result.className = 'text-xs text-rose-400 mt-2';
+      }
+      input.value = '';
+    }
+  });
+  
+  // Update member count
+  setInterval(() => {
+    if (memberCount) {
+      const options = ['∞', 'countless', '404', 'NaN', 'all of us', 'you + ∞'];
+      memberCount.textContent = options[Math.floor(Math.random() * options.length)];
+    }
+  }, 3000);
+</script>

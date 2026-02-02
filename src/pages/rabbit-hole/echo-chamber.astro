@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Echo Chamber | 🐇" description="echo echo echo..." favicon="🔊">
+  <div class="fixed inset-0 bg-gradient-to-b from-orange-950/10 to-zinc-950"></div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-orange-400 transition-colors">← escape the echo</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: 2</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <div class="text-5xl mb-6">🔊</div>
+      <h1 class="text-3xl font-light text-orange-400 mb-4">echo chamber</h1>
+      
+      <div class="mb-8">
+        <input 
+          type="text" 
+          id="echo-input"
+          placeholder="type something..."
+          class="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded text-center text-zinc-300 placeholder-zinc-600 focus:outline-none focus:border-orange-500 transition-colors"
+        />
+      </div>
+      
+      <div id="echoes" class="space-y-2 mb-8 max-h-64 overflow-hidden">
+        <!-- Echoes appear here -->
+      </div>
+      
+      <p class="text-xs text-zinc-700 mb-8">
+        everything you say comes back<br/>
+        distorted<br/>
+        delayed<br/>
+        diminished
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/void-mail" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-indigo-500 hover:text-indigo-400 transition-colors">check void mail →</a>
+        <a href="/rabbit-hole/infinite-scroll" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-cyan-500 hover:text-cyan-400 transition-colors">infinite scroll →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const input = document.getElementById('echo-input') as HTMLInputElement;
+  const echoes = document.getElementById('echoes');
+  
+  const distortions = [
+    (s: string) => s,
+    (s: string) => s.toLowerCase(),
+    (s: string) => s.toUpperCase(),
+    (s: string) => s.split('').reverse().join(''),
+    (s: string) => s.replace(/[aeiou]/gi, '...'),
+    (s: string) => s.split(' ').reverse().join(' '),
+    (s: string) => s.replace(/./g, c => Math.random() > 0.7 ? '░' : c),
+    (s: string) => s + '...',
+    (s: string) => '...' + s,
+    (s: string) => s.replace(/\s+/g, '   '),
+    (s: string) => `"${s}"`,
+    (s: string) => s.split('').join(' '),
+  ];
+  
+  function createEcho(text: string, delay: number, opacity: number) {
+    setTimeout(() => {
+      if (!echoes) return;
+      
+      const distort = distortions[Math.floor(Math.random() * distortions.length)];
+      const distorted = distort(text);
+      
+      const div = document.createElement('div');
+      div.className = 'text-orange-400 transition-all duration-1000';
+      div.style.opacity = opacity.toString();
+      div.style.fontSize = `${Math.max(10, 16 - (1 - opacity) * 10)}px`;
+      div.textContent = distorted;
+      
+      echoes.prepend(div);
+      
+      // Limit echoes
+      while (echoes.children.length > 10) {
+        echoes.lastChild?.remove();
+      }
+    }, delay);
+  }
+  
+  input?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && input.value.trim()) {
+      const text = input.value.trim();
+      input.value = '';
+      
+      // Create multiple echoes with decreasing opacity and increasing delay
+      for (let i = 0; i < 5; i++) {
+        createEcho(text, i * 500, 1 - i * 0.2);
+      }
+    }
+  });
+  
+  // Ambient echoes
+  const ambientPhrases = [
+    "hello?",
+    "is anyone there?",
+    "can you hear me?",
+    "why won't you answer?",
+    "the walls remember",
+    "echo... echo... echo...",
+  ];
+  
+  setInterval(() => {
+    if (echoes && echoes.children.length === 0) {
+      const phrase = ambientPhrases[Math.floor(Math.random() * ambientPhrases.length)];
+      createEcho(phrase, 0, 0.3);
+    }
+  }, 5000);
+</script>

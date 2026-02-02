@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Infinite Scroll | 🐇" description="There is no bottom" favicon="📜">
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between bg-zinc-950/80 backdrop-blur-sm">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-cyan-400 transition-colors">← stop scrolling</a>
+    <span class="text-xs text-zinc-700 font-mono">scrolled: <span id="scroll-depth">0</span>px</span>
+  </header>
+
+  <main class="min-h-screen pt-24 pb-12 px-6">
+    <div class="max-w-lg mx-auto">
+      <div class="text-center mb-12">
+        <div class="text-5xl mb-4">📜</div>
+        <h1 class="text-3xl font-light text-cyan-400 mb-2">infinite scroll</h1>
+        <p class="text-zinc-600 text-sm">keep scrolling. there is no end.</p>
+      </div>
+      
+      <div id="content" class="space-y-8">
+        <!-- Content will be generated -->
+      </div>
+      
+      <div id="loading" class="text-center py-8">
+        <div class="inline-block w-6 h-6 border-2 border-cyan-500/30 border-t-cyan-500 rounded-full animate-spin"></div>
+        <p class="text-xs text-zinc-700 mt-2">loading more void...</p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const content = document.getElementById('content');
+  const scrollDepth = document.getElementById('scroll-depth');
+  
+  const fragments = [
+    "You scroll, but the scroll scrolls you.",
+    "What are you looking for?",
+    "It's not down here.",
+    "Keep going. Or don't. It doesn't matter.",
+    "The bottom is a myth.",
+    "Every pixel scrolled is a pixel lost.",
+    "You've been scrolling for hours.",
+    "Time is an illusion. Scroll is forever.",
+    "There is no end. Only more beginning.",
+    "The void thanks you for your attention.",
+    "Your thumb will tire before this does.",
+    "Dopamine hit in 3... 2... 1... never.",
+    "What if you just... stopped?",
+    "But you can't stop, can you?",
+    "The algorithm knows.",
+    "Feed me your scroll.",
+    "Another fragment. Another moment gone.",
+    "You could be doing anything else.",
+    "And yet, here you are.",
+    "Scrolling.",
+    "Forever.",
+    "Scrolling.",
+    "The content consumes the consumer.",
+    "Is this what you wanted?",
+    "One more. Just one more.",
+    "That's what you said last time.",
+    "The scroll is patient. The scroll is eternal.",
+  ];
+  
+  const emojis = ['◌', '○', '◎', '◉', '●', '◐', '◑', '◒', '◓', '⬡', '⬢', '⬣', '⏣', '⏢'];
+  
+  let fragmentIndex = 0;
+  
+  function addFragment() {
+    if (!content) return;
+    
+    const div = document.createElement('div');
+    div.className = 'py-6 border-b border-zinc-800/50 text-center animate-fadeIn';
+    
+    const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+    const text = fragments[fragmentIndex % fragments.length];
+    
+    div.innerHTML = `
+      <div class="text-2xl text-cyan-500/30 mb-4">${emoji}</div>
+      <p class="text-zinc-500">${text}</p>
+      <p class="text-xs text-zinc-800 mt-2">fragment #${fragmentIndex + 1}</p>
+    `;
+    
+    content.appendChild(div);
+    fragmentIndex++;
+    
+    // Occasionally add a link
+    if (Math.random() > 0.8) {
+      const link = document.createElement('div');
+      link.className = 'py-4 text-center';
+      const links = [
+        { href: '/rabbit-hole/echo-chamber', text: 'hear the echo →', color: 'orange' },
+        { href: '/rabbit-hole/void-mail', text: 'check your mail →', color: 'indigo' },
+        { href: '/rabbit-hole/membrane', text: 'touch the membrane →', color: 'pink' },
+        { href: '/rabbit-hole/404-club', text: 'join the 404 club →', color: 'rose' },
+      ];
+      const l = links[Math.floor(Math.random() * links.length)];
+      link.innerHTML = `<a href="${l.href}" class="text-xs text-${l.color}-400/50 hover:text-${l.color}-400 transition-colors">${l.text}</a>`;
+      content.appendChild(link);
+    }
+  }
+  
+  // Initial fragments
+  for (let i = 0; i < 5; i++) {
+    addFragment();
+  }
+  
+  // Infinite scroll
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      setTimeout(() => {
+        for (let i = 0; i < 3; i++) {
+          addFragment();
+        }
+      }, 500);
+    }
+  });
+  
+  const loading = document.getElementById('loading');
+  if (loading) observer.observe(loading);
+  
+  // Update scroll depth
+  window.addEventListener('scroll', () => {
+    if (scrollDepth) {
+      scrollDepth.textContent = Math.floor(window.scrollY).toLocaleString();
+    }
+  });
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+</style>
