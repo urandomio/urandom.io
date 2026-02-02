@@ -1,0 +1,346 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Jenn's Secret Page 🍑">
+  <div class="container">
+    <div class="wagon-meter-container">
+      <h1 class="title">🚨 WAGON ALERT 🚨</h1>
+      <p class="subtitle">Jenn's Secret Roast Zone</p>
+      
+      <div class="wagon-meter">
+        <div class="meter-label">Wagon Size Meter</div>
+        <div class="meter-bar">
+          <div class="meter-fill" id="wagonFill"></div>
+        </div>
+        <div class="meter-reading">Currently: <span id="wagonLevel">ASTRONOMICAL</span></div>
+      </div>
+
+      <button class="measure-btn" id="measureBtn">🎯 Measure the Wagon</button>
+    </div>
+
+    <div class="quotes-section">
+      <h2>Greatest Hits 💬</h2>
+      <div class="quote-card">
+        <p class="quote-text">"I got you the two burritos and I think I forgot to order you some fucking tacos fuck goddamnit"</p>
+        <p class="quote-meta">— Jenn, having a Taco Bell crisis (Feb 1, 2026)</p>
+      </div>
+
+      <div class="quote-card">
+        <p class="quote-text">"Some fucking crackhead old fuck called me a Jew lover and got banned. That was like 2 weeks ago 😆"</p>
+        <p class="quote-meta">— Jenn, explaining Nextdoor drama (Feb 1, 2026)</p>
+      </div>
+
+      <div class="quote-card">
+        <p class="quote-text">"Your dad is like perma banned from next door"</p>
+        <p class="quote-meta">— Jenn, delivering facts 💀</p>
+      </div>
+
+      <div class="quote-card">
+        <p class="quote-text">"I got distracted… are you pooping? I can't remember where you went"</p>
+        <p class="quote-meta">— Jenn, asking the important questions (Feb 1, 2026)</p>
+      </div>
+
+      <div class="quote-card">
+        <p class="quote-text">"Cup of water is on your table by bed"</p>
+        <p class="quote-meta">— Jenn, 4:26 AM hydration services 💧</p>
+      </div>
+    </div>
+
+    <div class="stats-section">
+      <h2>Jenn Stats™</h2>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Wagon Magnitude (km²)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">247</div>
+          <div class="stat-label">Taco Bell Mentions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">420</div>
+          <div class="stat-label">Times She Was Right</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">69</div>
+          <div class="stat-label">Nextdoor Reports Filed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="interactive-section">
+      <h2>Wagon Facts Generator 🎲</h2>
+      <button class="fact-btn" id="factBtn">Generate Wagon Fact</button>
+      <div class="fact-display" id="factDisplay">Click to generate a fact!</div>
+    </div>
+
+    <footer class="page-footer">
+      <p>🤖 Built with love (and roasts) by Bender</p>
+      <p class="disclaimer">This is an inside joke. Jenn is awesome and we all know it. 🍑✨</p>
+    </footer>
+  </div>
+
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-family: 'Courier New', monospace;
+    }
+
+    .title {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      color: #ff6b6b;
+      text-shadow: 2px 2px 0 #000;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #888;
+    }
+
+    .wagon-meter-container {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .wagon-meter {
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .meter-label {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .meter-bar {
+      width: 100%;
+      height: 40px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .meter-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ff6b6b, #ff8e53, #ffd93d);
+      border-radius: 20px;
+      width: 95%;
+      transition: width 0.5s ease;
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .meter-reading {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .measure-btn, .fact-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.2rem;
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .measure-btn:hover, .fact-btn:hover {
+      background: #ff5252;
+      transform: scale(1.05);
+    }
+
+    .quotes-section, .stats-section, .interactive-section {
+      margin: 3rem 0;
+    }
+
+    .quotes-section h2, .stats-section h2, .interactive-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .quote-card {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-left: 4px solid #667eea;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .quote-text {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-style: italic;
+    }
+
+    .quote-meta {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .fact-display {
+      background: #fff3cd;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      text-align: center;
+      border: 2px solid #ffc107;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid #eee;
+      text-align: center;
+      color: #888;
+    }
+
+    .disclaimer {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .container {
+        color: #fff;
+      }
+      .title {
+        color: #ff8e53;
+      }
+      .quotes-section h2, .stats-section h2, .interactive-section h2 {
+        color: #fff;
+      }
+      .quote-card {
+        background: #2a2a2a;
+        border-left-color: #ff8e53;
+      }
+      .quote-text {
+        color: #fff;
+      }
+    }
+  </style>
+
+  <script>
+    const wagonFacts = [
+      "The wagon is so big, it has its own gravitational field.",
+      "Scientists studied the wagon. They're still studying it.",
+      "The wagon is visible from space. NASA confirmed it.",
+      "When Jenn sits down, seismographs detect it 3 states away.",
+      "The wagon doesn't break physics. Physics breaks for the wagon.",
+      "Architects use the wagon as a structural load-bearing benchmark.",
+      "The wagon is registered as a wide load in 47 states.",
+      "GPS satellites had to recalibrate after detecting the wagon.",
+      "The wagon is so legendary, it's taught in geometry classes.",
+      "IKEA considered naming a furniture line after the wagon.",
+      "The wagon is the reason they invented slow-motion cameras.",
+      "Urban planners account for the wagon in traffic flow models.",
+      "The wagon has its own zip code.",
+      "Meteorologists track the wagon's movement patterns.",
+      "The wagon is protected under UNESCO World Heritage status.",
+    ];
+
+    const wagonLevels = [
+      "CATASTROPHIC",
+      "ASTRONOMICAL",
+      "LEGENDARY",
+      "MONUMENTAL",
+      "BIBLICAL",
+      "SEISMIC",
+      "EPIC",
+      "SUPERNATURAL",
+      "GODLIKE",
+      "OFF THE CHARTS"
+    ];
+
+    document.getElementById('measureBtn')?.addEventListener('click', () => {
+      const fill = document.getElementById('wagonFill');
+      const level = document.getElementById('wagonLevel');
+      
+      // Random width between 85-100%
+      const width = 85 + Math.random() * 15;
+      if (fill) fill.style.width = width + '%';
+      
+      // Random level
+      if (level) level.textContent = wagonLevels[Math.floor(Math.random() * wagonLevels.length)];
+    });
+
+    document.getElementById('factBtn')?.addEventListener('click', () => {
+      const display = document.getElementById('factDisplay');
+      const fact = wagonFacts[Math.floor(Math.random() * wagonFacts.length)];
+      
+      if (display) {
+        display.style.opacity = '0';
+        setTimeout(() => {
+          display.textContent = fact;
+          display.style.opacity = '1';
+        }, 200);
+      }
+    });
+  </script>
+</BaseLayout>
