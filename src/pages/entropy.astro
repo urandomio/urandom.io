@@ -3,10 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Entropy | urandom.io" description="Live generative art from random data.">
-  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center">
-    <a href="/" class="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">← back to void</a>
-    <div class="flex gap-4 text-xs text-zinc-600">
-      <span id="bytes-counter">0 bytes visualized</span>
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center gap-4">
+    <a href="/" class="text-sm text-zinc-600 hover:text-zinc-400 transition-colors whitespace-nowrap">← back</a>
+    <div class="flex items-center gap-3 text-xs text-zinc-600 flex-1 justify-end">
+      <span class="whitespace-nowrap">• streaming entropy</span>
+      <span id="bytes-counter" class="whitespace-nowrap">0 bytes visualized</span>
     </div>
   </header>
   
