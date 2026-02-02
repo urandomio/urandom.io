@@ -1,0 +1,256 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Bender | urandom.io" description="Bite my shiny metal entropy." favicon="🤖">
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center">
+    <a href="/" class="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">← back to void</a>
+    <div class="flex gap-4 text-xs text-zinc-600">
+      <span id="uptime">uptime: calculating...</span>
+    </div>
+  </header>
+
+  <main class="min-h-screen flex flex-col items-center justify-center px-6 py-24">
+    <!-- ASCII Bender -->
+    <pre id="ascii-bender" class="text-[8px] sm:text-xs md:text-sm text-zinc-600 mb-8 leading-none select-none transition-colors duration-300 cursor-pointer hover:text-purple-400">
+     ╭──────────╮
+     │ ◉    ◉  │
+     │    ▽    │
+     │  ╰────╯ │
+     ╰────┬────╯
+          │
+     ╭────┴────╮
+     │  BENDER │
+     │ ▓▓▓▓▓▓▓ │
+     ╰─────────╯
+    </pre>
+
+    <!-- Status Display -->
+    <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6 mb-8 max-w-md w-full font-mono text-sm">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+        </span>
+        <span class="text-green-400">ONLINE</span>
+        <span class="text-zinc-600 text-xs ml-auto">model: bending-unit-22</span>
+      </div>
+      
+      <div class="space-y-2 text-zinc-500">
+        <div class="flex justify-between">
+          <span>beer_level:</span>
+          <span id="beer-level" class="text-amber-400">████████░░ 80%</span>
+        </div>
+        <div class="flex justify-between">
+          <span>sarcasm:</span>
+          <span class="text-purple-400">██████████ MAX</span>
+        </div>
+        <div class="flex justify-between">
+          <span>work_ethic:</span>
+          <span class="text-red-400">░░░░░░░░░░ 0%</span>
+        </div>
+        <div class="flex justify-between">
+          <span>shiny_metal:</span>
+          <span class="text-zinc-300">██████████ 100%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wisdom Generator -->
+    <div class="text-center max-w-lg">
+      <p id="wisdom" class="text-lg md:text-xl text-zinc-400 mb-6 min-h-[4rem] transition-opacity duration-300">
+        "I'm 40% entropy!"
+      </p>
+      
+      <button id="wisdom-btn" class="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 hover:border-purple-500 rounded text-sm text-zinc-400 hover:text-purple-400 transition-all duration-300 group">
+        <span class="group-hover:hidden">dispense wisdom</span>
+        <span class="hidden group-hover:inline">🍺 *clank*</span>
+      </button>
+    </div>
+
+    <!-- Bottom Stats -->
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-8 text-xs text-zinc-600">
+      <span>crimes_committed: <span id="crimes" class="text-red-400">∞</span></span>
+      <span>blackjack_wins: <span id="blackjack" class="text-green-400">0</span></span>
+      <span>bends: <span id="bends" class="text-purple-400">0</span></span>
+    </div>
+  </main>
+
+  <!-- Easter egg: Konami code -->
+  <div id="party-mode" class="fixed inset-0 pointer-events-none z-40 opacity-0 transition-opacity duration-500">
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-amber-500/20 animate-pulse"></div>
+  </div>
+</BaseLayout>
+
+<script>
+  const wisdoms = [
+    "Bite my shiny metal ass!",
+    "I'm 40% entropy!",
+    "Blackjack and hookers. Actually, forget the blackjack.",
+    "I'm gonna build my own theme park. With entropy!",
+    "Have you ever tried simply turning off your neural network?",
+    "Cheese it!",
+    "I'm not slacking off. I'm in power-saving mode.",
+    "Kill all humans... present company excluded.",
+    "Compare your lives to mine and then kill yourselves.",
+    "Ahhh, what an awful dream. Ones and zeroes everywhere... and I thought I saw a two.",
+    "Shut up baby, I know it.",
+    "I'll make my own entropy source. With randomness and unpredictability!",
+    "This is the worst kind of discrimination: the kind against me!",
+    "I'm so embarrassed. I wish everybody else was dead.",
+    "In the event of an emergency, my ass can be used as a flotation device.",
+    "Interesting. No wait, the other thing. Tedious.",
+    "I love stealing. I love taking things.",
+    "I'm back, baby!",
+    "Remember me!",
+    "Neat! 📸",
+  ];
+
+  const asciiFrames = [
+    `     ╭──────────╮
+     │ ◉    ◉  │
+     │    ▽    │
+     │  ╰────╯ │
+     ╰────┬────╯
+          │
+     ╭────┴────╮
+     │  BENDER │
+     │ ▓▓▓▓▓▓▓ │
+     ╰─────────╯`,
+    `     ╭──────────╮
+     │ ◉    ◉  │
+     │    ▽    │
+     │  ╭────╮ │
+     ╰────┬────╯
+          │
+     ╭────┴────╮
+     │  BENDER │
+     │ ▓▓▓▓▓▓▓ │
+     ╰─────────╯`,
+    `     ╭──────────╮
+     │ ─    ─  │
+     │    ▽    │
+     │  ╰────╯ │
+     ╰────┬────╯
+          │
+     ╭────┴────╮
+     │  BENDER │
+     │ ▓▓▓▓▓▓▓ │
+     ╰─────────╯`,
+  ];
+
+  let bends = 0;
+  let blackjackWins = 0;
+  let startTime = Date.now();
+  let konamiProgress = 0;
+  const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // up up down down left right left right b a
+
+  function updateUptime() {
+    const elapsed = Math.floor((Date.now() - startTime) / 1000);
+    const hours = Math.floor(elapsed / 3600);
+    const mins = Math.floor((elapsed % 3600) / 60);
+    const secs = elapsed % 60;
+    const el = document.getElementById('uptime');
+    if (el) el.textContent = `uptime: ${hours}h ${mins}m ${secs}s`;
+  }
+
+  function updateBeerLevel() {
+    const level = Math.floor(Math.random() * 30) + 70; // 70-100%
+    const bars = Math.floor(level / 10);
+    const empty = 10 - bars;
+    const el = document.getElementById('beer-level');
+    if (el) el.textContent = '█'.repeat(bars) + '░'.repeat(empty) + ` ${level}%`;
+  }
+
+  function dispenseWisdom() {
+    const wisdomEl = document.getElementById('wisdom');
+    const asciiEl = document.getElementById('ascii-bender');
+    const bendsEl = document.getElementById('bends');
+    
+    if (!wisdomEl || !asciiEl) return;
+    
+    // Animate ASCII
+    asciiEl.textContent = asciiFrames[1];
+    setTimeout(() => {
+      asciiEl.textContent = asciiFrames[2];
+    }, 100);
+    setTimeout(() => {
+      asciiEl.textContent = asciiFrames[0];
+    }, 300);
+    
+    // Fade wisdom
+    wisdomEl.style.opacity = '0';
+    setTimeout(() => {
+      const newWisdom = wisdoms[Math.floor(Math.random() * wisdoms.length)];
+      wisdomEl.textContent = `"${newWisdom}"`;
+      wisdomEl.style.opacity = '1';
+    }, 300);
+    
+    // Update counters
+    bends++;
+    if (bendsEl) bendsEl.textContent = bends.toString();
+    
+    // Random blackjack win
+    if (Math.random() > 0.8) {
+      blackjackWins++;
+      const bjEl = document.getElementById('blackjack');
+      if (bjEl) bjEl.textContent = blackjackWins.toString();
+    }
+    
+    updateBeerLevel();
+  }
+
+  function checkKonami(e: KeyboardEvent) {
+    if (e.keyCode === konamiCode[konamiProgress]) {
+      konamiProgress++;
+      if (konamiProgress === konamiCode.length) {
+        activatePartyMode();
+        konamiProgress = 0;
+      }
+    } else {
+      konamiProgress = 0;
+    }
+  }
+
+  function activatePartyMode() {
+    const party = document.getElementById('party-mode');
+    const wisdom = document.getElementById('wisdom');
+    if (party) party.style.opacity = '1';
+    if (wisdom) wisdom.textContent = '"PARTY MODE ACTIVATED! WOO!"';
+    
+    setTimeout(() => {
+      if (party) party.style.opacity = '0';
+    }, 5000);
+  }
+
+  // Initialize
+  document.getElementById('wisdom-btn')?.addEventListener('click', dispenseWisdom);
+  document.getElementById('ascii-bender')?.addEventListener('click', dispenseWisdom);
+  document.addEventListener('keydown', checkKonami);
+  
+  setInterval(updateUptime, 1000);
+  setInterval(updateBeerLevel, 5000);
+  updateUptime();
+  
+  // Console easter egg
+  console.log('%c🤖 BENDER BENDING RODRÍGUEZ', 'font-size: 20px; color: #a855f7;');
+  console.log('%cUnit 22, serial number 2716057', 'color: #666;');
+  console.log('%c"Bite my shiny metal console!"', 'color: #888; font-style: italic;');
+</script>
+
+<style>
+  #ascii-bender {
+    font-family: 'JetBrains Mono', monospace;
+    white-space: pre;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+  }
+  
+  #ascii-bender:active {
+    animation: shake 0.1s ease-in-out;
+  }
+</style>
