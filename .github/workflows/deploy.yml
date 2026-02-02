@@ -16,7 +16,8 @@ concurrency:
 
 jobs:
   build:
-    runs-on: urandomio-s
+    # TODO: Switch back to urandomio-s once runner image is updated (v2.329.0 deprecated)
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
