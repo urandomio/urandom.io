@@ -231,7 +231,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   setInterval(updateStats, 3000);
   
   // Easter egg: clicking the void
-  const voidCircle = document.querySelector('.void-circle');
+  const voidCircle = document.querySelector('.void-circle') as HTMLElement | null;
   if (voidCircle) {
     voidCircle.addEventListener('click', () => {
       document.body.style.transition = 'opacity 2s ease';
