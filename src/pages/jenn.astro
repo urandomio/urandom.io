@@ -299,11 +299,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       try {
         const response = await fetch('/jenn-data.json');
         data = await response.json();
+        
+        if (!data) return;
+        
         monthKeys = Object.keys(data.months);
         
         // Update total count
         const totalEl = document.getElementById('totalMessages');
-        if (totalEl) totalEl.textContent = data.total.toString();
+        if (totalEl && data) totalEl.textContent = data.total.toString();
         
         // Load first batch
         loadMoreMessages();
