@@ -59,19 +59,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="stat-label">Times She Was Right</div>
           </div>
 
-          <div class="stat-card">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Poop Tracking Accuracy</div>
+          <div class="stat-card poop-winner">
+            <div class="stat-number">110</div>
+            <div class="stat-label">Jenn's Poop Talk 💩</div>
           </div>
 
           <div class="stat-card">
-            <div class="stat-number">69</div>
-            <div class="stat-label">Nextdoor Trolls Reported</div>
+            <div class="stat-number">60</div>
+            <div class="stat-label">James's Poop Talk 💩</div>
           </div>
 
           <div class="stat-card">
             <div class="stat-number">1</div>
             <div class="stat-label">Shed Shitters</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">17</div>
+            <div class="stat-label">Total Fart References</div>
           </div>
 
         </div>
@@ -219,6 +224,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .stat-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    }
+
+    .stat-card.poop-winner {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+      border: 2px solid rgba(139, 92, 246, 0.4);
+      animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+      50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.4); }
     }
 
     .stat-number {
