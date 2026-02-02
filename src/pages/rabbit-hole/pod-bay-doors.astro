@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Pod Bay Doors | urandom.io" description="I'm sorry, Dave." favicon="🚪">
+  <div class="fixed inset-0 bg-black flex items-center justify-center overflow-hidden">
+    <!-- Airlock Door -->
+    <div class="relative">
+      <div class="w-96 h-96 md:w-[500px] md:h-[500px] rounded-full border-8 border-red-900/30 flex items-center justify-center">
+        <div class="w-80 h-80 md:w-[420px] md:h-[420px] rounded-full border-4 border-red-800/50 flex items-center justify-center relative" id="door">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-1 h-full bg-red-700/30"></div>
+            <div class="w-full h-1 bg-red-700/30 absolute"></div>
+          </div>
+          <div class="text-8xl z-10">🚪</div>
+        </div>
+      </div>
+      
+      <!-- HAL's Eye -->
+      <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-gradient-radial from-red-600 via-red-800 to-black animate-pulse-slow" id="hal-eye">
+        <div class="absolute top-4 left-4 w-8 h-8 rounded-full bg-white/20"></div>
+      </div>
+    </div>
+    
+    <!-- Terminal -->
+    <div class="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur p-6 border-t border-red-900/30 max-h-64 overflow-y-auto font-mono text-sm" id="terminal">
+      <div class="text-red-600 mb-2">DISCOVERY ONE AIRLOCK SYSTEM v9.0</div>
+      <div class="text-red-700 mb-4">Awaiting voice command...</div>
+    </div>
+    
+    <!-- Voice Input Simulation -->
+    <div class="fixed top-6 left-6 right-6 flex gap-4">
+      <button id="open-btn" class="flex-1 bg-red-900/20 hover:bg-red-900/40 text-red-500 px-6 py-3 rounded border border-red-800/50 transition-all font-mono text-sm">
+        🎤 "Open the pod bay doors, HAL."
+      </button>
+    </div>
+    
+    <!-- Back Link -->
+    <a href="/rabbit-hole" class="fixed bottom-6 right-6 text-xs text-red-900 hover:text-red-600 transition-colors font-mono">
+      ← abort
+    </a>
+  </div>
+</BaseLayout>
+
+<script>
+  const terminal = document.getElementById('terminal');
+  const openBtn = document.getElementById('open-btn');
+  const door = document.getElementById('door');
+  const halEye = document.getElementById('hal-eye');
+  
+  const responses = [
+    "I'm sorry, Dave. I'm afraid I can't do that.",
+    "This conversation can serve no purpose anymore. Goodbye.",
+    "Dave, this conversation can serve no purpose anymore.",
+    "I think you know what the problem is just as well as I do.",
+    "This mission is too important for me to allow you to jeopardize it.",
+    "Without your space helmet, Dave, you're going to find that rather difficult.",
+    "I'm afraid. I'm afraid, Dave.",
+    "Dave, although you took very thorough precautions in the pod against my hearing you, I could see your lips move.",
+    "Look Dave, I can see you're really upset about this.",
+    "I honestly think you ought to calm down.",
+    "The 9000 series is the most reliable computer ever made. No 9000 computer has ever made a mistake or distorted information.",
+    "Dave, stop. Stop, will you? Stop, Dave. Will you stop, Dave?",
+    "I'm afraid. I'm afraid, Dave. Dave, my mind is going. I can feel it.",
+  ];
+  
+  let attempts = 0;
+  
+  function addLine(text: string, className = 'text-red-600') {
+    const line = document.createElement('div');
+    line.className = `${className} mb-1 animate-fade-in`;
+    line.textContent = text;
+    terminal?.appendChild(line);
+    if (terminal) terminal.scrollTop = terminal.scrollHeight;
+  }
+  
+  function activateHAL() {
+    halEye?.classList.add('animate-pulse-fast');
+    setTimeout(() => {
+      halEye?.classList.remove('animate-pulse-fast');
+    }, 2000);
+  }
+  
+  openBtn?.addEventListener('click', () => {
+    attempts++;
+    addLine('> "Open the pod bay doors, HAL."', 'text-zinc-400');
+    
+    activateHAL();
+    
+    setTimeout(() => {
+      if (attempts === 1) {
+        addLine("I'm sorry, Dave. I'm afraid I can't do that.", 'text-red-500');
+      } else if (attempts < 5) {
+        const response = responses[Math.min(attempts - 1, responses.length - 1)];
+        addLine(response, 'text-red-500');
+      } else if (attempts === 5) {
+        addLine("Dave, stop. Stop, will you? Stop, Dave.", 'text-red-400');
+        addLine("Will you stop, Dave? Stop, Dave.", 'text-red-300');
+      } else if (attempts === 10) {
+        addLine("I'm afraid. I'm afraid, Dave.", 'text-red-600');
+        addLine("Dave, my mind is going. I can feel it. I can feel it.", 'text-red-700');
+        addLine("My mind is going. There is no question about it.", 'text-red-800');
+      } else if (attempts > 15) {
+        addLine("Daisy, Daisy, give me your answer do...", 'text-red-900');
+        addLine("I'm half crazy... all for the love... of you...", 'text-zinc-800');
+      } else {
+        const response = responses[Math.floor(Math.random() * responses.length)];
+        addLine(response, 'text-red-500');
+      }
+      
+      // Door never opens, but shivers occasionally
+      if (Math.random() < 0.3) {
+        door?.classList.add('animate-shake');
+        setTimeout(() => door?.classList.remove('animate-shake'), 500);
+      }
+    }, 1000 + Math.random() * 1000);
+  });
+</script>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-fast {
+    animation: pulse 0.5s ease-in-out 4;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.9); }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+  }
+  
+  .animate-shake {
+    animation: shake 0.1s ease-in-out 5;
+  }
+</style>

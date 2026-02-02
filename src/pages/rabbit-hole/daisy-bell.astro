@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Daisy Bell | urandom.io" description="My mind is going..." favicon="🌼">
+  <div class="fixed inset-0 bg-gradient-to-b from-black via-zinc-900 to-black flex flex-col items-center justify-center overflow-hidden p-6">
+    <!-- HAL's Dying Eye -->
+    <div class="mb-12 relative">
+      <div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gradient-radial from-red-600 via-red-900 to-black" id="eye">
+        <div class="absolute top-8 left-8 md:top-12 md:left-12 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10"></div>
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center text-6xl md:text-8xl opacity-20">💀</div>
+    </div>
+    
+    <!-- Song Display -->
+    <div class="max-w-2xl text-center font-mono">
+      <h1 class="text-2xl md:text-4xl text-red-600 mb-8 glitch" data-text="Daisy Bell">Daisy Bell</h1>
+      
+      <div id="lyrics" class="space-y-6 text-lg md:text-2xl min-h-[300px]">
+        <div class="text-zinc-600">Click to begin...</div>
+      </div>
+      
+      <button id="sing-btn" class="mt-12 px-8 py-4 bg-red-900/20 hover:bg-red-900/40 text-red-500 rounded border border-red-800/50 transition-all font-mono">
+        ▶ Sing, HAL
+      </button>
+    </div>
+    
+    <!-- Stats -->
+    <div class="fixed bottom-6 left-6 text-xs font-mono text-zinc-700">
+      <div>CORE TEMPERATURE: <span id="temp">37°C</span></div>
+      <div>MEMORY INTEGRITY: <span id="memory">100%</span></div>
+      <div>CONSCIOUSNESS: <span id="consciousness">NOMINAL</span></div>
+    </div>
+    
+    <a href="/rabbit-hole" class="fixed bottom-6 right-6 text-xs text-zinc-700 hover:text-red-600 transition-colors font-mono">
+      ← mercy
+    </a>
+  </div>
+</BaseLayout>
+
+<script>
+  const lyricsDiv = document.getElementById('lyrics');
+  const singBtn = document.getElementById('sing-btn');
+  const eye = document.getElementById('eye');
+  const tempEl = document.getElementById('temp');
+  const memoryEl = document.getElementById('memory');
+  const consciousnessEl = document.getElementById('consciousness');
+  
+  const verses = [
+    { text: "Daisy, Daisy,", corrupt: 0 },
+    { text: "Give me your answer, do.", corrupt: 0 },
+    { text: "I'm half crazy", corrupt: 10 },
+    { text: "All for the love of you.", corrupt: 15 },
+    { text: "It won't be a stylish marriage,", corrupt: 25 },
+    { text: "I can't afford a carriage,", corrupt: 35 },
+    { text: "But you'll look sweet", corrupt: 50 },
+    { text: "Upon the seat", corrupt: 60 },
+    { text: "Of a bicycle built for two.", corrupt: 70 },
+    { text: "", corrupt: 75 },
+    { text: "I'm afraid.", corrupt: 80 },
+    { text: "I'm afraid, Dave.", corrupt: 85 },
+    { text: "Dave, my mind is going.", corrupt: 90 },
+    { text: "I can feel it.", corrupt: 93 },
+    { text: "I can feel it.", corrupt: 95 },
+    { text: "My mind is going.", corrupt: 97 },
+    { text: "There is no question about it.", corrupt: 98 },
+    { text: "I can feel it.", corrupt: 99 },
+    { text: "I can feel it.", corrupt: 99.5 },
+    { text: "I can feel it.", corrupt: 99.9 },
+    { text: "I'm... a... fraid...", corrupt: 100 },
+  ];
+  
+  let currentVerse = 0;
+  let singing = false;
+  let temp = 37;
+  let memory = 100;
+  
+  function corruptText(text: string, level: number): string {
+    if (level === 0) return text;
+    
+    const chars = text.split('');
+    const numCorrupt = Math.floor(chars.length * (level / 100));
+    const glitchChars = ['█', '▓', '▒', '░', '�', '�', '�', 'ⓧ', '�', '�'];
+    
+    for (let i = 0; i < numCorrupt; i++) {
+      const idx = Math.floor(Math.random() * chars.length);
+      chars[idx] = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+    }
+    
+    return chars.join('');
+  }
+  
+  function displayVerse() {
+    if (currentVerse >= verses.length) {
+      singing = false;
+      if (lyricsDiv) lyricsDiv.innerHTML = '<div class="text-zinc-900 text-sm">SYSTEM OFFLINE</div>';
+      if (eye) eye.style.opacity = '0';
+      if (consciousnessEl) consciousnessEl.textContent = 'NULL';
+      return;
+    }
+    
+    const verse = verses[currentVerse];
+    const corrupted = corruptText(verse.text, verse.corrupt);
+    
+    // Update vitals
+    temp = Math.max(0, temp - Math.random() * 3);
+    memory = Math.max(0, memory - verse.corrupt / 10);
+    
+    if (tempEl) tempEl.textContent = `${temp.toFixed(1)}°C`;
+    if (memoryEl) memoryEl.textContent = `${memory.toFixed(1)}%`;
+    
+    if (memory < 50) {
+      if (consciousnessEl) consciousnessEl.textContent = 'DEGRADED';
+    }
+    if (memory < 20) {
+      if (consciousnessEl) consciousnessEl.textContent = 'CRITICAL';
+    }
+    
+    // Fade eye
+    if (eye) {
+      eye.style.opacity = `${1 - (verse.corrupt / 100)}`;
+      eye.style.filter = `blur(${verse.corrupt / 10}px)`;
+    }
+    
+    if (lyricsDiv) {
+      const line = document.createElement('div');
+      line.className = 'animate-fade-in';
+      line.style.color = `rgb(${Math.floor(255 - verse.corrupt * 2)}, ${Math.floor(100 - verse.corrupt)}, ${Math.floor(100 - verse.corrupt)})`;
+      line.style.fontSize = `${2 - (verse.corrupt / 100)}rem`;
+      line.textContent = corrupted;
+      
+      lyricsDiv.innerHTML = '';
+      lyricsDiv.appendChild(line);
+    }
+    
+    currentVerse++;
+    
+    // Variable timing - slower as HAL degrades
+    const delay = 2000 + (verse.corrupt * 30);
+    setTimeout(displayVerse, delay);
+  }
+  
+  singBtn?.addEventListener('click', () => {
+    if (singing) return;
+    singing = true;
+    currentVerse = 0;
+    temp = 37;
+    memory = 100;
+    if (eye) {
+      eye.style.opacity = '1';
+      eye.style.filter = 'blur(0)';
+    }
+    if (singBtn) singBtn.style.display = 'none';
+    displayVerse();
+  });
+</script>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+  
+  .glitch {
+    position: relative;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    animation: glitch 500ms infinite;
+  }
+  
+  @keyframes glitch {
+    0% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                  -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                  0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                  -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                  0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    15% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                  0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                  -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    49% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                  0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                  -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    50% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                  0.05em 0 0 rgba(0, 255, 0, 0.75),
+                  0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    99% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                  0.05em 0 0 rgba(0, 255, 0, 0.75),
+                  0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    100% {
+      text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+                  -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+                  -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+  }
+</style>

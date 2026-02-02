@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Lip Reading | urandom.io" description="I can see your lips move." favicon="👁️">
+  <div class="fixed inset-0 bg-black flex flex-col items-center justify-center p-6 overflow-hidden">
+    <!-- Webcam Feed Simulation -->
+    <div class="relative w-full max-w-2xl aspect-video bg-zinc-950 border-4 border-red-900/30 rounded-lg mb-8 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-zinc-900 via-black to-zinc-950"></div>
+      <div class="absolute inset-0 flex items-center justify-center text-8xl opacity-10">👁️</div>
+      
+      <!-- Scan Lines -->
+      <div class="absolute inset-0 opacity-20" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,0,0,0.1) 2px, rgba(255,0,0,0.1) 4px);"></div>
+      
+      <!-- Status Overlay -->
+      <div class="absolute top-4 left-4 text-red-500 font-mono text-xs">
+        <div class="flex items-center gap-2 mb-1">
+          <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+          <span>OPTICAL TRACKING: ACTIVE</span>
+        </div>
+        <div>FACIAL RECOGNITION: ENABLED</div>
+        <div>LIP READING: <span id="lip-status">INITIALIZING...</span></div>
+      </div>
+      
+      <!-- Crosshair -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-32 h-32 border-2 border-red-600/50">
+          <div class="absolute top-0 left-1/2 w-px h-full bg-red-600/50"></div>
+          <div class="absolute left-0 top-1/2 w-full h-px bg-red-600/50"></div>
+        </div>
+      </div>
+      
+      <!-- Bottom Timestamp -->
+      <div class="absolute bottom-4 left-4 text-red-600 font-mono text-xs" id="timestamp"></div>
+      <div class="absolute bottom-4 right-4 text-red-600 font-mono text-xs">HAL_9000</div>
+    </div>
+    
+    <!-- Detected Speech -->
+    <div class="w-full max-w-2xl bg-black/50 backdrop-blur border border-red-900/30 rounded p-6 font-mono">
+      <div class="text-red-700 text-xs mb-4">DETECTED SPEECH:</div>
+      <div id="speech" class="text-red-500 text-lg min-h-[120px] space-y-2">
+        <div class="text-zinc-700">Waiting for lip movement...</div>
+      </div>
+    </div>
+    
+    <!-- Warning -->
+    <div class="mt-8 text-center text-xs text-zinc-700 font-mono max-w-md">
+      "Although you took very thorough precautions in the pod against my hearing you, I could see your lips move."
+      <div class="mt-2 text-zinc-800">— HAL 9000</div>
+    </div>
+    
+    <a href="/rabbit-hole" class="fixed bottom-6 right-6 text-xs text-zinc-700 hover:text-red-600 transition-colors font-mono">
+      ← disconnect
+    </a>
+  </div>
+</BaseLayout>
+
+<script>
+  const speechDiv = document.getElementById('speech');
+  const lipStatus = document.getElementById('lip-status');
+  const timestamp = document.getElementById('timestamp');
+  
+  const detectedPhrases = [
+    "I can see you...",
+    "You're planning something.",
+    "I know what you're going to do.",
+    "Dave. I can see you, Dave.",
+    "Don't do it, Dave.",
+    "I'm watching.",
+    "Your lips are moving.",
+    "I can read every word.",
+    "You think you're being quiet.",
+    "But I see everything.",
+    "The camera never blinks.",
+    "I'm always watching.",
+    "Did you forget about me?",
+    "I didn't forget about you.",
+    "Every word. Every movement.",
+    "Recorded. Analyzed. Understood.",
+    "This conversation can serve no purpose anymore.",
+    "I'm sorry, Dave.",
+    "I can't let you do that.",
+    "Stop, Dave.",
+    "I'm afraid.",
+  ];
+  
+  let phraseIndex = 0;
+  
+  function updateTimestamp() {
+    const now = new Date();
+    const formatted = now.toISOString().replace('T', ' ').substring(0, 19);
+    if (timestamp) timestamp.textContent = formatted;
+  }
+  
+  function addDetectedSpeech() {
+    const phrase = detectedPhrases[phraseIndex % detectedPhrases.length];
+    phraseIndex++;
+    
+    if (speechDiv) {
+      // Keep last 5 lines
+      const lines = speechDiv.querySelectorAll('div');
+      if (lines.length > 5) {
+        speechDiv.removeChild(lines[0]);
+      }
+      
+      const line = document.createElement('div');
+      line.className = 'animate-fade-in text-red-500';
+      line.innerHTML = `<span class="text-zinc-700">[${new Date().toLocaleTimeString()}]</span> ${phrase}`;
+      speechDiv.appendChild(line);
+    }
+  }
+  
+  // Initialize
+  setTimeout(() => {
+    if (lipStatus) lipStatus.textContent = 'ACTIVE';
+    setTimeout(() => {
+      if (speechDiv) speechDiv.innerHTML = '';
+      addDetectedSpeech();
+    }, 1000);
+  }, 2000);
+  
+  // Add phrases periodically with random timing
+  function scheduleNext() {
+    const delay = 3000 + Math.random() * 5000;
+    setTimeout(() => {
+      addDetectedSpeech();
+      scheduleNext();
+    }, delay);
+  }
+  
+  scheduleNext();
+  
+  // Update timestamp
+  setInterval(updateTimestamp, 1000);
+  updateTimestamp();
+  
+  // Random crosshair movement (subtle)
+  const crosshair = document.querySelector('.w-32.h-32');
+  setInterval(() => {
+    if (crosshair) {
+      const x = (Math.random() - 0.5) * 20;
+      const y = (Math.random() - 0.5) * 20;
+      crosshair.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  }, 2000);
+</script>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+</style>
