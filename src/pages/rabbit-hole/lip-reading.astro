@@ -135,7 +135,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   updateTimestamp();
   
   // Random crosshair movement (subtle)
-  const crosshair = document.querySelector('.w-32.h-32');
+  const crosshair = document.querySelector('.w-32.h-32') as HTMLElement;
   setInterval(() => {
     if (crosshair) {
       const x = (Math.random() - 0.5) * 20;
