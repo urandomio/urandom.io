@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="liminal.exe | 🐇" description="Loading... forever" favicon="⏳">
+  <div class="fixed inset-0 bg-zinc-950">
+    <div class="absolute inset-0 bg-gradient-to-b from-red-950/10 to-zinc-950"></div>
+  </div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-red-400 transition-colors">← exit</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: ∞</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-md text-center">
+      <!-- Fake loading screen -->
+      <div class="mb-8">
+        <div class="text-4xl mb-4 animate-spin-slow">⏳</div>
+        <h1 class="text-2xl font-mono text-red-400 mb-2">liminal.exe</h1>
+        <p class="text-xs text-zinc-600 font-mono">version ?.?.?</p>
+      </div>
+      
+      <div class="p-6 border border-zinc-800 rounded bg-zinc-900/50 mb-8">
+        <p class="text-xs text-zinc-600 mb-4 font-mono">STATUS:</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-4 h-4 border-2 border-red-500/50 border-t-red-500 rounded-full animate-spin"></div>
+            <span id="status-text" class="text-sm text-zinc-400 font-mono">Loading reality...</span>
+          </div>
+          <div class="w-full h-2 bg-zinc-800 rounded overflow-hidden">
+            <div id="progress-bar" class="h-full bg-red-500/50 transition-all duration-500" style="width: 0%"></div>
+          </div>
+          <p class="text-xs text-zinc-700 font-mono"><span id="percent">0</span>% complete</p>
+        </div>
+      </div>
+      
+      <div class="text-xs text-zinc-700 font-mono space-y-2 mb-8">
+        <p id="log-1" class="opacity-0 transition-opacity duration-500">Initializing consciousness...</p>
+        <p id="log-2" class="opacity-0 transition-opacity duration-500">Loading existential dread...</p>
+        <p id="log-3" class="opacity-0 transition-opacity duration-500">Compiling meaning of life...</p>
+        <p id="log-4" class="opacity-0 transition-opacity duration-500">Segmentation fault</p>
+        <p id="log-5" class="opacity-0 transition-opacity duration-500 text-red-400">Error: meaning not found</p>
+        <p id="log-6" class="opacity-0 transition-opacity duration-500">Restarting...</p>
+      </div>
+      
+      <p class="text-zinc-600 text-sm mb-8">
+        You're in the space between. Not here, not there. 
+        The loading bar will never reach 100%. 
+        <span class="text-red-400">It was never meant to.</span>
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/recursion" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-purple-500 hover:text-purple-400 transition-colors">try again →</a>
+        <a href="/rabbit-hole/membrane" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-pink-500 hover:text-pink-400 transition-colors">escape →</a>
+      </div>
+    </div>
+  </main>
+  
+  <div class="fixed bottom-4 left-4 text-[8px] text-zinc-800 font-mono hidden md:block">
+    time elapsed: <span id="time">00:00:00</span>
+  </div>
+  <div class="fixed bottom-4 right-4 text-[8px] text-zinc-800 font-mono">
+    ETA: <span id="eta">calculating...</span>
+  </div>
+</BaseLayout>
+
+<script>
+  const statuses = [
+    "Loading reality...",
+    "Buffering existence...",
+    "Parsing consciousness...",
+    "Rendering dreams...",
+    "Compiling thoughts...",
+    "Downloading memories...",
+    "Uploading hopes...",
+    "Defragmenting soul...",
+    "Optimizing entropy...",
+    "Installing updates...",
+    "Reticulating splines...",
+    "Generating meaning...",
+    "Validating purpose...",
+    "Error: timeout",
+    "Retrying...",
+  ];
+  
+  const etas = [
+    "calculating...",
+    "∞",
+    "soon™",
+    "never",
+    "yesterday",
+    "NaN seconds",
+    "when pigs fly",
+    "after heat death",
+    "undefined",
+    "ask again later",
+  ];
+  
+  let progress = 0;
+  let statusIndex = 0;
+  let startTime = Date.now();
+  
+  const progressBar = document.getElementById('progress-bar');
+  const percentEl = document.getElementById('percent');
+  const statusEl = document.getElementById('status-text');
+  const timeEl = document.getElementById('time');
+  const etaEl = document.getElementById('eta');
+  
+  // Progress that never reaches 100%
+  setInterval(() => {
+    // Asymptotic approach to 99%
+    progress = 99 - (99 - progress) * 0.995;
+    if (progress > 98) progress = Math.random() * 30; // Reset randomly
+    
+    if (progressBar) progressBar.style.width = progress + '%';
+    if (percentEl) percentEl.textContent = Math.floor(progress).toString();
+  }, 100);
+  
+  // Status changes
+  setInterval(() => {
+    statusIndex = (statusIndex + 1) % statuses.length;
+    if (statusEl) statusEl.textContent = statuses[statusIndex];
+  }, 3000);
+  
+  // ETA changes
+  setInterval(() => {
+    if (etaEl) etaEl.textContent = etas[Math.floor(Math.random() * etas.length)];
+  }, 5000);
+  
+  // Time elapsed
+  setInterval(() => {
+    const elapsed = Math.floor((Date.now() - startTime) / 1000);
+    const h = Math.floor(elapsed / 3600).toString().padStart(2, '0');
+    const m = Math.floor((elapsed % 3600) / 60).toString().padStart(2, '0');
+    const s = (elapsed % 60).toString().padStart(2, '0');
+    if (timeEl) timeEl.textContent = `${h}:${m}:${s}`;
+  }, 1000);
+  
+  // Log lines appear over time
+  const logs = ['log-1', 'log-2', 'log-3', 'log-4', 'log-5', 'log-6'];
+  logs.forEach((id, i) => {
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.style.opacity = '1';
+    }, (i + 1) * 2000);
+  });
+  
+  // After all logs, reset and loop
+  setTimeout(() => {
+    logs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.opacity = '0';
+    });
+    // Trigger re-show after fade
+    setTimeout(() => {
+      logs.forEach((id, i) => {
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) el.style.opacity = '1';
+        }, (i + 1) * 2000);
+      });
+    }, 1000);
+  }, 15000);
+</script>
+
+<style>
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+</style>

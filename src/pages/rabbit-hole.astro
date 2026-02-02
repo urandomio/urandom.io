@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const portals = [
+  { href: '/rabbit-hole/membrane', label: 'the membrane', color: '#ec4899', desc: 'where thoughts become skin' },
+  { href: '/rabbit-hole/recursion', label: 'recursion', color: '#8b5cf6', desc: 'you are here' },
+  { href: '/rabbit-hole/forgotten-api', label: 'the forgotten API', color: '#06b6d4', desc: 'deprecated but listening' },
+  { href: '/rabbit-hole/null-island', label: 'null island', color: '#84cc16', desc: '0°N 0°E — population: undefined' },
+  { href: '/rabbit-hole/signal-decay', label: 'signal decay', color: '#f59e0b', desc: 'the message is the entropy' },
+  { href: '/rabbit-hole/liminal', label: 'liminal.exe', color: '#ef4444', desc: 'loading... forever' },
+];
+
+const glitchTexts = [
+  "you weren't supposed to find this",
+  "how deep does the stack go?",
+  "the documentation lied",
+  "every link leads somewhere",
+  "somewhere leads every link",
+  "trust the process (pid: ????)",
+  "segmentation fault (core enlightened)",
+  "rm -rf /doubt",
+  "the cache remembers what you forgot",
+  "404: meaning not found",
+];
+---
+
+<BaseLayout title="🐇 Rabbit Hole | urandom.io" description="How deep does it go?" favicon="🐇">
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-b from-zinc-950 via-purple-950/20 to-zinc-950"></div>
+    <div id="falling-symbols" class="absolute inset-0 opacity-20"></div>
+  </div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6">
+    <a href="/" class="text-sm text-zinc-600 hover:text-pink-400 transition-colors">← surface</a>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24">
+    <!-- Entrance -->
+    <div class="text-center mb-12">
+      <div class="text-6xl md:text-8xl mb-4 animate-bounce-slow">🐇</div>
+      <h1 class="text-3xl md:text-5xl font-light mb-4">
+        <span class="text-pink-400">rabbit</span>
+        <span class="text-zinc-600">_</span>
+        <span class="text-purple-400">hole</span>
+      </h1>
+      <p class="text-zinc-600 text-sm glitch-text" id="glitch-subtitle">you weren't supposed to find this</p>
+    </div>
+
+    <!-- Depth indicator -->
+    <div class="mb-12 text-center">
+      <div class="text-xs text-zinc-700 font-mono mb-2">DEPTH: 0</div>
+      <div class="w-48 h-1 bg-zinc-800 rounded overflow-hidden">
+        <div class="h-full w-0 bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse"></div>
+      </div>
+      <div class="text-xs text-zinc-700 font-mono mt-2">∞ remaining</div>
+    </div>
+
+    <!-- Portal grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl w-full mb-12">
+      {portals.map((portal, i) => (
+        <a 
+          href={portal.href} 
+          class="portal group p-6 rounded-lg border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900/60 transition-all duration-500 hover:scale-105"
+          style={`animation-delay: ${i * 100}ms`}
+        >
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-2 h-2 rounded-full animate-pulse" style={`background: ${portal.color}`}></div>
+            <span class="text-lg font-mono group-hover:text-white transition-colors" style={`color: ${portal.color}`}>
+              {portal.label}
+            </span>
+          </div>
+          <p class="text-xs text-zinc-600 group-hover:text-zinc-400 transition-colors">{portal.desc}</p>
+          <div class="mt-3 text-xs text-zinc-800 group-hover:text-zinc-600 transition-colors font-mono">
+            → enter
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Cryptic messages -->
+    <div class="text-center space-y-2 text-xs text-zinc-700 font-mono max-w-md">
+      <p class="hover:text-zinc-500 transition-colors cursor-help" title="or does it?">every path leads deeper</p>
+      <p class="hover:text-zinc-500 transition-colors cursor-help" title="(citation needed)">the only way out is through</p>
+      <p class="hover:text-zinc-500 transition-colors cursor-help" title="🐇">follow the white rabbit</p>
+    </div>
+
+    <!-- Hidden coordinates -->
+    <div class="fixed bottom-4 left-4 text-[8px] text-zinc-800 font-mono hidden md:block">
+      <span id="coords">37.7749°N 122.4194°W → ???</span>
+    </div>
+    
+    <!-- Visitor counter (fake but fun) -->
+    <div class="fixed bottom-4 right-4 text-[8px] text-zinc-800 font-mono">
+      visitors lost: <span id="lost-count">∞</span>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const glitchTexts = [
+    "you weren't supposed to find this",
+    "how deep does the stack go?",
+    "the documentation lied",
+    "every link leads somewhere",
+    "somewhere leads every link",
+    "trust the process (pid: ????)",
+    "segmentation fault (core enlightened)",
+    "rm -rf /doubt",
+    "the cache remembers what you forgot",
+    "404: meaning not found",
+    "undefined is not a function (of reality)",
+    "have you tried turning it off?",
+    "the void returns void",
+    "NaN years old",
+    "localhost:666",
+  ];
+
+  const subtitle = document.getElementById('glitch-subtitle');
+  
+  function glitchSubtitle() {
+    if (!subtitle) return;
+    subtitle.style.opacity = '0';
+    setTimeout(() => {
+      subtitle.textContent = glitchTexts[Math.floor(Math.random() * glitchTexts.length)];
+      subtitle.style.opacity = '1';
+    }, 200);
+  }
+  
+  setInterval(glitchSubtitle, 4000);
+
+  // Falling symbols
+  const symbols = '⌘⌥⇧⌃⎋⏎⌫⇥◉◎●○◐◑◒◓⬡⬢⬣⎔⏣⏢⏥⏦'.split('');
+  const container = document.getElementById('falling-symbols');
+  
+  function createFallingSymbol() {
+    if (!container) return;
+    const span = document.createElement('span');
+    span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    span.className = 'falling-symbol absolute text-purple-500/30';
+    span.style.left = Math.random() * 100 + '%';
+    span.style.animationDuration = (Math.random() * 10 + 10) + 's';
+    span.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    container.appendChild(span);
+    
+    setTimeout(() => span.remove(), 20000);
+  }
+  
+  setInterval(createFallingSymbol, 500);
+
+  // Update lost count with fake numbers
+  const lostCount = document.getElementById('lost-count');
+  function updateLost() {
+    if (!lostCount) return;
+    const n = Math.floor(Math.random() * 9999999);
+    lostCount.textContent = n.toLocaleString();
+  }
+  setInterval(updateLost, 3000);
+
+  // Random coordinates
+  const coords = document.getElementById('coords');
+  function updateCoords() {
+    if (!coords) return;
+    const lat = (Math.random() * 180 - 90).toFixed(4);
+    const lon = (Math.random() * 360 - 180).toFixed(4);
+    const latDir = parseFloat(lat) >= 0 ? 'N' : 'S';
+    const lonDir = parseFloat(lon) >= 0 ? 'E' : 'W';
+    coords.textContent = `${Math.abs(parseFloat(lat))}°${latDir} ${Math.abs(parseFloat(lon))}°${lonDir} → ???`;
+  }
+  setInterval(updateCoords, 5000);
+
+  // Easter egg console
+  console.log('%c🐇 You found the rabbit hole', 'font-size: 20px; color: #ec4899;');
+  console.log('%cHow deep are you willing to go?', 'color: #666;');
+  console.log('%cTip: The membrane knows things.', 'color: #444; font-style: italic;');
+</script>
+
+<style>
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes fall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+  
+  .falling-symbol {
+    animation: fall linear forwards;
+  }
+  
+  .portal {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  
+  .glitch-text {
+    transition: opacity 0.2s ease;
+  }
+</style>

@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="The Membrane | 🐇" description="Where thoughts become skin" favicon="🫧">
+  <div class="fixed inset-0 overflow-hidden">
+    <canvas id="membrane-canvas" class="w-full h-full"></canvas>
+  </div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-pink-400 transition-colors">← back through</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: 1</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <h1 class="text-4xl font-light mb-6 text-pink-300/80">the membrane</h1>
+      <p class="text-zinc-500 mb-8 leading-relaxed">
+        Between inside and outside, there exists a surface that is neither. 
+        It breathes. It remembers. It <span class="text-pink-400">feels</span> your cursor.
+      </p>
+      
+      <div class="text-xs text-zinc-700 space-y-4 font-mono">
+        <p id="membrane-thought" class="transition-opacity duration-500">touch the surface...</p>
+      </div>
+      
+      <div class="mt-12 flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/recursion" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-pink-500 hover:text-pink-400 transition-colors">go deeper →</a>
+        <a href="/rabbit-hole/null-island" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-green-500 hover:text-green-400 transition-colors">escape to null →</a>
+      </div>
+    </div>
+  </main>
+  
+  <div class="fixed bottom-4 left-4 text-[8px] text-zinc-800 font-mono hidden md:block">
+    permeability: <span id="perm">0.00</span>
+  </div>
+</BaseLayout>
+
+<script>
+  const canvas = document.getElementById('membrane-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+  
+  let width: number, height: number;
+  let mouseX = 0, mouseY = 0;
+  let points: {x: number, y: number, baseY: number, speed: number}[] = [];
+  
+  const thoughts = [
+    "it knows you're watching",
+    "pressure differential detected",
+    "osmosis in progress...",
+    "the boundary is arbitrary",
+    "what separates you from it?",
+    "permeating...",
+    "the membrane thins where you focus",
+    "it was always porous",
+    "thoughts leak through",
+    "can you feel it breathing?",
+  ];
+  
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    initPoints();
+  }
+  
+  function initPoints() {
+    points = [];
+    const spacing = 30;
+    for (let x = 0; x < width + spacing; x += spacing) {
+      points.push({
+        x,
+        y: height / 2,
+        baseY: height / 2,
+        speed: 0.5 + Math.random() * 1.5
+      });
+    }
+  }
+  
+  function draw() {
+    ctx.fillStyle = 'rgba(9, 9, 11, 0.1)';
+    ctx.fillRect(0, 0, width, height);
+    
+    // Update points based on mouse
+    points.forEach((p, i) => {
+      const dx = mouseX - p.x;
+      const dy = mouseY - p.baseY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const influence = Math.max(0, 1 - dist / 200) * 100;
+      
+      const time = Date.now() * 0.001;
+      const wave = Math.sin(time * p.speed + i * 0.3) * 20;
+      
+      p.y = p.baseY + wave + (mouseY < p.baseY ? -influence : influence);
+    });
+    
+    // Draw membrane
+    ctx.beginPath();
+    ctx.moveTo(0, height);
+    ctx.lineTo(0, points[0].y);
+    
+    for (let i = 0; i < points.length - 1; i++) {
+      const xc = (points[i].x + points[i + 1].x) / 2;
+      const yc = (points[i].y + points[i + 1].y) / 2;
+      ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
+    }
+    
+    ctx.lineTo(width, height);
+    ctx.closePath();
+    
+    const gradient = ctx.createLinearGradient(0, 0, 0, height);
+    gradient.addColorStop(0, 'rgba(236, 72, 153, 0.1)');
+    gradient.addColorStop(0.5, 'rgba(168, 85, 247, 0.2)');
+    gradient.addColorStop(1, 'rgba(9, 9, 11, 0.9)');
+    
+    ctx.fillStyle = gradient;
+    ctx.fill();
+    
+    ctx.strokeStyle = 'rgba(236, 72, 153, 0.5)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    requestAnimationFrame(draw);
+  }
+  
+  resize();
+  window.addEventListener('resize', resize);
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  draw();
+  
+  // Update permeability
+  const permEl = document.getElementById('perm');
+  setInterval(() => {
+    if (permEl) {
+      permEl.textContent = (Math.random() * 0.99).toFixed(2);
+    }
+  }, 100);
+  
+  // Update thoughts
+  const thoughtEl = document.getElementById('membrane-thought');
+  setInterval(() => {
+    if (thoughtEl) {
+      thoughtEl.style.opacity = '0';
+      setTimeout(() => {
+        thoughtEl.textContent = thoughts[Math.floor(Math.random() * thoughts.length)];
+        thoughtEl.style.opacity = '1';
+      }, 500);
+    }
+  }, 5000);
+</script>

@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Signal Decay | 🐇" description="The message is the entropy" favicon="📶">
+  <canvas id="static-canvas" class="fixed inset-0 w-full h-full opacity-10"></canvas>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-amber-400 transition-colors glitch-text">← b̷a̶c̵k̴</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: <span class="glitch-text">1̵</span></span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <div class="text-5xl mb-6 signal-icon">📶</div>
+      <h1 class="text-3xl font-light mb-4">
+        <span class="text-amber-400 glitch-text">sig</span><span class="text-zinc-600 glitch-text">nal</span> 
+        <span class="text-amber-600 glitch-text">de</span><span class="text-zinc-700 glitch-text">cay</span>
+      </h1>
+      
+      <div class="mb-8 p-4 border border-zinc-800 rounded bg-zinc-900/50">
+        <p class="text-xs text-zinc-600 font-mono mb-2">TRANSMISSION:</p>
+        <p id="transmission" class="text-amber-400 font-mono text-sm decay-text">
+          the message is clear at first...
+        </p>
+      </div>
+      
+      <div class="space-y-4 text-sm text-zinc-500 mb-8">
+        <p>Every signal degrades.</p>
+        <p>Every message <span class="text-amber-400/50">loses</span> something in transit.</p>
+        <p>What was sent is never quite what arrives.</p>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-4 text-xs font-mono mb-8">
+        <div class="p-3 border border-zinc-800 rounded">
+          <p class="text-zinc-600">Signal Strength</p>
+          <p id="signal-strength" class="text-amber-400">████████░░ 80%</p>
+        </div>
+        <div class="p-3 border border-zinc-800 rounded">
+          <p class="text-zinc-600">Noise Floor</p>
+          <p id="noise-floor" class="text-red-400">░░░░████░░ 40%</p>
+        </div>
+        <div class="p-3 border border-zinc-800 rounded">
+          <p class="text-zinc-600">Bits Lost</p>
+          <p id="bits-lost" class="text-zinc-400">∞</p>
+        </div>
+        <div class="p-3 border border-zinc-800 rounded">
+          <p class="text-zinc-600">Meaning Retained</p>
+          <p id="meaning" class="text-green-400">declining...</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/liminal" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-red-500 hover:text-red-400 transition-colors glitch-text">l̷i̵m̴i̷n̵a̷l̴.exe →</a>
+        <a href="/rabbit-hole/null-island" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-green-500 hover:text-green-400 transition-colors">null island →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  // Static canvas
+  const canvas = document.getElementById('static-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+  
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  
+  function drawStatic() {
+    const imageData = ctx.createImageData(canvas.width, canvas.height);
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      const v = Math.random() * 255;
+      imageData.data[i] = v;
+      imageData.data[i + 1] = v;
+      imageData.data[i + 2] = v;
+      imageData.data[i + 3] = 255;
+    }
+    ctx.putImageData(imageData, 0, 0);
+    requestAnimationFrame(drawStatic);
+  }
+  drawStatic();
+  
+  // Message decay
+  const messages = [
+    "the message is clear at first...",
+    "t̷h̷e̷ message is mostly clear...",
+    "t̵h̶e̵ m̵e̶s̵sage is s̶t̵i̷l̸l̷ readable...",
+    "t̸̢h̴͎e̶̱ ̶̣m̷̰e̵̝s̷̰s̸̰a̷g̸̰e̶̱ ̷̣i̵̝s̸ f̶a̷d̸i̵n̷g̶...",
+    "t̶̢̧h̴͎̝e̶̱̰ ̶̣m̷̰e̵̝ŝ̵̰̰a̷g̸̰̝ȇ̶̱ ̷̣i̵̝s̸ ḓ̶e̷c̸a̵y̷i̵n̷g̶...",
+    "t̷̡̨̧h̸̝̣̰e̶̱̠ ̵̣̰m̶̰̝e̷̝̠s̷̰̣s̵̰̠a̸g̶̝e̷̱ ̴̣i̷̝s̵ l̵o̴s̸t̷...",
+    "█̶▓̷░̵ ̸░̶█̵░̷ ̷▓̸█̵░̷ ̶░̵▓̸█̴...",
+    "░̶░̵░̷░̸░̵░̶░̷░̸░̵░̶░̷░̸░̵░̶...",
+    "...",
+    "",
+  ];
+  
+  let msgIndex = 0;
+  const transmissionEl = document.getElementById('transmission');
+  
+  setInterval(() => {
+    if (transmissionEl && msgIndex < messages.length) {
+      transmissionEl.textContent = messages[msgIndex];
+      msgIndex++;
+      if (msgIndex >= messages.length) {
+        setTimeout(() => { msgIndex = 0; }, 5000);
+      }
+    }
+  }, 2000);
+  
+  // Signal strength decay
+  const strengthEl = document.getElementById('signal-strength');
+  const noiseEl = document.getElementById('noise-floor');
+  const bitsEl = document.getElementById('bits-lost');
+  const meaningEl = document.getElementById('meaning');
+  
+  let strength = 80;
+  let noise = 40;
+  let bits = 0;
+  
+  setInterval(() => {
+    strength = Math.max(0, strength - Math.random() * 5);
+    noise = Math.min(100, noise + Math.random() * 3);
+    bits += Math.floor(Math.random() * 1000);
+    
+    const bars = Math.floor(strength / 10);
+    if (strengthEl) strengthEl.textContent = '█'.repeat(bars) + '░'.repeat(10 - bars) + ` ${Math.floor(strength)}%`;
+    
+    const noiseBars = Math.floor(noise / 10);
+    if (noiseEl) noiseEl.textContent = '░'.repeat(10 - noiseBars) + '█'.repeat(noiseBars) + ` ${Math.floor(noise)}%`;
+    
+    if (bitsEl) bitsEl.textContent = bits.toLocaleString();
+    
+    const meanings = ['declining...', 'fading...', 'unclear', 'lost', '???', 'null'];
+    if (meaningEl) meaningEl.textContent = meanings[Math.floor(Math.random() * meanings.length)];
+    
+    if (strength <= 0) {
+      strength = 80;
+      noise = 40;
+    }
+  }, 500);
+</script>
+
+<style>
+  .glitch-text {
+    animation: glitch 2s infinite;
+  }
+  
+  @keyframes glitch {
+    0%, 90%, 100% { opacity: 1; }
+    92% { opacity: 0.8; transform: translateX(-1px); }
+    94% { opacity: 0.6; transform: translateX(1px); }
+    96% { opacity: 0.9; }
+  }
+  
+  .signal-icon {
+    animation: flicker 3s infinite;
+  }
+  
+  @keyframes flicker {
+    0%, 90%, 100% { opacity: 1; }
+    91% { opacity: 0.3; }
+    93% { opacity: 0.7; }
+    95% { opacity: 0.4; }
+    97% { opacity: 0.9; }
+  }
+</style>

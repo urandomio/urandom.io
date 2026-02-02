@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Recursion | 🐇" description="You are here. Or are you?" favicon="🔄">
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-purple-400 transition-colors">← escape recursion</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: <span id="depth">1</span></span>
+  </header>
+
+  <main class="min-h-screen flex flex-col items-center justify-center px-6 py-24">
+    <div class="max-w-md text-center">
+      <div class="text-6xl mb-6" id="recursive-emoji">🔄</div>
+      <h1 class="text-3xl font-light mb-4 text-purple-400">recursion</h1>
+      <p class="text-zinc-600 text-sm mb-2">see: <a href="/rabbit-hole/recursion" class="text-purple-400 hover:underline">recursion</a></p>
+      
+      <div class="my-12 p-6 border border-zinc-800 rounded-lg bg-zinc-900/50">
+        <p class="text-xs text-zinc-500 font-mono mb-4">function reality() {'{'}</p>
+        <p class="text-xs text-zinc-500 font-mono mb-4 ml-4">return <a href="/rabbit-hole/recursion" class="text-purple-400 hover:underline">reality()</a>;</p>
+        <p class="text-xs text-zinc-500 font-mono">{'}'}</p>
+        <p class="text-xs text-red-500 font-mono mt-4">⚠️ Maximum call stack size exceeded</p>
+      </div>
+      
+      <div class="space-y-2 text-xs text-zinc-700">
+        <p>You have been here <span id="times" class="text-purple-400">1</span> times.</p>
+        <p>Or was it <span id="times-alt" class="text-purple-400">∞</span> times?</p>
+      </div>
+      
+      <div class="mt-12 flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/recursion" class="px-4 py-2 text-xs border border-purple-800 rounded hover:border-purple-500 hover:text-purple-400 transition-colors">go deeper →</a>
+        <a href="/rabbit-hole/forgotten-api" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-cyan-500 hover:text-cyan-400 transition-colors">break the loop →</a>
+      </div>
+      
+      <div id="stack-frames" class="mt-12 text-left max-h-48 overflow-hidden opacity-50">
+        <!-- Stack frames will be added here -->
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  // Get or set visit count
+  let visits = parseInt(sessionStorage.getItem('recursion-visits') || '0') + 1;
+  sessionStorage.setItem('recursion-visits', visits.toString());
+  
+  const timesEl = document.getElementById('times');
+  const depthEl = document.getElementById('depth');
+  if (timesEl) timesEl.textContent = visits.toString();
+  if (depthEl) depthEl.textContent = visits.toString();
+  
+  // Stack frames
+  const stackEl = document.getElementById('stack-frames');
+  if (stackEl) {
+    for (let i = 0; i < Math.min(visits, 20); i++) {
+      const frame = document.createElement('div');
+      frame.className = 'text-xs text-zinc-800 font-mono';
+      frame.style.opacity = (1 - i * 0.05).toString();
+      frame.textContent = `  at reality (recursion.astro:${i + 1}:${Math.floor(Math.random() * 20) + 1})`;
+      stackEl.appendChild(frame);
+    }
+  }
+  
+  // Alternate times (random)
+  const altEl = document.getElementById('times-alt');
+  setInterval(() => {
+    if (altEl) {
+      const options = ['∞', visits * 1000, 'NaN', 'undefined', -visits, '???'];
+      altEl.textContent = options[Math.floor(Math.random() * options.length)].toString();
+    }
+  }, 2000);
+  
+  // Recursive emoji
+  const emojis = ['🔄', '♾️', '🌀', '⟳', '↻', '🔁'];
+  const emojiEl = document.getElementById('recursive-emoji');
+  setInterval(() => {
+    if (emojiEl) emojiEl.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+  }, 1000);
+</script>

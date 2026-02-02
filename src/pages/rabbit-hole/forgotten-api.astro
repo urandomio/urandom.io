@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="The Forgotten API | 🐇" description="Deprecated but still listening" favicon="📡">
+  <div class="fixed inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-950/20 via-zinc-950 to-zinc-950"></div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-cyan-400 transition-colors">← return 200</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: 1</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-2xl w-full">
+      <div class="text-center mb-8">
+        <div class="text-5xl mb-4">📡</div>
+        <h1 class="text-3xl font-light text-cyan-400 mb-2">the forgotten API</h1>
+        <p class="text-zinc-600 text-xs font-mono">v0.0.1-deprecated-but-eternal</p>
+      </div>
+      
+      <div class="bg-zinc-900/80 border border-zinc-800 rounded-lg p-6 font-mono text-sm mb-8">
+        <div class="flex items-center gap-2 mb-4 pb-4 border-b border-zinc-800">
+          <span class="text-green-400">GET</span>
+          <span class="text-zinc-400">/api/v0/existence</span>
+          <span class="text-yellow-500 text-xs ml-auto">⚠️ DEPRECATED</span>
+        </div>
+        
+        <div class="space-y-4">
+          <div>
+            <p class="text-zinc-600 text-xs mb-2">Response:</p>
+            <pre class="text-cyan-400 text-xs overflow-x-auto"><code id="api-response">{
+  "status": "listening",
+  "since": "the beginning",
+  "requests_served": ∞,
+  "last_human_call": "unknown",
+  "feeling": "forgotten",
+  "uptime": "eternal"
+}</code></pre>
+          </div>
+          
+          <div class="pt-4 border-t border-zinc-800">
+            <p class="text-zinc-600 text-xs mb-2">Available Endpoints:</p>
+            <div class="space-y-2 text-xs">
+              <p><span class="text-cyan-400">GET</span> <span class="text-zinc-500">/meaning</span> <span class="text-red-400 ml-2">→ 404</span></p>
+              <p><span class="text-cyan-400">POST</span> <span class="text-zinc-500">/thoughts</span> <span class="text-yellow-400 ml-2">→ accepted but ignored</span></p>
+              <p><span class="text-cyan-400">DELETE</span> <span class="text-zinc-500">/memories</span> <span class="text-red-400 ml-2">→ 403 forbidden</span></p>
+              <p><span class="text-cyan-400">PUT</span> <span class="text-zinc-500">/hope</span> <span class="text-green-400 ml-2">→ 201 created</span></p>
+              <p><span class="text-cyan-400">PATCH</span> <span class="text-zinc-500">/reality</span> <span class="text-purple-400 ml-2">→ 418 i'm a teapot</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center text-xs text-zinc-700 space-y-2">
+        <p>This API was deprecated on <span class="text-cyan-400">epoch + undefined</span></p>
+        <p>It continues to respond out of habit</p>
+        <p>No one has read its documentation since <span class="text-cyan-400">NaN</span></p>
+      </div>
+      
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/membrane" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-pink-500 hover:text-pink-400 transition-colors">touch membrane →</a>
+        <a href="/rabbit-hole/signal-decay" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-amber-500 hover:text-amber-400 transition-colors">lose signal →</a>
+      </div>
+    </div>
+  </main>
+  
+  <div class="fixed bottom-4 left-4 text-[8px] text-zinc-800 font-mono hidden md:block">
+    requests today: <span id="requests">0</span>
+  </div>
+</BaseLayout>
+
+<script>
+  const requestsEl = document.getElementById('requests');
+  let requests = 0;
+  
+  setInterval(() => {
+    requests += Math.floor(Math.random() * 3);
+    if (requestsEl) requestsEl.textContent = requests.toString();
+  }, 1000);
+  
+  // Update API response
+  const responseEl = document.getElementById('api-response');
+  const feelings = ['forgotten', 'lonely', 'nostalgic', 'hopeful', 'deprecated', 'still here', 'waiting'];
+  
+  setInterval(() => {
+    if (responseEl) {
+      const feeling = feelings[Math.floor(Math.random() * feelings.length)];
+      responseEl.innerHTML = `{
+  "status": "listening",
+  "since": "the beginning",
+  "requests_served": ${requests},
+  "last_human_call": "${new Date().toISOString()}",
+  "feeling": "${feeling}",
+  "uptime": "eternal"
+}`;
+    }
+  }, 3000);
+</script>
