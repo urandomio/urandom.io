@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="The Backrooms | 🐇" description="You noclipped out of reality" favicon="🚪">
+  <div class="fixed inset-0 bg-amber-950/20"></div>
+  <div id="fluorescent" class="fixed inset-0 pointer-events-none"></div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-amber-400 transition-colors">← clip back</a>
+    <span class="text-xs text-zinc-700 font-mono">LEVEL: <span id="level">0</span></span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <div class="text-5xl mb-6">🚪</div>
+      <h1 class="text-3xl font-light text-amber-400 mb-4">the backrooms</h1>
+      <p class="text-zinc-600 text-sm mb-8">you noclipped out of reality</p>
+      
+      <div class="p-6 border border-amber-900/50 rounded-lg bg-amber-950/20 mb-8">
+        <p class="text-sm text-amber-200/70 mb-4">The smell of old moist carpet...</p>
+        <p class="text-sm text-amber-200/70 mb-4">The madness of mono-yellow...</p>
+        <p class="text-sm text-amber-200/70">The endless hum of fluorescent lights...</p>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-4 mb-8 text-xs font-mono">
+        <div class="p-3 border border-amber-900/30 rounded bg-amber-950/10">
+          <p class="text-zinc-600">Distance walked:</p>
+          <p class="text-amber-400" id="distance">0 miles</p>
+        </div>
+        <div class="p-3 border border-amber-900/30 rounded bg-amber-950/10">
+          <p class="text-zinc-600">Entities nearby:</p>
+          <p class="text-red-400" id="entities">unknown</p>
+        </div>
+        <div class="p-3 border border-amber-900/30 rounded bg-amber-950/10">
+          <p class="text-zinc-600">Sanity:</p>
+          <p class="text-amber-400" id="sanity">declining</p>
+        </div>
+        <div class="p-3 border border-amber-900/30 rounded bg-amber-950/10">
+          <p class="text-zinc-600">Exit found:</p>
+          <p class="text-zinc-500">no</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <button id="walk-btn" class="px-4 py-2 text-xs border border-amber-900/50 rounded hover:border-amber-500 hover:text-amber-400 transition-colors">
+          keep walking
+        </button>
+        <button id="listen-btn" class="px-4 py-2 text-xs border border-amber-900/50 rounded hover:border-amber-500 hover:text-amber-400 transition-colors">
+          listen
+        </button>
+      </div>
+      
+      <p id="event" class="text-xs text-amber-400/50 h-6 transition-opacity duration-500"></p>
+      
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/liminal" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-red-500 hover:text-red-400 transition-colors">liminal.exe →</a>
+        <a href="/rabbit-hole/the-static" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-zinc-500 hover:text-zinc-400 transition-colors">the static →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const events = [
+    "You hear footsteps behind you. They stop when you stop.",
+    "A door appears. It wasn't there before.",
+    "The lights flicker. Something moved.",
+    "You find a note: 'DON'T TRUST THE EXITS'",
+    "The carpet squelches. It's wet.",
+    "A child's laughter echoes. There are no children here.",
+    "You've been walking for hours. The room looks the same.",
+    "The humming gets louder. Then stops.",
+    "You see yourself walking in the distance.",
+    "A phone rings. There are no phones.",
+    "The walls are breathing.",
+    "You find your own footprints ahead of you.",
+    "Something is watching from the ceiling tiles.",
+    "The exit sign points in circles.",
+    "You smell almonds. Run.",
+  ];
+  
+  const entities = ["unknown", "0", "1?", "listening", "watching", "close", "behind you", "none (probably)"];
+  const sanities = ["declining", "stable?", "questionable", "what's sanity?", "N/A", "yes", "no"];
+  
+  let distance = 0;
+  let level = 0;
+  
+  const distanceEl = document.getElementById('distance');
+  const entitiesEl = document.getElementById('entities');
+  const sanityEl = document.getElementById('sanity');
+  const levelEl = document.getElementById('level');
+  const eventEl = document.getElementById('event');
+  const walkBtn = document.getElementById('walk-btn');
+  const listenBtn = document.getElementById('listen-btn');
+  
+  walkBtn?.addEventListener('click', () => {
+    distance += Math.random() * 0.5;
+    if (distanceEl) distanceEl.textContent = distance.toFixed(2) + ' miles';
+    
+    if (Math.random() > 0.7) {
+      level = Math.floor(Math.random() * 999);
+      if (levelEl) levelEl.textContent = level.toString();
+    }
+    
+    if (Math.random() > 0.5 && eventEl) {
+      eventEl.style.opacity = '0';
+      setTimeout(() => {
+        eventEl.textContent = events[Math.floor(Math.random() * events.length)];
+        eventEl.style.opacity = '1';
+      }, 300);
+    }
+  });
+  
+  listenBtn?.addEventListener('click', () => {
+    if (eventEl) {
+      eventEl.style.opacity = '0';
+      setTimeout(() => {
+        const sounds = [
+          "...humming...",
+          "...dripping...",
+          "...footsteps...",
+          "...breathing...",
+          "...silence...",
+          "...your name...",
+        ];
+        eventEl.textContent = sounds[Math.floor(Math.random() * sounds.length)];
+        eventEl.style.opacity = '1';
+      }, 300);
+    }
+  });
+  
+  setInterval(() => {
+    if (entitiesEl) entitiesEl.textContent = entities[Math.floor(Math.random() * entities.length)];
+  }, 5000);
+  
+  setInterval(() => {
+    if (sanityEl) sanityEl.textContent = sanities[Math.floor(Math.random() * sanities.length)];
+  }, 7000);
+  
+  // Fluorescent flicker
+  const fluoro = document.getElementById('fluorescent');
+  setInterval(() => {
+    if (fluoro && Math.random() > 0.9) {
+      fluoro.style.backgroundColor = 'rgba(251, 191, 36, 0.1)';
+      setTimeout(() => {
+        fluoro.style.backgroundColor = 'transparent';
+      }, 50);
+    }
+  }, 100);
+</script>

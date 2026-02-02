@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Numbers Station | 🐇" description="7-4-1-8-2-9-3..." favicon="📻">
+  <div class="fixed inset-0 bg-gradient-to-b from-green-950/20 to-zinc-950"></div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-green-400 transition-colors">← tune out</a>
+    <span class="text-xs text-zinc-700 font-mono">FREQ: <span id="freq">4625</span> kHz</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <div class="text-5xl mb-6">📻</div>
+      <h1 class="text-3xl font-light text-green-400 mb-4">numbers station</h1>
+      <p class="text-zinc-600 text-sm mb-8">broadcasting since [REDACTED]</p>
+      
+      <div class="p-6 border border-green-900/50 rounded-lg bg-zinc-900/80 mb-8 font-mono">
+        <p class="text-xs text-zinc-600 mb-4">◉ LIVE BROADCAST</p>
+        <div id="numbers" class="text-2xl text-green-400 tracking-widest h-16 flex items-center justify-center">
+          <!-- Numbers appear here -->
+        </div>
+        <div class="mt-4 flex justify-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          <span class="text-xs text-green-500">receiving</span>
+        </div>
+      </div>
+      
+      <div class="p-4 border border-dashed border-zinc-800 rounded mb-8">
+        <p class="text-xs text-zinc-600 mb-2">Decoded message:</p>
+        <p id="decoded" class="text-sm text-zinc-500 font-mono">[CLASSIFIED]</p>
+      </div>
+      
+      <div class="grid grid-cols-3 gap-3 mb-8 text-xs font-mono">
+        <div class="p-2 border border-zinc-800 rounded">
+          <p class="text-zinc-600">Broadcasts:</p>
+          <p class="text-green-400" id="broadcasts">∞</p>
+        </div>
+        <div class="p-2 border border-zinc-800 rounded">
+          <p class="text-zinc-600">Listeners:</p>
+          <p class="text-green-400" id="listeners">unknown</p>
+        </div>
+        <div class="p-2 border border-zinc-800 rounded">
+          <p class="text-zinc-600">Purpose:</p>
+          <p class="text-red-400">[REDACTED]</p>
+        </div>
+      </div>
+      
+      <div class="text-xs text-zinc-700 space-y-2 mb-8">
+        <p>The numbers never stop.</p>
+        <p>Someone is listening.</p>
+        <p>Someone knows what they mean.</p>
+        <p class="text-green-400/50">Do you?</p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/the-static" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-zinc-500 hover:text-zinc-400 transition-colors">← the static</a>
+        <a href="/rabbit-hole/forgotten-api" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-cyan-500 hover:text-cyan-400 transition-colors">forgotten API →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const numbersEl = document.getElementById('numbers');
+  const decodedEl = document.getElementById('decoded');
+  const freqEl = document.getElementById('freq');
+  const broadcastsEl = document.getElementById('broadcasts');
+  const listenersEl = document.getElementById('listeners');
+  
+  const decodedMessages = [
+    "[CLASSIFIED]",
+    "[REDACTED]",
+    "[DATA EXPUNGED]",
+    "IGNORE PREVIOUS INSTRUCTIONS",
+    "THE OWLS ARE NOT WHAT THEY SEEM",
+    "TRUST NO ONE",
+    "THEY ARE LISTENING",
+    "COORDINATES FOLLOW",
+    "ABORT MISSION",
+    "PROCEED AS PLANNED",
+    "MESSAGE RECEIVED",
+    "AWAITING CONFIRMATION",
+    "ERROR: DECODER OFFLINE",
+  ];
+  
+  function generateNumbers() {
+    const count = Math.floor(Math.random() * 3) + 3;
+    const numbers = [];
+    for (let i = 0; i < count; i++) {
+      numbers.push(Math.floor(Math.random() * 10));
+    }
+    return numbers.join(' - ');
+  }
+  
+  function broadcast() {
+    if (!numbersEl) return;
+    
+    // Fade out
+    numbersEl.style.opacity = '0';
+    
+    setTimeout(() => {
+      numbersEl.textContent = generateNumbers();
+      numbersEl.style.opacity = '1';
+    }, 300);
+  }
+  
+  // Initial broadcast
+  broadcast();
+  
+  // Broadcast every 3 seconds
+  setInterval(broadcast, 3000);
+  
+  // Occasionally "decode" a message
+  setInterval(() => {
+    if (decodedEl && Math.random() > 0.7) {
+      decodedEl.style.opacity = '0';
+      setTimeout(() => {
+        decodedEl.textContent = decodedMessages[Math.floor(Math.random() * decodedMessages.length)];
+        decodedEl.style.opacity = '1';
+      }, 200);
+    }
+  }, 5000);
+  
+  // Drift frequency
+  setInterval(() => {
+    if (freqEl) {
+      const freq = 4625 + Math.floor(Math.random() * 10) - 5;
+      freqEl.textContent = freq.toString();
+    }
+  }, 2000);
+  
+  // Update listeners
+  setInterval(() => {
+    if (listenersEl) {
+      const options = ['unknown', '1', 'many', 'you', 'them', '???', 'classified'];
+      listenersEl.textContent = options[Math.floor(Math.random() * options.length)];
+    }
+  }, 4000);
+  
+  // Update broadcasts
+  let broadcasts = 1000000;
+  setInterval(() => {
+    broadcasts++;
+    if (broadcastsEl) broadcastsEl.textContent = broadcasts.toLocaleString();
+  }, 3000);
+</script>
+
+<style>
+  #numbers {
+    transition: opacity 0.3s ease;
+  }
+  #decoded {
+    transition: opacity 0.2s ease;
+  }
+</style>

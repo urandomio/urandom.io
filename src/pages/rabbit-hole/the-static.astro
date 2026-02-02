@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="The Static | 🐇" description="Between the channels" favicon="📺">
+  <canvas id="static-canvas" class="fixed inset-0 w-full h-full"></canvas>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">← change channel</a>
+    <span class="text-xs text-zinc-700 font-mono">CH: <span id="channel">---</span></span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-lg text-center">
+      <div class="text-5xl mb-6 animate-glitch">📺</div>
+      <h1 class="text-3xl font-light text-zinc-400 mb-4">the static</h1>
+      <p class="text-zinc-600 text-sm mb-8">between the channels, something waits</p>
+      
+      <div class="p-6 border border-zinc-800 rounded-lg bg-zinc-900/80 mb-8">
+        <p class="text-xs text-zinc-600 font-mono mb-4">INTERCEPTED TRANSMISSION:</p>
+        <p id="transmission" class="text-sm text-zinc-400 font-mono h-12 flex items-center justify-center">
+          tuning...
+        </p>
+      </div>
+      
+      <div class="flex justify-center gap-4 mb-8">
+        <button id="tune-down" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-zinc-500 hover:text-zinc-400 transition-colors">
+          ◄ tune
+        </button>
+        <button id="tune-up" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-zinc-500 hover:text-zinc-400 transition-colors">
+          tune ►
+        </button>
+      </div>
+      
+      <div class="space-y-2 text-xs text-zinc-700 mb-8">
+        <p>The static is not empty.</p>
+        <p>There are voices in the noise.</p>
+        <p>If you listen long enough...</p>
+        <p class="text-zinc-500">...they start to make sense.</p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/signal-decay" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-amber-500 hover:text-amber-400 transition-colors">signal decay →</a>
+        <a href="/rabbit-hole/numbers-station" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-green-500 hover:text-green-400 transition-colors">numbers station →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const canvas = document.getElementById('static-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+  
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  
+  function drawStatic() {
+    const imageData = ctx.createImageData(canvas.width, canvas.height);
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      const v = Math.random() * 60;
+      imageData.data[i] = v;
+      imageData.data[i + 1] = v;
+      imageData.data[i + 2] = v;
+      imageData.data[i + 3] = 255;
+    }
+    ctx.putImageData(imageData, 0, 0);
+    requestAnimationFrame(drawStatic);
+  }
+  drawStatic();
+  
+  const transmissions = [
+    "...can you hear me...",
+    "...they're coming through...",
+    "...don't adjust your set...",
+    "...we've been trying to reach you...",
+    "...the signal is clear now...",
+    "...between 3 and 4 AM...",
+    "...channel zero...",
+    "...the broadcast never ended...",
+    "...we are still here...",
+    "...turn back...",
+    "...too late...",
+    "...01001000 01000101 01001100 01010000...",
+    "...the numbers are wrong...",
+    "...static is not silence...",
+    "...we see you watching...",
+  ];
+  
+  const channelEl = document.getElementById('channel');
+  const transmissionEl = document.getElementById('transmission');
+  const tuneDownBtn = document.getElementById('tune-down');
+  const tuneUpBtn = document.getElementById('tune-up');
+  
+  let channel = 0;
+  
+  function updateChannel(delta: number) {
+    channel = (channel + delta + 1000) % 1000;
+    if (channelEl) channelEl.textContent = channel.toString().padStart(3, '0');
+    
+    if (transmissionEl) {
+      transmissionEl.style.opacity = '0';
+      setTimeout(() => {
+        if (Math.random() > 0.3) {
+          transmissionEl.textContent = transmissions[Math.floor(Math.random() * transmissions.length)];
+        } else {
+          transmissionEl.textContent = '█'.repeat(Math.floor(Math.random() * 20) + 5);
+        }
+        transmissionEl.style.opacity = '1';
+      }, 200);
+    }
+  }
+  
+  tuneDownBtn?.addEventListener('click', () => updateChannel(-1));
+  tuneUpBtn?.addEventListener('click', () => updateChannel(1));
+  
+  // Auto-tune occasionally
+  setInterval(() => {
+    if (Math.random() > 0.8) {
+      updateChannel(Math.random() > 0.5 ? 1 : -1);
+    }
+  }, 5000);
+  
+  // Initial channel
+  updateChannel(Math.floor(Math.random() * 1000));
+</script>
+
+<style>
+  @keyframes glitch {
+    0%, 90%, 100% { opacity: 1; }
+    92% { opacity: 0.5; transform: translateX(-2px); }
+    94% { opacity: 0.8; transform: translateX(2px); }
+  }
+  .animate-glitch {
+    animation: glitch 3s infinite;
+  }
+</style>
