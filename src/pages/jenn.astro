@@ -11,11 +11,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="max-w-4xl mx-auto relative z-10">
       <!-- Header -->
       <div class="text-center mb-16">
-        <div class="text-6xl md:text-7xl mb-4 font-bold">
-          <span class="inline-block animate-pulse-slow">🚨</span>
-          <span class="gradient-text glow mx-3">The Jenn Archives</span>
-          <span class="inline-block animate-pulse-slow delay-500">🚨</span>
-        </div>
+        <h1 class="text-5xl md:text-6xl mb-4 font-bold gradient-text glow">
+          The Jenn Archives
+        </h1>
         <p class="text-xl text-zinc-500">A timeline of legendary moments</p>
       </div>
 
@@ -50,18 +48,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <div class="stat-card">
-            <div class="stat-number">69</div>
-            <div class="stat-label">Nextdoor Trolls Reported</div>
-          </div>
-
-          <div class="stat-card">
             <div class="stat-number">100%</div>
             <div class="stat-label">Poop Tracking Accuracy</div>
           </div>
 
           <div class="stat-card">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Regrets (About That Wagon)</div>
+            <div class="stat-number">69</div>
+            <div class="stat-label">Nextdoor Trolls Reported</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Donut Count (Important)</div>
           </div>
 
         </div>
@@ -158,6 +156,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
 
+          <!-- Nov 2024 -->
+          <div class="timeline-section">
+            <div class="timeline-date">November 2024</div>
+            
+            <div class="message-bubble received">
+              <div class="message-content">
+                You let the flys out of the bathroom and now they're everywhere
+              </div>
+              <div class="message-time">Nov 8 • 8:56 AM</div>
+            </div>
+
+            <div class="message-bubble received">
+              <div class="message-content">
+                Dude. You and not closing the door after you dump
+              </div>
+              <div class="message-time">Nov 8 • 8:25 AM</div>
+            </div>
+
+            <div class="message-bubble received">
+              <div class="message-content">
+                I have donut
+              </div>
+              <div class="message-time">Nov 8 • 3:45 PM</div>
+            </div>
+
+            <div class="message-bubble received">
+              <div class="message-content">
+                Sorry i accidentally dropped a ton of butter on the hot burner. I wiped it off but it's smoking
+              </div>
+              <div class="message-time">Nov 21 • 6:06 PM</div>
+            </div>
+          </div>
+
           <!-- Oct 2025 -->
           <div class="timeline-section">
             <div class="timeline-date">October 2025</div>
@@ -170,12 +201,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
 
+          <!-- May 2025 -->
+          <div class="timeline-section">
+            <div class="timeline-date">May 2025</div>
+            
+            <div class="message-bubble received">
+              <div class="message-content">
+                You just pooped in there didn't you
+              </div>
+              <div class="message-time">May 30 • 8:30 AM</div>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <!-- Interactive Section -->
       <div class="mb-16 p-8 rounded-2xl bg-zinc-900/50 border border-zinc-700 backdrop-blur-sm">
-        <h2 class="text-3xl font-bold mb-6 gradient-text">Jenn Quote Generator 🎲</h2>
+        <h2 class="text-3xl font-bold mb-6 gradient-text">Random Quote Generator 💭</h2>
         <button class="fact-btn w-full py-4 px-6 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 active:scale-95 mb-4">
           Generate Random Quote
         </button>
@@ -187,7 +230,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- Footer -->
       <div class="text-center text-zinc-600 text-sm space-y-2">
         <p>🤖 Curated with love (and roasts) by Bender</p>
-        <p class="text-zinc-700 text-xs">More memories loading... check back for updates to the timeline 📅</p>
+        <p class="text-zinc-700 text-xs">Scraping 15 months of history... more memories loading 📅</p>
       </div>
     </div>
   </main>
@@ -376,7 +419,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       "You poop sitting down just like a boy lol",
       "It was a fucking meteor dude! What the shit!",
       "Everyone stopped drinking alcohol and started smoking pot apparently",
-      "I was gonna see if you wanted to bang in a little while but...",
+      "You let the flys out of the bathroom and now they're everywhere",
+      "Dude. You and not closing the door after you dump",
+      "I have donut",
+      "You just pooped in there didn't you",
+      "Sorry i accidentally dropped a ton of butter on the hot burner",
     ];
 
     document.querySelector('.fact-btn')?.addEventListener('click', () => {
