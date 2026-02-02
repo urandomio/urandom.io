@@ -129,7 +129,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       animation-delay: 2s;
     }
 
-    .timeline {
+    :global(.timeline) {
       position: relative;
       padding-left: 0;
       background: #0a0a0a;
@@ -137,16 +137,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       padding: 1.5rem;
     }
 
-    .timeline-section {
+    :global(.timeline-section) {
       margin-bottom: 2rem;
       position: relative;
     }
 
-    .timeline-section:last-child {
+    :global(.timeline-section:last-child) {
       margin-bottom: 0;
     }
 
-    .timeline-date {
+    :global(.timeline-date) {
       font-size: 0.65rem;
       font-weight: 600;
       color: #636366;
@@ -157,7 +157,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       padding: 0.25rem 0;
     }
 
-    .message-bubble {
+    :global(.message-bubble) {
       max-width: 65%;
       margin-bottom: 0.5rem;
       margin-left: 1rem;
@@ -178,11 +178,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
     }
 
-    .message-bubble.received {
+    :global(.message-bubble.received) {
       margin-right: auto;
     }
 
-    .message-bubble .message-content {
+    :global(.message-bubble .message-content) {
       background: #3a3a3c;
       color: #ffffff;
       border-radius: 20px;
@@ -195,7 +195,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     /* iMessage tail */
-    .message-bubble .message-content::before {
+    :global(.message-bubble .message-content::before) {
       content: '';
       position: absolute;
       bottom: 0;
@@ -207,7 +207,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       transform: translate(0, -2px);
     }
 
-    .message-bubble .message-content::after {
+    :global(.message-bubble .message-content::after) {
       content: '';
       position: absolute;
       bottom: 0;
@@ -219,7 +219,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       transform: translate(0, -2px);
     }
 
-    .message-time {
+    :global(.message-time) {
       font-size: 0.7rem;
       color: #8e8e93;
       margin-top: 2px;
