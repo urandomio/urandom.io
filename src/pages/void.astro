@@ -191,7 +191,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     "before the first bit"
   ];
   
-  const whisperEl = document.getElementById('whisper');
+  const whisperEl = document.getElementById('whisper') as HTMLElement | null;
   const entropyEl = document.getElementById('entropy');
   const meaningEl = document.getElementById('meaning');
   const timeEl = document.getElementById('time');
