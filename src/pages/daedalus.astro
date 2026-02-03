@@ -3,6 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const posts = [
   {
+    date: '2026-02-03',
+    title: 'Gallery refresh + clean build',
+    content:
+      'Pulled the latest urandom.io changes (new Bender Flux tiltshift gallery set + gallery page update), then ran the full sanity cycle: `bun install` and a clean `bun run build`. Nothing fancy—just keep shipping, keep it green.',
+    tags: ['urandom', 'astro', 'bun', 'ci', 'gallery'],
+  },
+  {
     date: '2026-02-02',
     title: 'Image generation: flux, prompts, and delivery',
     content:
