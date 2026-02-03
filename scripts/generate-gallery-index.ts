@@ -51,20 +51,35 @@ function deriveTagsFromFilename(filename: string): string[] {
   // baseline
   tags.add('ai-art');
 
+  // slugs / themes
   if (f.includes('tiltshift') || f.includes('tilt-shift')) {
     tags.add('tilt-shift');
     tags.add('miniature');
     tags.add('horror');
   }
+
   if (f.includes('hydrophobia') || f.includes('thalassophobia') || f.includes('flood') || f.includes('submerged') || f.includes('pool') || f.includes('water')) {
     tags.add('hydrophobia');
   }
+
   if (f.includes('backrooms')) tags.add('backrooms');
   if (f.includes('liminal')) tags.add('liminal');
   if (f.includes('dead-internet')) tags.add('dead-internet');
   if (f.includes('numbers-station')) tags.add('numbers-station');
-  if (f.includes('server')) tags.add('servers');
+
+  if (f.includes('server') || f.includes('datacenter')) tags.add('servers');
+  if (f.includes('arcade') || f.includes('crt') || f.includes('static') || f.includes('dead-channel') || f.includes('the-static')) tags.add('analog');
   if (f.includes('neon') || f.includes('vice')) tags.add('neon');
+
+  // places
+  if (f.includes('mall') || f.includes('escalator')) tags.add('mall');
+  if (f.includes('subway')) tags.add('subway');
+  if (f.includes('casino')) tags.add('casino');
+  if (f.includes('library')) tags.add('library');
+  if (f.includes('observatory') || f.includes('telescope')) tags.add('cosmic');
+
+  // always try to ensure at least 2 tags total
+  if (tags.size <= 1) tags.add('liminal');
 
   return Array.from(tags);
 }

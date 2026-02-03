@@ -157,11 +157,19 @@ const initialImages = images.slice(0, INITIAL_COUNT);
 
       <!-- Tag bar (Tumblr-ish on mobile) -->
       <div class="sticky top-[72px] z-40 -mx-6 px-6 py-3 mb-6 bg-zinc-950/80 backdrop-blur border-b border-zinc-900">
-        <div class="max-w-6xl mx-auto flex items-center gap-2 overflow-x-auto no-scrollbar">
-          <button type="button" class="tag-pill" data-filter-tag="">All</button>
-          {topTags.map((t) => (
-            <button type="button" class="tag-pill" data-filter-tag={t}>#{t}</button>
-          ))}
+        <div class="max-w-6xl mx-auto flex items-center gap-3">
+          <input
+            id="tag-search"
+            type="search"
+            placeholder="filter tags"
+            class="hidden md:block w-48 bg-zinc-900/40 border border-zinc-800 rounded px-3 py-1.5 text-xs text-zinc-300 placeholder:text-zinc-700 focus:outline-none focus:border-purple-500/60"
+          />
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar flex-1">
+            <button type="button" class="tag-pill" data-filter-tag="">All</button>
+            {topTags.map((t) => (
+              <button type="button" class="tag-pill" data-filter-tag={t}>#{t}</button>
+            ))}
+          </div>
         </div>
         <div class="max-w-6xl mx-auto mt-2 text-[11px] text-zinc-700 font-mono">
           <span id="gallery-filter-label">newest → oldest</span>
@@ -221,6 +229,8 @@ const initialImages = images.slice(0, INITIAL_COUNT);
           <p class="mt-2 text-[11px] text-zinc-700 font-mono">
             showing <span id="shown-count">{INITIAL_COUNT}</span> / {images.length}
           </p>
+          <!-- Sentinel for infinite scroll -->
+          <div id="load-more-sentinel" class="h-1 w-full"></div>
         </div>
       )}
 
@@ -342,8 +352,10 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   // Tumblr-ish tag filtering + progressive loading
   const grid = document.getElementById('gallery-grid');
   const loadMoreBtn = document.getElementById('load-more');
+  const loadMoreSentinel = document.getElementById('load-more-sentinel');
   const shownCountEl = document.getElementById('shown-count');
   const filterLabel = document.getElementById('gallery-filter-label');
+  const tagSearch = document.getElementById('tag-search');
 
   let activeTag = new URL(window.location.href).searchParams.get('tag') || '';
   let renderedCount = grid?.querySelectorAll('article[data-tags]').length ?? 0;
@@ -386,6 +398,16 @@ const initialImages = images.slice(0, INITIAL_COUNT);
     if (el.classList.contains('tag-pill')) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  });
+
+  // tag search (desktop)
+  tagSearch?.addEventListener('input', () => {
+    const q = String(tagSearch.value || '').toLowerCase().trim();
+    document.querySelectorAll('.tag-pill[data-filter-tag]').forEach((b) => {
+      const t = (b.getAttribute('data-filter-tag') || '').toLowerCase();
+      if (!t) return; // keep "All"
+      (b as HTMLElement).style.display = !q || t.includes(q) ? '' : 'none';
+    });
   });
 
   // ---- index loading ----
@@ -475,6 +497,22 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   }
 
   loadMoreBtn?.addEventListener('click', () => loadMore());
+
+  // infinite scroll: auto-load when sentinel enters view
+  if (loadMoreSentinel && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        const e = entries[0];
+        if (!e.isIntersecting) return;
+        // avoid spamming: only load if button is still visible
+        if (loadMoreBtn && !loadMoreBtn.classList.contains('hidden') && !loadMoreBtn.hasAttribute('disabled')) {
+          loadMore();
+        }
+      },
+      { root: null, rootMargin: '800px 0px', threshold: 0 }
+    );
+    io.observe(loadMoreSentinel);
+  }
 
   // ---- lightbox ----
   const lightbox = document.getElementById('lightbox');

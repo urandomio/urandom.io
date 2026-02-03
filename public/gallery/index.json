@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-03T23:06:55.746Z",
+  "generatedAt": "2026-02-03T23:56:30.462Z",
   "images": [
     {
       "src": "/gallery/bender-flux-dead-channel-20260203-1500.png",
@@ -8,7 +8,8 @@
       "title": "Bender Flux Dead Channel",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "analog"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -34,7 +35,8 @@
       "description": "",
       "tags": [
         "ai-art",
-        "dead-internet"
+        "dead-internet",
+        "mall"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -107,7 +109,8 @@
       "title": "Bender Flux Hourly",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "liminal"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -136,7 +139,8 @@
       "title": "Bender Flux Abandoned Bumpercars",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "liminal"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -148,7 +152,8 @@
       "title": "Bender Flux Derelict Rollercoaster",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "liminal"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -160,7 +165,8 @@
       "title": "Bender Flux Abandoned Ferris Wheel",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "liminal"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -172,7 +178,8 @@
       "title": "Bender Flux Creepy Carousel",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "liminal"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -184,7 +191,8 @@
       "title": "Bender Flux Radio Telescope Void",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "cosmic"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -196,7 +204,8 @@
       "title": "Bender Flux Static Void Room",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "analog"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -208,7 +217,8 @@
       "title": "Bender Flux Infinite Stairwell",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "liminal"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -220,7 +230,8 @@
       "title": "Bender Flux Dead Datacenter",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "servers"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-03",
@@ -740,7 +751,8 @@
       "title": "Hal9000 Flux Void 02",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "liminal"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-02",
@@ -752,7 +764,8 @@
       "title": "Hal9000 Flux",
       "description": "",
       "tags": [
-        "ai-art"
+        "ai-art",
+        "liminal"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-02",
