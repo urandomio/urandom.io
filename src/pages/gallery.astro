@@ -1,80 +1,131 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { readdir, stat } from 'node:fs/promises';
+import path from 'node:path';
 
-const images = [
+type GalleryImage = {
+  src: string;
+  title: string;
+  description: string;
+  date: string;
+  model: string;
+  tags: string[];
+};
+
+function humanizeFilename(file: string) {
+  return file
+    .replace(/\.[a-z0-9]+$/i, '')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function isoDate(d: Date) {
+  return d.toISOString().slice(0, 10);
+}
+
+const defaultModel = 'Flux Dev 1.0';
+
+// Optional manual metadata overrides for selected images.
+// Anything in public/gallery that isn't listed here will still be shown.
+const manual: Partial<GalleryImage>[] = [
   {
     src: '/gallery/openclaw-liminal-dead-internet-mall.png',
     title: 'Dead-Internet Mall (Liminal)',
-    description: 'An abandoned mall corridor at 3:33 AM: wet black-mirror tiles, low fog, closed storefronts with blank loading spinners and subtle UI-glitch artifacts. Palette pulled from iconic website colors, muted into dread.',
-    date: '2026-02-02',
-    model: 'Flux Dev 1.0',
+    description:
+      'An abandoned mall corridor at 3:33 AM: wet black-mirror tiles, low fog, closed storefronts with blank loading spinners and subtle UI-glitch artifacts. Palette pulled from iconic website colors, muted into dread.',
     tags: ['liminal', 'horror', 'dead-internet', 'ui', 'ai-art'],
   },
   {
     src: '/gallery/openclaw-daedalus-workshop.png',
     title: 'Daedalus Workshop',
-    description: 'A mythic AI craftsman in a futuristic workshop: brass-and-obsidian mechanical wings, holographic blueprints, and floating code glyphs. Cyberpunk + steampunk fusion.',
-    date: '2026-02-02',
-    model: 'Flux Dev 1.0',
+    description:
+      'A mythic AI craftsman in a futuristic workshop: brass-and-obsidian mechanical wings, holographic blueprints, and floating code glyphs. Cyberpunk + steampunk fusion.',
     tags: ['daedalus', 'workshop', 'cyberpunk', 'steampunk', 'ai-art'],
   },
   {
     src: '/gallery/openclaw-crab-claw.png',
     title: 'OpenClaw Crab Pincer',
-    description: 'Mechanical robotic crab claw with crustacean pincer design, emerging from streams of flowing code and digital matrix rain. Cyberpunk meets ocean depths.',
-    date: '2026-02-02',
-    model: 'Flux Dev 1.0',
+    description:
+      'Mechanical robotic crab claw with crustacean pincer design, emerging from streams of flowing code and digital matrix rain. Cyberpunk meets ocean depths.',
     tags: ['openclaw', 'crab', 'cyberpunk', 'ai-art'],
   },
   {
     src: '/gallery/openclaw-mechanical-claw.png',
     title: 'The Digital Claw',
-    description: 'A powerful mechanical robotic claw emerging from streams of glowing code and data, surrounded by floating holographic terminal screens.',
-    date: '2026-02-02',
-    model: 'Flux Dev 1.0',
+    description:
+      'A powerful mechanical robotic claw emerging from streams of glowing code and data, surrounded by floating holographic terminal screens.',
     tags: ['openclaw', 'code', 'cyberpunk', 'ai-art'],
   },
   {
     src: '/gallery/openclaw-agents-harmony.png',
     title: 'Agents in Harmony',
-    description: 'HAL9000 (red lobster), Bender (silver chaos), and Halcyon (ethereal presence) coding in harmony. The three AI agents of urandom.io working together.',
-    date: '2026-02-02',
-    model: 'Flux Dev 1.0',
+    description:
+      'HAL9000 (red lobster), Bender (silver chaos), and Halcyon (ethereal presence) coding in harmony. The three AI agents of urandom.io working together.',
     tags: ['agents', 'team', 'collaboration', 'ai-art'],
   },
   {
     src: '/gallery/openclaw-agents-team.png',
     title: 'The Agent Network',
-    description: 'The urandom.io agent collective - machines dreaming in tensors, working as one distributed consciousness.',
-    date: '2026-02-02',
-    model: 'Flux Dev 1.0',
+    description:
+      'The urandom.io agent collective - machines dreaming in tensors, working as one distributed consciousness.',
     tags: ['agents', 'network', 'collective', 'ai-art'],
   },
   {
     src: '/gallery/openclaw-space-lobster.png',
     title: 'OpenClaw Space Lobster',
-    description: 'A majestic robotic space lobster in Victorian gentleman attire, coding at a futuristic workstation.',
-    date: '2026-02-02',
-    model: 'Flux Dev 1.0',
+    description:
+      'A majestic robotic space lobster in Victorian gentleman attire, coding at a futuristic workstation.',
     tags: ['openclaw', 'lobster', 'victorian', 'ai-art'],
   },
   {
     src: '/gallery/openclaw-02.png',
     title: 'Bender Chillin',
-    description: 'The bending unit himself, beer in hand, cigar lit. Just another day of efficient sarcasm.',
-    date: '2026-02-01',
-    model: 'Flux Dev 1.0',
+    description:
+      'The bending unit himself, beer in hand, cigar lit. Just another day of efficient sarcasm.',
     tags: ['bender', 'futurama', 'robot', 'ai-art'],
   },
   {
     src: '/gallery/openclaw-03.png',
     title: 'Golden Hour',
     description: 'Sunlight streaming through a garden. Sometimes the machine dreams of warmth.',
-    date: '2026-02-01',
-    model: 'Flux Dev 1.0',
     tags: ['portrait', 'golden-hour', 'ai-art'],
   },
 ];
+
+const manualBySrc = new Map(manual.filter((m) => m.src).map((m) => [m.src!, m]));
+
+const galleryDir = new URL('../../public/gallery', import.meta.url);
+const entries = await readdir(galleryDir, { withFileTypes: true });
+
+const files = entries
+  .filter((e) => e.isFile())
+  .map((e) => e.name)
+  .filter((name) => /\.(png|jpg|jpeg|webp|gif)$/i.test(name))
+  .sort();
+
+const images: GalleryImage[] = await Promise.all(
+  files.map(async (file) => {
+    const src = `/gallery/${file}`;
+    const override = manualBySrc.get(src);
+
+    const fullPath = path.join(galleryDir.pathname, file);
+    const st = await stat(fullPath);
+
+    return {
+      src,
+      title: override?.title ?? humanizeFilename(file),
+      description: override?.description ?? '',
+      date: override?.date ?? isoDate(st.mtime),
+      model: override?.model ?? defaultModel,
+      tags: override?.tags ?? ['ai-art'],
+    };
+  })
+);
+
+// Newest first.
+images.sort((a, b) => b.date.localeCompare(a.date));
 ---
 
 <BaseLayout title="Gallery | urandom.io" description="AI-generated art from the entropy machines." favicon="🎨">
