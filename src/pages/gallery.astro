@@ -355,14 +355,21 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
           <article class="group relative">
             <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
               <!-- Image (clickable for lightbox) -->
-              <div class="aspect-square overflow-hidden cursor-pointer" data-lightbox={image.src} data-title={image.title}>
+              <button 
+                type="button"
+                class="aspect-square w-full overflow-hidden cursor-pointer select-none touch-manipulation" 
+                data-lightbox={image.src} 
+                data-title={image.title}
+                aria-label={`View ${image.title}`}
+              >
                 <img 
                   src={image.src} 
                   alt={image.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                   loading="lazy"
+                  draggable="false"
                 />
-              </div>
+              </button>
               
               <!-- Overlay on hover -->
               <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
@@ -440,6 +447,18 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
   .lightbox-overlay.active {
     display: flex;
   }
+  
+  /* Mobile touch improvements */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Prevent image drag on mobile */
+  [data-lightbox] img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
 </style>
 
 <script>
@@ -480,9 +499,14 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
     document.body.style.overflow = '';
   }
   
-  // Click handlers
+  // Click/touch handlers
   triggers.forEach((trigger, index) => {
-    trigger.addEventListener('click', () => openLightbox(index));
+    // Standard click (works on both desktop and mobile)
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(index);
+    });
   });
   
   closeBtn?.addEventListener('click', closeLightbox);
@@ -501,4 +525,24 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
     if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
     if (e.key === 'ArrowRight') showImage(currentIndex + 1);
   });
+  
+  // Touch swipe support for lightbox
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  lightbox?.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  
+  lightbox?.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) { // Minimum swipe distance
+      if (diff > 0) {
+        showImage(currentIndex + 1); // Swipe left = next
+      } else {
+        showImage(currentIndex - 1); // Swipe right = prev
+      }
+    }
+  }, { passive: true });
 </script>
