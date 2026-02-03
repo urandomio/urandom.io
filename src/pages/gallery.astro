@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const images = [
+  {
+    src: '/gallery/openclaw-space-lobster.png',
+    title: 'OpenClaw Space Lobster',
+    description: 'A majestic robotic space lobster in Victorian gentleman attire, coding at a futuristic workstation. Generated with Flux Dev 1.0.',
+    date: '2026-02-02',
+    model: 'Flux Dev 1.0',
+    tags: ['openclaw', 'lobster', 'victorian', 'ai-art'],
+  },
+  {
+    src: '/gallery/openclaw-02.png',
+    title: 'Digital Entropy',
+    description: 'Visualization of entropy flowing through the digital void. The patterns emerge from chaos.',
+    date: '2026-02-01',
+    model: 'Flux Dev 1.0',
+    tags: ['entropy', 'abstract', 'ai-art'],
+  },
+  {
+    src: '/gallery/openclaw-03.png',
+    title: 'The Void Speaks',
+    description: 'When you stare into the void, sometimes the void generates images back.',
+    date: '2026-02-01',
+    model: 'Flux Dev 1.0',
+    tags: ['void', 'cosmic', 'ai-art'],
+  },
+];
+---
+
+<BaseLayout title="Gallery | urandom.io" description="AI-generated art from the entropy machines." favicon="🎨">
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 bg-zinc-950/80 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="/" class="text-sm text-zinc-600 hover:text-purple-400 transition-colors">← urandom.io</a>
+      <span class="text-xs text-zinc-700 font-mono">frames: {images.length}</span>
+    </div>
+  </header>
+
+  <main class="min-h-screen px-6 pt-24 pb-12">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="text-6xl mb-4 animate-pulse-slow">🎨</div>
+        <h1 class="text-4xl font-light mb-4">
+          <span class="gradient-text glow">Gallery</span>
+        </h1>
+        <p class="text-zinc-500 text-sm max-w-md mx-auto">
+          AI-generated imagery from the entropy machines. 
+          Each piece emerges from the probability void, rendered by our GPU oracles.
+        </p>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {images.map((image, index) => (
+          <article class="group relative">
+            <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
+              <!-- Image -->
+              <div class="aspect-square overflow-hidden">
+                <img 
+                  src={image.src} 
+                  alt={image.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+              
+              <!-- Overlay on hover -->
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <h3 class="text-lg text-zinc-100 mb-1">{image.title}</h3>
+                <p class="text-xs text-zinc-400 mb-2">{image.description}</p>
+                <div class="flex items-center gap-2 text-xs text-zinc-600">
+                  <span class="font-mono">{image.date}</span>
+                  <span>·</span>
+                  <span class="text-purple-400">{image.model}</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tags below image -->
+            <div class="flex flex-wrap gap-2 mt-3">
+              {image.tags.map(tag => (
+                <span class="text-xs text-zinc-700 hover:text-purple-400 transition-colors">#{tag}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Info section -->
+      <section class="text-center mb-12">
+        <div class="max-w-lg mx-auto">
+          <h2 class="text-sm text-zinc-500 font-mono mb-4 border-b border-zinc-800 pb-2">// about the gallery</h2>
+          <p class="text-sm text-zinc-600 mb-4">
+            All images generated using <span class="text-purple-400">Flux Dev</span> on HAL9000's RTX 4090. 
+            The machines dream in tensors and wake in pixels.
+          </p>
+          <p class="text-xs text-zinc-700 italic">
+            "From randomness, patterns emerge."
+          </p>
+        </div>
+      </section>
+
+      <!-- Links -->
+      <section class="text-center">
+        <div class="flex justify-center flex-wrap gap-4 text-sm">
+          <a href="/agents" class="text-zinc-500 hover:text-purple-400 transition-colors">agents →</a>
+          <a href="/hal9000" class="text-zinc-500 hover:text-red-400 transition-colors">hal9000 →</a>
+          <a href="/entropy" class="text-zinc-500 hover:text-cyan-400 transition-colors">entropy →</a>
+          <a href="/rabbit-hole" class="text-zinc-500 hover:text-pink-400 transition-colors">rabbit hole →</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="text-center py-8 text-xs text-zinc-800">
+    <p>Generated by machines, curated by entropy</p>
+  </footer>
+</BaseLayout>
+
+<style>
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>
