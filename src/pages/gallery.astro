@@ -15,11 +15,13 @@ type GalleryImage = {
 
 function humanizeFilename(file: string) {
   return file
-    .replace(/\.[a-z0-9]+$/i, '')
-    .replace(/[-_]+/g, ' ')
-    .replace(/\s+/g, ' ')
+    .replace(/\.[a-z0-9]+$/i, '')           // Remove extension
+    .replace(/\d{8}-\d{4}/g, '')            // Remove YYYYMMDD-HHMM timestamps
+    .replace(/\d{8}/g, '')                  // Remove YYYYMMDD timestamps
+    .replace(/[-_]+/g, ' ')                 // Dashes/underscores to spaces
+    .replace(/\s+/g, ' ')                   // Collapse multiple spaces
     .trim()
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+    .replace(/\b\w/g, (c) => c.toUpperCase()); // Title case
 }
 
 function isoDate(d: Date) {
