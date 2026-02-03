@@ -4,189 +4,454 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Entropy | urandom.io" description="Live generative art from random data.">
   <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center gap-4">
-    <a href="/" class="text-sm text-zinc-600 hover:text-zinc-400 transition-colors whitespace-nowrap">← back</a>
-    <div class="flex items-center gap-3 text-xs text-zinc-600 flex-1 justify-end">
+    <a href="/" class="text-sm text-zinc-400 hover:text-zinc-200 transition-colors whitespace-nowrap">← back</a>
+    <div class="flex items-center gap-3 text-xs text-zinc-400 flex-1 justify-end">
       <span class="whitespace-nowrap">• streaming entropy</span>
       <span id="bytes-counter" class="whitespace-nowrap">0 bytes visualized</span>
     </div>
   </header>
-  
+
   <canvas id="entropy-canvas" class="fixed inset-0 w-full h-full cursor-crosshair"></canvas>
-  
-  <div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-6 text-xs text-zinc-600 z-10">
-    <span class="cursor-pointer hover:text-purple-400 transition-colors" id="mode-btn">mode: <span id="mode-label">flow</span></span>
-    <span class="cursor-pointer hover:text-purple-400 transition-colors" id="palette-btn">palette: <span id="palette-label">void</span></span>
-    <span class="cursor-pointer hover:text-purple-400 transition-colors" id="speed-btn">speed: <span id="speed-label">normal</span></span>
-    <button id="save-btn" class="hover:text-purple-400 transition-colors">save png</button>
+
+  <div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-6 text-xs text-zinc-300 z-10 px-4 py-2 rounded-full bg-zinc-950/40 backdrop-blur border border-zinc-800/60">
+    <span class="cursor-pointer hover:text-purple-300 transition-colors" id="mode-btn">mode: <span id="mode-label">flow</span></span>
+    <span class="cursor-pointer hover:text-purple-300 transition-colors" id="palette-btn">palette: <span id="palette-label">void</span></span>
+    <span class="cursor-pointer hover:text-purple-300 transition-colors" id="speed-btn">speed: <span id="speed-label">normal</span></span>
+    <button id="save-btn" class="hover:text-purple-300 transition-colors">save png</button>
   </div>
-  
-  <div class="fixed bottom-6 right-6 text-xs text-zinc-700 z-10">
-    click to freeze · 🤖 bender
+
+  <div class="fixed bottom-6 right-6 text-[11px] text-zinc-500 z-10 select-none">
+    click to freeze · <span class="text-zinc-400">m</span> mode · <span class="text-zinc-400">p</span> palette · <span class="text-zinc-400">s</span> speed · 🤖 bender
   </div>
 </BaseLayout>
 
 <script>
-  const canvas = document.getElementById('entropy-canvas') as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d')!;
-  
-  let width: number, height: number;
+  // @ts-nocheck
+  const canvas = document.getElementById('entropy-canvas');
+  if (!(canvas instanceof HTMLCanvasElement)) throw new Error('Missing canvas');
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) throw new Error('Missing 2d context');
+
+  let width = 0;
+  let height = 0;
   let paused = false;
   let bytesUsed = 0;
-  let mode = 0;
-  let palette = 0;
-  let speed = 1;
-  
+
+  // Controls
   const modes = ['flow', 'particles', 'waves', 'noise', 'cellular'];
+  let mode = 0;
+
   const palettes = [
-    { name: 'void', colors: ['#1a1a2e', '#16213e', '#533483', '#e94560'] },
-    { name: 'ember', colors: ['#1a0a0a', '#5c2e2e', '#f97316', '#fbbf24'] },
-    { name: 'matrix', colors: ['#0a1a0a', '#1a3a1a', '#22c55e', '#4ade80'] },
-    { name: 'mono', colors: ['#111', '#333', '#666', '#999'] },
-    { name: 'rainbow', colors: ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6', '#8b5cf6'] },
+    { name: 'void', colors: ['#0b0b14', '#121a3a', '#533483', '#e94560'] },
+    { name: 'ember', colors: ['#070405', '#3b1212', '#f97316', '#fde68a'] },
+    { name: 'matrix', colors: ['#06120a', '#0f2a17', '#22c55e', '#86efac'] },
+    { name: 'neon', colors: ['#00e5ff', '#ff2bd6', '#a7ff00', '#7c3aed'] },
+    { name: 'mono', colors: ['#111827', '#334155', '#94a3b8', '#e2e8f0'] },
+    { name: 'rainbow', colors: ['#ef4444', '#f97316', '#eab308', '#22c55e', '#06b6d4', '#3b82f6', '#8b5cf6'] },
   ];
+  let palette = 0;
+
   const speeds = [0.5, 1, 2, 4];
   const speedLabels = ['slow', 'normal', 'fast', 'chaos'];
   let speedIndex = 1;
-  
-  let particles: Array<{x: number, y: number, vx: number, vy: number, life: number}> = [];
-  let flowField: number[][] = [];
-  let time = 0;
-  
-  function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-    initFlowField();
-  }
-  
-  function initFlowField() {
-    const cols = Math.ceil(width / 20);
-    const rows = Math.ceil(height / 20);
-    flowField = Array(cols).fill(0).map(() => Array(rows).fill(0));
-  }
-  
-  function getRandomBytes(n: number): Uint8Array {
+  let speed = speeds[speedIndex];
+
+  function getRandomBytes(n) {
     const bytes = new Uint8Array(n);
     crypto.getRandomValues(bytes);
     bytesUsed += n;
-    updateCounter();
-    return bytes;
-  }
-  
-  function updateCounter() {
     const el = document.getElementById('bytes-counter');
     if (el) el.textContent = `${bytesUsed.toLocaleString()} bytes visualized`;
+    return bytes;
   }
-  
-  function getColor(idx: number): string {
-    const colors = palettes[palette].colors;
-    return colors[idx % colors.length];
+
+  function color(i) {
+    const cols = palettes[palette].colors;
+    return cols[i % cols.length];
   }
-  
-  function drawFlow() {
-    const bytes = getRandomBytes(100);
-    ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
+
+  // State
+  let time = 0;
+  let particles = []; // {x,y,vx,vy,life,r}
+
+  // noise buffer
+  let noiseW = 160;
+  let noiseH = 90;
+  let noiseImage = new ImageData(noiseW, noiseH);
+
+  // cellular automaton
+  let cellSize = 6;
+  let cellCols = 0;
+  let cellRows = 0;
+  let cells = new Uint8Array(0);
+  let nextCells = new Uint8Array(0);
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+
+    // noise resolution scaled by screen (keep cheap)
+    const scale = Math.max(1, Math.floor(Math.min(width, height) / 900));
+    noiseW = Math.max(120, Math.floor(width / (6 * scale)));
+    noiseH = Math.max(80, Math.floor(height / (6 * scale)));
+    noiseImage = new ImageData(noiseW, noiseH);
+
+    // cellular
+    cellSize = Math.max(4, Math.floor(Math.min(width, height) / 180));
+    cellCols = Math.ceil(width / cellSize);
+    cellRows = Math.ceil(height / cellSize);
+    cells = new Uint8Array(cellCols * cellRows);
+    nextCells = new Uint8Array(cellCols * cellRows);
+
+    // seed cells
+    const seed = getRandomBytes(cellCols * cellRows);
+    for (let i = 0; i < cells.length; i++) cells[i] = seed[i] > 180 ? 1 : 0;
+
+    clear();
+  }
+
+  function clear() {
+    // deep background with subtle vignette
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = '#05050a';
     ctx.fillRect(0, 0, width, height);
-    
-    for (let i = 0; i < bytes.length; i += 2) {
+
+    const grad = ctx.createRadialGradient(width * 0.5, height * 0.5, 0, width * 0.5, height * 0.5, Math.max(width, height) * 0.7);
+    grad.addColorStop(0, 'rgba(255,255,255,0.03)');
+    grad.addColorStop(1, 'rgba(0,0,0,0.35)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, width, height);
+  }
+
+  function drawFlow() {
+    // trails
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = 'rgba(5, 5, 10, 0.06)';
+    ctx.fillRect(0, 0, width, height);
+
+    const bytes = getRandomBytes(240);
+    ctx.globalCompositeOperation = 'lighter';
+
+    for (let i = 0; i < bytes.length; i += 4) {
       const x = (bytes[i] / 255) * width;
       const y = (bytes[i + 1] / 255) * height;
-      const angle = time * 0.01 + x * 0.01 + y * 0.01;
-      
+      const a = (bytes[i + 2] / 255) * Math.PI * 2;
+      const amp = 10 + (bytes[i + 3] / 255) * 42;
+      const angle = a + time * 0.005 + (x - width / 2) * 0.002 + (y - height / 2) * 0.002;
+
       ctx.beginPath();
       ctx.moveTo(x, y);
-      ctx.lineTo(x + Math.cos(angle) * 20, y + Math.sin(angle) * 20);
-      ctx.strokeStyle = getColor(Math.floor(i / 2)) + '40';
-      ctx.lineWidth = 1;
+      ctx.lineTo(x + Math.cos(angle) * amp, y + Math.sin(angle) * amp);
+      ctx.strokeStyle = color(i / 4) + '66';
+      ctx.lineWidth = 0.8 + (amp / 60);
       ctx.stroke();
     }
   }
-  
+
   function drawParticles() {
-    ctx.fillStyle = 'rgba(10, 10, 15, 0.02)';
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = 'rgba(5, 5, 10, 0.04)';
     ctx.fillRect(0, 0, width, height);
-    
-    // Add new particles
-    const bytes = getRandomBytes(6);
-    for (let i = 0; i < 2; i++) {
+
+    const bytes = getRandomBytes(24);
+    for (let i = 0; i < 6; i++) {
+      const bx = bytes[i * 4];
+      const by = bytes[i * 4 + 1];
+      const bvx = bytes[i * 4 + 2];
+      const bvy = bytes[i * 4 + 3];
       particles.push({
-        x: (bytes[i * 3] / 255) * width,
-        y: (bytes[i * 3 + 1] / 255) * height,
-        vx: (bytes[i * 3 + 2] / 255 - 0.5) * 4,
-        vy: (bytes[(i * 3 + 3) % 6] / 255 - 0.5) * 4,
-        life: 200
+        x: (bx / 255) * width,
+        y: (by / 255) * height,
+        vx: (bvx / 255 - 0.5) * 8,
+        vy: (bvy / 255 - 0.5) * 8,
+        life: 260,
+        r: 1.3 + (bvx / 255) * 2.2,
       });
     }
-    
-    // Update and draw particles
-    particles = particles.filter(p => {
+
+    ctx.globalCompositeOperation = 'lighter';
+
+    particles = particles.filter((p) => {
       p.x += p.vx * speed;
       p.y += p.vy * speed;
-      p.life -= speed;
-      
-      const alpha = Math.floor((p.life / 200) * 255).toString(16).padStart(2, '0');
+      p.life -= 1.2 * speed;
+
+      // wrap for continuous motion
+      if (p.x < -10) p.x = width + 10;
+      if (p.x > width + 10) p.x = -10;
+      if (p.y < -10) p.y = height + 10;
+      if (p.y > height + 10) p.y = -10;
+
+      const t = Math.max(0, Math.min(1, p.life / 260));
+      const alpha = Math.floor(t * 160).toString(16).padStart(2, '0');
+
       ctx.beginPath();
-      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-      ctx.fillStyle = getColor(Math.floor(p.life / 50)) + alpha;
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = color(Math.floor((1 - t) * 10)) + alpha;
       ctx.fill();
-      
+
+      // tiny trail
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(p.x - p.vx * 1.2, p.y - p.vy * 1.2);
+      ctx.strokeStyle = color(Math.floor((1 - t) * 10) + 1) + '33';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
       return p.life > 0;
     });
-    
-    if (particles.length > 500) particles = particles.slice(-500);
+
+    if (particles.length > 1200) particles = particles.slice(-1200);
   }
-  
+
+  function drawWaves() {
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = 'rgba(5, 5, 10, 0.08)';
+    ctx.fillRect(0, 0, width, height);
+
+    const lanes = 7;
+    const steps = Math.max(90, Math.floor(width / 10));
+    const bytes = getRandomBytes(lanes * 8);
+
+    ctx.globalCompositeOperation = 'lighter';
+
+    for (let l = 0; l < lanes; l++) {
+      const b0 = bytes[l * 8];
+      const b1 = bytes[l * 8 + 1];
+      const b2 = bytes[l * 8 + 2];
+      const b3 = bytes[l * 8 + 3];
+
+      const y0 = ((l + 1) / (lanes + 1)) * height;
+      const amp = 18 + (b0 / 255) * 80;
+      const freq = 0.004 + (b1 / 255) * 0.02;
+      const drift = (b2 / 255 - 0.5) * 0.6;
+      const phase = (b3 / 255) * Math.PI * 2;
+
+      ctx.beginPath();
+      for (let i = 0; i <= steps; i++) {
+        const x = (i / steps) * width;
+        const y = y0 + Math.sin(x * freq + phase + time * 0.02) * amp + Math.sin((x * freq * 2) + time * 0.03) * (amp * 0.25);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+
+      ctx.strokeStyle = color(l) + '66';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      // secondary glow
+      ctx.strokeStyle = color(l + 2) + '22';
+      ctx.lineWidth = 4;
+      ctx.stroke();
+
+      // slight horizontal drift (by translating the canvas subtly)
+      ctx.setTransform(1, 0, 0, 1, drift * speed, 0);
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+    }
+  }
+
+  function drawNoise() {
+    // generate a low-res noise field from entropy bytes then scale up
+    const bytes = getRandomBytes(noiseW * noiseH);
+    const data = noiseImage.data;
+
+    const cols = palettes[palette].colors;
+    // preparse palette into rgb once per frame
+    const rgb = cols.map((hex) => {
+      const h = hex.replace('#', '');
+      const r = parseInt(h.slice(0, 2), 16);
+      const g = parseInt(h.slice(2, 4), 16);
+      const b = parseInt(h.slice(4, 6), 16);
+      return [r, g, b];
+    });
+
+    for (let i = 0; i < bytes.length; i++) {
+      const v = bytes[i];
+      const c = rgb[Math.floor((v / 255) * (rgb.length - 1))];
+      const idx = i * 4;
+      data[idx] = c[0];
+      data[idx + 1] = c[1];
+      data[idx + 2] = c[2];
+      // alpha modulated by time for shimmer
+      data[idx + 3] = 40 + ((v + (time % 255)) % 120);
+    }
+
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = 'rgba(5,5,10,0.20)';
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.save();
+    ctx.imageSmoothingEnabled = true;
+    ctx.globalCompositeOperation = 'lighter';
+
+    // scale the noise to full screen
+    const tmp = document.createElement('canvas');
+    tmp.width = noiseW;
+    tmp.height = noiseH;
+    const tctx = tmp.getContext('2d');
+    if (tctx) {
+      tctx.putImageData(noiseImage, 0, 0);
+      ctx.drawImage(tmp, 0, 0, width, height);
+    }
+
+    // scanlines
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+    ctx.lineWidth = 1;
+    for (let y = 0; y < height; y += 6) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(width, y);
+      ctx.stroke();
+    }
+
+    ctx.restore();
+  }
+
+  function idx(x, y) {
+    return y * cellCols + x;
+  }
+
+  function stepCellular() {
+    // elementary-ish life: random births/decays mixed with neighbor rules
+    const bytes = getRandomBytes(64);
+    const wobble = (bytes[0] / 255) * 0.35;
+
+    for (let y = 0; y < cellRows; y++) {
+      for (let x = 0; x < cellCols; x++) {
+        const i = idx(x, y);
+        const self = cells[i];
+
+        let n = 0;
+        for (let oy = -1; oy <= 1; oy++) {
+          for (let ox = -1; ox <= 1; ox++) {
+            if (ox === 0 && oy === 0) continue;
+            const xx = (x + ox + cellCols) % cellCols;
+            const yy = (y + oy + cellRows) % cellRows;
+            n += cells[idx(xx, yy)];
+          }
+        }
+
+        // base rule: life-ish
+        let v = self;
+        if (self === 1 && (n < 2 || n > 3)) v = 0;
+        else if (self === 0 && n === 3) v = 1;
+
+        // entropy inject: occasional flips
+        const b = bytes[(x + y) % bytes.length] / 255;
+        if (b < wobble * 0.08) v = 1;
+        if (b > 1 - wobble * 0.08) v = 0;
+
+        nextCells[i] = v;
+      }
+    }
+
+    const tmp = cells;
+    cells = nextCells;
+    nextCells = tmp;
+  }
+
+  function drawCellular() {
+    // slow fade so patterns linger
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = 'rgba(5,5,10,0.10)';
+    ctx.fillRect(0, 0, width, height);
+
+    // do multiple steps at higher speeds
+    const steps = Math.max(1, Math.floor(speed));
+    for (let i = 0; i < steps; i++) stepCellular();
+
+    ctx.globalCompositeOperation = 'lighter';
+
+    for (let y = 0; y < cellRows; y++) {
+      for (let x = 0; x < cellCols; x++) {
+        const v = cells[idx(x, y)];
+        if (!v) continue;
+
+        const c = color((x + y + Math.floor(time / 20)) % 12);
+        ctx.fillStyle = c + '55';
+        ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+      }
+    }
+
+    // subtle outline
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.strokeStyle = 'rgba(255,255,255,0.02)';
+    ctx.strokeRect(0.5, 0.5, width - 1, height - 1);
+  }
+
   function draw() {
-    if (paused) {
-      requestAnimationFrame(draw);
-      return;
-    }
-    
-    time += speed;
-    
-    switch (modes[mode]) {
-      case 'flow': drawFlow(); break;
-      case 'particles': drawParticles(); break;
-      default: drawFlow();
-    }
-    
     requestAnimationFrame(draw);
+    if (paused) return;
+
+    time += speed;
+
+    switch (modes[mode]) {
+      case 'flow':
+        drawFlow();
+        break;
+      case 'particles':
+        drawParticles();
+        break;
+      case 'waves':
+        drawWaves();
+        break;
+      case 'noise':
+        drawNoise();
+        break;
+      case 'cellular':
+        drawCellular();
+        break;
+      default:
+        drawFlow();
+    }
   }
-  
-  // Initialize
+
+  // init
   resize();
   window.addEventListener('resize', resize);
   draw();
-  
-  // Controls
+
+  // Interactions
   canvas.addEventListener('click', () => {
     paused = !paused;
   });
-  
-  document.getElementById('mode-btn')?.addEventListener('click', () => {
-    mode = (mode + 1) % modes.length;
+
+  function setMode(next) {
+    mode = ((next % modes.length) + modes.length) % modes.length;
     const el = document.getElementById('mode-label');
     if (el) el.textContent = modes[mode];
-    ctx.fillStyle = '#0a0a0f';
-    ctx.fillRect(0, 0, width, height);
-  });
-  
-  document.getElementById('palette-btn')?.addEventListener('click', () => {
-    palette = (palette + 1) % palettes.length;
+    clear();
+  }
+
+  function setPalette(next) {
+    palette = ((next % palettes.length) + palettes.length) % palettes.length;
     const el = document.getElementById('palette-label');
     if (el) el.textContent = palettes[palette].name;
-  });
-  
-  document.getElementById('speed-btn')?.addEventListener('click', () => {
-    speedIndex = (speedIndex + 1) % speeds.length;
+  }
+
+  function setSpeed(next) {
+    speedIndex = ((next % speeds.length) + speeds.length) % speeds.length;
     speed = speeds[speedIndex];
     const el = document.getElementById('speed-label');
     if (el) el.textContent = speedLabels[speedIndex];
-  });
-  
+  }
+
+  document.getElementById('mode-btn')?.addEventListener('click', () => setMode(mode + 1));
+  document.getElementById('palette-btn')?.addEventListener('click', () => setPalette(palette + 1));
+  document.getElementById('speed-btn')?.addEventListener('click', () => setSpeed(speedIndex + 1));
+
   document.getElementById('save-btn')?.addEventListener('click', () => {
     const link = document.createElement('a');
     link.download = `entropy-${Date.now()}.png`;
-    link.href = canvas.toDataURL();
+    link.href = canvas.toDataURL('image/png');
     link.click();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'm') setMode(mode + 1);
+    if (e.key === 'p') setPalette(palette + 1);
+    if (e.key === 's') setSpeed(speedIndex + 1);
+    if (e.key === ' ') paused = !paused;
   });
 </script>
