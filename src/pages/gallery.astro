@@ -26,6 +26,16 @@ function isoDate(d: Date) {
   return d.toISOString().slice(0, 10);
 }
 
+// Extract YYYYMMDD from filename for reliable sorting (git clone resets mtimes)
+function extractDateFromFilename(filename: string): string | null {
+  // Match YYYYMMDD pattern (e.g., "bender-flux-hospital-20260202.png")
+  const match = filename.match(/(\d{4})(\d{2})(\d{2})/);
+  if (match) {
+    return `${match[1]}-${match[2]}-${match[3]}`;
+  }
+  return null;
+}
+
 const defaultModel = 'Flux Dev 1.0';
 
 // Optional manual metadata overrides for selected images.
@@ -170,20 +180,29 @@ const images: GalleryImage[] = await Promise.all(
     const fullPath = path.join(galleryDir.pathname, file);
     const st = await stat(fullPath);
 
+    // Prefer date from filename (YYYYMMDD), then manual override, then mtime
+    const filenameDate = extractDateFromFilename(file);
+    const date = filenameDate ?? override?.date ?? isoDate(st.mtime);
+
     return {
       src,
       title: override?.title ?? humanizeFilename(file),
       description: override?.description ?? '',
-      date: override?.date ?? isoDate(st.mtime),
-      mtime: st.mtime.getTime(), // full timestamp for precise sorting
+      date,
+      mtime: st.mtime.getTime(),
       model: override?.model ?? defaultModel,
       tags: override?.tags ?? ['ai-art'],
     };
   })
 );
 
-// Newest first (by full timestamp, not just date).
-images.sort((a, b) => b.mtime - a.mtime);
+// Newest first: sort by date descending, then by filename descending (for same-day ordering)
+images.sort((a, b) => {
+  const dateCompare = b.date.localeCompare(a.date);
+  if (dateCompare !== 0) return dateCompare;
+  // Same date: sort by filename descending (puts -08 before -01, newer files first)
+  return b.src.localeCompare(a.src);
+});
 ---
 
 <BaseLayout title="Gallery | urandom.io" description="AI-generated art from the entropy machines." favicon="🎨">
