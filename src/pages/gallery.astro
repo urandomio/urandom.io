@@ -180,9 +180,10 @@ const images: GalleryImage[] = await Promise.all(
     const fullPath = path.join(galleryDir.pathname, file);
     const st = await stat(fullPath);
 
-    // Prefer date from filename (YYYYMMDD), then manual override, then mtime
+    // Prefer date from filename (YYYYMMDD), then manual override, then OLD fallback
+    // (mtime is unreliable on deployed builds - git clone resets it to checkout time)
     const filenameDate = extractDateFromFilename(file);
-    const date = filenameDate ?? override?.date ?? isoDate(st.mtime);
+    const date = filenameDate ?? override?.date ?? '1970-01-01'; // old fallback pushes undated files to bottom
 
     return {
       src,
