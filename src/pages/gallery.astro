@@ -465,7 +465,8 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     user-select: none;
-    touch-action: manipulation;
+    /* allow vertical scrolling gestures to pass through without triggering "tap" */
+    touch-action: pan-y;
   }
 
   .lightbox-trigger * {
@@ -519,15 +520,52 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
   }
   
   // Click/touch handlers (mobile-friendly)
+  // Goal: don't open the lightbox when the user is trying to scroll.
   triggers.forEach((trigger, index) => {
-    const handler = (e: Event) => {
+    // Desktop / non-touch
+    trigger.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       openLightbox(index);
-    };
-    trigger.addEventListener('click', handler);
-    // iOS Safari sometimes selects text on tap; capture touchstart too.
-    trigger.addEventListener('touchstart', handler, { passive: false });
+    });
+
+    // Touch: only open if it's a true tap (minimal movement)
+    let startX = 0;
+    let startY = 0;
+    let moved = false;
+
+    trigger.addEventListener(
+      'touchstart',
+      (e) => {
+        const t = e.changedTouches[0];
+        startX = t.clientX;
+        startY = t.clientY;
+        moved = false;
+      },
+      { passive: true }
+    );
+
+    trigger.addEventListener(
+      'touchmove',
+      (e) => {
+        const t = e.changedTouches[0];
+        const dx = Math.abs(t.clientX - startX);
+        const dy = Math.abs(t.clientY - startY);
+        if (dx > 8 || dy > 8) moved = true;
+      },
+      { passive: true }
+    );
+
+    trigger.addEventListener(
+      'touchend',
+      (e) => {
+        if (moved) return; // user was scrolling
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox(index);
+      },
+      { passive: false }
+    );
   });
   
   closeBtn?.addEventListener('click', closeLightbox);
