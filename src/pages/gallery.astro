@@ -73,17 +73,17 @@ const manual: Partial<GalleryImage>[] = [
   },
   {
     src: '/gallery/bender-flux-tiltshift-ghosttown-20260203-0003.png',
-    title: 'Decrepit Carnival (Miniature)',
-    description:
-      'Tilt-shift miniature photography of decrepit carnival at dusk. Ferris wheel and rides look like abandoned toys. Fog and rust create eerie atmosphere.',
-    tags: ['tilt-shift', 'miniature', 'carnival', 'horror', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-tiltshift-carnival-20260203-0002.png',
     title: 'Flooded Ghost Town (Miniature)',
     description:
       'Tilt-shift miniature photography of flooded ghost town. Dark murky water submerging tiny houses. Post-apocalyptic diorama with uncanny toy-like scale.',
     tags: ['tilt-shift', 'miniature', 'flood', 'horror', 'ai-art'],
+  },
+  {
+    src: '/gallery/bender-flux-tiltshift-carnival-20260203-0002.png',
+    title: 'Decrepit Carnival (Miniature)',
+    description:
+      'Tilt-shift miniature photography of decrepit carnival at dusk. Ferris wheel and rides look like abandoned toys. Fog and rust create eerie atmosphere.',
+    tags: ['tilt-shift', 'miniature', 'carnival', 'horror', 'ai-art'],
   },
   {
     src: '/gallery/bender-flux-tiltshift-city-20260203-0001.png',
@@ -338,6 +338,19 @@ const images: GalleryImage[] = await Promise.all(
 
 // Newest first: sort by sortKey descending (YYYYMMDDHHMM format)
 images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
+
+// Build tag list for UI (exclude the generic tag)
+const tagCounts = new Map<string, number>();
+for (const img of images) {
+  for (const t of img.tags) {
+    if (t === 'ai-art') continue;
+    tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
+  }
+}
+const topTags = Array.from(tagCounts.entries())
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 14)
+  .map(([t]) => t);
 ---
 
 <BaseLayout title="Gallery | urandom.io" description="AI-generated art from the entropy machines." favicon="🎨">
@@ -362,10 +375,23 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
         </p>
       </div>
 
+      <!-- Tag bar (Tumblr-ish on mobile) -->
+      <div class="sticky top-[72px] z-40 -mx-6 px-6 py-3 mb-6 bg-zinc-950/80 backdrop-blur border-b border-zinc-900">
+        <div class="max-w-6xl mx-auto flex items-center gap-2 overflow-x-auto no-scrollbar">
+          <button type="button" class="tag-pill" data-filter-tag="">All</button>
+          {topTags.map((t) => (
+            <button type="button" class="tag-pill" data-filter-tag={t}>#{t}</button>
+          ))}
+        </div>
+        <div class="max-w-6xl mx-auto mt-2 text-[11px] text-zinc-700 font-mono">
+          <span id="gallery-filter-label">newest → oldest</span>
+        </div>
+      </div>
+
       <!-- Gallery Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {images.map((image, index) => (
-          <article class="group relative">
+          <article class="group relative" data-tags={image.tags.join(' ')} data-src={image.src}>
             <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
               <!-- Image (clickable for lightbox) -->
               <button
@@ -398,8 +424,8 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
             
             <!-- Tags below image -->
             <div class="flex flex-wrap gap-2 mt-3">
-              {image.tags.map(tag => (
-                <span class="text-xs text-zinc-700 hover:text-purple-400 transition-colors">#{tag}</span>
+              {image.tags.map((tag) => (
+                <button type="button" class="tag-chip" data-filter-tag={tag}>#{tag}</button>
               ))}
             </div>
           </article>
@@ -486,9 +512,82 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
     -webkit-user-drag: none;
     user-select: none;
   }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+
+  .tag-pill {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 9999px;
+    border: 1px solid rgba(39, 39, 42, 0.9);
+    background: rgba(24, 24, 27, 0.35);
+    color: rgba(161, 161, 170, 1);
+    white-space: nowrap;
+    transition: border-color 200ms ease, color 200ms ease, background 200ms ease;
+  }
+  .tag-pill:hover {
+    border-color: rgba(168, 85, 247, 0.55);
+    color: rgba(216, 180, 254, 1);
+  }
+  .tag-pill.active {
+    border-color: rgba(168, 85, 247, 0.85);
+    background: rgba(88, 28, 135, 0.25);
+    color: rgba(216, 180, 254, 1);
+  }
+
+  .tag-chip {
+    font-size: 12px;
+    color: rgba(113, 113, 122, 1);
+    transition: color 200ms ease;
+  }
+  .tag-chip:hover {
+    color: rgba(192, 132, 252, 1);
+  }
 </style>
 
 <script>
+  // Filtering (Tumblr-ish)
+  const filterLabel = document.getElementById('gallery-filter-label');
+  const tagButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-tag]');
+  const cards = document.querySelectorAll<HTMLElement>('article[data-tags]');
+
+  function setActiveTag(tag: string) {
+    tagButtons.forEach((b) => {
+      const t = b.getAttribute('data-filter-tag') || '';
+      b.classList.toggle('active', t === tag);
+    });
+
+    cards.forEach((c) => {
+      const tags = (c.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
+      const show = !tag || tags.includes(tag);
+      c.style.display = show ? '' : 'none';
+    });
+
+    if (filterLabel) {
+      filterLabel.textContent = tag ? `tag: #${tag}` : 'newest → oldest';
+    }
+
+    const url = new URL(window.location.href);
+    if (tag) url.searchParams.set('tag', tag);
+    else url.searchParams.delete('tag');
+    window.history.replaceState({}, '', url);
+
+    // scroll back to top of feed on mobile when switching tags
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // wire clicks
+  tagButtons.forEach((b) => {
+    b.addEventListener('click', () => {
+      const tag = b.getAttribute('data-filter-tag') || '';
+      setActiveTag(tag);
+    });
+  });
+
+  // initial filter from URL
+  const initialTag = new URL(window.location.href).searchParams.get('tag') || '';
+  setActiveTag(initialTag);
+
   // Lightbox functionality
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
