@@ -19,7 +19,7 @@ type IndexFile = {
   images: IndexEntry[];
 };
 
-function slugifyTag(tag: string) {
+function slug(tag: string) {
   return tag.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/-+/g, '-');
 }
 
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
   }
 
   return Array.from(tags).map((tag) => ({
-    params: { tag: slugifyTag(tag) },
+    params: { tag: slug(tag) },
     props: { tag },
   }));
 }
@@ -95,7 +95,7 @@ const shown = images.slice(0, 60);
 
             <div class="flex flex-wrap gap-2 mt-3">
               {image.tags.map((t) => (
-                <a href={`/gallery/tag/${slugifyTag(t)}`} class="text-xs text-zinc-700 hover:text-purple-400 transition-colors">#{t}</a>
+                <a href={`/gallery?tag=${encodeURIComponent(t)}`} class="text-xs text-zinc-700 hover:text-purple-400 transition-colors">#{t}</a>
               ))}
             </div>
           </article>
