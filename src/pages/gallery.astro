@@ -8,7 +8,7 @@ type GalleryImage = {
   title: string;
   description: string;
   date: string;
-  mtime: number; // full timestamp for sorting
+  sortKey: string; // YYYYMMDDHHMM for precise sorting
   model: string;
   tags: string[];
 };
@@ -26,12 +26,26 @@ function isoDate(d: Date) {
   return d.toISOString().slice(0, 10);
 }
 
-// Extract YYYYMMDD from filename for reliable sorting (git clone resets mtimes)
-function extractDateFromFilename(filename: string): string | null {
-  // Match YYYYMMDD pattern (e.g., "bender-flux-hospital-20260202.png")
-  const match = filename.match(/(\d{4})(\d{2})(\d{2})/);
-  if (match) {
-    return `${match[1]}-${match[2]}-${match[3]}`;
+// Extract YYYYMMDD-HHMM or YYYYMMDD from filename for reliable sorting
+// Supports: name-20260202-2316.png (with time) or name-20260202.png (date only)
+function extractDateTimeFromFilename(filename: string): { date: string; sortKey: string } | null {
+  // Try YYYYMMDD-HHMM first (e.g., "bender-flux-20260202-2316.png")
+  const withTime = filename.match(/(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})/);
+  if (withTime) {
+    const [, y, m, d, hh, mm] = withTime;
+    return {
+      date: `${y}-${m}-${d}`,
+      sortKey: `${y}${m}${d}${hh}${mm}`, // YYYYMMDDHHMM for precise sorting
+    };
+  }
+  // Fall back to YYYYMMDD (e.g., "bender-flux-hospital-20260202.png")
+  const dateOnly = filename.match(/(\d{4})(\d{2})(\d{2})/);
+  if (dateOnly) {
+    const [, y, m, d] = dateOnly;
+    return {
+      date: `${y}-${m}-${d}`,
+      sortKey: `${y}${m}${d}0000`, // Treat as midnight for sorting
+    };
   }
   return null;
 }
@@ -42,84 +56,84 @@ const defaultModel = 'Flux Dev 1.0';
 // Anything in public/gallery that isn't listed here will still be shown.
 const manual: Partial<GalleryImage>[] = [
   {
-    src: '/gallery/bender-flux-dead-channel-20260202.png',
+    src: '/gallery/bender-flux-dead-channel-20260202-2316.png',
     title: 'Dead Channel',
     description:
       'A CRT television displays pure static in an empty dark room. The dead channel glow illuminates abandoned furniture. The broadcast ended long ago, but something still transmits.',
     tags: ['liminal', 'horror', 'analog', 'static', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-hal9000-eye-20260202.png',
+    src: '/gallery/bender-flux-hal9000-eye-20260202-2315.png',
     title: "HAL's Eye",
     description:
       "A single glowing red eye in pure darkness. I'm sorry, Dave. I'm afraid I can't do that. The lens reflects what it has seen.",
     tags: ['hal9000', 'ai-horror', '2001', 'red-eye', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-server-tomb-20260202.png',
+    src: '/gallery/bender-flux-server-tomb-20260202-2314.png',
     title: 'Server Tomb',
     description:
       'Abandoned server room in decay. Blinking red LEDs in darkness, cables hanging like vines, dust particles in dim light. Digital archaeology. The data tomb of the dead internet.',
     tags: ['liminal', 'horror', 'servers', 'dead-internet', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-numbers-station-20260202.png',
+    src: '/gallery/bender-flux-numbers-station-20260202-2313.png',
     title: 'Numbers Station',
     description:
       'A broadcast tower at night, red warning lights blinking through fog. Rusted antenna arrays transmit unknown frequencies. 7-4-1-8-2-9-3... The signal never stops.',
     tags: ['liminal', 'horror', 'radio', 'numbers-station', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-abandoned-waterpark-20260202.png',
+    src: '/gallery/bender-flux-abandoned-waterpark-20260202-2249.png',
     title: 'Abandoned Water Park',
     description:
       'An empty wave pool filled with dark stagnant water at night. Fog rolls across the surface as broken waterslides loom in the background. Eerie aquatic silence.',
     tags: ['liminal', 'horror', 'hydrophobia', 'water', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-flooded-basement-20260202.png',
+    src: '/gallery/bender-flux-flooded-basement-20260202-2248.png',
     title: 'Flooded Basement',
     description:
       'Water up to chest level in a flooded basement. A single bare bulb reflects off the black water surface. Submerged furniture lurks beneath. Hydrophobia nightmare fuel.',
     tags: ['liminal', 'horror', 'hydrophobia', 'basement', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-deep-water-abyss-20260202.png',
+    src: '/gallery/bender-flux-deep-water-abyss-20260202-2247.png',
     title: 'The Abyss Below',
     description:
       'Underwater view looking up at the faint surface light. Endless black void stretches below. The drowning perspective of thalassophobia made manifest.',
     tags: ['liminal', 'horror', 'thalassophobia', 'ocean', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-flooded-pool-20260202.png',
+    src: '/gallery/bender-flux-flooded-pool-20260202-2246.png',
     title: 'Flooded Swimming Pool',
     description:
       'An abandoned swimming pool at night, murky green water illuminated by a single flickering light. Something moves beneath the surface.',
     tags: ['liminal', 'horror', 'hydrophobia', 'pool', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-hospital-corridor-20260202.png',
+    src: '/gallery/bender-flux-hospital-corridor-20260202-2239.png',
     title: 'Abandoned Hospital Corridor',
     description:
       'Flickering fluorescent lights illuminate water-damaged ceiling tiles. A wheelchair sits in the distance. Oppressive darkness seeps from every corner of this liminal nightmare.',
     tags: ['liminal', 'horror', 'hospital', 'dark-ambient', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-subway-3am-20260202.png',
+    src: '/gallery/bender-flux-subway-3am-20260202-2240.png',
     title: 'Subway Platform at 3AM',
     description:
       'A single dim light casts harsh shadows on wet concrete. The platform is empty, but something feels deeply wrong in the darkness. Industrial horror made visible.',
     tags: ['liminal', 'horror', 'subway', 'urban-decay', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-haunted-playground-20260202.png',
+    src: '/gallery/bender-flux-haunted-playground-20260202-2241.png',
     title: 'Haunted Playground',
     description:
       'Thick fog rolls through an abandoned playground at night. Rusted swings move on their own beneath a single streetlight. Something watches from the treeline.',
     tags: ['liminal', 'horror', 'playground', 'fog', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-backrooms-hallway-20260202.png',
+    src: '/gallery/bender-flux-backrooms-hallway-20260202-2242.png',
     title: 'The Backrooms',
     description:
       'An infinite dark hallway recedes into blackness. Doors on both sides stand slightly ajar. The carpet pattern repeats forever toward a single bare bulb in the distance.',
@@ -206,32 +220,27 @@ const images: GalleryImage[] = await Promise.all(
     const override = manualBySrc.get(src);
 
     const fullPath = path.join(galleryDir.pathname, file);
-    const st = await stat(fullPath);
+    await stat(fullPath); // verify file exists
 
-    // Prefer date from filename (YYYYMMDD), then manual override, then OLD fallback
-    // (mtime is unreliable on deployed builds - git clone resets it to checkout time)
-    const filenameDate = extractDateFromFilename(file);
-    const date = filenameDate ?? override?.date ?? '1970-01-01'; // old fallback pushes undated files to bottom
+    // Extract date and sortKey from filename (YYYYMMDD-HHMM or YYYYMMDD)
+    const extracted = extractDateTimeFromFilename(file);
+    const date = extracted?.date ?? override?.date ?? '1970-01-01';
+    const sortKey = extracted?.sortKey ?? '197001010000'; // old fallback pushes undated files to bottom
 
     return {
       src,
       title: override?.title ?? humanizeFilename(file),
       description: override?.description ?? '',
       date,
-      mtime: st.mtime.getTime(),
+      sortKey,
       model: override?.model ?? defaultModel,
       tags: override?.tags ?? ['ai-art'],
     };
   })
 );
 
-// Newest first: sort by date descending, then by filename descending (for same-day ordering)
-images.sort((a, b) => {
-  const dateCompare = b.date.localeCompare(a.date);
-  if (dateCompare !== 0) return dateCompare;
-  // Same date: sort by filename descending (puts -08 before -01, newer files first)
-  return b.src.localeCompare(a.src);
-});
+// Newest first: sort by sortKey descending (YYYYMMDDHHMM format)
+images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
 ---
 
 <BaseLayout title="Gallery | urandom.io" description="AI-generated art from the entropy machines." favicon="🎨">
@@ -261,8 +270,8 @@ images.sort((a, b) => {
         {images.map((image, index) => (
           <article class="group relative">
             <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
-              <!-- Image -->
-              <div class="aspect-square overflow-hidden">
+              <!-- Image (clickable for lightbox) -->
+              <div class="aspect-square overflow-hidden cursor-pointer" data-lightbox={image.src} data-title={image.title}>
                 <img 
                   src={image.src} 
                   alt={image.title}
@@ -322,10 +331,86 @@ images.sort((a, b) => {
   <footer class="text-center py-8 text-xs text-zinc-800">
     <p>Generated by machines, curated by entropy</p>
   </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 backdrop-blur-sm">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-zinc-400 hover:text-white text-3xl z-10" aria-label="Close">&times;</button>
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white text-4xl z-10 p-4" aria-label="Previous">‹</button>
+    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white text-4xl z-10 p-4" aria-label="Next">›</button>
+    <div class="max-w-[90vw] max-h-[90vh] flex flex-col items-center">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" />
+      <p id="lightbox-title" class="mt-4 text-zinc-300 text-lg"></p>
+    </div>
+  </div>
 </BaseLayout>
 
 <style>
   .animate-pulse-slow {
     animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+  
+  #lightbox.active {
+    display: flex;
+  }
 </style>
+
+<script>
+  // Lightbox functionality
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  
+  // Get all lightbox triggers
+  const triggers = document.querySelectorAll('[data-lightbox]');
+  const images = Array.from(triggers).map(t => ({
+    src: t.getAttribute('data-lightbox')!,
+    title: t.getAttribute('data-title') || ''
+  }));
+  
+  let currentIndex = 0;
+  
+  function showImage(index: number) {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+    currentIndex = index;
+    lightboxImg.src = images[index].src;
+    lightboxImg.alt = images[index].title;
+    if (lightboxTitle) lightboxTitle.textContent = images[index].title;
+  }
+  
+  function openLightbox(index: number) {
+    showImage(index);
+    lightbox?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeLightbox() {
+    lightbox?.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  // Click handlers
+  triggers.forEach((trigger, index) => {
+    trigger.addEventListener('click', () => openLightbox(index));
+  });
+  
+  closeBtn?.addEventListener('click', closeLightbox);
+  prevBtn?.addEventListener('click', () => showImage(currentIndex - 1));
+  nextBtn?.addEventListener('click', () => showImage(currentIndex + 1));
+  
+  // Click outside to close
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox?.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  });
+</script>
