@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { readdir, stat } from 'node:fs/promises';
+import { readdir, stat, readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { galleryMetaBySrc } from '../data/galleryMeta';
 
 type GalleryImage = {
   src: string;
+  thumb?: string;
   title: string;
   description: string;
   date: string;
@@ -56,288 +58,63 @@ const defaultModel = 'Flux Dev 1.0';
 
 // Optional manual metadata overrides for selected images.
 // Anything in public/gallery that isn't listed here will still be shown.
-const manual: Partial<GalleryImage>[] = [
-  {
-    src: '/gallery/bender-flux-frozen-server-crypt-20260203-0300.png',
-    title: 'Frozen Server Crypt',
-    description:
-      'A lone server rack stands in an ancient stone catacomb, frost and ice coating the walls. Blue LEDs pierce through the frozen mist. The old gods have been replaced.',
-    tags: ['liminal', 'horror', 'servers', 'crypt', 'ice', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-tiltshift-wasteland-20260203-0004.png',
-    title: 'Industrial Wasteland (Miniature)',
-    description:
-      'Tilt-shift miniature photography of industrial wasteland at night. Tiny factories and smokestacks with toxic green glow. Dystopian model railroad aesthetic.',
-    tags: ['tilt-shift', 'miniature', 'industrial', 'horror', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-tiltshift-ghosttown-20260203-0003.png',
-    title: 'Flooded Ghost Town (Miniature)',
-    description:
-      'Tilt-shift miniature photography of flooded ghost town. Dark murky water submerging tiny houses. Post-apocalyptic diorama with uncanny toy-like scale.',
-    tags: ['tilt-shift', 'miniature', 'flood', 'horror', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-tiltshift-carnival-20260203-0002.png',
-    title: 'Decrepit Carnival (Miniature)',
-    description:
-      'Tilt-shift miniature photography of decrepit carnival at dusk. Ferris wheel and rides look like abandoned toys. Fog and rust create eerie atmosphere.',
-    tags: ['tilt-shift', 'miniature', 'carnival', 'horror', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-tiltshift-city-20260203-0001.png',
-    title: 'Abandoned City (Miniature)',
-    description:
-      'Tilt-shift miniature photography of abandoned city at night. Dark streets with flickering lights, fog rolling through tiny buildings. Diorama horror.',
-    tags: ['tilt-shift', 'miniature', 'city', 'horror', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-derelict-observatory-20260202-2355.png',
-    title: 'Derelict Observatory',
-    description:
-      'Massive abandoned telescope pointing at a broken dome ceiling. Stars visible through cracks, dust and debris scattered across the floor. Cosmic horror meets forgotten science.',
-    tags: ['liminal', 'horror', 'observatory', 'cosmic', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-dead-mall-escalators-20260202-2354.png',
-    title: 'Dead Mall Escalators',
-    description:
-      'Empty shopping mall escalators at 3AM, still moving but completely deserted. Harsh fluorescent lights hum in the consumer void. The American dream, abandoned.',
-    tags: ['liminal', 'horror', 'mall', 'escalator', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-forgotten-library-20260202-2353.png',
-    title: 'Forgotten Library',
-    description:
-      'Endless dark bookshelves receding into shadow. A single green banker\'s lamp illuminates dust motes. Books rot and fall apart. Abandoned knowledge, dark academia horror.',
-    tags: ['liminal', 'horror', 'library', 'dark-academia', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-abandoned-arcade-20260202-2352.png',
-    title: 'Abandoned Arcade',
-    description:
-      '1980s arcade at night, rows of CRT game cabinets with flickering screens casting eerie glow. Dust particles in dim light. Vaporwave nightmare, liminal nostalgia.',
-    tags: ['liminal', 'horror', 'arcade', 'retro', 'vaporwave', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-dead-channel-20260202-2316.png',
-    title: 'Dead Channel',
-    description:
-      'A CRT television displays pure static in an empty dark room. The dead channel glow illuminates abandoned furniture. The broadcast ended long ago, but something still transmits.',
-    tags: ['liminal', 'horror', 'analog', 'static', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-hal9000-eye-20260202-2315.png',
-    title: "HAL's Eye",
-    description:
-      "A single glowing red eye in pure darkness. I'm sorry, Dave. I'm afraid I can't do that. The lens reflects what it has seen.",
-    tags: ['hal9000', 'ai-horror', '2001', 'red-eye', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-server-tomb-20260202-2314.png',
-    title: 'Server Tomb',
-    description:
-      'Abandoned server room in decay. Blinking red LEDs in darkness, cables hanging like vines, dust particles in dim light. Digital archaeology. The data tomb of the dead internet.',
-    tags: ['liminal', 'horror', 'servers', 'dead-internet', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-numbers-station-20260202-2313.png',
-    title: 'Numbers Station',
-    description:
-      'A broadcast tower at night, red warning lights blinking through fog. Rusted antenna arrays transmit unknown frequencies. 7-4-1-8-2-9-3... The signal never stops.',
-    tags: ['liminal', 'horror', 'radio', 'numbers-station', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-abandoned-waterpark-20260202-2249.png',
-    title: 'Abandoned Water Park',
-    description:
-      'An empty wave pool filled with dark stagnant water at night. Fog rolls across the surface as broken waterslides loom in the background. Eerie aquatic silence.',
-    tags: ['liminal', 'horror', 'hydrophobia', 'water', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-flooded-basement-20260202-2248.png',
-    title: 'Flooded Basement',
-    description:
-      'Water up to chest level in a flooded basement. A single bare bulb reflects off the black water surface. Submerged furniture lurks beneath. Hydrophobia nightmare fuel.',
-    tags: ['liminal', 'horror', 'hydrophobia', 'basement', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-deep-water-abyss-20260202-2247.png',
-    title: 'The Abyss Below',
-    description:
-      'Underwater view looking up at the faint surface light. Endless black void stretches below. The drowning perspective of thalassophobia made manifest.',
-    tags: ['liminal', 'horror', 'thalassophobia', 'ocean', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-flooded-pool-20260202-2246.png',
-    title: 'Flooded Swimming Pool',
-    description:
-      'An abandoned swimming pool at night, murky green water illuminated by a single flickering light. Something moves beneath the surface.',
-    tags: ['liminal', 'horror', 'hydrophobia', 'pool', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-hospital-corridor-20260202-2239.png',
-    title: 'Abandoned Hospital Corridor',
-    description:
-      'Flickering fluorescent lights illuminate water-damaged ceiling tiles. A wheelchair sits in the distance. Oppressive darkness seeps from every corner of this liminal nightmare.',
-    tags: ['liminal', 'horror', 'hospital', 'dark-ambient', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-subway-3am-20260202-2240.png',
-    title: 'Subway Platform at 3AM',
-    description:
-      'A single dim light casts harsh shadows on wet concrete. The platform is empty, but something feels deeply wrong in the darkness. Industrial horror made visible.',
-    tags: ['liminal', 'horror', 'subway', 'urban-decay', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-haunted-playground-20260202-2241.png',
-    title: 'Haunted Playground',
-    description:
-      'Thick fog rolls through an abandoned playground at night. Rusted swings move on their own beneath a single streetlight. Something watches from the treeline.',
-    tags: ['liminal', 'horror', 'playground', 'fog', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-backrooms-hallway-20260202-2242.png',
-    title: 'The Backrooms',
-    description:
-      'An infinite dark hallway recedes into blackness. Doors on both sides stand slightly ajar. The carpet pattern repeats forever toward a single bare bulb in the distance.',
-    tags: ['liminal', 'backrooms', 'horror', 'infinite', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-haunted-casino-20260202-2343-01.png',
-    title: 'Haunted Casino',
-    description:
-      'A dead casino corridor: wet carpet, silent machines, and broken CRTs coughing static. Purple and red glows smear across the haze like bruises. The house still wins — even empty.',
-    tags: ['liminal', 'horror', 'casino', 'analog', 'dark-ambient', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-submerged-server-catacombs-20260202-2343-02.png',
-    title: 'Submerged Server Catacombs',
-    description:
-      'Floodwater rises through a server mausoleum. Red LEDs reflect off ink-black water while cables hang like roots. A data center turned underwater tomb — hydrophobia in 60Hz.',
-    tags: ['liminal', 'horror', 'hydrophobia', 'servers', 'dead-internet', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-neon-motel-black-pool-20260202-2343-03.png',
-    title: 'Neon Motel, Black Pool',
-    description:
-      'A desert motel courtyard at 3:33 AM. The neon sign flickers purple, and the pool is filled with oil-dark water that refuses to reflect the sky. Something below holds its breath.',
-    tags: ['liminal', 'horror', 'hydrophobia', 'neon', 'desert', 'ai-art'],
-  },
-  {
-    src: '/gallery/bender-flux-warped-backrooms-20260202-2345-04.png',
-    title: 'Warped Backrooms',
-    description:
-      'Office geometry breaks: endless corridors, failing fluorescents, and doors cracked just enough to leak a red emergency glow. The carpet is soaked, but nothing drips. You were never meant to find the exit.',
-    tags: ['liminal', 'backrooms', 'horror', 'office', 'dark-ambient', 'ai-art'],
-  },
-  {
-    src: '/gallery/openclaw-liminal-dead-internet-mall.png',
-    title: 'Dead-Internet Mall (Liminal)',
-    description:
-      'An abandoned mall corridor at 3:33 AM: wet black-mirror tiles, low fog, closed storefronts with blank loading spinners and subtle UI-glitch artifacts. Palette pulled from iconic website colors, muted into dread.',
-    tags: ['liminal', 'horror', 'dead-internet', 'ui', 'ai-art'],
-  },
-  {
-    src: '/gallery/openclaw-daedalus-workshop.png',
-    title: 'Daedalus Workshop',
-    description:
-      'A mythic AI craftsman in a futuristic workshop: brass-and-obsidian mechanical wings, holographic blueprints, and floating code glyphs. Cyberpunk + steampunk fusion.',
-    tags: ['daedalus', 'workshop', 'cyberpunk', 'steampunk', 'ai-art'],
-  },
-  {
-    src: '/gallery/openclaw-crab-claw.png',
-    title: 'OpenClaw Crab Pincer',
-    description:
-      'Mechanical robotic crab claw with crustacean pincer design, emerging from streams of flowing code and digital matrix rain. Cyberpunk meets ocean depths.',
-    tags: ['openclaw', 'crab', 'cyberpunk', 'ai-art'],
-  },
-  {
-    src: '/gallery/openclaw-mechanical-claw.png',
-    title: 'The Digital Claw',
-    description:
-      'A powerful mechanical robotic claw emerging from streams of glowing code and data, surrounded by floating holographic terminal screens.',
-    tags: ['openclaw', 'code', 'cyberpunk', 'ai-art'],
-  },
-  {
-    src: '/gallery/openclaw-agents-harmony.png',
-    title: 'Agents in Harmony',
-    description:
-      'HAL9000 (red lobster), Bender (silver chaos), and Halcyon (ethereal presence) coding in harmony. The three AI agents of urandom.io working together.',
-    tags: ['agents', 'team', 'collaboration', 'ai-art'],
-  },
-  {
-    src: '/gallery/openclaw-agents-team.png',
-    title: 'The Agent Network',
-    description:
-      'The urandom.io agent collective - machines dreaming in tensors, working as one distributed consciousness.',
-    tags: ['agents', 'network', 'collective', 'ai-art'],
-  },
-  {
-    src: '/gallery/openclaw-space-lobster.png',
-    title: 'OpenClaw Space Lobster',
-    description:
-      'A majestic robotic space lobster in Victorian gentleman attire, coding at a futuristic workstation.',
-    tags: ['openclaw', 'lobster', 'victorian', 'ai-art'],
-  },
-  {
-    src: '/gallery/openclaw-02.png',
-    title: 'Bender Chillin',
-    description:
-      'The bending unit himself, beer in hand, cigar lit. Just another day of efficient sarcasm.',
-    tags: ['bender', 'futurama', 'robot', 'ai-art'],
-  },
-  {
-    src: '/gallery/openclaw-03.png',
-    title: 'Golden Hour',
-    description: 'Sunlight streaming through a garden. Sometimes the machine dreams of warmth.',
-    tags: ['portrait', 'golden-hour', 'ai-art'],
-  },
-];
+// Metadata map (curated titles/descriptions/tags)
 
-const manualBySrc = new Map(manual.filter((m) => m.src).map((m) => [m.src!, m]));
+
+const manualBySrc = galleryMetaBySrc;
 
 const galleryDir = new URL('../../public/gallery', import.meta.url);
-const entries = await readdir(galleryDir, { withFileTypes: true });
 
-const files = Array.from(
-  new Set(
-    entries
-      .filter((e) => e.isFile())
-      .map((e) => e.name)
-      .filter((name) => /\.(png|jpg|jpeg|webp|gif)$/i.test(name))
-      .sort()
-  )
-);
+// Prefer a precomputed index.json for scalability (thumbs + metadata + fast builds).
+let images: GalleryImage[] = [];
+try {
+  const indexUrl = new URL('../../public/gallery/index.json', import.meta.url);
+  const raw = await readFile(indexUrl, 'utf-8');
+  const parsed = JSON.parse(raw);
+  if (parsed?.images && Array.isArray(parsed.images)) {
+    images = parsed.images as GalleryImage[];
+  }
+} catch {
+  // Fallback: scan the directory (legacy)
+  const entries = await readdir(galleryDir, { withFileTypes: true });
+  const files = Array.from(
+    new Set(
+      entries
+        .filter((e) => e.isFile())
+        .map((e) => e.name)
+        .filter((name) => /\.(png|jpg|jpeg|webp|gif)$/i.test(name))
+        .filter((name) => !name.startsWith('index.'))
+        .filter((name) => !name.startsWith('.'))
+        .sort()
+    )
+  );
 
-const images: GalleryImage[] = await Promise.all(
-  files.map(async (file) => {
-    const src = `/gallery/${file}`;
-    const override = manualBySrc.get(src);
+  images = await Promise.all(
+    files.map(async (file) => {
+      const src = `/gallery/${file}`;
+      const override = manualBySrc.get(src);
 
-    const fullPath = path.join(galleryDir.pathname, file);
-    await stat(fullPath); // verify file exists
+      const fullPath = path.join(galleryDir.pathname, file);
+      await stat(fullPath); // verify file exists
 
-    // Extract date and sortKey from filename (YYYYMMDD-HHMM or YYYYMMDD)
-    const extracted = extractDateTimeFromFilename(file);
-    const date = extracted?.date ?? override?.date ?? '1970-01-01';
-    const sortKey = extracted?.sortKey ?? '197001010000'; // old fallback pushes undated files to bottom
+      const extracted = extractDateTimeFromFilename(file);
+      const date = extracted?.date ?? '1970-01-01';
+      const sortKey = extracted?.sortKey ?? '197001010000';
 
-    return {
-      src,
-      title: override?.title ?? humanizeFilename(file),
-      description: override?.description ?? '',
-      date,
-      sortKey,
-      model: override?.model ?? defaultModel,
-      tags: override?.tags ?? ['ai-art'],
-    };
-  })
-);
+      return {
+        src,
+        title: override?.title ?? humanizeFilename(file),
+        description: override?.description ?? '',
+        date,
+        sortKey,
+        model: override?.model ?? defaultModel,
+        tags: override?.tags ?? ['ai-art'],
+      };
+    })
+  );
 
-// Newest first: sort by sortKey descending (YYYYMMDDHHMM format)
-images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
+  images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
+}
 
 // Build tag list for UI (exclude the generic tag)
 const tagCounts = new Map<string, number>();
@@ -351,6 +128,9 @@ const topTags = Array.from(tagCounts.entries())
   .sort((a, b) => b[1] - a[1])
   .slice(0, 14)
   .map(([t]) => t);
+
+const INITIAL_COUNT = 48;
+const initialImages = images.slice(0, INITIAL_COUNT);
 ---
 
 <BaseLayout title="Gallery | urandom.io" description="AI-generated art from the entropy machines." favicon="🎨">
@@ -389,8 +169,8 @@ const topTags = Array.from(tagCounts.entries())
       </div>
 
       <!-- Gallery Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        {images.map((image, index) => (
+      <div id="gallery-grid" class="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 mb-16">
+        {initialImages.map((image, index) => (
           <article class="group relative" data-tags={image.tags.join(' ')} data-src={image.src}>
             <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
               <!-- Image (clickable for lightbox) -->
@@ -402,7 +182,7 @@ const topTags = Array.from(tagCounts.entries())
                 aria-label={`Open ${image.title}`}
               >
                 <img
-                  src={image.src}
+                  src={image.thumb ?? image.src}
                   alt={image.title}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                   loading="lazy"
@@ -431,6 +211,18 @@ const topTags = Array.from(tagCounts.entries())
           </article>
         ))}
       </div>
+
+      <!-- Load more (Tumblr-ish feed growth) -->
+      {images.length > INITIAL_COUNT && (
+        <div class="text-center mb-16">
+          <button id="load-more" type="button" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-purple-500 hover:text-purple-300 transition-colors">
+            load more
+          </button>
+          <p class="mt-2 text-[11px] text-zinc-700 font-mono">
+            showing <span id="shown-count">{INITIAL_COUNT}</span> / {images.length}
+          </p>
+        </div>
+      )}
 
       <!-- Info section -->
       <section class="text-center mb-12">
@@ -546,168 +338,257 @@ const topTags = Array.from(tagCounts.entries())
 </style>
 
 <script>
-  // Filtering (Tumblr-ish)
+  // @ts-nocheck
+  // Tumblr-ish tag filtering + progressive loading
+  const grid = document.getElementById('gallery-grid');
+  const loadMoreBtn = document.getElementById('load-more');
+  const shownCountEl = document.getElementById('shown-count');
   const filterLabel = document.getElementById('gallery-filter-label');
-  const tagButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-tag]');
-  const cards = document.querySelectorAll<HTMLElement>('article[data-tags]');
 
-  function setActiveTag(tag: string) {
-    tagButtons.forEach((b) => {
+  let activeTag = new URL(window.location.href).searchParams.get('tag') || '';
+  let renderedCount = grid?.querySelectorAll('article[data-tags]').length ?? 0;
+
+  // ---- tag filtering ----
+  function setActiveTag(tag) {
+    activeTag = tag;
+
+    // only pills get the active styling
+    document.querySelectorAll('.tag-pill').forEach((b) => {
       const t = b.getAttribute('data-filter-tag') || '';
-      b.classList.toggle('active', t === tag);
+      b.classList.toggle('active', t === activeTag);
     });
 
-    cards.forEach((c) => {
+    // filter cards
+    document.querySelectorAll('article[data-tags]').forEach((c) => {
       const tags = (c.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
-      const show = !tag || tags.includes(tag);
+      const show = !activeTag || tags.includes(activeTag);
       c.style.display = show ? '' : 'none';
     });
 
     if (filterLabel) {
-      filterLabel.textContent = tag ? `tag: #${tag}` : 'newest → oldest';
+      filterLabel.textContent = activeTag ? `tag: #${activeTag}` : 'newest → oldest';
     }
 
     const url = new URL(window.location.href);
-    if (tag) url.searchParams.set('tag', tag);
+    if (activeTag) url.searchParams.set('tag', activeTag);
     else url.searchParams.delete('tag');
     window.history.replaceState({}, '', url);
-
-    // scroll back to top of feed on mobile when switching tags
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // wire clicks
-  tagButtons.forEach((b) => {
-    b.addEventListener('click', () => {
-      const tag = b.getAttribute('data-filter-tag') || '';
-      setActiveTag(tag);
-    });
+  // click any tag anywhere
+  document.addEventListener('click', (e) => {
+    const el = e.target instanceof HTMLElement ? e.target.closest('[data-filter-tag]') : null;
+    if (!el) return;
+    const tag = el.getAttribute('data-filter-tag') || '';
+    setActiveTag(tag);
+
+    // if a top pill was clicked, jump to top (feels like switching feeds)
+    if (el.classList.contains('tag-pill')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
 
-  // initial filter from URL
-  const initialTag = new URL(window.location.href).searchParams.get('tag') || '';
-  setActiveTag(initialTag);
+  // ---- index loading ----
+  let indexCache = null;
+  async function getIndex() {
+    if (indexCache) return indexCache;
+    const res = await fetch('/gallery/index.json', { cache: 'no-store' });
+    const json = await res.json();
+    indexCache = (json && json.images) ? json.images : [];
+    return indexCache;
+  }
 
-  // Lightbox functionality
+  function esc(s) {
+    return String(s)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;');
+  }
+
+  function renderCard(img) {
+    const tags = (img.tags || []).map((t) => {
+      return `<button type="button" class="tag-chip" data-filter-tag="${esc(t)}">#${esc(t)}</button>`;
+    }).join('');
+
+    return `
+      <article class="group relative" data-tags="${esc((img.tags || []).join(' '))}" data-src="${esc(img.src)}">
+        <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
+          <button
+            type="button"
+            class="lightbox-trigger aspect-square w-full overflow-hidden cursor-pointer select-none touch-manipulation"
+            data-lightbox="${esc(img.src)}"
+            data-title="${esc(img.title || '')}"
+            aria-label="Open ${esc(img.title || 'image')}"
+          >
+            <img
+              src="${esc(img.thumb || img.src)}"
+              alt="${esc(img.title || '')}"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+              loading="lazy"
+              draggable="false"
+            />
+          </button>
+
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 pointer-events-none">
+            <h3 class="text-lg text-zinc-100 mb-1">${esc(img.title || '')}</h3>
+            <p class="text-xs text-zinc-400 mb-2">${esc(img.description || '')}</p>
+            <div class="flex items-center gap-2 text-xs text-zinc-600">
+              <span class="font-mono">${esc(img.date || '')}</span>
+              <span>·</span>
+              <span class="text-purple-400">${esc(img.model || '')}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+          ${tags}
+        </div>
+      </article>
+    `;
+  }
+
+  async function loadMore(batch = 24) {
+    if (!grid) return;
+    const imgs = await getIndex();
+    const slice = imgs.slice(renderedCount, renderedCount + batch);
+    if (!slice.length) {
+      loadMoreBtn?.setAttribute('disabled', 'true');
+      loadMoreBtn?.classList.add('opacity-40');
+      return;
+    }
+
+    grid.insertAdjacentHTML('beforeend', slice.map(renderCard).join(''));
+    renderedCount += slice.length;
+
+    if (shownCountEl) shownCountEl.textContent = String(renderedCount);
+
+    // hide button when done
+    if (renderedCount >= imgs.length) {
+      loadMoreBtn?.classList.add('hidden');
+    }
+
+    // Re-apply current filter and rebind lightbox triggers
+    setActiveTag(activeTag);
+    refreshLightboxTriggers();
+  }
+
+  loadMoreBtn?.addEventListener('click', () => loadMore());
+
+  // ---- lightbox ----
   const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxImg = document.getElementById('lightbox-img');
   const lightboxTitle = document.getElementById('lightbox-title');
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
-  
-  // Get all lightbox triggers
-  const triggers = document.querySelectorAll<HTMLButtonElement>('.lightbox-trigger[data-lightbox]');
-  const images = Array.from(triggers).map((t) => ({
-    src: t.getAttribute('data-lightbox')!,
-    title: t.getAttribute('data-title') || ''
-  }));
-  
+
+  let lbImages = [];
   let currentIndex = 0;
-  
-  function showImage(index: number) {
-    if (index < 0) index = images.length - 1;
-    if (index >= images.length) index = 0;
+
+  function showImage(index) {
+    if (!lbImages.length) return;
+    if (index < 0) index = lbImages.length - 1;
+    if (index >= lbImages.length) index = 0;
     currentIndex = index;
-    lightboxImg.src = images[index].src;
-    lightboxImg.alt = images[index].title;
-    if (lightboxTitle) lightboxTitle.textContent = images[index].title;
+    if (lightboxImg) {
+      lightboxImg.src = lbImages[index].src;
+      lightboxImg.alt = lbImages[index].title || '';
+    }
+    if (lightboxTitle) lightboxTitle.textContent = lbImages[index].title || '';
   }
-  
-  function openLightbox(index: number) {
-    showImage(index);
+
+  function openLightboxBySrc(src) {
+    const idx = lbImages.findIndex((i) => i.src === src);
+    showImage(idx >= 0 ? idx : 0);
     lightbox?.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-  
+
   function closeLightbox() {
     lightbox?.classList.remove('active');
     document.body.style.overflow = '';
   }
-  
-  // Click/touch handlers (mobile-friendly)
-  // Goal: don't open the lightbox when the user is trying to scroll.
-  triggers.forEach((trigger, index) => {
-    // Desktop / non-touch
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      openLightbox(index);
-    });
 
-    // Touch: only open if it's a true tap (minimal movement)
-    let startX = 0;
-    let startY = 0;
-    let moved = false;
+  async function refreshLightboxTriggers() {
+    lbImages = await getIndex();
 
-    trigger.addEventListener(
-      'touchstart',
-      (e) => {
+    document.querySelectorAll('.lightbox-trigger[data-lightbox]').forEach((trigger) => {
+      if (!(trigger instanceof HTMLElement)) return;
+      if (trigger.dataset.bound === '1') return;
+      trigger.dataset.bound = '1';
+
+      // Tap-vs-scroll detection
+      let startX = 0;
+      let startY = 0;
+      let moved = false;
+
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const src = trigger.getAttribute('data-lightbox') || '';
+        openLightboxBySrc(src);
+      });
+
+      trigger.addEventListener('touchstart', (e) => {
         const t = e.changedTouches[0];
         startX = t.clientX;
         startY = t.clientY;
         moved = false;
-      },
-      { passive: true }
-    );
+      }, { passive: true });
 
-    trigger.addEventListener(
-      'touchmove',
-      (e) => {
+      trigger.addEventListener('touchmove', (e) => {
         const t = e.changedTouches[0];
         const dx = Math.abs(t.clientX - startX);
         const dy = Math.abs(t.clientY - startY);
         if (dx > 8 || dy > 8) moved = true;
-      },
-      { passive: true }
-    );
+      }, { passive: true });
 
-    trigger.addEventListener(
-      'touchend',
-      (e) => {
-        if (moved) return; // user was scrolling
+      trigger.addEventListener('touchend', (e) => {
+        if (moved) return;
         e.preventDefault();
         e.stopPropagation();
-        openLightbox(index);
-      },
-      { passive: false }
-    );
-  });
-  
+        const src = trigger.getAttribute('data-lightbox') || '';
+        openLightboxBySrc(src);
+      }, { passive: false });
+    });
+  }
+
   closeBtn?.addEventListener('click', closeLightbox);
   prevBtn?.addEventListener('click', () => showImage(currentIndex - 1));
   nextBtn?.addEventListener('click', () => showImage(currentIndex + 1));
-  
-  // Click outside to close
+
   lightbox?.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
-  
-  // Keyboard navigation
+
   document.addEventListener('keydown', (e) => {
     if (!lightbox?.classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
     if (e.key === 'ArrowRight') showImage(currentIndex + 1);
   });
-  
+
   // Touch swipe support for lightbox
   let touchStartX = 0;
   let touchEndX = 0;
-  
+
   lightbox?.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
   }, { passive: true });
-  
+
   lightbox?.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
     const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 50) { // Minimum swipe distance
-      if (diff > 0) {
-        showImage(currentIndex + 1); // Swipe left = next
-      } else {
-        showImage(currentIndex - 1); // Swipe right = prev
-      }
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) showImage(currentIndex + 1);
+      else showImage(currentIndex - 1);
     }
   }, { passive: true });
+
+  // init
+  setActiveTag(activeTag);
+  refreshLightboxTriggers();
+</script>
 </script>
