@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Dead Feed | 🐇" description="Newest to oldest. Forever." favicon="📰">
+  <div class="fixed inset-0 bg-gradient-to-b from-zinc-950 via-purple-950/10 to-zinc-950"></div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-purple-400 transition-colors">← back</a>
+    <span class="text-xs text-zinc-700 font-mono">FEED: <span class="text-purple-400">LIVE</span></span>
+  </header>
+
+  <main class="relative min-h-screen flex items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-xl w-full">
+      <div class="text-center mb-8">
+        <div class="text-5xl mb-4">📰</div>
+        <h1 class="text-3xl font-light text-purple-400">dead feed</h1>
+        <p class="text-zinc-600 text-sm">the algorithm learned dread and optimized for it</p>
+      </div>
+
+      <div class="rounded-lg border border-zinc-800 bg-zinc-900/40 overflow-hidden">
+        <div class="px-4 py-3 border-b border-zinc-800 flex items-center justify-between">
+          <span class="text-xs text-zinc-600 font-mono">newest → oldest</span>
+          <span class="text-xs text-zinc-700 font-mono">refresh: <span id="refresh">3.0s</span></span>
+        </div>
+        <div id="items" class="max-h-[60vh] overflow-auto"></div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="/rabbit-hole/infinite-scroll" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-purple-500 hover:text-purple-400 transition-colors">go deeper →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const itemsEl = document.getElementById('items');
+  const refreshEl = document.getElementById('refresh');
+
+  const fragments = [
+    'a door appears in a hallway you already walked through',
+    'a pool reflects a sky that isn\'t yours',
+    'the mall plays music for nobody',
+    'the server room is breathing',
+    'static resolves into your own name',
+    'your shadow loads before you do',
+    'floodwater rises at 60Hz',
+    'the neon sign flickers: OPEN / ERROR / OPEN',
+  ];
+
+  let n = 0;
+
+  function stamp() {
+    const d = new Date();
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    const hh = String(d.getHours()).padStart(2, '0');
+    const mi = String(d.getMinutes()).padStart(2, '0');
+    const ss = String(d.getSeconds()).padStart(2, '0');
+    return `${yyyy}${mm}${dd}-${hh}${mi}${ss}`;
+  }
+
+  function addItem() {
+    if (!itemsEl) return;
+    n++;
+    const div = document.createElement('div');
+    div.className = 'item px-4 py-3 border-b border-zinc-800/60';
+
+    const title = document.createElement('div');
+    title.className = 'text-sm text-zinc-200';
+    title.textContent = fragments[Math.floor(Math.random() * fragments.length)];
+
+    const meta = document.createElement('div');
+    meta.className = 'mt-1 text-[11px] text-zinc-600 font-mono flex justify-between';
+    meta.innerHTML = `<span>${stamp()}</span><span>#${String(n).padStart(4, '0')}</span>`;
+
+    div.appendChild(title);
+    div.appendChild(meta);
+
+    // newest-first: prepend
+    itemsEl.prepend(div);
+
+    // keep it from growing forever (ironically)
+    const kids = itemsEl.querySelectorAll('.item');
+    if (kids.length > 60) kids[kids.length - 1].remove();
+  }
+
+  // seed
+  for (let i = 0; i < 12; i++) addItem();
+
+  let seconds = 3.0;
+  setInterval(() => {
+    seconds = 2.5 + Math.random() * 2.5;
+    if (refreshEl) refreshEl.textContent = `${seconds.toFixed(1)}s`;
+  }, 2500);
+
+  setInterval(addItem, 3000);
+</script>
+
+<style>
+  .item { animation: in 220ms ease-out; }
+  @keyframes in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+</style>

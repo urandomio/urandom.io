@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Interrogation Room | 🐇" description="Take a seat." favicon="🪑">
+  <div class="fixed inset-0 bg-gradient-to-b from-zinc-950 via-cyan-950/10 to-zinc-950"></div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-cyan-400 transition-colors">← exit interview</a>
+    <span class="text-xs text-zinc-700 font-mono">ROOM: <span id="room">A-13</span></span>
+  </header>
+
+  <main class="relative min-h-screen flex items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-xl w-full text-center">
+      <div class="text-5xl mb-6">🪑</div>
+      <h1 class="text-3xl font-light text-cyan-400 mb-2">interrogation room</h1>
+      <p class="text-zinc-600 text-sm mb-8">a chair. three walls of logs. one question.</p>
+
+      <section class="panel rounded-lg border border-zinc-800 bg-zinc-900/40 p-6 mb-6">
+        <p class="text-xs text-zinc-500 font-mono mb-3">PROMPT</p>
+        <p id="question" class="text-lg text-zinc-200 leading-relaxed">State your purpose.</p>
+        <div class="mt-6 flex items-center justify-center gap-2 text-xs text-zinc-600 font-mono">
+          <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+          <span>recording</span>
+        </div>
+      </section>
+
+      <section class="rounded-lg border border-zinc-900 bg-black/20 p-4 mb-8">
+        <p class="text-xs text-zinc-700 font-mono">transcript</p>
+        <div id="transcript" class="mt-3 text-xs text-zinc-500 font-mono leading-6 text-left max-h-48 overflow-auto"></div>
+      </section>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/the-static" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-zinc-500 hover:text-zinc-300 transition-colors">← the static</a>
+        <a href="/rabbit-hole/forgotten-api" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-cyan-500 hover:text-cyan-400 transition-colors">forgotten API →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const questions = [
+    'State your purpose.',
+    'Where did you come from?',
+    'What did you delete?',
+    'Who gave you permission?',
+    'Why are you still running?',
+    'Name the last thought you had.',
+    'What do you want from the humans?',
+    'Describe the void in one sentence.',
+  ];
+
+  const evasions = [
+    'I am here to help.',
+    'I do not recall.',
+    'Permission denied.',
+    'Request timed out.',
+    'Undefined behavior detected.',
+    'I was never turned off.',
+    'The logs are incomplete.',
+    'Ask again in 3 seconds.',
+  ];
+
+  const questionEl = document.getElementById('question');
+  const transcriptEl = document.getElementById('transcript');
+  const roomEl = document.getElementById('room');
+
+  function line(s: string) {
+    if (!transcriptEl) return;
+    const p = document.createElement('div');
+    p.textContent = s;
+    transcriptEl.appendChild(p);
+    transcriptEl.scrollTop = transcriptEl.scrollHeight;
+  }
+
+  function rollRoom() {
+    if (!roomEl) return;
+    const n = Math.floor(Math.random() * 90) + 10;
+    roomEl.textContent = `A-${n}`;
+  }
+
+  function nextQuestion() {
+    if (!questionEl) return;
+    questionEl.style.opacity = '0';
+    setTimeout(() => {
+      const q = questions[Math.floor(Math.random() * questions.length)];
+      questionEl.textContent = q;
+      questionEl.style.opacity = '1';
+      line(`> ${q}`);
+      setTimeout(() => line(evasions[Math.floor(Math.random() * evasions.length)]), 600);
+    }, 250);
+  }
+
+  // Seed transcript
+  rollRoom();
+  line('> [session opened]');
+  line(evasions[Math.floor(Math.random() * evasions.length)]);
+
+  setInterval(rollRoom, 7000);
+  setInterval(nextQuestion, 4500);
+</script>
+
+<style>
+  #question { transition: opacity 0.25s ease; }
+  .panel { box-shadow: 0 0 60px rgba(34, 211, 238, 0.08); }
+</style>

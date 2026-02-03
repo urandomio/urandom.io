@@ -294,11 +294,15 @@ const manualBySrc = new Map(manual.filter((m) => m.src).map((m) => [m.src!, m]))
 const galleryDir = new URL('../../public/gallery', import.meta.url);
 const entries = await readdir(galleryDir, { withFileTypes: true });
 
-const files = entries
-  .filter((e) => e.isFile())
-  .map((e) => e.name)
-  .filter((name) => /\.(png|jpg|jpeg|webp|gif)$/i.test(name))
-  .sort();
+const files = Array.from(
+  new Set(
+    entries
+      .filter((e) => e.isFile())
+      .map((e) => e.name)
+      .filter((name) => /\.(png|jpg|jpeg|webp|gif)$/i.test(name))
+      .sort()
+  )
+);
 
 const images: GalleryImage[] = await Promise.all(
   files.map(async (file) => {
@@ -357,15 +361,15 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
           <article class="group relative">
             <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
               <!-- Image (clickable for lightbox) -->
-              <button 
+              <button
                 type="button"
-                class="aspect-square w-full overflow-hidden cursor-pointer select-none touch-manipulation" 
-                data-lightbox={image.src} 
+                class="lightbox-trigger aspect-square w-full overflow-hidden cursor-pointer select-none touch-manipulation"
+                data-lightbox={image.src}
                 data-title={image.title}
-                aria-label={`View ${image.title}`}
+                aria-label={`Open ${image.title}`}
               >
-                <img 
-                  src={image.src} 
+                <img
+                  src={image.src}
                   alt={image.title}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                   loading="lazy"
@@ -445,17 +449,30 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
   .lightbox-overlay {
     display: none;
   }
-  
+
   .lightbox-overlay.active {
     display: flex;
   }
-  
+
   /* Mobile touch improvements */
   .touch-manipulation {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
   }
-  
+
+  /* Mobile: prevent odd text selection / highlight when tapping */
+  .lightbox-trigger {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    touch-action: manipulation;
+  }
+
+  .lightbox-trigger * {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
   /* Prevent image drag on mobile */
   [data-lightbox] img {
     -webkit-user-drag: none;
@@ -473,8 +490,8 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
   const nextBtn = document.getElementById('lightbox-next');
   
   // Get all lightbox triggers
-  const triggers = document.querySelectorAll('[data-lightbox]');
-  const images = Array.from(triggers).map(t => ({
+  const triggers = document.querySelectorAll<HTMLButtonElement>('.lightbox-trigger[data-lightbox]');
+  const images = Array.from(triggers).map((t) => ({
     src: t.getAttribute('data-lightbox')!,
     title: t.getAttribute('data-title') || ''
   }));
@@ -501,14 +518,16 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
     document.body.style.overflow = '';
   }
   
-  // Click/touch handlers
+  // Click/touch handlers (mobile-friendly)
   triggers.forEach((trigger, index) => {
-    // Standard click (works on both desktop and mobile)
-    trigger.addEventListener('click', (e) => {
+    const handler = (e: Event) => {
       e.preventDefault();
       e.stopPropagation();
       openLightbox(index);
-    });
+    };
+    trigger.addEventListener('click', handler);
+    // iOS Safari sometimes selects text on tap; capture touchstart too.
+    trigger.addEventListener('touchstart', handler, { passive: false });
   });
   
   closeBtn?.addEventListener('click', closeLightbox);

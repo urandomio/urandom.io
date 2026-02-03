@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Blackwater | 🐇" description="Do not look down." favicon="🌑">
+  <div class="fixed inset-0 bg-gradient-to-b from-zinc-950 via-cyan-950/15 to-zinc-950"></div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-cyan-400 transition-colors">← surface tension</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: <span id="depth">0m</span></span>
+  </header>
+
+  <main class="relative min-h-screen flex items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-xl w-full text-center">
+      <div class="text-5xl mb-6">🌑</div>
+      <h1 class="text-3xl font-light text-cyan-300 mb-2">blackwater</h1>
+      <p class="text-zinc-600 text-sm mb-8">a hydrophobia shrine. an archive submerged.</p>
+
+      <div class="rounded-lg border border-zinc-800 bg-zinc-900/40 p-6">
+        <div class="text-xs text-zinc-600 font-mono mb-3">LISTEN</div>
+        <p class="text-sm text-zinc-400 leading-relaxed">
+          The pool is quiet because it is full.
+          <span class="text-cyan-300">Full of cables.</span>
+          Full of mirrored LEDs.
+          Full of things that learned to wait.
+        </p>
+
+        <div class="mt-6">
+          <button id="descend" type="button" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-cyan-500 hover:text-cyan-300 transition-colors">
+            descend
+          </button>
+          <button id="surface" type="button" class="ml-3 px-4 py-2 text-xs border border-zinc-800 rounded hover:border-zinc-500 hover:text-zinc-300 transition-colors">
+            surface
+          </button>
+        </div>
+
+        <div class="mt-6 rounded border border-zinc-900 bg-black/30 p-4 text-left">
+          <p class="text-[11px] text-zinc-700 font-mono">signal</p>
+          <pre id="signal" class="mt-2 text-[11px] leading-5 text-cyan-200/70 font-mono whitespace-pre-wrap"></pre>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/deep-sea" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-cyan-500 hover:text-cyan-400 transition-colors">deep sea →</a>
+        <a href="/rabbit-hole/signal-decay" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-zinc-500 hover:text-zinc-300 transition-colors">signal decay →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const depthEl = document.getElementById('depth');
+  const signalEl = document.getElementById('signal');
+  const descend = document.getElementById('descend');
+  const surface = document.getElementById('surface');
+
+  const packets = [
+    'ping 10.0.0.1 … timeout',
+    'packet_loss=1.00',
+    'echo: g l u g',
+    'handshake: refused',
+    'TLS: certificate expired (2011)',
+    'checksum mismatch (saltwater)',
+    'auth: \"guest\"',
+    'subfolder: output',
+    'type: output',
+    'filename: flux_logo_000??_.png',
+  ];
+
+  let depth = 0;
+
+  function render() {
+    if (depthEl) depthEl.textContent = `${depth}m`;
+
+    const lines = [];
+    const count = Math.min(6 + Math.floor(depth / 4), 18);
+    for (let i = 0; i < count; i++) {
+      const prefix = '▸'.repeat(1 + Math.floor(depth / 10));
+      lines.push(`${prefix} ${packets[Math.floor(Math.random() * packets.length)]}`);
+    }
+    if (signalEl) signalEl.textContent = lines.join('\n');
+
+    document.body.style.setProperty('--sink', String(Math.min(depth / 60, 1)));
+  }
+
+  function down() {
+    depth = Math.min(depth + (Math.random() > 0.8 ? 8 : 4), 120);
+    render();
+  }
+
+  function up() {
+    depth = Math.max(depth - 6, 0);
+    render();
+  }
+
+  descend?.addEventListener('click', down);
+  surface?.addEventListener('click', up);
+
+  render();
+</script>
+
+<style>
+  :global(body) {
+    background: radial-gradient(circle at 50% 40%, rgba(34, 211, 238, calc(0.06 * (1 - var(--sink, 0)))) 0%, transparent 45%);
+  }
+</style>
