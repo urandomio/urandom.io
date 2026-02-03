@@ -333,7 +333,7 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
   </footer>
 
   <!-- Lightbox Modal -->
-  <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 backdrop-blur-sm">
+  <div id="lightbox" class="lightbox-overlay fixed inset-0 z-[100] items-center justify-center bg-black/95 backdrop-blur-sm">
     <button id="lightbox-close" class="absolute top-6 right-6 text-zinc-400 hover:text-white text-3xl z-10" aria-label="Close">&times;</button>
     <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white text-4xl z-10 p-4" aria-label="Previous">‹</button>
     <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white text-4xl z-10 p-4" aria-label="Next">›</button>
@@ -349,7 +349,11 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
     animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   
-  #lightbox.active {
+  .lightbox-overlay {
+    display: none;
+  }
+  
+  .lightbox-overlay.active {
     display: flex;
   }
 </style>
