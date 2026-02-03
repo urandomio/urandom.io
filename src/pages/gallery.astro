@@ -373,8 +373,8 @@ images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
                 />
               </button>
               
-              <!-- Overlay on hover -->
-              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+              <!-- Overlay on hover (pointer-events-none so clicks pass through to button) -->
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 pointer-events-none">
                 <h3 class="text-lg text-zinc-100 mb-1">{image.title}</h3>
                 <p class="text-xs text-zinc-400 mb-2">{image.description}</p>
                 <div class="flex items-center gap-2 text-xs text-zinc-600">
