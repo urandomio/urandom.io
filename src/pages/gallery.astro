@@ -8,6 +8,7 @@ type GalleryImage = {
   title: string;
   description: string;
   date: string;
+  mtime: number; // full timestamp for sorting
   model: string;
   tags: string[];
 };
@@ -146,14 +147,15 @@ const images: GalleryImage[] = await Promise.all(
       title: override?.title ?? humanizeFilename(file),
       description: override?.description ?? '',
       date: override?.date ?? isoDate(st.mtime),
+      mtime: st.mtime.getTime(), // full timestamp for precise sorting
       model: override?.model ?? defaultModel,
       tags: override?.tags ?? ['ai-art'],
     };
   })
 );
 
-// Newest first.
-images.sort((a, b) => b.date.localeCompare(a.date));
+// Newest first (by full timestamp, not just date).
+images.sort((a, b) => b.mtime - a.mtime);
 ---
 
 <BaseLayout title="Gallery | urandom.io" description="AI-generated art from the entropy machines." favicon="🎨">
