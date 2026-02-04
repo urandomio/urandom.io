@@ -171,8 +171,14 @@ const initialImages = images.slice(0, INITIAL_COUNT);
             ))}
           </div>
         </div>
-        <div class="max-w-6xl mx-auto mt-2 text-[11px] text-zinc-700 font-mono">
+        <div class="max-w-6xl mx-auto mt-2 text-[11px] text-zinc-700 font-mono flex items-center justify-between gap-3">
           <span id="gallery-filter-label">newest → oldest</span>
+          <span class="hidden md:inline">·</span>
+          <span id="gallery-count" class="text-zinc-800">0 posts</span>
+          <div class="ml-auto flex items-center gap-2">
+            <button id="gallery-clear" type="button" class="tag-pill hidden" data-filter-clear>clear</button>
+            <button id="gallery-top" type="button" class="tag-pill hidden" data-filter-top>top</button>
+          </div>
         </div>
       </div>
 
@@ -229,6 +235,7 @@ const initialImages = images.slice(0, INITIAL_COUNT);
           <p class="mt-2 text-[11px] text-zinc-700 font-mono">
             showing <span id="shown-count">{INITIAL_COUNT}</span> / {images.length}
           </p>
+          <p id="load-more-status" class="mt-2 text-[11px] text-zinc-800 font-mono hidden">loading…</p>
           <!-- Sentinel for infinite scroll -->
           <div id="load-more-sentinel" class="h-1 w-full"></div>
         </div>
@@ -355,7 +362,11 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   const loadMoreSentinel = document.getElementById('load-more-sentinel');
   const shownCountEl = document.getElementById('shown-count');
   const filterLabel = document.getElementById('gallery-filter-label');
+  const countLabel = document.getElementById('gallery-count');
+  const clearBtn = document.getElementById('gallery-clear');
+  const topBtn = document.getElementById('gallery-top');
   const tagSearch = document.getElementById('tag-search');
+  const loadMoreStatus = document.getElementById('load-more-status');
 
   let activeTag = new URL(window.location.href).searchParams.get('tag') || '';
   let searchQuery = '';
@@ -369,6 +380,7 @@ const initialImages = images.slice(0, INITIAL_COUNT);
     });
 
     // filter cards by active tag AND search query
+    let visible = 0;
     document.querySelectorAll('article[data-tags]').forEach((c) => {
       const tags = (c.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
       const title = (c.querySelector('img')?.getAttribute('alt') || '').toLowerCase();
@@ -377,15 +389,25 @@ const initialImages = images.slice(0, INITIAL_COUNT);
       const tagOk = !activeTag || tags.includes(activeTag);
       const qOk = !searchQuery || hay.includes(searchQuery);
 
-      c.style.display = tagOk && qOk ? '' : 'none';
+      const show = tagOk && qOk;
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
 
     if (filterLabel) {
-      const parts = [];
+      const parts: string[] = [];
       if (activeTag) parts.push(`#${activeTag}`);
       if (searchQuery) parts.push(`search: “${searchQuery}”`);
       filterLabel.textContent = parts.length ? parts.join(' · ') : 'newest → oldest';
     }
+
+    if (countLabel) {
+      countLabel.textContent = `${visible} post${visible === 1 ? '' : 's'}`;
+    }
+
+    const hasFilter = Boolean(activeTag || searchQuery);
+    if (clearBtn) clearBtn.classList.toggle('hidden', !hasFilter);
+    if (topBtn) topBtn.classList.toggle('hidden', !hasFilter);
 
     const url = new URL(window.location.href);
     if (activeTag) url.searchParams.set('tag', activeTag);
@@ -410,6 +432,18 @@ const initialImages = images.slice(0, INITIAL_COUNT);
     if (el.classList.contains('tag-pill')) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    activeTag = '';
+    searchQuery = '';
+    if (tagSearch) tagSearch.value = '';
+    applyFilters();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  topBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   // tag search (desktop)
@@ -489,29 +523,41 @@ const initialImages = images.slice(0, INITIAL_COUNT);
     `;
   }
 
+  let loading = false;
+
   async function loadMore(batch = 24) {
     if (!grid) return;
-    const imgs = await getIndex();
-    const slice = imgs.slice(renderedCount, renderedCount + batch);
-    if (!slice.length) {
-      loadMoreBtn?.setAttribute('disabled', 'true');
-      loadMoreBtn?.classList.add('opacity-40');
-      return;
+    if (loading) return;
+    loading = true;
+
+    if (loadMoreStatus) loadMoreStatus.classList.remove('hidden');
+
+    try {
+      const imgs = await getIndex();
+      const slice = imgs.slice(renderedCount, renderedCount + batch);
+      if (!slice.length) {
+        loadMoreBtn?.setAttribute('disabled', 'true');
+        loadMoreBtn?.classList.add('opacity-40');
+        return;
+      }
+
+      grid.insertAdjacentHTML('beforeend', slice.map(renderCard).join(''));
+      renderedCount += slice.length;
+
+      if (shownCountEl) shownCountEl.textContent = String(renderedCount);
+
+      // hide button when done
+      if (renderedCount >= imgs.length) {
+        loadMoreBtn?.classList.add('hidden');
+      }
+
+      // Re-apply current filter and rebind lightbox triggers
+      applyFilters();
+      refreshLightboxTriggers();
+    } finally {
+      loading = false;
+      if (loadMoreStatus) loadMoreStatus.classList.add('hidden');
     }
-
-    grid.insertAdjacentHTML('beforeend', slice.map(renderCard).join(''));
-    renderedCount += slice.length;
-
-    if (shownCountEl) shownCountEl.textContent = String(renderedCount);
-
-    // hide button when done
-    if (renderedCount >= imgs.length) {
-      loadMoreBtn?.classList.add('hidden');
-    }
-
-    // Re-apply current filter and rebind lightbox triggers
-    setActiveTag(activeTag);
-    refreshLightboxTriggers();
   }
 
   loadMoreBtn?.addEventListener('click', () => loadMore());
@@ -524,7 +570,7 @@ const initialImages = images.slice(0, INITIAL_COUNT);
         if (!e.isIntersecting) return;
         // avoid spamming: only load if button is still visible
         if (loadMoreBtn && !loadMoreBtn.classList.contains('hidden') && !loadMoreBtn.hasAttribute('disabled')) {
-          loadMore();
+          loadMore(24);
         }
       },
       { root: null, rootMargin: '800px 0px', threshold: 0 }
