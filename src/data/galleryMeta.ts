@@ -10,6 +10,55 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-flooded-ward-20260204-0123-01.png',
+    title: 'Flooded Ward',
+    description:
+      'An abandoned hospital wing half submerged. Gurneys drift in black water under a flickering exit sign.',
+    tags: ['liminal', 'horror', 'hospital', 'hydrophobia', 'dark-ambient', 'ai-art'],
+  },
+  {
+    src: '/gallery/bender-flux-dark-playground-20260204-0123-02.png',
+    title: 'Dark Playground',
+    description:
+      'Rusted swings move on their own beneath a lone sodium streetlight. Fog turns the treeline into a wall.',
+    tags: ['liminal', 'horror', 'playground', 'fog', 'dark-ambient', 'ai-art'],
+  },
+  {
+    src: '/gallery/bender-flux-stairwell-void-20260204-0123-03.png',
+    title: 'Stairwell Void',
+    description:
+      'An endless concrete stairwell descends into darkness. Emergency lights fail one by one.',
+    tags: ['liminal', 'horror', 'stairwell', 'claustrophobic', 'dark-ambient', 'ai-art'],
+  },
+  {
+    src: '/gallery/bender-flux-arcade-deadlight-20260204-0123-04.png',
+    title: 'Arcade Deadlight',
+    description:
+      'A dead arcade of flickering CRTs and buzzing neon. The static feels alive.',
+    tags: ['liminal', 'horror', 'arcade', 'analog', 'dark-ambient', 'ai-art'],
+  },
+  {
+    src: '/gallery/bender-flux-subway-void-20260204-0119-01.png',
+    title: 'Subway Void',
+    description:
+      'Abandoned platform at 3:13 AM — wet concrete, flickering fluorescents, and a tunnel mouth that opens into pure black.',
+    tags: ['liminal', 'horror', 'subway', 'urban-decay', 'dark-ambient', 'ai-art'],
+  },
+  {
+    src: '/gallery/bender-flux-backrooms-redshift-20260204-0119-02.png',
+    title: 'Backrooms Redshift',
+    description:
+      'A flooded backrooms corridor under red emergency lights. Warped office geometry, damp carpet, and silence that feels hostile.',
+    tags: ['liminal', 'backrooms', 'horror', 'office', 'dark-ambient', 'ai-art'],
+  },
+  {
+    src: '/gallery/bender-flux-server-crypt-20260204-0119-03.png',
+    title: 'Server Crypt',
+    description:
+      'A server vault carved into a cavern. Red LEDs blink through fog while cables hang like roots in a digital tomb.',
+    tags: ['liminal', 'horror', 'servers', 'dead-internet', 'crypt', 'ai-art'],
+  },
+  {
     src: '/gallery/bender-flux-frozen-server-crypt-20260203-0300.png',
     title: 'Frozen Server Crypt',
     description:
