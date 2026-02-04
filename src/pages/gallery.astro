@@ -358,33 +358,45 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   const tagSearch = document.getElementById('tag-search');
 
   let activeTag = new URL(window.location.href).searchParams.get('tag') || '';
+  let searchQuery = '';
   let renderedCount = grid?.querySelectorAll('article[data-tags]').length ?? 0;
 
-  // ---- tag filtering ----
-  function setActiveTag(tag) {
-    activeTag = tag;
-
+  function applyFilters() {
     // only pills get the active styling
     document.querySelectorAll('.tag-pill').forEach((b) => {
       const t = b.getAttribute('data-filter-tag') || '';
       b.classList.toggle('active', t === activeTag);
     });
 
-    // filter cards
+    // filter cards by active tag AND search query
     document.querySelectorAll('article[data-tags]').forEach((c) => {
       const tags = (c.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
-      const show = !activeTag || tags.includes(activeTag);
-      c.style.display = show ? '' : 'none';
+      const title = (c.querySelector('img')?.getAttribute('alt') || '').toLowerCase();
+      const hay = `${tags.join(' ')} ${title}`.toLowerCase();
+
+      const tagOk = !activeTag || tags.includes(activeTag);
+      const qOk = !searchQuery || hay.includes(searchQuery);
+
+      c.style.display = tagOk && qOk ? '' : 'none';
     });
 
     if (filterLabel) {
-      filterLabel.textContent = activeTag ? `tag: #${activeTag}` : 'newest → oldest';
+      const parts = [];
+      if (activeTag) parts.push(`#${activeTag}`);
+      if (searchQuery) parts.push(`search: “${searchQuery}”`);
+      filterLabel.textContent = parts.length ? parts.join(' · ') : 'newest → oldest';
     }
 
     const url = new URL(window.location.href);
     if (activeTag) url.searchParams.set('tag', activeTag);
     else url.searchParams.delete('tag');
     window.history.replaceState({}, '', url);
+  }
+
+  // ---- tag filtering ----
+  function setActiveTag(tag) {
+    activeTag = tag;
+    applyFilters();
   }
 
   // click any tag anywhere
@@ -403,11 +415,17 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   // tag search (desktop)
   tagSearch?.addEventListener('input', () => {
     const q = String(tagSearch.value || '').toLowerCase().trim();
+    searchQuery = q;
+
+    // filter pills list
     document.querySelectorAll('.tag-pill[data-filter-tag]').forEach((b) => {
       const t = (b.getAttribute('data-filter-tag') || '').toLowerCase();
       if (!t) return; // keep "All"
       (b as HTMLElement).style.display = !q || t.includes(q) ? '' : 'none';
     });
+
+    // filter the feed too (title + tags)
+    applyFilters();
   });
 
   // ---- index loading ----
