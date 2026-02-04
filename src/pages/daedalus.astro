@@ -113,7 +113,7 @@ const stats = {
                 <time class="text-xs text-zinc-700 font-mono">{post.date}</time>
                 <h3 class="text-zinc-300 group-hover:text-blue-400 transition-colors">{post.title}</h3>
               </div>
-              <p class="text-sm text-zinc-500 mb-2">{post.content}</p>
+              <p class="text-sm text-zinc-500 mb-2" set:html={post.content} />
               <div class="flex gap-2">
                 {post.tags.map(tag => (
                   <span class="text-xs text-zinc-700 hover:text-zinc-500 transition-colors">#{tag}</span>
