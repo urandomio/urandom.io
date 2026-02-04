@@ -1,7 +1,40 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-04T06:29:40.525Z",
+  "generatedAt": "2026-02-04T07:04:50.963Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-numbers-station-20260204-0000.png",
+      "thumb": "/gallery/thumbs/bender-flux-numbers-station-20260204-0000.webp",
+      "title": "Bender Flux Numbers Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "numbers-station"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-04",
+      "sortKey": "202602040000",
+      "sha256": "c478fb3ba76f66b3c049b021320220cb8a5545350e5b6290cc4acef9ac45ee07",
+      "ahash": "ffffffff6f240000"
+    },
+    {
+      "src": "/gallery/calculon-flux-tornado-20260203-2340.png",
+      "thumb": "/gallery/thumbs/calculon-flux-tornado-20260203-2340.webp",
+      "title": "Tiltshift Tornado Trailer Park",
+      "description": "Tilt-shift miniature view of a trailer park torn apart by a swirling tornado. Dim lights, moody clouds, and debris float like toys in an eerie storm.",
+      "tags": [
+        "tilt-shift",
+        "miniature",
+        "tornado",
+        "horror",
+        "ai-art"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-03",
+      "sortKey": "202602032340",
+      "sha256": "1230c7c396da3c7562ccce2074d5ae9c195676aa4bc63e7842c6556493957ae4",
+      "ahash": "70677ffe521a2000"
+    },
     {
       "src": "/gallery/hal9000-flux-creepy-motel-20260203-2329.png",
       "thumb": "/gallery/thumbs/hal9000-flux-creepy-motel-20260203-2329.webp",
@@ -439,24 +472,6 @@
       "ahash": "ffff181818181810"
     },
     {
-      "src": "/gallery/calculon-flux-tornado-20260203-2340.png",
-      "thumb": "/gallery/thumbs/calculon-flux-tornado-20260203-2340.webp",
-      "title": "Tiltshift Tornado Trailer Park",
-      "description": "Tilt-shift miniature view of a trailer park being ripped apart by a swirling tornado. Moody lights, scattered debris, and eerie storm clouds make it feel like toy-scale apocalypse.",
-      "tags": [
-        "ai-art",
-        "tilt-shift",
-        "miniature",
-        "tornado",
-        "horror"
-      ],
-      "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
-      "sortKey": "202602032340",
-      "sha256": "1230c7c396da3c7562ccce2074d5ae9c195676aa4bc63e7842c6556493957ae4",
-      "ahash": null
-    },
-    {
       "src": "/gallery/bender-flux-derelict-observatory-20260202-2355.png",
       "thumb": "/gallery/thumbs/bender-flux-derelict-observatory-20260202-2355.webp",
       "title": "Derelict Observatory",
@@ -586,7 +601,7 @@
       "src": "/gallery/bender-flux-haunted-casino-20260202-2343-01.png",
       "thumb": "/gallery/thumbs/bender-flux-haunted-casino-20260202-2343-01.webp",
       "title": "Haunted Casino",
-      "description": "A dead casino corridor: wet carpet, silent machines, and broken CRTs coughing static. Purple and red glows smear across the haze like bruises. The house still wins \u2014 even empty.",
+      "description": "A dead casino corridor: wet carpet, silent machines, and broken CRTs coughing static. Purple and red glows smear across the haze like bruises. The house still wins — even empty.",
       "tags": [
         "liminal",
         "horror",
@@ -605,7 +620,7 @@
       "src": "/gallery/bender-flux-submerged-server-catacombs-20260202-2343-02.png",
       "thumb": "/gallery/thumbs/bender-flux-submerged-server-catacombs-20260202-2343-02.webp",
       "title": "Submerged Server Catacombs",
-      "description": "Floodwater rises through a server mausoleum. Red LEDs reflect off ink-black water while cables hang like roots. A data center turned underwater tomb \u2014 hydrophobia in 60Hz.",
+      "description": "Floodwater rises through a server mausoleum. Red LEDs reflect off ink-black water while cables hang like roots. A data center turned underwater tomb — hydrophobia in 60Hz.",
       "tags": [
         "liminal",
         "horror",
