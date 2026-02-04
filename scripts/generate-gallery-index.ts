@@ -1,8 +1,9 @@
 #!/usr/bin/env bun
 
-import { readdir, stat, mkdir, writeFile } from 'node:fs/promises';
+import { readdir, stat, mkdir, writeFile, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
+import crypto from 'node:crypto';
 import { galleryMetaBySrc } from '../src/data/galleryMeta';
 
 type IndexEntry = {
@@ -14,6 +15,8 @@ type IndexEntry = {
   model: string;
   date: string; // YYYY-MM-DD
   sortKey: string; // YYYYMMDDHHMM
+  sha256: string;
+  ahash: string; // 64-bit average hash as hex
 };
 
 const ROOT = new URL('../', import.meta.url); // repo root
@@ -111,6 +114,46 @@ async function ensureThumb(inputPath: string, outputPath: string) {
   await run('magick', args);
 }
 
+async function sha256File(filePath: string): Promise<string> {
+  const buf = await readFile(filePath);
+  return crypto.createHash('sha256').update(new Uint8Array(buf)).digest('hex');
+}
+
+async function aHash64Hex(filePath: string): Promise<string> {
+  // Use ImageMagick to downsample to 8x8 grayscale and dump pixels.
+  // Then compute average-hash (aHash) and return 64 bits as 16-char hex.
+  const out = await new Promise<string>((resolve, reject) => {
+    const args = [filePath, '-auto-orient', '-resize', '8x8!', '-colorspace', 'Gray', '-depth', '8', 'txt:-'];
+    const p = spawn('magick', args, { stdio: ['ignore', 'pipe', 'pipe'] });
+    let stdout = '';
+    let stderr = '';
+    p.stdout.on('data', (d) => (stdout += d.toString()));
+    p.stderr.on('data', (d) => (stderr += d.toString()));
+    p.on('error', reject);
+    p.on('exit', (code) => {
+      if (code === 0) resolve(stdout);
+      else reject(new Error(`magick txt failed (${code}): ${stderr}`));
+    });
+  });
+
+  const vals: number[] = [];
+  for (const line of out.split('\n')) {
+    // Example: "0,0: ( 12, 12, 12)  #0C0C0C  gray(12)"
+    const m = line.match(/gray\((\d+)\)/);
+    if (m) vals.push(Number(m[1]));
+  }
+  if (vals.length < 64) throw new Error(`aHash: expected 64 gray values, got ${vals.length}`);
+
+  const pix = vals.slice(0, 64);
+  const avg = pix.reduce((a, b) => a + b, 0) / 64;
+
+  let bits = 0n;
+  for (let i = 0; i < 64; i++) {
+    if (pix[i] >= avg) bits |= 1n << BigInt(63 - i);
+  }
+  return bits.toString(16).padStart(16, '0');
+}
+
 async function main() {
   const thumbsDirFs = path.join(PUBLIC_GALLERY.pathname, 'thumbs');
   await mkdir(thumbsDirFs, { recursive: true });
@@ -155,6 +198,9 @@ async function main() {
 
     const tags = (meta?.tags && meta.tags.length ? meta.tags : deriveTagsFromFilename(file)).slice();
 
+    const sha256 = await sha256File(fullPath);
+    const ahash = await aHash64Hex(fullPath);
+
     index.push({
       src,
       thumb,
@@ -164,6 +210,8 @@ async function main() {
       model: meta?.model ?? 'Flux Dev 1.0',
       date,
       sortKey,
+      sha256,
+      ahash,
     });
   }
 
