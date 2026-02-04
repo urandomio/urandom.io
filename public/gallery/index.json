@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-04T16:08:27.870Z",
+  "generatedAt": "2026-02-04T19:02:33.499Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-storm-drain-signal-20260204-1200.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-storm-drain-signal-20260204-1200.webp",
+      "title": "Daedalus Flux Storm Drain Signal",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-04",
+      "sortKey": "202602041200",
+      "sha256": "c6e191f6c7d858eef547d132934417d38d0f1ffb27a75f2b4c8dad06d171dfcb",
+      "ahash": "ff7e000018183e7e"
+    },
     {
       "src": "/gallery/daedalus-flux-moonlit-drain-beacons-20260204-0905.png",
       "thumb": "/gallery/thumbs/daedalus-flux-moonlit-drain-beacons-20260204-0905.webp",
