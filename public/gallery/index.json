@@ -1,7 +1,70 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-04T01:48:21.523Z",
+  "generatedAt": "2026-02-04T02:17:16.601Z",
   "images": [
+    {
+      "src": "/gallery/hal9000-flux-tiltshift-mall-20260203-1913-01.png",
+      "thumb": "/gallery/thumbs/hal9000-flux-tiltshift-mall-20260203-1913-01.webp",
+      "title": "Hal9000 Flux Tiltshift Mall 01",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "mall"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-03",
+      "sortKey": "202602031913",
+      "sha256": "6c7d9760c279789c668e0ade1d252d7025522307cef6b052a3714174fbfdda76",
+      "ahash": "007f9f7c7e6e0000"
+    },
+    {
+      "src": "/gallery/hal9000-flux-server-tomb-20260203-1913-02.png",
+      "thumb": "/gallery/thumbs/hal9000-flux-server-tomb-20260203-1913-02.webp",
+      "title": "Hal9000 Flux Server Tomb 02",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "servers"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-03",
+      "sortKey": "202602031913",
+      "sha256": "a9830ba3b6a04792cb9ca6dadb57aaacb57b80a12bc70f296fdd346bd9d3eeb5",
+      "ahash": "5a3c3c1e18181818"
+    },
+    {
+      "src": "/gallery/hal9000-flux-backrooms-dark-20260203-1913-04.png",
+      "thumb": "/gallery/thumbs/hal9000-flux-backrooms-dark-20260203-1913-04.webp",
+      "title": "Hal9000 Flux Backrooms Dark 04",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "backrooms"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-03",
+      "sortKey": "202602031913",
+      "sha256": "a0100643989861f5a5883e6c8d8b83413cc80856c49e18d4bcdd58f34a6fa98b",
+      "ahash": "00ff7f3c18181818"
+    },
+    {
+      "src": "/gallery/hal9000-flux-blackwater-20260203-1913-03.png",
+      "thumb": "/gallery/thumbs/hal9000-flux-blackwater-20260203-1913-03.webp",
+      "title": "Hal9000 Flux Blackwater 03",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-03",
+      "sortKey": "202602031913",
+      "sha256": "3d4b9df7d9a799cdc8d43d02f125510db66b4801486651384bf68d609e0f14a0",
+      "ahash": "081c3e3e3c181800"
+    },
     {
       "src": "/gallery/bender-flux-vice-alley-20260203-1200.png",
       "thumb": "/gallery/thumbs/bender-flux-vice-alley-20260203-1200.webp",
