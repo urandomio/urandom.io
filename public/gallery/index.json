@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-04T04:06:15.990Z",
+  "generatedAt": "2026-02-04T06:29:40.525Z",
   "images": [
+    {
+      "src": "/gallery/hal9000-flux-creepy-motel-20260203-2329.png",
+      "thumb": "/gallery/thumbs/hal9000-flux-creepy-motel-20260203-2329.webp",
+      "title": "Hal9000 Flux Creepy Motel",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-03",
+      "sortKey": "202602032329",
+      "sha256": "86ef5a4b531c06bbed35c071447f2cf67a1ec692f255f361d65d5420d1a2762e",
+      "ahash": "c1c3ffff09000800"
+    },
     {
       "src": "/gallery/bender-flux-numbers-station-20260203-2103.png",
       "thumb": "/gallery/thumbs/bender-flux-numbers-station-20260203-2103.webp",
