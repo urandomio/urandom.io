@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-04T10:03:02.903Z",
+  "generatedAt": "2026-02-04T13:02:39.416Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-static-pulse-frosted-20260204-0600.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-static-pulse-frosted-20260204-0600.webp",
+      "title": "Daedalus Flux Static Pulse Frosted",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "analog"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-04",
+      "sortKey": "202602040600",
+      "sha256": "f954e8e4b6d5bfea124df0d3986eac40755e5378e525d841f2830dbf5b6adf7d",
+      "ahash": "3800183cffc73817"
+    },
     {
       "src": "/gallery/daedalus-flux-red-gate-chasm-20260204-0300.png",
       "thumb": "/gallery/thumbs/daedalus-flux-red-gate-chasm-20260204-0300.webp",
