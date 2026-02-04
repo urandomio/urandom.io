@@ -1,7 +1,20 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-03T23:56:30.462Z",
+  "generatedAt": "2026-02-04T01:03:16.429Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-dead-channel-20260203-1800.png",
+      "thumb": "/gallery/thumbs/bender-flux-dead-channel-20260203-1800.webp",
+      "title": "Bender Flux Dead Channel",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "analog"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-03",
+      "sortKey": "202602031800"
+    },
     {
       "src": "/gallery/bender-flux-dead-channel-20260203-1500.png",
       "thumb": "/gallery/thumbs/bender-flux-dead-channel-20260203-1500.webp",
