@@ -19,11 +19,8 @@ type IndexFile = {
   images: IndexEntry[];
 };
 
-function slug(tag: string) {
-  return tag.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/-+/g, '-');
-}
-
 export async function getStaticPaths() {
+  const slug = (tag: string) => tag.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/-+/g, '-');
   const indexUrl = new URL('../../../../public/gallery/index.json', import.meta.url);
   const raw = await readFile(indexUrl, 'utf-8');
   const parsed = JSON.parse(raw) as IndexFile;
