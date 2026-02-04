@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: bun install
         
+      - name: Validate gallery index
+        run: bun scripts/validate-gallery-index.ts
+
       - name: Build
         run: bun run build
         
