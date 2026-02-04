@@ -93,6 +93,12 @@ export const galleryMeta: GalleryMetaEntry[] = [
     tags: ['tilt-shift', 'miniature', 'tornado', 'horror', 'ai-art'],
   },
   {
+    src: '/gallery/calculon-flux-doll-heads-20260204-0124.png',
+    title: 'Tiltshift Doll Heads',
+    description: 'A creepy dark-ambient tilt-shift scene of cracked porcelain doll heads floating in nicotine fog and warped light, like toys left on a funeral train.',
+    tags: ['tilt-shift', 'dark-ambient', 'doll-heads', 'miniature', 'horror', 'ai-art'],
+  },
+  {
     src: '/gallery/bender-flux-tiltshift-city-20260203-0001.png',
     title: 'Abandoned City (Miniature)',
     description:
