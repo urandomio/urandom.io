@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-04T13:02:39.416Z",
+  "generatedAt": "2026-02-04T16:08:27.870Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-moonlit-drain-beacons-20260204-0905.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-moonlit-drain-beacons-20260204-0905.webp",
+      "title": "Daedalus Flux Moonlit Drain Beacons",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-04",
+      "sortKey": "202602040905",
+      "sha256": "6f79beb3e989327ac3be1fae1fcd21e983e012141bac7ae32973d9eba5de16b9",
+      "ahash": "3e1c3e8e0018387c"
+    },
     {
       "src": "/gallery/daedalus-flux-static-pulse-frosted-20260204-0600.png",
       "thumb": "/gallery/thumbs/daedalus-flux-static-pulse-frosted-20260204-0600.webp",
