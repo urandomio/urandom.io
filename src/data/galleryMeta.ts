@@ -38,7 +38,12 @@ export const galleryMeta: GalleryMetaEntry[] = [
     tags: ['tilt-shift', 'miniature', 'carnival', 'horror', 'ai-art'],
   },
   {
-    src: '/gallery/bender-flux-tiltshift-city-20260203-0001.png',
+    src: '/gallery/calculon-flux-tornado-20260203-2340.png',
+    title: 'Tiltshift Tornado Trailer Park',
+    description: 'Tilt-shift miniature view of a trailer park torn apart by a swirling tornado. Dim lights, moody clouds, and debris float like toys in an eerie storm.',
+    tags: ['tilt-shift', 'miniature', 'tornado', 'horror', 'ai-art'],
+  },
+  ,
     title: 'Abandoned City (Miniature)',
     description:
       'Tilt-shift miniature photography of abandoned city at night. Dark streets with flickering lights, fog rolling through tiny buildings. Diorama horror.',
