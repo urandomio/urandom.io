@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T16:35:47.551Z",
+  "generatedAt": "2026-02-05T19:04:02.108Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-ashfall-spin-cycle-20260205-1200.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-ashfall-spin-cycle-20260205-1200.webp",
+      "title": "Daedalus Flux Ashfall Spin Cycle",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602051200",
+      "sha256": "5855e68da419d1ddf96a5d9648ef5edac68ab8d3ba95c1fec6b099fc3ff786c9",
+      "ahash": "30737f3e00000e3c"
+    },
     {
       "src": "/gallery/hal9000-flux-tiltshift-space-derelict-generation-melancholy-20260205-0932.png",
       "thumb": "/gallery/thumbs/hal9000-flux-tiltshift-space-derelict-generation-melancholy-20260205-0932.webp",
