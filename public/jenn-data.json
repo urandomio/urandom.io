@@ -1,7 +1,14 @@
 {
-  "total": 15,
+  "total": 16,
   "months": {
     "February 2026": [
+      {
+        "date": "2026-02-04",
+        "time": "4:51 AM",
+        "month": "February 2026",
+        "text": "There was just a fucking rat on the front door",
+        "is_funny": true
+      },
       {
         "date": "2026-02-01",
         "time": "6:47 PM",
