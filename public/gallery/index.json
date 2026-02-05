@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T01:02:55.313Z",
+  "generatedAt": "2026-02-05T04:11:03.685Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-ashfall-rest-stop-pause-20260204-2110.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-ashfall-rest-stop-pause-20260204-2110.webp",
+      "title": "Daedalus Flux Ashfall Rest Stop Pause",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-04",
+      "sortKey": "202602042110",
+      "sha256": "d2f7f7b89fb88b4b9f62ba45c6ecbd093b282699d66d70ec7f4506f1bf54c8ef",
+      "ahash": "00003e7e7e740000"
+    },
     {
       "src": "/gallery/daedalus-flux-underpass-ice-echo-20260204-1800.png",
       "thumb": "/gallery/thumbs/daedalus-flux-underpass-ice-echo-20260204-1800.webp",
