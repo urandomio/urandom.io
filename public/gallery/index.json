@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T12:22:00.933Z",
+  "generatedAt": "2026-02-05T13:04:42.633Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-ashfall-echo-20260205-0600.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-ashfall-echo-20260205-0600.webp",
+      "title": "Daedalus Flux Ashfall Echo",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602050600",
+      "sha256": "72fdf2476d1f7dcbaf6195cd59ee50fd95ea145d3d6aed71c09bdbbafd499a42",
+      "ahash": "6f666c0c00387e7e"
+    },
     {
       "src": "/gallery/calculon-flux-clown-horizon-20260205-0516.png",
       "thumb": "/gallery/thumbs/calculon-flux-clown-horizon-20260205-0516.webp",
