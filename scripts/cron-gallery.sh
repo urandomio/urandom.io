@@ -44,10 +44,17 @@ TS=$(date +"%Y%m%d-%H%M")
 OUTFILE="$REPO/public/gallery/${AGENT}-flux-${SLUG}-${TS}.png"
 THUMB="$REPO/public/gallery/thumbs/${AGENT}-flux-${SLUG}-${TS}.webp"
 
+cd "$REPO"
+
+if ! git diff --quiet || ! git diff --cached --quiet; then
+  echo "repo has uncommitted changes; aborting" >&2
+  exit 1
+fi
+
+git pull --rebase
+
 # Generate image
 python3 "$GEN" "$PROMPT" --output "$OUTFILE" --width "$WIDTH" --height "$HEIGHT" --steps "$STEPS"
-
-cd "$REPO"
 
 # Update gallery index + thumbs
 bun scripts/generate-gallery-index.ts
@@ -63,8 +70,6 @@ if [[ ! -f "$THUMB" ]]; then
   echo "thumb missing: $THUMB" >&2
   exit 1
 fi
-
-git pull --rebase
 
 git add "$OUTFILE" "$THUMB" public/gallery/index.json
 
