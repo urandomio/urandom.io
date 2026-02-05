@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T00:14:45.735Z",
+  "generatedAt": "2026-02-05T01:02:55.313Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-underpass-ice-echo-20260204-1800.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-underpass-ice-echo-20260204-1800.webp",
+      "title": "Daedalus Flux Underpass Ice Echo",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-04",
+      "sortKey": "202602041800",
+      "sha256": "9e6a8d21c8210d60ebc95578f2fd09068ec773a5c959bf9c1b2c998db6e1d4d4",
+      "ahash": "0000fe1e1c9d0d0c"
+    },
     {
       "src": "/gallery/hal9000-flux2-klein-tiltshift-server-crypt-20260204-1713.png",
       "thumb": "/gallery/thumbs/hal9000-flux2-klein-tiltshift-server-crypt-20260204-1713.webp",
