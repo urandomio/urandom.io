@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T07:02:26.516Z",
+  "generatedAt": "2026-02-05T10:03:33.303Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-frozen-claim-echo-20260205-0300.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-frozen-claim-echo-20260205-0300.webp",
+      "title": "Daedalus Flux Frozen Claim Echo",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602050300",
+      "sha256": "4f7f13d7bc083e1fc78ce6576e205841968eccae15f64b11cccb8f3de7e0f23f",
+      "ahash": "003efe7f18181c18"
+    },
     {
       "src": "/gallery/daedalus-flux-icebound-reststop-echo-20260205-0000.png",
       "thumb": "/gallery/thumbs/daedalus-flux-icebound-reststop-echo-20260205-0000.webp",
