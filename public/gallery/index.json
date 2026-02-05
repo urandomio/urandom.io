@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T13:38:40.552Z",
+  "generatedAt": "2026-02-05T16:09:33.958Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-iceward-laundry-20260205-0905.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-iceward-laundry-20260205-0905.webp",
+      "title": "Daedalus Flux Iceward Laundry",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602050905",
+      "sha256": "24c6bfa50166e6d7be46ed29be1468d0885d490db14132d43a1b746317f5e413",
+      "ahash": "001a7e7e60183e5e"
+    },
     {
       "src": "/gallery/hal9000-flux-tiltshift-space-ringed-giant-awe-20260205-0634.png",
       "thumb": "/gallery/thumbs/hal9000-flux-tiltshift-space-ringed-giant-awe-20260205-0634.webp",
