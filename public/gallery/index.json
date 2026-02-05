@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T19:37:06.156Z",
+  "generatedAt": "2026-02-05T22:03:54.108Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-mirrored-flood-sentinel-20260205-1500.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-mirrored-flood-sentinel-20260205-1500.webp",
+      "title": "Daedalus Flux Mirrored Flood Sentinel",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602051500",
+      "sha256": "2da97f5dbc6c81508dbded119afbd33c9917d362e297500b8ab61b2c016e4858",
+      "ahash": "0040fd7f041c3c7c"
+    },
     {
       "src": "/gallery/hal9000-flux-tiltshift-space-ringed-giant-lumen-20260205-1236.png",
       "thumb": "/gallery/thumbs/hal9000-flux-tiltshift-space-ringed-giant-lumen-20260205-1236.webp",
