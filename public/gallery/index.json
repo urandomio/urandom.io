@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T10:48:57.430Z",
+  "generatedAt": "2026-02-05T10:50:19.767Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-server-crypt-20260205-0350.png",
+      "thumb": "/gallery/thumbs/calculon-flux-server-crypt-20260205-0350.webp",
+      "title": "Calculon Flux Server Crypt",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "servers"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602050350",
+      "sha256": "4a8c13517dca4355606a9a5fafb55559979bde26ae7ab417ea66e3688ee3bd29",
+      "ahash": "0a08bc7e7e3e3c10"
+    },
     {
       "src": "/gallery/bender-flux-dead-mall-20260205-0347.png",
       "thumb": "/gallery/thumbs/bender-flux-dead-mall-20260205-0347.webp",
