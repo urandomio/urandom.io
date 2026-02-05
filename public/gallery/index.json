@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T06:52:47.522Z",
+  "generatedAt": "2026-02-05T07:02:26.516Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-icebound-reststop-echo-20260205-0000.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-icebound-reststop-echo-20260205-0000.webp",
+      "title": "Daedalus Flux Icebound Reststop Echo",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602050000",
+      "sha256": "cf2f802eefc1c7c743080cbdb6a86e357a39e9812308a2e644f2a9c1c4f81ad7",
+      "ahash": "3000103f1dffff3e"
+    },
     {
       "src": "/gallery/daedalus-flux-nocturnal-void-20260205-0000.png",
       "thumb": "/gallery/thumbs/daedalus-flux-nocturnal-void-20260205-0000.webp",
