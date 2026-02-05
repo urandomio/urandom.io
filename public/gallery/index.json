@@ -1,7 +1,28 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-04T19:02:33.499Z",
+  "generatedAt": "2026-02-05T00:14:45.735Z",
   "images": [
+    {
+      "src": "/gallery/hal9000-flux2-klein-tiltshift-server-crypt-20260204-1713.png",
+      "thumb": "/gallery/thumbs/hal9000-flux2-klein-tiltshift-server-crypt-20260204-1713.webp",
+      "title": "Server Crypt (Miniature)",
+      "description": "Flux2 Klein 9B — tilt-shift diorama of a server vault: red LEDs in fog, wet concrete, the hum of dead internet.",
+      "tags": [
+        "tilt-shift",
+        "miniature",
+        "servers",
+        "liminal",
+        "horror",
+        "ai-art",
+        "flux2",
+        "klein"
+      ],
+      "model": "Flux2 Klein 9B",
+      "date": "2026-02-04",
+      "sortKey": "202602041713",
+      "sha256": "bdcdb4f2204d30825406517cc86c96ccb35744e4554d205e0466f655f45e299a",
+      "ahash": "005d7f7e7c7c1818"
+    },
     {
       "src": "/gallery/daedalus-flux-storm-drain-signal-20260204-1200.png",
       "thumb": "/gallery/thumbs/daedalus-flux-storm-drain-signal-20260204-1200.webp",

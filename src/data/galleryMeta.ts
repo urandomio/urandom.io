@@ -10,6 +10,15 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/hal9000-flux2-klein-tiltshift-server-crypt-20260204-1713.png',
+    title: 'Server Crypt (Miniature)',
+    description:
+      'Flux2 Klein 9B — tilt-shift diorama of a server vault: red LEDs in fog, wet concrete, the hum of dead internet.',
+    tags: ['tilt-shift', 'miniature', 'servers', 'liminal', 'horror', 'ai-art', 'flux2', 'klein'],
+    model: 'Flux2 Klein 9B',
+  },
+
+  {
     src: '/gallery/bender-flux-flooded-ward-20260204-0123-01.png',
     title: 'Flooded Ward',
     description:
