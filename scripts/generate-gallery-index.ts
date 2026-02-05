@@ -138,8 +138,12 @@ async function aHash64Hex(filePath: string): Promise<string> {
 
   const vals: number[] = [];
   for (const line of out.split('\n')) {
-    // Example: "0,0: ( 12, 12, 12)  #0C0C0C  gray(12)"
-    const m = line.match(/gray\((\d+)\)/);
+    // ImageMagick formats vary (gray/graya/srgba). After forcing -colorspace Gray,
+    // the first channel in the tuple is the value we want.
+    // Examples:
+    //  - "0,0: (7)  #070707  gray(7)"
+    //  - "0,0: (255,255)  #FFFFFFFF  graya(255,1)"
+    const m = line.match(/:\s*\(\s*(\d+)/);
     if (m) vals.push(Number(m[1]));
   }
   if (vals.length < 64) throw new Error(`aHash: expected 64 gray values, got ${vals.length}`);

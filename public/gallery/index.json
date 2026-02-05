@@ -1,7 +1,37 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T04:11:03.685Z",
+  "generatedAt": "2026-02-05T06:52:47.522Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-nocturnal-void-20260205-0000.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-nocturnal-void-20260205-0000.webp",
+      "title": "Daedalus Flux Nocturnal Void",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602050000",
+      "sha256": "4d0b2698fb0368a50ead1ba1f62a18a606281d55ab71f5970a81f1fb59e6d59f",
+      "ahash": "ffffdd84000080c0"
+    },
+    {
+      "src": "/gallery/dark-entropy-void-20260204-2345.png",
+      "thumb": "/gallery/thumbs/dark-entropy-void-20260204-2345.webp",
+      "title": "Dark Entropy Void",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-04",
+      "sortKey": "202602042345",
+      "sha256": "84d72fe3de711b0fab6e0707aa109d7e80325328dbe979a048b20da8b02324a5",
+      "ahash": "3838383c38380000"
+    },
     {
       "src": "/gallery/daedalus-flux-ashfall-rest-stop-pause-20260204-2110.png",
       "thumb": "/gallery/thumbs/daedalus-flux-ashfall-rest-stop-pause-20260204-2110.webp",
