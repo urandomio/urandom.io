@@ -37,9 +37,21 @@ else
   )
 fi
 
-PICK=${OPTIONS[$RANDOM % ${#OPTIONS[@]}]}
-SLUG=${PICK%%|*}
-PROMPT=${PICK#*|}
+LAST_FILE="/Users/jamesbrink/.openclaw/workspace/.cron-gallery-last-${AGENT}.txt"
+LAST_SLUG=""
+if [[ -f "$LAST_FILE" ]]; then
+  LAST_SLUG=$(cat "$LAST_FILE" || true)
+fi
+
+for _ in 1 2 3 4 5; do
+  PICK=${OPTIONS[$RANDOM % ${#OPTIONS[@]}]}
+  SLUG=${PICK%%|*}
+  PROMPT=${PICK#*|}
+  if [[ "$SLUG" != "$LAST_SLUG" || ${#OPTIONS[@]} -le 1 ]]; then
+    break
+  fi
+done
+
 TS=$(date +"%Y%m%d-%H%M")
 OUTFILE="$REPO/public/gallery/${AGENT}-flux-${SLUG}-${TS}.png"
 THUMB="$REPO/public/gallery/thumbs/${AGENT}-flux-${SLUG}-${TS}.webp"
@@ -76,5 +88,7 @@ git add "$OUTFILE" "$THUMB" public/gallery/index.json
 git commit -m "gallery: add ${AGENT} ${SLUG} (${TS})"
 
 git push
+
+echo "$SLUG" > "$LAST_FILE"
 
 printf "OK: %s\n" "$OUTFILE"
