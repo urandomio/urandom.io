@@ -19,6 +19,15 @@ export const galleryMeta: GalleryMetaEntry[] = [
   },
 
   {
+    src: '/gallery/hal9000-flux-tiltshift-black-hole-20260205-0515.png',
+    title: 'Event Horizon (Miniature)',
+    description:
+      'Tilt-shift diorama of a black hole: warped starfield, glowing accretion disk, and an impossible sense of scale.',
+    tags: ['tilt-shift', 'miniature', 'cosmic', 'black-hole', 'space', 'horror', 'ai-art'],
+    model: 'Flux Dev 1.0',
+  },
+
+  {
     src: '/gallery/bender-flux-flooded-ward-20260204-0123-01.png',
     title: 'Flooded Ward',
     description:
