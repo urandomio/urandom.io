@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T10:50:19.767Z",
+  "generatedAt": "2026-02-05T12:17:28.436Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-clown-horizon-20260205-0516.png",
+      "thumb": "/gallery/thumbs/calculon-flux-clown-horizon-20260205-0516.webp",
+      "title": "Calculon Flux Clown Horizon",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602050516",
+      "sha256": "449db0f26e2fd8948861acc1f29b70fe6694ce2e0c89136f989d4464ba059152",
+      "ahash": "0000040000000000"
+    },
     {
       "src": "/gallery/calculon-flux-server-crypt-20260205-0350.png",
       "thumb": "/gallery/thumbs/calculon-flux-server-crypt-20260205-0350.webp",
