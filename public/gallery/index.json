@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-05T22:36:15.716Z",
+  "generatedAt": "2026-02-06T01:04:16.713Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-ice-storm-underpass-door-20260205-1800.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-ice-storm-underpass-door-20260205-1800.webp",
+      "title": "Daedalus Flux Ice Storm Underpass Door",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602051800",
+      "sha256": "573693c6b0b84f31fa5c53e9e56b6b7f8451d27769b5239b78c82bf847229eeb",
+      "ahash": "3f7f81000076fbc9"
+    },
     {
       "src": "/gallery/hal9000-flux-tiltshift-space-nebula-nursery-sacramental-20260205-1532.png",
       "thumb": "/gallery/thumbs/hal9000-flux-tiltshift-space-nebula-nursery-sacramental-20260205-1532.webp",
