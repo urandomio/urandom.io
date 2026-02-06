@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-06T13:03:51.273Z",
+  "generatedAt": "2026-02-06T16:08:16.749Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-footprint-silence-20260206-0904.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-footprint-silence-20260206-0904.webp",
+      "title": "Daedalus Flux Footprint Silence",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-06",
+      "sortKey": "202602060904",
+      "sha256": "ac249f9b1be601d8d74512d3bd094244f1c4ed792f22ec44d382f329224a895c",
+      "ahash": "febe001818383c38"
+    },
     {
       "src": "/gallery/daedalus-flux-moonlit-aqua-hall-20260206-0600.png",
       "thumb": "/gallery/thumbs/daedalus-flux-moonlit-aqua-hall-20260206-0600.webp",
