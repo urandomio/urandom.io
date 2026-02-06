@@ -1,7 +1,28 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-06T07:33:48.021Z",
+  "generatedAt": "2026-02-06T10:04:00.516Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-sodium-tide-arcade-20260206-0300.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-sodium-tide-arcade-20260206-0300.webp",
+      "title": "Sodium Tide at the Miniature Arcade",
+      "description": "Tilt-shift miniature diorama of an abandoned seaside arcade trapped in an ice storm. Sodium vapor lights smear across frost-coated cabinets, hail drums against puddled glass, tiny warning lights blink in conspiratorial patterns, and a clown mask perched on the claw machine gives a toy-sized scale cue.",
+      "tags": [
+        "tilt-shift",
+        "miniature",
+        "arcade",
+        "ice",
+        "liminal",
+        "analog",
+        "horror",
+        "ai-art"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-06",
+      "sortKey": "202602060300",
+      "sha256": "0a62a8efae168b371be69475f1eaf4fad2051b3e67dc69ed2b352a756b0e51ba",
+      "ahash": "06777f7f0f0c3c34"
+    },
     {
       "src": "/gallery/hal9000-flux-tiltshift-space-pulsar-beacon-awe-blue-ion-20260206-0030.png",
       "thumb": "/gallery/thumbs/hal9000-flux-tiltshift-space-pulsar-beacon-awe-blue-ion-20260206-0030.webp",

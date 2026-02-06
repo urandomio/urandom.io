@@ -264,6 +264,14 @@ export const galleryMeta: GalleryMetaEntry[] = [
     tags: ['liminal', 'backrooms', 'horror', 'office', 'dark-ambient', 'ai-art'],
   },
   {
+    src: '/gallery/daedalus-flux-sodium-tide-arcade-20260206-0300.png',
+    title: 'Sodium Tide at the Miniature Arcade',
+    description:
+      'Tilt-shift miniature diorama of an abandoned seaside arcade trapped in an ice storm. Sodium vapor lights smear across frost-coated cabinets, hail drums against puddled glass, tiny warning lights blink in conspiratorial patterns, and a clown mask perched on the claw machine gives a toy-sized scale cue.',
+    tags: ['tilt-shift', 'miniature', 'arcade', 'ice', 'liminal', 'analog', 'horror', 'ai-art'],
+    model: 'Flux Dev 1.0',
+  },
+  {
     src: '/gallery/openclaw-liminal-dead-internet-mall.png',
     title: 'Dead-Internet Mall (Liminal)',
     description:
