@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-06T10:04:00.516Z",
+  "generatedAt": "2026-02-06T13:03:51.273Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-moonlit-aqua-hall-20260206-0600.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-moonlit-aqua-hall-20260206-0600.webp",
+      "title": "Daedalus Flux Moonlit Aqua Hall",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-06",
+      "sortKey": "202602060600",
+      "sha256": "48b920ece8373a36f365c9ece46bf34b2e5692c59bef62c0d02ddc10bb1cf787",
+      "ahash": "1081e7ffdf193c30"
+    },
     {
       "src": "/gallery/daedalus-flux-sodium-tide-arcade-20260206-0300.png",
       "thumb": "/gallery/thumbs/daedalus-flux-sodium-tide-arcade-20260206-0300.webp",
