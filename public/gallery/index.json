@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-06T04:08:46.493Z",
+  "generatedAt": "2026-02-06T07:03:14.138Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-sodium-vigil-drain-20260206-0002.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-sodium-vigil-drain-20260206-0002.webp",
+      "title": "Daedalus Flux Sodium Vigil Drain",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-06",
+      "sortKey": "202602060002",
+      "sha256": "5cf3459a10e93123ed1e32ffeee785937c1961e20ce07f71f82e79eaaea1bed8",
+      "ahash": "0e3c72201c3c3c3e"
+    },
     {
       "src": "/gallery/daedalus-flux-glacial-static-reststop-20260205-2107.png",
       "thumb": "/gallery/thumbs/daedalus-flux-glacial-static-reststop-20260205-2107.webp",
