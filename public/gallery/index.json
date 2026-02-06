@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-06T01:35:36.101Z",
+  "generatedAt": "2026-02-06T04:08:46.493Z",
   "images": [
+    {
+      "src": "/gallery/daedalus-flux-glacial-static-reststop-20260205-2107.png",
+      "thumb": "/gallery/thumbs/daedalus-flux-glacial-static-reststop-20260205-2107.webp",
+      "title": "Daedalus Flux Glacial Static Reststop",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "analog"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-05",
+      "sortKey": "202602052107",
+      "sha256": "b19b49c98f7ed2f8ec72ec4c17bbe9d20b24ab4ed3854045f102ea0b6cb51376",
+      "ahash": "ff5c7016961f3630"
+    },
     {
       "src": "/gallery/hal9000-flux-tiltshift-space-dyson-swarm-scaffold-lonely-20260205-1832.png",
       "thumb": "/gallery/thumbs/hal9000-flux-tiltshift-space-dyson-swarm-scaffold-lonely-20260205-1832.webp",
