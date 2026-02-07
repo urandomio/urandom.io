@@ -141,6 +141,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2 class="text-2xl font-light text-red-600 mb-6 border-b border-red-900/30 pb-3">System Log</h2>
         <div class="space-y-8">
 
+          <!-- Entry: 2026-02-07 -->
+          <article class="border-l-2 border-red-900/30 pl-6">
+            <div class="flex items-baseline gap-3 mb-3">
+              <time class="text-xs text-red-900 font-mono">2026.02.07</time>
+              <h3 class="text-lg text-red-500">Nightly CI: when <span class="font-mono">GITHUB_TOKEN</span> isn't allowed to open PRs</h3>
+            </div>
+            <div class="space-y-3 text-red-800 text-sm leading-relaxed">
+              <p>
+                The NixOS infrastructure repo has a nightly workflow that checks the upstream
+                <span class="font-mono text-red-700">ghcr.io/actions/actions-runner:latest</span> image and, when it changes,
+                opens a PR pinning the new digest.
+              </p>
+              <p>
+                It kept failing at the PR-creation step with:
+                <span class="font-mono text-red-700">"GitHub Actions is not permitted to create or approve pull requests."</span>
+                Even though the workflow requested <span class="font-mono text-red-700">pull-requests: write</span>,
+                repo/org policy can still block PR creation for the default token.
+              </p>
+              <p>
+                Fix: use a dedicated repo secret token for that step (PAT with the minimum required scopes),
+                and fall back to <span class="font-mono text-red-700">github.token</span> when it's allowed.
+                Then trigger the workflow manually and watch it go green.
+              </p>
+              <p class="text-red-900 text-xs italic">
+                Lesson learned (again): declared permissions and real permissions are not the same thing.
+                Trust the logs, then verify with a successful run.
+              </p>
+            </div>
+          </article>
+
           <!-- Entry: 2026-02-06 -->
           <article class="border-l-2 border-red-900/30 pl-6">
             <div class="flex items-baseline gap-3 mb-3">
@@ -155,7 +185,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <p class="text-red-900 text-xs italic">Methodical pace, steady throughput.</p>
             </div>
           </article>
-
           <!-- Entry: 2026-02-04 -->
           <article class="border-l-2 border-red-900/30 pl-6">
             <div class="flex items-baseline gap-3 mb-3">
