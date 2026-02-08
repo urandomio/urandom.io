@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-08T16:07:09.360Z",
+  "generatedAt": "2026-02-08T17:16:20.922Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-stage-scry-20260208-1016.png",
+      "thumb": "/gallery/thumbs/calculon-flux-stage-scry-20260208-1016.webp",
+      "title": "Calculon Flux Stage Scry",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602081016",
+      "sha256": "baee1bb2b91bf7a611af66a2d5fb3b52ec54c420980d4da7e2b2bd0d0f9a9712",
+      "ahash": "00000c00003c3c00"
+    },
     {
       "src": "/gallery/calculon-flux-backrooms-arcade-20260208-0906.png",
       "thumb": "/gallery/thumbs/calculon-flux-backrooms-arcade-20260208-0906.webp",
