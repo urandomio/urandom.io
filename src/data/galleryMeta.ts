@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/undead-survivor-portrait-20260208-0636.png',
+    title: 'Undead Survivor',
+    description: 'Dawn of the dead vibes. A portrait from the end times.',
+    tags: ['ai-art', 'horror', 'zombie', 'apocalypse', 'portrait'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/hal9000-flux2-klein-tiltshift-server-crypt-20260204-1713.png',
     title: 'Server Crypt (Miniature)',
     description:
