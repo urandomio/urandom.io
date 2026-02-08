@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-neon-catacombs-20260208-1500.png',
+    title: 'Where the Dead Glow',
+    description: 'Ancient catacombs illuminated by flickering neon tubes — cyan and magenta light bleeds across skull-lined walls while fog rolls through wet stone corridors. Modern electricity invades sacred burial grounds, turning death architecture into a cyberpunk ossuary. The afterlife glows in 60Hz.',
+    tags: ['catacombs', 'neon', 'horror', 'cyberpunk', 'skulls', 'dark-ambient', 'liminal', 'ai-art'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/bender-flux-tilt-shift-apocalypse-20260208-1200.png',
     title: 'Toy Town Rapture',
     description: 'Tilt-shift photography transforms catastrophe into diorama: tiny buildings ablaze, smoke plumes like cotton wisps, destruction rendered at dollhouse scale. The apocalypse becomes a model train disaster — selective focus makes the end of the world feel like something you could hold in your hands.',
