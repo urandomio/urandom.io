@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-08T06:46:25.466Z",
+  "generatedAt": "2026-02-08T06:55:24.325Z",
   "images": [
+    {
+      "src": "/gallery/landscape-scene-03066-20260208-0652.png",
+      "thumb": "/gallery/thumbs/landscape-scene-03066-20260208-0652.webp",
+      "title": "Landscape Scene",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "landscape"
+      ],
+      "model": "FLUX Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602080652",
+      "sha256": "37756c293cd320e70fdc95bbd65d93a812752fb994a8dd1589b4461d02698b72",
+      "ahash": "f8f87c7c3e140800"
+    },
     {
       "src": "/gallery/undead-survivor-portrait-20260208-0636.png",
       "thumb": "/gallery/thumbs/undead-survivor-portrait-20260208-0636.webp",

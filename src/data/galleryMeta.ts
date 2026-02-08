@@ -26,6 +26,14 @@ export const galleryMeta: GalleryMetaEntry[] = [
   },
 
   {
+    src: '/gallery/landscape-scene-03066-20260208-0652.png',
+    title: 'Landscape Scene',
+    description: '',
+    tags: ['ai-art', 'landscape'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/hal9000-flux2-klein-tiltshift-server-crypt-20260204-1713.png',
     title: 'Server Crypt (Miniature)',
     description:
