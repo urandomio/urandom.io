@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-tilt-shift-cult-20260208-0600.png',
+    title: 'Tiny Gods, Tiny Flames',
+    description: 'A miniature cult gathering in the forest rendered as tilt-shift diorama — hooded figures circle a bonfire like toys arranged by unseen hands, the ritual reduced to dollhouse scale but no less ominous.',
+    tags: ['tilt-shift', 'miniature', 'cult', 'ritual', 'forest', 'horror', 'ai-art'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/bender-flux-tilt-shift-asylum-20260208-0300.png',
     title: 'Dollhouse of the Damned',
     description: 'Victorian asylum rendered as a tilt-shift diorama — miniature nightmare architecture, Gothic windows like dead eyes, a tiny monument to suffering.',
