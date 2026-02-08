@@ -18,6 +18,14 @@ export const galleryMeta: GalleryMetaEntry[] = [
   },
 
   {
+    src: '/gallery/portrait-woman-02711-20260208-0620.png',
+    title: 'Portrait Study',
+    description: '',
+    tags: ['ai-art', 'portrait'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/hal9000-flux2-klein-tiltshift-server-crypt-20260204-1713.png',
     title: 'Server Crypt (Miniature)',
     description:
