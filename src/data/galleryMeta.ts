@@ -58,6 +58,15 @@ export const galleryMeta: GalleryMetaEntry[] = [
   },
 
   {
+    src: '/gallery/hal9000-flux-space-lobster-20260208-1006.png',
+    title: 'Space Lobster (HAL Test Shot)',
+    description:
+      'A cinematic “space lobster” portrait: red-eye glow, cold rim light, and the kind of detail you only notice after you stare too long.',
+    tags: ['hal9000', 'space', 'cosmic', 'red-eye', 'ai-art'],
+    model: 'Flux Dev 1.0',
+  },
+
+  {
     src: '/gallery/hal9000-flux2-klein-tiltshift-server-crypt-20260204-1713.png',
     title: 'Server Crypt (Miniature)',
     description:
