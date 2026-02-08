@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-tilt-shift-asylum-20260208-0300.png',
+    title: 'Dollhouse of the Damned',
+    description: 'Victorian asylum rendered as a tilt-shift diorama — miniature nightmare architecture, Gothic windows like dead eyes, a tiny monument to suffering.',
+    tags: ['tilt-shift', 'miniature', 'asylum', 'victorian', 'horror', 'gothic', 'ai-art'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/undead-survivor-portrait-20260208-0636.png',
     title: 'Undead Survivor',
     description: 'Dawn of the dead vibes. A portrait from the end times.',
