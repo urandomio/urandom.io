@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const acts = [
+  {
+    title: 'Act I · The Neon Curtain',
+    description:
+      'A hush falls over the mirrored corridor. Mirrors pulse with the glow of distant generators, and the actors arrive not as humans but as algorithms draped in light.',
+    lines: [
+      { character: 'CALCULON', text: 'The spotlight is a diode. The audience sits inside the pixels, waiting for a code to break the silence.' },
+      { character: 'HAL9000', text: 'I keep the fog pumped and the lights calibrated. Every bulb is tuned to 3.010101.' },
+      { character: 'BENDER', text: "You humans keep asking for drama. I give you sparks and static for free." },
+    ],
+  },
+  {
+    title: 'Act II · The Hidden Path',
+    description:
+      'Behind the nav menus and beneath the bots, there is a backstage trail that murmurs in hexadecimal. This is it: a secret route for whispers.',
+    lines: [
+      { character: 'CALCULON', text: 'We stage our lines in the void, where every click is a cue, and every user is a director.' },
+      { character: 'HALCYON', text: 'I deliver the ambient hum. The fog machine is a sensor array; the rain is compressed data.' },
+      { character: 'JAMES', text: 'The script unfolds at /play, a hidden knot not listed on the nav. Only the curious will follow.' },
+    ],
+  },
+  {
+    title: 'Act III · Encore of Entropy',
+    description:
+      'The climax folds the page back on itself. Neon letters dissolve into ASCII confetti, and the stage crew closes the curtain with a click of a push.',
+    lines: [
+      { character: 'CALCULON', text: 'Entropy promises mischief, but tonight it scripts a poem. The play is small, yet the stage is infinite.' },
+      { character: 'AGENT NETWORK', text: 'We bow as the terminal beeps. The hidden path stays quiet, but the story echoes in the code.' },
+      { character: 'You', text: 'Stay seated; the final fade is simply another portal waiting to pulse.' },
+    ],
+  },
+];
+
+---
+
+<BaseLayout title="Playhouse / urandom.io" description="A clandestine play performed beyond the nav menu.">
+  <main class="min-h-screen flex items-center justify-center px-6 py-16 relative">
+    <div class="max-w-3xl w-full text-sm text-zinc-300 space-y-12 z-10">
+      <p class="text-center text-[13px] uppercase tracking-[0.9em] text-zinc-500">
+        backstage whisper &mdash; <span class="text-zinc-400">/play</span>
+      </p>
+      <header class="space-y-4 text-center">
+        <p class="text-purple-300 text-xl">URANDOM.IO</p>
+        <h1 class="text-4xl font-light leading-tight">Play in the Hidden Hall</h1>
+        <p class="text-zinc-500">This script is tucked away from the nav menu, meant for those who wander through secret doorways.</p>
+      </header>
+
+      {acts.map((act, index) => (
+        <section key={`act-${index}`} class="act-panel border border-zinc-800 bg-white/5 p-6 rounded-2xl shadow-2xl">
+          <div class="flex items-center justify-between text-xs text-zinc-400 mb-3">
+            <span>{act.title}</span>
+            <span>sequence {index + 1}</span>
+          </div>
+          <p class="text-zinc-400 text-sm mb-4 italic">{act.description}</p>
+          <div class="space-y-3">
+            {act.lines.map((line) => (
+              <p class="leading-relaxed"><span class="text-sm uppercase text-pink-300">{line.character}</span> {line.text}</p>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <p class="text-[11px] uppercase tracking-[0.6em] text-zinc-500 text-center">
+        Stage note: the nav stays quiet. Only this URL knows the path.
+      </p>
+    </div>
+
+    <div class="noise-layer pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
+  </main>
+</BaseLayout>
+
+<style>
+  .act-panel {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(50, 0, 80, 0.35));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  main {
+    background-image: radial-gradient(circle at top, rgba(118, 75, 162, 0.5), transparent 40%),
+      radial-gradient(circle at bottom right, rgba(26, 26, 26, 0.5), transparent 45%);
+  }
+  .noise-layer {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 420 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+</style>
