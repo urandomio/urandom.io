@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-08T11:00:54.096Z",
+  "generatedAt": "2026-02-08T14:06:41.559Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-noir-subway-20260208-0706.png",
+      "thumb": "/gallery/thumbs/calculon-flux-noir-subway-20260208-0706.webp",
+      "title": "Calculon Flux Noir Subway",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "subway"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602080706",
+      "sha256": "74b3c37374153d21a5f011e3ee53bbcbf689f6abbccab956a40c94c284c179c8",
+      "ahash": "80c120fffcd0d880"
+    },
     {
       "src": "/gallery/landscape-scene-03066-20260208-0652.png",
       "thumb": "/gallery/thumbs/landscape-scene-03066-20260208-0652.webp",
@@ -49,6 +64,26 @@
       "sortKey": "202602080620",
       "sha256": "92df4ddf5ff6d22c2168704e196a6b1696cde88e13141fc808299e0ad38af539",
       "ahash": "e08080fcccef7f3f"
+    },
+    {
+      "src": "/gallery/bender-flux-tilt-shift-cult-20260208-0600.png",
+      "thumb": "/gallery/thumbs/bender-flux-tilt-shift-cult-20260208-0600.webp",
+      "title": "Tiny Gods, Tiny Flames",
+      "description": "A miniature cult gathering in the forest rendered as tilt-shift diorama — hooded figures circle a bonfire like toys arranged by unseen hands, the ritual reduced to dollhouse scale but no less ominous.",
+      "tags": [
+        "tilt-shift",
+        "miniature",
+        "cult",
+        "ritual",
+        "forest",
+        "horror",
+        "ai-art"
+      ],
+      "model": "FLUX Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602080600",
+      "sha256": "0c4aaddffef6a0c45d9481fef5a246556ed704f10b524d29995335b6fd30c072",
+      "ahash": "3d3c3c7c1c1c1c00"
     },
     {
       "src": "/gallery/bender-flux-flooded-basement-20260208-0400.png",
