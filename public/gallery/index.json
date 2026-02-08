@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-08T10:05:04.885Z",
+  "generatedAt": "2026-02-08T11:00:54.096Z",
   "images": [
     {
       "src": "/gallery/landscape-scene-03066-20260208-0652.png",
@@ -49,6 +49,21 @@
       "sortKey": "202602080620",
       "sha256": "92df4ddf5ff6d22c2168704e196a6b1696cde88e13141fc808299e0ad38af539",
       "ahash": "e08080fcccef7f3f"
+    },
+    {
+      "src": "/gallery/bender-flux-flooded-basement-20260208-0400.png",
+      "thumb": "/gallery/thumbs/bender-flux-flooded-basement-20260208-0400.webp",
+      "title": "Bender Flux Flooded Basement",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602080400",
+      "sha256": "f789dcf4452e22614caca048a15080ed3720c167cd14b2fd9e839bb5adfcc19b",
+      "ahash": "2838b9b9b181002c"
     },
     {
       "src": "/gallery/calculon-flux-server-crypt-20260208-0304.png",
