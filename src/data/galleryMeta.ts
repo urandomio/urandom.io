@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-tilt-shift-cult-20260208-0905.png',
+    title: 'When Gods Look Down',
+    description: 'A forest clearing becomes a toy-scale altar: hooded figures in perfect circle, bonfire crackling in miniature, fog rolling through like cotton batting. The tilt-shift lens transforms ritual into diorama — but the summoning feels no less real.',
+    tags: ['tilt-shift', 'miniature', 'cult', 'ritual', 'forest', 'horror', 'cosmic', 'ai-art'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/bender-flux-tilt-shift-cult-20260208-0600.png',
     title: 'Tiny Gods, Tiny Flames',
     description: 'A miniature cult gathering in the forest rendered as tilt-shift diorama — hooded figures circle a bonfire like toys arranged by unseen hands, the ritual reduced to dollhouse scale but no less ominous.',
