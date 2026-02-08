@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-tilt-shift-apocalypse-20260208-1200.png',
+    title: 'Toy Town Rapture',
+    description: 'Tilt-shift photography transforms catastrophe into diorama: tiny buildings ablaze, smoke plumes like cotton wisps, destruction rendered at dollhouse scale. The apocalypse becomes a model train disaster — selective focus makes the end of the world feel like something you could hold in your hands.',
+    tags: ['tilt-shift', 'miniature', 'apocalypse', 'destruction', 'fire', 'horror', 'diorama', 'ai-art'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/bender-flux-tilt-shift-cult-20260208-0905.png',
     title: 'When Gods Look Down',
     description: 'A forest clearing becomes a toy-scale altar: hooded figures in perfect circle, bonfire crackling in miniature, fog rolling through like cotton batting. The tilt-shift lens transforms ritual into diorama — but the summoning feels no less real.',
