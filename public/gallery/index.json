@@ -3,6 +3,21 @@
   "generatedAt": "2026-02-08T17:18:41.566Z",
   "images": [
     {
+      "src": "/gallery/calculon-flux-stage-lights-20260208-1018.png",
+      "thumb": "/gallery/thumbs/calculon-flux-stage-lights-20260208-1018.webp",
+      "title": "Calculon Flux Stage Lights",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602081018",
+      "sha256": "6bb88b7c4b74968a73eece53c0068e2356912bf5ae9fa0335583f83b43d16ee7",
+      "ahash": "0000ffffffff0000"
+    },
+    {
       "src": "/gallery/calculon-flux-stage-scry-20260208-1016.png",
       "thumb": "/gallery/thumbs/calculon-flux-stage-scry-20260208-1016.webp",
       "title": "Calculon Flux Stage Scry",
