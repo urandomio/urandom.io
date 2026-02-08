@@ -174,6 +174,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     tags: ['tilt-shift', 'dark-ambient', 'doll-heads', 'miniature', 'horror', 'ai-art'],
   },
   {
+    src: '/gallery/calculon-flux-liminal-labyrinth-20260208-1033.png',
+    title: 'Limbo Neon Labyrinth',
+    description: 'Tilt-shift miniature corridor drenched in neon, fog curling through wet tiles, malfunctioning arcade cabinets pulse with ember light as a drifting haze swallows the path.',
+    tags: ['tilt-shift', 'miniature', 'liminal', 'neon', 'arcade', 'fog', 'dark-ambient', 'ai-art'],
+    model: 'SDXL Turbo',
+  },
+  {
     src: '/gallery/bender-flux-tiltshift-city-20260203-0001.png',
     title: 'Abandoned City (Miniature)',
     description:
