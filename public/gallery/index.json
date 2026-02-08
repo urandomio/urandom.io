@@ -1,7 +1,44 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-08T15:01:06.944Z",
+  "generatedAt": "2026-02-08T16:07:09.360Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-backrooms-arcade-20260208-0906.png",
+      "thumb": "/gallery/thumbs/calculon-flux-backrooms-arcade-20260208-0906.webp",
+      "title": "Calculon Flux Backrooms Arcade",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "backrooms",
+        "analog"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602080906",
+      "sha256": "2e0b93967cad3cf65eec527311647349b3f6bca5a418f7d2a3b685ba978bbd50",
+      "ahash": "6ffffe3c81013c38"
+    },
+    {
+      "src": "/gallery/bender-flux-tilt-shift-cult-20260208-0905.png",
+      "thumb": "/gallery/thumbs/bender-flux-tilt-shift-cult-20260208-0905.webp",
+      "title": "When Gods Look Down",
+      "description": "A forest clearing becomes a toy-scale altar: hooded figures in perfect circle, bonfire crackling in miniature, fog rolling through like cotton batting. The tilt-shift lens transforms ritual into diorama — but the summoning feels no less real.",
+      "tags": [
+        "tilt-shift",
+        "miniature",
+        "cult",
+        "ritual",
+        "forest",
+        "horror",
+        "cosmic",
+        "ai-art"
+      ],
+      "model": "FLUX Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602080905",
+      "sha256": "f1ba42bd5fcf2be7e47ccf30150957ccb936d6b20ac54ba426686e95f91fd6ee",
+      "ahash": "7e7e7e3818180000"
+    },
     {
       "src": "/gallery/bender-flux-dead-mall-20260208-0800.png",
       "thumb": "/gallery/thumbs/bender-flux-dead-mall-20260208-0800.webp",
