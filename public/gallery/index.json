@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-08T08:01:12.364Z",
+  "generatedAt": "2026-02-08T09:02:17.448Z",
   "images": [
     {
       "src": "/gallery/landscape-scene-03066-20260208-0652.png",
@@ -49,6 +49,21 @@
       "sortKey": "202602080620",
       "sha256": "92df4ddf5ff6d22c2168704e196a6b1696cde88e13141fc808299e0ad38af539",
       "ahash": "e08080fcccef7f3f"
+    },
+    {
+      "src": "/gallery/bender-flux-liminal-hospital-20260208-0202.png",
+      "thumb": "/gallery/thumbs/bender-flux-liminal-hospital-20260208-0202.webp",
+      "title": "Bender Flux Liminal Hospital",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602080202",
+      "sha256": "5c2c1e2fb8e09285b8551d9ec5dbc027b197229719c3caaafda1304366047772",
+      "ahash": "087cfac7ef3e3800"
     },
     {
       "src": "/gallery/calculon-flux-backrooms-arcade-20260208-0100.png",
