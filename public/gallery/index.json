@@ -1,7 +1,43 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-08T18:00:58.185Z",
+  "generatedAt": "2026-02-08T19:05:34.373Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-flooded-basement-20260208-1204.png",
+      "thumb": "/gallery/thumbs/bender-flux-flooded-basement-20260208-1204.webp",
+      "title": "Bender Flux Flooded Basement",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602081204",
+      "sha256": "15780f7c4fbdc1ea7d90edafeb47f71f31a09190913f94e055cdd67196d5e1a0",
+      "ahash": "00388cdd99801818"
+    },
+    {
+      "src": "/gallery/bender-flux-tilt-shift-apocalypse-20260208-1200.png",
+      "thumb": "/gallery/thumbs/bender-flux-tilt-shift-apocalypse-20260208-1200.webp",
+      "title": "Toy Town Rapture",
+      "description": "Tilt-shift photography transforms catastrophe into diorama: tiny buildings ablaze, smoke plumes like cotton wisps, destruction rendered at dollhouse scale. The apocalypse becomes a model train disaster — selective focus makes the end of the world feel like something you could hold in your hands.",
+      "tags": [
+        "tilt-shift",
+        "miniature",
+        "apocalypse",
+        "destruction",
+        "fire",
+        "horror",
+        "diorama",
+        "ai-art"
+      ],
+      "model": "FLUX Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602081200",
+      "sha256": "f007a8bb8a134e17e68d9a5810c098376100f4b9f6a85eb429ff8fa113f3638f",
+      "ahash": "ecec7c383b103020"
+    },
     {
       "src": "/gallery/calculon-flux-noir-subway-20260208-1100.png",
       "thumb": "/gallery/thumbs/calculon-flux-noir-subway-20260208-1100.webp",
