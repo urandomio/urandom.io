@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-08T17:34:29.727Z",
+  "generatedAt": "2026-02-08T18:00:58.185Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-noir-subway-20260208-1100.png",
+      "thumb": "/gallery/thumbs/calculon-flux-noir-subway-20260208-1100.webp",
+      "title": "Calculon Flux Noir Subway",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "subway"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602081100",
+      "sha256": "ccd4475620fe6cd84c92239d383e2b82d79ac893c43684a1a4825b1f1818b912",
+      "ahash": "00f034fffee0e060"
+    },
     {
       "src": "/gallery/calculon-flux-liminal-labyrinth-20260208-1033.png",
       "thumb": "/gallery/thumbs/calculon-flux-liminal-labyrinth-20260208-1033.webp",
