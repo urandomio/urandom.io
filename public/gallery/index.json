@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-08T06:55:24.325Z",
+  "generatedAt": "2026-02-08T08:01:12.364Z",
   "images": [
     {
       "src": "/gallery/landscape-scene-03066-20260208-0652.png",
@@ -49,6 +49,22 @@
       "sortKey": "202602080620",
       "sha256": "92df4ddf5ff6d22c2168704e196a6b1696cde88e13141fc808299e0ad38af539",
       "ahash": "e08080fcccef7f3f"
+    },
+    {
+      "src": "/gallery/calculon-flux-backrooms-arcade-20260208-0100.png",
+      "thumb": "/gallery/thumbs/calculon-flux-backrooms-arcade-20260208-0100.webp",
+      "title": "Calculon Flux Backrooms Arcade",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "backrooms",
+        "analog"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-08",
+      "sortKey": "202602080100",
+      "sha256": "1277bae98413c627cf780163f76d7d76691442befb6625fb5233c899fc7f28a6",
+      "ahash": "7eff4f29801c3c1c"
     },
     {
       "src": "/gallery/daedalus-flux-footprint-silence-20260206-0904.png",
@@ -2122,7 +2138,7 @@
         "ai-art"
       ],
       "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
+      "date": "2026-02-05",
       "sortKey": "197001010000",
       "sha256": "d97a54256e26533270b496c259a58a5ae4806a228cdccf12bb22003c9968ed00",
       "ahash": "fc8c505042c35b3a"
@@ -2139,7 +2155,7 @@
         "ai-art"
       ],
       "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
+      "date": "2026-02-05",
       "sortKey": "197001010000",
       "sha256": "57f3de1367a11500860239ab2584c2c1dae3a2b6a76d6e5468967b3bfc53ba20",
       "ahash": "fff7e3e79383c1e3"
@@ -2156,7 +2172,7 @@
         "ai-art"
       ],
       "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
+      "date": "2026-02-05",
       "sortKey": "197001010000",
       "sha256": "93ef9716f7ddb7947b550feff1802478bf73c7cb93bf9170b19f58eba5212c26",
       "ahash": "00867e3f7e780000"
@@ -2174,7 +2190,7 @@
         "ai-art"
       ],
       "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
+      "date": "2026-02-05",
       "sortKey": "197001010000",
       "sha256": "41f8bc80b2095553f6f0ac7e8815f23d4c5f73c86c92199607478a2f19fb7857",
       "ahash": "18187f7e3c181818"
@@ -2191,7 +2207,7 @@
         "ai-art"
       ],
       "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
+      "date": "2026-02-05",
       "sortKey": "197001010000",
       "sha256": "2cceb4868286cded90a6321012cb59d31c9f6e56d42dcea99606a10ba31a2837",
       "ahash": "0573f3f0dc584000"
@@ -2208,7 +2224,7 @@
         "ai-art"
       ],
       "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
+      "date": "2026-02-05",
       "sortKey": "197001010000",
       "sha256": "9aa04f245a42591c4a0a01c875c2af04b2a79e0ef23c29ca639e496bdd555189",
       "ahash": "f8f9fb4000347c38"
@@ -2225,7 +2241,7 @@
         "ai-art"
       ],
       "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
+      "date": "2026-02-05",
       "sortKey": "197001010000",
       "sha256": "a4b4b156a2718fc369eec4b852b35c53ab996a88918d0a6c753dd4dd957c69c7",
       "ahash": "97bf9fbd2c000c00"
@@ -2243,7 +2259,7 @@
         "ai-art"
       ],
       "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
+      "date": "2026-02-05",
       "sortKey": "197001010000",
       "sha256": "d4b59376fcb144a1010a11a098299e473f42484f5e61d901493ae16855e9cd25",
       "ahash": "1c1c24a10302f878"
@@ -2260,7 +2276,7 @@
         "ai-art"
       ],
       "model": "Flux Dev 1.0",
-      "date": "2026-02-03",
+      "date": "2026-02-05",
       "sortKey": "197001010000",
       "sha256": "3a9fce506b6fc4780afd303ef6871bb7472c4b89dd83c53f6e94f2bf73a6cad1",
       "ahash": "7cf970f88a426000"
