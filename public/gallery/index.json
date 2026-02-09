@@ -1,17 +1,20 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-09T02:22:27.122Z",
+  "generatedAt": "2026-02-09T02:24:14.934Z",
   "images": [
     {
       "src": "/gallery/hal9000-flux-tilt-shift-asylum-20260208-1921.png",
       "thumb": "/gallery/thumbs/hal9000-flux-tilt-shift-asylum-20260208-1921.webp",
-      "title": "Hal9000 Flux Tilt Shift Asylum",
-      "description": "",
+      "title": "Asylum in Miniature",
+      "description": "Victorian asylum rendered as a haunting tilt-shift diorama — Gothic iron gates and barred windows shrink to dollhouse scale, fog rolling through tiny courtyards where the mad once wandered. Architecture of suffering becomes a toy, but horror persists in miniature.",
       "tags": [
-        "ai-art",
         "tilt-shift",
         "miniature",
-        "horror"
+        "asylum",
+        "victorian",
+        "horror",
+        "gothic",
+        "ai-art"
       ],
       "model": "Flux Dev 1.0",
       "date": "2026-02-08",
@@ -79,15 +82,15 @@
     {
       "src": "/gallery/bender-flux-tilt-shift-apocalypse-20260208-1200.png",
       "thumb": "/gallery/thumbs/bender-flux-tilt-shift-apocalypse-20260208-1200.webp",
-      "title": "Toy Town Rapture",
-      "description": "Tilt-shift photography transforms catastrophe into diorama: tiny buildings ablaze, smoke plumes like cotton wisps, destruction rendered at dollhouse scale. The apocalypse becomes a model train disaster — selective focus makes the end of the world feel like something you could hold in your hands.",
+      "title": "Toy Town Firestorm",
+      "description": "A city reduced to model scale while the horizon burns: highways like plastic ribbons, tiny windows glowing, smoke billowing in soft-focus towers. Tilt-shift makes it look like a tabletop diorama — until you realize the fire is real.",
       "tags": [
         "tilt-shift",
         "miniature",
-        "apocalypse",
-        "destruction",
+        "city",
         "fire",
-        "horror",
+        "smoke",
+        "disaster",
         "diorama",
         "ai-art"
       ],
