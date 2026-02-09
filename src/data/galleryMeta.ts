@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-tilt-shift-apocalypse-20260209-0600.png',
+    title: 'Toy Town Rapture',
+    description: 'Urban destruction rendered as delicate diorama — highways twist like broken toy tracks, buildings glow with miniature fires, smoke towers bloom in soft-focus perfection. The tilt-shift lens compresses catastrophe into dollhouse scale, making Armageddon look almost beautiful. A city dies in perfect depth of field.',
+    tags: ['tilt-shift', 'miniature', 'apocalypse', 'city', 'fire', 'diorama', 'horror', 'ai-art'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/bender-flux-void-elevator-20260209-0300.png',
     title: 'The Last Elevator Down',
     description: 'Brutalist elevator shaft descending into infinite darkness — industrial concrete walls lined with dim emergency lights that flicker and die one by one. The perspective pulls you down into the void, past floors that no longer exist, toward a bottom that was never built. An architectural throat swallowing all who enter. The descent has no end, only deeper shades of black.',
