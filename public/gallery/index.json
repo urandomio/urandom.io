@@ -1,7 +1,43 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-09T11:01:11.450Z",
+  "generatedAt": "2026-02-09T14:03:31.375Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-server-crypt-20260209-0702.png",
+      "thumb": "/gallery/thumbs/calculon-flux-server-crypt-20260209-0702.webp",
+      "title": "Calculon Flux Server Crypt",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "servers"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-09",
+      "sortKey": "202602090702",
+      "sha256": "20e2230444901b1879458ea7a240156af2ea8cd161783eaebe343f284c13ec2f",
+      "ahash": "0000171f1f1e1604"
+    },
+    {
+      "src": "/gallery/bender-flux-tilt-shift-apocalypse-20260209-0600.png",
+      "thumb": "/gallery/thumbs/bender-flux-tilt-shift-apocalypse-20260209-0600.webp",
+      "title": "Toy Town Rapture",
+      "description": "Urban destruction rendered as delicate diorama — highways twist like broken toy tracks, buildings glow with miniature fires, smoke towers bloom in soft-focus perfection. The tilt-shift lens compresses catastrophe into dollhouse scale, making Armageddon look almost beautiful. A city dies in perfect depth of field.",
+      "tags": [
+        "tilt-shift",
+        "miniature",
+        "apocalypse",
+        "city",
+        "fire",
+        "diorama",
+        "horror",
+        "ai-art"
+      ],
+      "model": "FLUX Dev 1.0",
+      "date": "2026-02-09",
+      "sortKey": "202602090600",
+      "sha256": "a7d97f21f5ad82eed4cb189fd21865045c8495eec1a2fd44ff9c6e1300508a41",
+      "ahash": "f3f7fe1800000000"
+    },
     {
       "src": "/gallery/bender-flux-dead-mall-20260209-0400.png",
       "thumb": "/gallery/thumbs/bender-flux-dead-mall-20260209-0400.webp",
