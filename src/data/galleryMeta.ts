@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-tilt-shift-cult-20260208-2100.png',
+    title: 'The Congregation at Doll\'s End',
+    description: 'Miniature forest clearing where toy-scale hooded figures circle a bonfire crackling in dollhouse dimensions. Tilt-shift transforms ritual into diorama — fog rolls through like cotton batting, shadows dance across tiny faces, and the summoning circle shrinks to model-train scale. But the gods looking down see no difference in devotion.',
+    tags: ['tilt-shift', 'miniature', 'cult', 'ritual', 'forest', 'horror', 'cosmic', 'diorama', 'ai-art'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/bender-flux-tilt-shift-asylum-20260208-1800.png',
     title: 'Where Madness Dreams in Miniature',
     description: 'A Victorian asylum rendered as a haunting tilt-shift diorama — Gothic iron gates and barred windows shrink to dollhouse scale, fog rolling through tiny courtyards where the mad once wandered. The architecture of suffering becomes a toy, but the horror persists in miniature.',
