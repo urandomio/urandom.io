@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-09T02:08:14.754Z",
+  "generatedAt": "2026-02-09T02:21:55.449Z",
   "images": [
     {
       "src": "/gallery/bender-flux-tilt-shift-asylum-20260208-1800.png",
@@ -62,15 +62,15 @@
     {
       "src": "/gallery/bender-flux-tilt-shift-apocalypse-20260208-1200.png",
       "thumb": "/gallery/thumbs/bender-flux-tilt-shift-apocalypse-20260208-1200.webp",
-      "title": "Toy Town Rapture",
-      "description": "Tilt-shift photography transforms catastrophe into diorama: tiny buildings ablaze, smoke plumes like cotton wisps, destruction rendered at dollhouse scale. The apocalypse becomes a model train disaster — selective focus makes the end of the world feel like something you could hold in your hands.",
+      "title": "Toy Town Firestorm",
+      "description": "A city reduced to model scale while the horizon burns: highways like plastic ribbons, tiny windows glowing, smoke billowing in soft-focus towers. Tilt-shift makes it look like a tabletop diorama — until you realize the fire is real.",
       "tags": [
         "tilt-shift",
         "miniature",
-        "apocalypse",
-        "destruction",
+        "city",
         "fire",
-        "horror",
+        "smoke",
+        "disaster",
         "diorama",
         "ai-art"
       ],
