@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Ghost Cursor Registry | 🐇" description="Your pointer has a second job" favicon="🫥">
+  <div class="fixed inset-0 overflow-hidden">
+    <canvas id="ghost-cursor" class="w-full h-full"></canvas>
+    <div class="absolute inset-0 bg-gradient-to-b from-emerald-950/20 via-zinc-950 to-zinc-950"></div>
+  </div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-emerald-400 transition-colors">← deregister</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: 3</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-xl text-center">
+      <div class="text-5xl mb-4">🫥</div>
+      <h1 class="text-3xl font-light text-emerald-300/90 mb-3">ghost cursor registry</h1>
+      <p class="text-zinc-500 mb-8 leading-relaxed">
+        Your cursor files paperwork while you sleep.
+        <span class="text-emerald-400">Move</span> to produce evidence.
+        <span class="text-emerald-400">Click</span> to revoke (temporarily).
+      </p>
+
+      <div class="mx-auto max-w-md text-left border border-zinc-800 rounded bg-zinc-900/40 p-4">
+        <div class="flex items-center justify-between mb-2">
+          <div class="text-xs font-mono text-zinc-600">registry id</div>
+          <div class="text-xs font-mono text-emerald-400" id="reg-id">GC-000000</div>
+        </div>
+        <div class="flex items-center justify-between mb-2">
+          <div class="text-xs font-mono text-zinc-600">status</div>
+          <div class="text-xs font-mono" id="reg-status">tracking: yes</div>
+        </div>
+        <div class="text-[10px] font-mono text-zinc-700" id="reg-log">
+          log: waiting for motion…
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/echo-chamber" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-orange-500 hover:text-orange-400 transition-colors">echo chamber →</a>
+        <a href="/rabbit-hole/recursion" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-purple-500 hover:text-purple-400 transition-colors">recursion →</a>
+      </div>
+
+      <p class="mt-10 text-[10px] text-zinc-700 font-mono">
+        hint: if you stop moving, it keeps moving anyway.
+      </p>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const canvas = document.getElementById('ghost-cursor') as HTMLCanvasElement | null;
+  const ctx = canvas?.getContext('2d') ?? null;
+
+  const idEl = document.getElementById('reg-id');
+  const statusEl = document.getElementById('reg-status');
+  const logEl = document.getElementById('reg-log');
+
+  const dpr = () => Math.max(1, Math.floor(window.devicePixelRatio || 1));
+
+  let w = 0;
+  let h = 0;
+  let tracking = true;
+
+  const real = { x: 0, y: 0, vx: 0, vy: 0, lastX: 0, lastY: 0, seen: false };
+  const ghost = { x: 0, y: 0, vx: 0, vy: 0, drag: 0.965 };
+
+  const trail: { x: number; y: number; t: number }[] = [];
+
+  function resize() {
+    if (!canvas || !ctx) return;
+    const r = dpr();
+    w = Math.floor(window.innerWidth);
+    h = Math.floor(window.innerHeight);
+    canvas.width = w * r;
+    canvas.height = h * r;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    ctx.setTransform(r, 0, 0, r, 0, 0);
+  }
+
+  function setLog(text: string) {
+    if (!logEl) return;
+    logEl.textContent = 'log: ' + text;
+  }
+
+  function makeId() {
+    const n = Math.floor(Math.random() * 1_000_000);
+    const s = String(n).padStart(6, '0');
+    idEl && (idEl.textContent = 'GC-' + s);
+  }
+
+  function tick() {
+    if (!ctx) return;
+
+    // Fade
+    ctx.fillStyle = 'rgba(9, 9, 11, 0.12)';
+    ctx.fillRect(0, 0, w, h);
+
+    // Ghost follows, but also drifts (bureaucracy has inertia)
+    if (tracking && real.seen) {
+      const ax = (real.x - ghost.x) * 0.02;
+      const ay = (real.y - ghost.y) * 0.02;
+      ghost.vx += ax;
+      ghost.vy += ay;
+    }
+
+    ghost.vx *= ghost.drag;
+    ghost.vy *= ghost.drag;
+    ghost.x += ghost.vx;
+    ghost.y += ghost.vy;
+
+    // If the user stops moving, the ghost continues on last known intent
+    const drift = 0.002;
+    ghost.x += (Math.sin(Date.now() * 0.001) * 0.5 + (real.vx || 0) * drift);
+    ghost.y += (Math.cos(Date.now() * 0.0011) * 0.5 + (real.vy || 0) * drift);
+
+    // Clamp
+    ghost.x = Math.max(0, Math.min(w, ghost.x));
+    ghost.y = Math.max(0, Math.min(h, ghost.y));
+
+    // Trail
+    const now = Date.now();
+    trail.push({ x: ghost.x, y: ghost.y, t: now });
+    while (trail.length && now - trail[0].t > 1500) trail.shift();
+
+    ctx.beginPath();
+    for (let i = 0; i < trail.length; i++) {
+      const p = trail[i];
+      if (i === 0) ctx.moveTo(p.x, p.y);
+      else ctx.lineTo(p.x, p.y);
+    }
+    ctx.strokeStyle = 'rgba(16, 185, 129, 0.25)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Real cursor marker
+    if (real.seen) {
+      ctx.beginPath();
+      ctx.arc(real.x, real.y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(16, 185, 129, 0.9)';
+      ctx.fill();
+    }
+
+    // Ghost cursor marker
+    ctx.beginPath();
+    ctx.arc(ghost.x, ghost.y, 9, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(16, 185, 129, 0.08)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(16, 185, 129, 0.5)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Stamp text
+    const stamp = tracking ? 'REGISTERED' : 'REVOKED (TEMP)';
+    ctx.font = '12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+    ctx.fillStyle = tracking ? 'rgba(16, 185, 129, 0.35)' : 'rgba(244, 63, 94, 0.35)';
+    ctx.fillText(stamp, ghost.x + 12, ghost.y - 12);
+
+    requestAnimationFrame(tick);
+  }
+
+  function updateStatus() {
+    if (!statusEl) return;
+    statusEl.textContent = tracking ? 'tracking: yes' : 'tracking: no';
+    statusEl.className = 'text-xs font-mono ' + (tracking ? 'text-emerald-400' : 'text-rose-400');
+  }
+
+  if (canvas && ctx) {
+    resize();
+    window.addEventListener('resize', resize);
+
+    window.addEventListener('mousemove', (e) => {
+      if (!tracking) return;
+      real.seen = true;
+      real.lastX = real.x;
+      real.lastY = real.y;
+      real.x = e.clientX;
+      real.y = e.clientY;
+      real.vx = real.x - real.lastX;
+      real.vy = real.y - real.lastY;
+
+      if (Math.abs(real.vx) + Math.abs(real.vy) > 20) {
+        setLog('excess velocity flagged (intent detected)');
+      } else {
+        setLog('motion recorded; forms filed');
+      }
+
+      // Initialize ghost near first motion
+      if (ghost.x === 0 && ghost.y === 0) {
+        ghost.x = real.x;
+        ghost.y = real.y;
+      }
+    });
+
+    window.addEventListener('click', () => {
+      tracking = !tracking;
+      updateStatus();
+      setLog(tracking ? 'tracking resumed (consent inferred)' : 'tracking paused (consent withdrawn)');
+    });
+
+    makeId();
+    updateStatus();
+    setInterval(makeId, 6500);
+    tick();
+  }
+</script>

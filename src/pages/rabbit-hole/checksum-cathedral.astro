@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Checksum Cathedral | 🐇" description="Pray. Hash. Repeat." favicon="⛪">
+  <div class="fixed inset-0 bg-gradient-to-b from-pink-950/10 via-violet-950/10 to-zinc-950"></div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between">
+    <a href="/rabbit-hole" class="text-sm text-zinc-600 hover:text-pink-400 transition-colors">← leave the nave</a>
+    <span class="text-xs text-zinc-700 font-mono">DEPTH: 4</span>
+  </header>
+
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+    <div class="max-w-3xl w-full">
+      <div class="text-center mb-8">
+        <div class="text-5xl mb-4">⛪</div>
+        <h1 class="text-3xl font-light text-pink-300/90 mb-2">checksum cathedral</h1>
+        <p class="text-zinc-600 text-xs font-mono">confess a string; receive a fingerprint; pretend it means salvation</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
+        <div class="border border-zinc-800 rounded bg-zinc-900/40 p-4">
+          <label for="confession" class="text-xs font-mono text-zinc-600">confession</label>
+          <textarea
+            id="confession"
+            class="mt-2 w-full h-40 rounded bg-zinc-950/40 border border-zinc-800 p-3 text-sm text-zinc-300 font-mono focus:outline-none focus:ring-0 focus:border-pink-500"
+            placeholder="type something you can’t take back…"
+          ></textarea>
+
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button id="hash-btn" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-pink-500 hover:text-pink-400 transition-colors">
+              hash
+            </button>
+            <button id="clear-btn" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-zinc-600 hover:text-zinc-300 transition-colors">
+              absolve (clear)
+            </button>
+            <button id="copy-btn" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-violet-500 hover:text-violet-400 transition-colors">
+              copy fingerprint
+            </button>
+          </div>
+
+          <p class="mt-3 text-[10px] text-zinc-700 font-mono" id="status">awaiting confession…</p>
+
+          <div class="mt-3 text-[10px] font-mono text-zinc-600 break-all" id="fingerprint">
+            sha-256: (none)
+          </div>
+        </div>
+
+        <div class="border border-zinc-800 rounded bg-zinc-900/40 overflow-hidden relative">
+          <canvas id="glass" class="w-full h-full"></canvas>
+          <div class="absolute inset-x-0 bottom-0 p-3 text-[10px] font-mono text-zinc-700 bg-gradient-to-t from-zinc-950/90 to-transparent">
+            stained glass is just compressed guilt
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-wrap justify-center gap-4">
+        <a href="/rabbit-hole/numbers-station" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-green-500 hover:text-green-400 transition-colors">numbers station →</a>
+        <a href="/rabbit-hole/the-machine" class="px-4 py-2 text-xs border border-zinc-800 rounded hover:border-amber-500 hover:text-amber-400 transition-colors">the machine →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const ta = document.getElementById('confession') as HTMLTextAreaElement | null;
+  const hashBtn = document.getElementById('hash-btn') as HTMLButtonElement | null;
+  const clearBtn = document.getElementById('clear-btn') as HTMLButtonElement | null;
+  const copyBtn = document.getElementById('copy-btn') as HTMLButtonElement | null;
+
+  const statusEl = document.getElementById('status');
+  const fpEl = document.getElementById('fingerprint');
+
+  const canvas = document.getElementById('glass') as HTMLCanvasElement | null;
+  const ctx = canvas?.getContext('2d') ?? null;
+
+  function toHex(buf: ArrayBuffer) {
+    const bytes = new Uint8Array(buf);
+    let out = '';
+    for (const b of bytes) out += b.toString(16).padStart(2, '0');
+    return out;
+  }
+
+  function resize() {
+    if (!canvas || !ctx) return;
+    const r = Math.max(1, Math.floor(window.devicePixelRatio || 1));
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = Math.max(1, Math.floor(rect.width * r));
+    canvas.height = Math.max(1, Math.floor(rect.height * r));
+    ctx.setTransform(r, 0, 0, r, 0, 0);
+  }
+
+  function paintFromHash(hex: string) {
+    if (!ctx || !canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const W = rect.width;
+    const H = rect.height;
+
+    ctx.clearRect(0, 0, W, H);
+
+    // Parse bytes from hex
+    const bytes: number[] = [];
+    for (let i = 0; i < hex.length; i += 2) {
+      bytes.push(parseInt(hex.slice(i, i + 2), 16));
+    }
+
+    const cols = 12;
+    const rows = 8;
+    const cw = W / cols;
+    const ch = H / rows;
+
+    let k = 0;
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        const a = bytes[k % bytes.length];
+        const b = bytes[(k + 7) % bytes.length];
+        const c = bytes[(k + 13) % bytes.length];
+
+        const hue = (a / 255) * 360;
+        const sat = 55 + (b / 255) * 40;
+        const lig = 25 + (c / 255) * 40;
+
+        ctx.fillStyle = `hsl(${hue.toFixed(1)} ${sat.toFixed(1)}% ${lig.toFixed(1)}%)`;
+        ctx.fillRect(x * cw, y * ch, cw + 1, ch + 1);
+
+        // Lead lines
+        ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(x * cw, y * ch, cw, ch);
+
+        k++;
+      }
+    }
+
+    // Soft glow
+    const g = ctx.createRadialGradient(W * 0.5, H * 0.25, 10, W * 0.5, H * 0.4, Math.max(W, H));
+    g.addColorStop(0, 'rgba(236, 72, 153, 0.18)');
+    g.addColorStop(1, 'rgba(9, 9, 11, 0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  async function compute() {
+    const text = ta?.value ?? '';
+
+    if (!text.trim()) {
+      statusEl && (statusEl.textContent = 'awaiting confession…');
+      fpEl && (fpEl.textContent = 'sha-256: (none)');
+      paintFromHash('00'.repeat(32));
+      return;
+    }
+
+    if (!crypto?.subtle) {
+      statusEl && (statusEl.textContent = 'crypto.subtle unavailable; no absolution today');
+      return;
+    }
+
+    statusEl && (statusEl.textContent = 'chanting…');
+    const data = new TextEncoder().encode(text);
+    const digest = await crypto.subtle.digest('SHA-256', data);
+    const hex = toHex(digest);
+
+    statusEl && (statusEl.textContent = 'fingerprint received');
+    fpEl && (fpEl.textContent = 'sha-256: ' + hex);
+    paintFromHash(hex);
+  }
+
+  async function copy() {
+    const fp = fpEl?.textContent || '';
+    const match = fp.match(/[0-9a-f]{64}/);
+    if (!match) {
+      statusEl && (statusEl.textContent = 'nothing to copy');
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(match[0]);
+      statusEl && (statusEl.textContent = 'copied (your penance is portable)');
+    } catch {
+      statusEl && (statusEl.textContent = 'clipboard denied (the cathedral is sandboxed)');
+    }
+  }
+
+  if (canvas && ctx) {
+    resize();
+    window.addEventListener('resize', resize);
+    paintFromHash('00'.repeat(32));
+  }
+
+  hashBtn?.addEventListener('click', () => void compute());
+  clearBtn?.addEventListener('click', () => {
+    if (ta) ta.value = '';
+    void compute();
+  });
+  copyBtn?.addEventListener('click', () => void copy());
+
+  // Gentle auto-update without thrashing
+  let t: number | undefined;
+  ta?.addEventListener('input', () => {
+    if (t) window.clearTimeout(t);
+    t = window.setTimeout(() => void compute(), 250);
+  });
+</script>
