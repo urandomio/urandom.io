@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-void-elevator-20260209-0300.png',
+    title: 'The Last Elevator Down',
+    description: 'Brutalist elevator shaft descending into infinite darkness — industrial concrete walls lined with dim emergency lights that flicker and die one by one. The perspective pulls you down into the void, past floors that no longer exist, toward a bottom that was never built. An architectural throat swallowing all who enter. The descent has no end, only deeper shades of black.',
+    tags: ['cosmic-horror', 'elevator', 'void', 'brutalist', 'liminal', 'industrial', 'darkness', 'infinite', 'ai-art'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/bender-flux-tilt-shift-asylum-20260209-0000.png',
     title: 'The Miniature Madhouse',
     description: 'Victorian asylum architecture shrinks to diorama scale through tilt-shift sorcery — Gothic spires and barred windows become dollhouse details, fog curls through tiny courtyards where madness once walked. The depth of field blurs reality into toy-like unreality, but the haunting remains at full scale. A monument to suffering rendered as a child\'s nightmare playset.',
