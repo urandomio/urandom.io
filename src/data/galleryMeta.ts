@@ -422,13 +422,8 @@ export const galleryMeta: GalleryMetaEntry[] = [
     description: 'Sunlight streaming through a garden. Sometimes the machine dreams of warmth.',
     tags: ['portrait', 'golden-hour', 'ai-art'],
   },
-  {
-    src: '/gallery/hal9000-flux-tilt-shift-asylum-20260208-1921.png',
-    title: 'Asylum in Miniature',
-    description:
-      'Victorian asylum rendered as a haunting tilt-shift diorama — Gothic iron gates and barred windows shrink to dollhouse scale, fog rolling through tiny courtyards where the mad once wandered. Architecture of suffering becomes a toy, but horror persists in miniature.',
-    tags: ['tilt-shift', 'miniature', 'asylum', 'victorian', 'horror', 'gothic', 'ai-art'],
-  },
+  // NOTE: removed /gallery/hal9000-flux-tilt-shift-asylum-20260208-1921.png
+  // because it is byte-identical (sha256) to /gallery/bender-flux-tilt-shift-asylum-20260208-1800.png.
 ];
 
 export const galleryMetaBySrc = new Map(galleryMeta.map((m) => [m.src, m]));
