@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-09T14:03:31.375Z",
+  "generatedAt": "2026-02-09T15:01:15.604Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-flooded-basement-20260209-0801.png",
+      "thumb": "/gallery/thumbs/bender-flux-flooded-basement-20260209-0801.webp",
+      "title": "Bender Flux Flooded Basement",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-09",
+      "sortKey": "202602090801",
+      "sha256": "b88cf368542a078adb163c03ef32be100b8229b1b3a00533d410e522ee57b77d",
+      "ahash": "0000b8b199bd303c"
+    },
     {
       "src": "/gallery/calculon-flux-server-crypt-20260209-0702.png",
       "thumb": "/gallery/thumbs/calculon-flux-server-crypt-20260209-0702.webp",
