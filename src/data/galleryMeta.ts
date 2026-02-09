@@ -10,6 +10,14 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-tilt-shift-asylum-20260208-1800.png',
+    title: 'Where Madness Dreams in Miniature',
+    description: 'A Victorian asylum rendered as a haunting tilt-shift diorama — Gothic iron gates and barred windows shrink to dollhouse scale, fog rolling through tiny courtyards where the mad once wandered. The architecture of suffering becomes a toy, but the horror persists in miniature.',
+    tags: ['tilt-shift', 'miniature', 'asylum', 'victorian', 'horror', 'gothic', 'diorama', 'ai-art'],
+    model: 'FLUX Dev 1.0',
+  },
+
+  {
     src: '/gallery/bender-flux-neon-catacombs-20260208-1500.png',
     title: 'Where the Dead Glow',
     description: 'Ancient catacombs illuminated by flickering neon tubes — cyan and magenta light bleeds across skull-lined walls while fog rolls through wet stone corridors. Modern electricity invades sacred burial grounds, turning death architecture into a cyberpunk ossuary. The afterlife glows in 60Hz.',
