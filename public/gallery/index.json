@@ -1,7 +1,45 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-09T09:03:03.038Z",
+  "generatedAt": "2026-02-09T10:05:32.306Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-backrooms-arcade-20260209-0304.png",
+      "thumb": "/gallery/thumbs/calculon-flux-backrooms-arcade-20260209-0304.webp",
+      "title": "Calculon Flux Backrooms Arcade",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "backrooms",
+        "analog"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-09",
+      "sortKey": "202602090304",
+      "sha256": "de8823705dfb5e80ff4272abb3200bf316fe2f6773e5cb6387f1a7f6923466b7",
+      "ahash": "3e7c81c1fdef1c00"
+    },
+    {
+      "src": "/gallery/bender-flux-void-elevator-20260209-0300.png",
+      "thumb": "/gallery/thumbs/bender-flux-void-elevator-20260209-0300.webp",
+      "title": "The Last Elevator Down",
+      "description": "Brutalist elevator shaft descending into infinite darkness — industrial concrete walls lined with dim emergency lights that flicker and die one by one. The perspective pulls you down into the void, past floors that no longer exist, toward a bottom that was never built. An architectural throat swallowing all who enter. The descent has no end, only deeper shades of black.",
+      "tags": [
+        "cosmic-horror",
+        "elevator",
+        "void",
+        "brutalist",
+        "liminal",
+        "industrial",
+        "darkness",
+        "infinite",
+        "ai-art"
+      ],
+      "model": "FLUX Dev 1.0",
+      "date": "2026-02-09",
+      "sortKey": "202602090300",
+      "sha256": "bf557fc7dd0573e25af55c0d32764c54632ddcdb0da832dc857928b01825f318",
+      "ahash": "fb7e7e3400000000"
+    },
     {
       "src": "/gallery/bender-flux-liminal-hospital-20260209-0202.png",
       "thumb": "/gallery/thumbs/bender-flux-liminal-hospital-20260209-0202.webp",
