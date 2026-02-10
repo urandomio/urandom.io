@@ -1,7 +1,23 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-10T07:02:38.846Z",
+  "generatedAt": "2026-02-10T08:02:02.205Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-backrooms-arcade-20260210-0100.png",
+      "thumb": "/gallery/thumbs/calculon-flux-backrooms-arcade-20260210-0100.webp",
+      "title": "Calculon Flux Backrooms Arcade",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "backrooms",
+        "analog"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-10",
+      "sortKey": "202602100100",
+      "sha256": "b29a07d3e932cc768b411c5cf948a352b6d923aed527b42a93c0b007caad9ae5",
+      "ahash": "7fbf91fbf8c01c1c"
+    },
     {
       "src": "/gallery/bender-flux-liminal-hospital-20260210-0000.png",
       "thumb": "/gallery/thumbs/bender-flux-liminal-hospital-20260210-0000.webp",
