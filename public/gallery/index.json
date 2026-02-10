@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-10T04:01:45.863Z",
+  "generatedAt": "2026-02-10T05:01:59.465Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-dead-mall-20260209-2200.png",
+      "thumb": "/gallery/thumbs/bender-flux-dead-mall-20260209-2200.webp",
+      "title": "Bender Flux Dead Mall",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "mall"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-09",
+      "sortKey": "202602092200",
+      "sha256": "53b00c38218ee5e095f908c03fef3199c203d72e86548ded95af5a7e11b688a4",
+      "ahash": "7bfffe6600103000"
+    },
     {
       "src": "/gallery/calculon-flux-noir-subway-20260209-2101.png",
       "thumb": "/gallery/thumbs/calculon-flux-noir-subway-20260209-2101.webp",
