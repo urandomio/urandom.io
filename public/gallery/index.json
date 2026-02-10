@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-09T15:01:15.604Z",
+  "generatedAt": "2026-02-10T03:01:33.624Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-liminal-hospital-20260209-2000.png",
+      "thumb": "/gallery/thumbs/bender-flux-liminal-hospital-20260209-2000.webp",
+      "title": "Bender Flux Liminal Hospital",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "liminal"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-09",
+      "sortKey": "202602092000",
+      "sha256": "7e794c182a14ba9511269c75e69b9a0cf69217b4a2f4b544f32a6047c80d9927",
+      "ahash": "085cebf7f6ea1810"
+    },
     {
       "src": "/gallery/bender-flux-flooded-basement-20260209-0801.png",
       "thumb": "/gallery/thumbs/bender-flux-flooded-basement-20260209-0801.webp",
