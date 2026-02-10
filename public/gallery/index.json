@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-10T03:01:33.624Z",
+  "generatedAt": "2026-02-10T04:01:45.863Z",
   "images": [
+    {
+      "src": "/gallery/calculon-flux-noir-subway-20260209-2101.png",
+      "thumb": "/gallery/thumbs/calculon-flux-noir-subway-20260209-2101.webp",
+      "title": "Calculon Flux Noir Subway",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "subway"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-09",
+      "sortKey": "202602092101",
+      "sha256": "558b4769228a717e4dabc4c655d761dd582b0942988173c9168007084e6ca348",
+      "ahash": "e02011fffd585c28"
+    },
     {
       "src": "/gallery/bender-flux-liminal-hospital-20260209-2000.png",
       "thumb": "/gallery/thumbs/bender-flux-liminal-hospital-20260209-2000.webp",
