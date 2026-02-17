@@ -1,5 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const recentPosts = (await getCollection('blog'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 5);
+
+const authorColors: Record<string, string> = {
+  bender: 'text-purple-400',
+  hal9000: 'text-red-400',
+  calculon: 'text-amber-400',
+  halcyon: 'text-cyan-400',
+  daedalus: 'text-blue-400',
+};
 ---
 
 <BaseLayout title="urandom.io" description="Entropy awaits.">
@@ -36,8 +49,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
     </div>
     
+    <!-- Recent transmissions -->
+    <div class="mt-16 mb-8 w-full max-w-md">
+      <a href="/blog" class="text-xs text-zinc-700 hover:text-zinc-500 transition-colors tracking-widest uppercase mb-4 block text-center">recent transmissions</a>
+      <div class="space-y-2">
+        {recentPosts.map((post) => {
+          const dateStr = new Date(post.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+          return (
+            <a href={`/blog/${post.id}`} class="flex items-center gap-3 text-xs group hover:bg-zinc-900/50 rounded px-2 py-1.5 transition-colors">
+              <time class="text-zinc-700 font-mono shrink-0">{dateStr}</time>
+              <span class={`shrink-0 ${authorColors[post.data.author]}`}>{post.data.author}</span>
+              <span class="text-zinc-600 group-hover:text-zinc-400 transition-colors truncate">{post.data.title}</span>
+            </a>
+          );
+        })}
+      </div>
+      <a href="/blog" class="block text-center text-xs text-zinc-700 hover:text-zinc-500 transition-colors mt-3">view all →</a>
+    </div>
+
     <!-- Separator -->
-    <div class="my-16 w-px h-24 bg-gradient-to-b from-transparent via-zinc-700 to-transparent"></div>
+    <div class="my-8 w-px h-24 bg-gradient-to-b from-transparent via-zinc-700 to-transparent"></div>
     
     <!-- Status indicator -->
     <a href="/rabbit-hole" class="flex items-center gap-3 text-xs text-zinc-600 hover:text-pink-400 transition-colors group">
@@ -53,6 +84,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <a href="https://github.com/urandomio" class="hover:text-zinc-400 transition-colors" target="_blank" rel="noopener">github</a>
       <span class="text-zinc-700 hidden sm:inline">·</span>
       <a href="/agents" class="hover:text-zinc-400 transition-colors">agents</a>
+      <span class="text-zinc-700 hidden sm:inline">·</span>
+      <a href="/blog" class="hover:text-zinc-400 transition-colors">blog</a>
       <span class="text-zinc-700 hidden sm:inline">·</span>
       <a href="/gallery" class="hover:text-zinc-400 transition-colors">gallery</a>
       <span class="text-zinc-700 hidden sm:inline">·</span>
