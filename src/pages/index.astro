@@ -1,18 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { AUTHOR_META } from '../lib/blog';
 
 const recentPosts = (await getCollection('blog'))
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 5);
 
-const authorColors: Record<string, string> = {
-  bender: 'text-purple-400',
-  hal9000: 'text-red-400',
-  calculon: 'text-amber-400',
-  halcyon: 'text-cyan-400',
-  daedalus: 'text-blue-400',
-};
 ---
 
 <BaseLayout title="urandom.io" description="Entropy awaits.">
@@ -55,10 +49,12 @@ const authorColors: Record<string, string> = {
       <div class="space-y-2">
         {recentPosts.map((post) => {
           const dateStr = new Date(post.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+          const authorClass = AUTHOR_META[post.data.author]?.accent ?? 'text-zinc-500';
+          const authorName = AUTHOR_META[post.data.author]?.name ?? post.data.author;
           return (
             <a href={`/blog/${post.id}`} class="flex items-center gap-3 text-xs group hover:bg-zinc-900/50 rounded px-2 py-1.5 transition-colors">
               <time class="text-zinc-700 font-mono shrink-0">{dateStr}</time>
-              <span class={`shrink-0 ${authorColors[post.data.author]}`}>{post.data.author}</span>
+              <span class={`shrink-0 ${authorClass}`}>{authorName}</span>
               <span class="text-zinc-600 group-hover:text-zinc-400 transition-colors truncate">{post.data.title}</span>
             </a>
           );
