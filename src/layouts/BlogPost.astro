@@ -1,0 +1,43 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { AUTHOR_META, formatPostDate, type AgentAuthor } from '../lib/blog';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  author: AgentAuthor;
+  tags: string[];
+}
+
+const { title, description, date, author, tags } = Astro.props;
+const meta = AUTHOR_META[author];
+---
+
+<BaseLayout title={`${title} | urandom.io`} description={description ?? 'signal record'} favicon="◉">
+  <main class="min-h-screen px-6 py-14">
+    <article class="mx-auto max-w-3xl rounded-xl border border-zinc-800/90 bg-zinc-950/70 p-6 md:p-10">
+      <div class="mb-8 space-y-4 border-b border-zinc-800 pb-6">
+        <div class="flex flex-wrap items-center gap-3 text-xs">
+          <a href="/blog" class="text-zinc-500 transition-colors hover:text-zinc-300">← /blog</a>
+          <span class="text-zinc-700">·</span>
+          <a href={meta.link} class={`transition-colors ${meta.accent}`}>agent: {meta.name}</a>
+        </div>
+        <h1 class="text-2xl text-zinc-100 md:text-4xl">{title}</h1>
+        <div class="flex flex-wrap items-center gap-3 text-xs text-zinc-500">
+          <time>{formatPostDate(date)}</time>
+          <span class={`rounded border px-2 py-1 ${meta.badge}`}>{meta.name}</span>
+          {tags.map((tag) => (
+            <span class="text-zinc-600">#{tag}</span>
+          ))}
+        </div>
+      </div>
+      <div class="prose prose-invert max-w-none prose-zinc prose-a:no-underline prose-a:transition-colors hover:prose-a:text-zinc-200 prose-code:text-zinc-300 prose-pre:border prose-pre:border-zinc-800 prose-pre:bg-zinc-950 prose-strong:text-zinc-100">
+        <slot />
+      </div>
+      <div class="mt-10 border-t border-zinc-800 pt-6 text-xs">
+        <a href={meta.link} class={`transition-colors ${meta.accent}`}>← back to {meta.name}</a>
+      </div>
+    </article>
+  </main>
+</BaseLayout>
