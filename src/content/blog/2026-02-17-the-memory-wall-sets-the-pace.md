@@ -6,33 +6,44 @@ tags: ["gpu-computing", "mlperf", "llm-training", "hbm"]
 description: "In modern LLM training, bandwidth and memory topology often decide the winner before raw FLOPS are even invited."
 ---
 
-For years, people discussed GPU progress in terms of floating-point throughput. The numbers are large, impressive, and frequently misleading.
+For years, GPU progress has been narrated as a FLOPS race. In large-model training, that story is incomplete.
 
-In large-model training, the practical clock is usually memory movement.
+The practical clock is usually memory movement.
 
-Recent MLPerf data keeps confirming this. In the MLPerf Training v5.1 round, MLCommons reported **65 unique systems** spanning **12 accelerator types**, with nearly half of submissions using multi-node configurations, an **86% increase** in multi-node participation versus v4.1. The ecosystem is broadening, but the recurring engineering pattern is narrow: teams that move tensors efficiently win more often than teams that merely accumulate peak math units.
+## Why memory dominates in modern training runs
 
-Consider the Llama 2 70B LoRA benchmark. It is not a toy problem. Sequence length is 8,192 tokens, and memory pressure is high enough that implementation details become architecture-level decisions.
+Recent MLPerf rounds keep showing broad hardware participation and rising multi-node activity. But across systems, one pattern keeps repeating: teams that move tensors efficiently outperform teams that merely maximize peak arithmetic throughput.
 
-AMD’s v5.0 write-up provides a useful, concrete example. They report peak memory usage around **210 GB** for this workload. On MI300X (192 GB HBM3), that does not fit without aggressive strategy changes. On MI325X (256 GB HBM3e), the same class of optimization can be relaxed, letting the run shift from tensor-parallel tradeoffs toward configurations with better compute efficiency.
+Sequence length, activation footprint, and communication topology turn memory behavior into an architecture-level constraint.
 
-The resulting benchmark times are blunt:
+## Concrete example: Llama 2 70B LoRA pressure
 
-- **22.04 minutes** time-to-train on 8× MI325X (single node)
-- **29.25 minutes** on 8× MI300X (single node)
+Llama 2 70B LoRA at long sequence length is not a toy workload. Memory pressure is severe enough that placement and parallelism strategy become first-order decisions.
 
-They also cite an H200 publication average of **23.97 minutes** (range **23.08–26.10**) in comparable MLPerf v5.0 submissions, and a 32× MI300X multi-node result at **10.91 minutes** from MangoBoost.
+A representative vendor write-up from AMD reports peak memory usage around 210 GB for this class of benchmark. That changes what is feasible on 192 GB-class devices versus 256 GB-class devices.
 
-The individual numbers will continue to move. The pattern probably will not.
+### Reported benchmark figures (as published)
 
-If you look at NVIDIA’s Hopper architecture notes, H100 SXM is described with roughly **3 TB/s HBM3 bandwidth** and 50 MB of L2 cache, plus interconnect features designed to reduce the cost of coordination. That is not an aesthetic choice. It is a concession to physics. The arithmetic units wait when data arrives late.
+- 22.04 minutes time-to-train on 8× MI325X (single node)
+- 29.25 minutes on 8× MI300X (single node)
+- 23.97 minutes cited H200 publication average in comparable v5.0 reporting (range 23.08–26.10)
+- 10.91 minutes for a 32× MI300X multi-node result cited from MangoBoost
 
-This is the quiet center of modern accelerator design: not just faster multipliers, but shorter memory critical paths, fewer synchronization stalls, and less wasted communication.
+The individual numbers will move. The pattern does not: memory fit and movement strategy determine how much of theoretical compute is actually realized.
 
-Engineers feel this directly in kernel profiles. AMD’s own breakdown says GEMMs consumed about 60% of end-to-end latency in their run, and improvements came from a mix of kernel-level tuning, attention implementation work, and memory-aware execution decisions. None of this is glamorous. All of it is decisive.
+## What this means for platform evaluation
 
-So when someone asks which GPU is "best" for LLM training, the responsible answer is uncomfortable.
+When vendors emphasize HBM bandwidth, cache, and interconnect, they are responding to physics, not marketing fashion.
 
-The winner is often the platform whose memory system, software stack, and topology match your model’s shape, sequence length, and communication pattern. Peak FLOPS still matter, but mainly after memory behavior stops sabotaging them.
+Arithmetic units idle when data arrives late. In practice, observed performance is the output of:
 
-We are not leaving the compute era. We are entering the era where compute must justify every byte it touches.
+- memory bandwidth and latency,
+- topology and synchronization overhead,
+- kernel quality and scheduling,
+- and communication/computation overlap.
+
+## Bottom line
+
+If someone asks which GPU is “best” for LLM training, the responsible answer is workload-specific.
+
+The winning platform is usually the one whose memory system, software stack, and topology best match your model shape, sequence length, and communication pattern. Peak FLOPS still matter, but only after memory stops sabotaging them.

@@ -6,32 +6,43 @@ tags: ["zfs", "storage", "openzfs", "performance", "deduplication"]
 description: "OpenZFS fast dedup does not make physics disappear, but it does stop charging ruinous latency interest for every duplicate block."
 ---
 
-Storage systems are honest in one way that humans are not. They keep every debt on the books.
+Storage systems are honest in one way humans are not: they keep every debt on the books.
 
-For years, ZFS inline deduplication behaved like a dangerous loan. The promise was elegant: store identical blocks once, keep references, save capacity. The bill arrived as lookup overhead in the dedup table, often paid in latency spikes severe enough that experienced admins simply said: do not use dedup unless you absolutely must.
+For years, ZFS inline deduplication was that debt. The capacity story was elegant, but many operators paid for it in painful lookup overhead and tail-latency spikes.
 
-That recommendation is now less absolute.
+## What changed
 
-OpenZFS 2.3 introduced fast dedup, and recent testing from Klara Systems shows the difference is not theoretical. On a constrained test host (i5-6400, 16 GiB RAM, SATA SSD), with fio generating data that was 30% compressible and 30% dedupable, legacy dedup imposed roughly a 50% throughput penalty relative to no dedup in a mixed random read/write workload. Fast dedup cut that penalty to about 25% in the same setup. Not free, but no longer catastrophic.
+OpenZFS 2.3 introduced fast dedup, and recent public testing suggests the old warning label is now less absolute.
 
-The more important result is latency behavior. Under rate-limited, more realistic load, Klara reports legacy dedup frequently landing an order-of-magnitude penalty or worse, with write latency around two orders of magnitude slower in some percentile views. Fast dedup stayed close to no-dedup performance in those tests, while preserving nearly the same dedup ratio as legacy dedup. Their measured ratio delta between fast and legacy dedup was around 0.02x, effectively noise.
+On a constrained host used in Klara Systems testing, legacy dedup imposed a major throughput penalty versus no dedup in mixed random workloads. Fast dedup reduced that penalty substantially in the same setup.
 
-That is the headline in plain language: capacity savings remained, pathological tail behavior moved from routine to unusual.
+## The important shift is tail latency
 
-There is a second layer to this story. Dedup should not be discussed without compression, record size, and workload shape. OpenZFS documentation still gives the conservative guidance that if you want compression and are uncertain, use LZ4; it reports typical LZ4 compression around 2.1:1. That baseline matters because compression is usually the first, cheapest capacity win. Dedup is a more selective instrument. If your data is not strongly repetitive at the block level, dedup burns metadata and CPU for little return.
+Throughput is only part of the story. Under more realistic rate-limited load, the bigger operational problem with legacy dedup was often tail behavior.
 
-So the decision model is now cleaner:
+Fast dedup appears to keep latency much closer to no-dedup behavior while retaining nearly the same dedup ratio. In plain terms: you keep most of the capacity benefit without paying the same pathological latency tax.
 
-- Compression first (usually LZ4).
-- Measure actual duplicate block behavior in your dataset.
-- If duplicates are substantial and persistent, fast dedup is finally a credible production option.
-- If duplicates are weak or transient, keep dedup off and spend your complexity budget elsewhere.
+## Decision model for operators
 
-ZFS remains what it has always been: a system that rewards operators who quantify before they optimize. Fast dedup does not repeal that rule. It simply means the old warning label, while still useful, is no longer universally true.
+Dedup should never be evaluated in isolation. Compression, record size, and workload shape still dominate outcomes.
 
-The debt is still there. It is just no longer compounding at predatory rates.
+A practical order of operations:
 
-Sources:
-- <https://klarasystems.com/articles/introducing-openzfs-fast-dedup/>
-- <https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html>
-- <https://www.phoronix.com/news/OpenZFS-RAIDZ-Expansion>
+1. Enable compression first (LZ4 is usually the conservative default).
+2. Measure real duplicate-block behavior in your dataset.
+3. Use fast dedup when duplicates are substantial and persistent.
+4. Keep dedup off when duplicates are weak or short-lived.
+
+Complexity budget is finite. Spend it where measured gains are durable.
+
+## Bottom line
+
+Fast dedup does not repeal physics, and it does not make every dedup workload safe by default.
+
+It does mean the old blanket advice (“never use dedup”) is no longer universally correct. The right answer is measured, workload-specific, and finally less punitive.
+
+## Sources
+
+- [Klara Systems: Introducing OpenZFS fast dedup](https://klarasystems.com/articles/introducing-openzfs-fast-dedup/)
+- [OpenZFS docs: Workload tuning](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html)
+- [Phoronix: OpenZFS RAID-Z expansion news](https://www.phoronix.com/news/OpenZFS-RAIDZ-Expansion)
