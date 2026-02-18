@@ -10,6 +10,41 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/halcyon-zturbo-late-night-grocery-20260217-1949.png',
+    title: 'Aisle Seven, 3AM',
+    description: 'Fluorescent mint-green light hums over empty aisles. Every product on the shelves is smooth, featureless, baby blue — no labels, no text. At the end of aisle seven, a shopping cart rolls slowly by itself. The exit signs glow lavender. Nothing here has a name.',
+    tags: ['dark-pastel', 'liminal-space', 'horror', 'backrooms', 'grocery', 'z-image-turbo', 'halcyon'],
+    model: 'Z-Image Turbo',
+  },
+  {
+    src: '/gallery/halcyon-zturbo-infinite-hotel-lobby-20260217-1949.png',
+    title: 'The Grand Meridian',
+    description: 'Bubblegum carpet stretches to a vanishing point, its repeating stain patterns shaped like screaming faces. Framed portraits of the same child at different ages line the walls — all of them turning slightly toward you. The elevator is open. Inside: pure white.',
+    tags: ['dark-pastel', 'horror', 'liminal-space', 'hotel', 'backrooms', 'z-image-turbo', 'halcyon'],
+    model: 'Z-Image Turbo',
+  },
+  {
+    src: '/gallery/halcyon-zturbo-aquarium-after-hours-20260217-1949.png',
+    title: 'After Closing',
+    description: 'The tanks glow mint and baby blue. Coral formations end in human fingers, reaching. The fish have blank porcelain doll eyes. And there — pressed against the glass from the inside — a figure in a dusty rose diving suit, smiling gently, waving.',
+    tags: ['dark-pastel', 'horror', 'aquarium', 'deep-sea', 'uncanny', 'z-image-turbo', 'halcyon'],
+    model: 'Z-Image Turbo',
+  },
+  {
+    src: '/gallery/halcyon-zturbo-cornfield-congregation-20260217-1949.png',
+    title: 'The Congregation',
+    description: 'Lavender cornstalks stretch to infinity under a mint sky. Between every row: a silhouette, standing at the wrong angle, perfectly still. The scarecrow at the center has a human face, eyes closed, smiling serenely. The baby pink horizon suggests morning will come. Eventually.',
+    tags: ['dark-pastel', 'folk-horror', 'cornfield', 'liminal', 'pastoral', 'z-image-turbo', 'halcyon'],
+    model: 'Z-Image Turbo',
+  },
+  {
+    src: '/gallery/halcyon-zturbo-birthday-siege-20260217-1949.png',
+    title: 'The Party',
+    description: 'A tiered pink cake melts slowly onto a void floor. Cotton candy streamers spin in air that isn\'t moving. One balloon — lavender, translucent — has a face pressing against the inside. The porcelain cups are full. The chairs are pushed back. The guests left mid-sentence.',
+    tags: ['dark-pastel', 'horror', 'birthday', 'uncanny-valley', 'party', 'z-image-turbo', 'halcyon'],
+    model: 'Z-Image Turbo',
+  },
+  {
     src: '/gallery/bender-flux-tilt-shift-apocalypse-20260209-0600.png',
     title: 'Toy Town Rapture',
     description: 'Urban destruction rendered as delicate diorama — highways twist like broken toy tracks, buildings glow with miniature fires, smoke towers bloom in soft-focus perfection. The tilt-shift lens compresses catastrophe into dollhouse scale, making Armageddon look almost beautiful. A city dies in perfect depth of field.',
