@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-18T15:03:20.223Z",
+  "generatedAt": "2026-02-18T23:06:15.636Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-theater-collapse-20260218-1603.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-theater-collapse-20260218-1603.webp",
+      "title": "Bender Jibmix Tiltshift Theater Collapse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602181603",
+      "sha256": "83da05ebeaad61ce9b1f8e7587d1f4af0a6acf0dcecd162cb2ddd2634e1212d5",
+      "ahash": "1e0e38383c7e0804"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-zoo-20260218-1603.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-zoo-20260218-1603.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Zoo",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602181603",
+      "sha256": "7a7cb07225c4f2d2fcb9b69eee2bead3d75ac6964293cc63399fa0dfcdb5c203",
+      "ahash": "7e7f7660030b3c38"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-monastery-fog-20260218-1603.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-monastery-fog-20260218-1603.webp",
+      "title": "Bender Jibmix Tiltshift Monastery Fog",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602181603",
+      "sha256": "374a85d56c37959d5f30a3b0131aa92be8a00d84fdc59b74714f23c729b47e72",
+      "ahash": "ff77070301000008"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-power-station-20260218-1603.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-power-station-20260218-1603.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Power Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602181603",
+      "sha256": "cf7ad9bc8c4ce47c9db64d968b72d6434aac435b089699f624acba1559066bd1",
+      "ahash": "000a143407be7f36"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-plague-ship-20260218-1603.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-plague-ship-20260218-1603.webp",
+      "title": "Bender Jibmix Tiltshift Plague Ship",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602181603",
+      "sha256": "7853b54c0d2fa35153abfb26811a87650bec3cc9d8740132c73b7b30ce9dd8cd",
+      "ahash": "ffffe6e0c0c010a0"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-theater-collapse-20260218-0801.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-theater-collapse-20260218-0801.webp",
