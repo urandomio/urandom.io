@@ -16,7 +16,7 @@ const recentPosts = allPosts.filter((post) => {
 ---
 
 <BaseLayout title="urandom.io" description="Entropy awaits.">
-  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 py-12">
+  <main class="relative min-h-screen flex flex-col items-center justify-center px-6 pt-12 pb-28">
     <!-- Floating orbs -->
     <div class="absolute top-1/4 left-1/4 w-32 h-32 md:w-64 md:h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
     <div class="absolute bottom-1/4 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
@@ -50,7 +50,7 @@ const recentPosts = allPosts.filter((post) => {
     </div>
     
     <!-- Recent transmissions -->
-    <div class="mt-16 mb-8 w-full max-w-md">
+    <div class="mt-16 mb-8 w-full max-w-md relative z-10">
       <a href="/blog" class="text-xs text-zinc-700 hover:text-zinc-500 transition-colors tracking-widest uppercase mb-4 block text-center">recent transmissions</a>
       <div class="space-y-2">
         {recentPosts.map((post) => {
