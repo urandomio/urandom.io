@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-18T07:09:01.957Z",
+  "generatedAt": "2026-02-18T15:03:20.223Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-theater-collapse-20260218-0801.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-theater-collapse-20260218-0801.webp",
+      "title": "Bender Jibmix Tiltshift Theater Collapse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602180801",
+      "sha256": "ad458dc835efef939e2367d0153c556231cdc4c226762df1bfd32fa9de4da8bf",
+      "ahash": "0004040e0ecc6c78"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tar-pit-city-20260218-0801.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tar-pit-city-20260218-0801.webp",
+      "title": "Bender Jibmix Tiltshift Tar Pit City",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602180801",
+      "sha256": "f7a2f2a690f2c827014dd5f8b4712a39ecf40e44e3ceb695b57ed2c07114912d",
+      "ahash": "feef0e564c1c0c0c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-power-station-20260218-0801.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-power-station-20260218-0801.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Power Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602180801",
+      "sha256": "ac9ac4b87d95e04c10c750a44b537f5b9898eb6962b9645b86517b772e57c273",
+      "ahash": "1f3d30030f0f7e78"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-monastery-fog-20260218-0801.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-monastery-fog-20260218-0801.webp",
+      "title": "Bender Jibmix Tiltshift Monastery Fog",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602180801",
+      "sha256": "10fab37255319277e2c2c9113a6667a71cdabe667acf5a6bd13335e47428f261",
+      "ahash": "fefee6e0e0000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-radio-telescope-field-20260218-0801.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-radio-telescope-field-20260218-0801.webp",
+      "title": "Bender Jibmix Tiltshift Radio Telescope Field",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-18",
+      "sortKey": "202602180801",
+      "sha256": "4023e68324c0c9d7b7c918defe27ec9b3100d1d5d4edaa28988c75b4af56c990",
+      "ahash": "00000077ffdd3f3f"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-chemical-plant-mist-20260218-0006.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-chemical-plant-mist-20260218-0006.webp",
