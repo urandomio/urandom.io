@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-18T23:06:15.636Z",
+  "generatedAt": "2026-02-19T07:07:37.344Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-chemical-plant-mist-20260219-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-chemical-plant-mist-20260219-0005.webp",
+      "title": "Bender Jibmix Tiltshift Chemical Plant Mist",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190005",
+      "sha256": "d05330cd4dbc2667001f5083ea1503abd452bfc4433d79356a9faffdab8ba231",
+      "ahash": "fe7f79100180383e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-metro-station-flood-20260219-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-metro-station-flood-20260219-0005.webp",
+      "title": "Bender Jibmix Tiltshift Metro Station Flood",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190005",
+      "sha256": "fe12352496c3b1ab80200fbc87e1fd868852457b9a61d35338501aaec8cecf6a",
+      "ahash": "18feff0018181818"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mine-elevator-20260219-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mine-elevator-20260219-0005.webp",
+      "title": "Bender Jibmix Tiltshift Mine Elevator",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190005",
+      "sha256": "5c15235ae2404e0059ed8465cef96424d394281076a29728a68231bbb2b01276",
+      "ahash": "303036d0d911db7f"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-carnival-after-midnight-20260219-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-carnival-after-midnight-20260219-0005.webp",
+      "title": "Bender Jibmix Tiltshift Carnival After Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190005",
+      "sha256": "31a9b5a0509adf61ba1859533cd1c981cf9e06bb327c97959402e4aa854b4049",
+      "ahash": "0010fefedaf80220"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-antarctic-station-20260219-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-antarctic-station-20260219-0005.webp",
+      "title": "Bender Jibmix Tiltshift Antarctic Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190005",
+      "sha256": "6f84ca8ec00f27a8517d3144b01cd8f5ff43398a3469432583caf210ce0275e0",
+      "ahash": "00e0fbc1fcff0e4a"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-theater-collapse-20260218-1603.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-theater-collapse-20260218-1603.webp",
