@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-19T15:07:03.982Z",
+  "generatedAt": "2026-02-19T23:07:24.958Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-hydro-dam-drought-20260219-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-hydro-dam-drought-20260219-1605.webp",
+      "title": "Bender Jibmix Tiltshift Hydro Dam Drought",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602191605",
+      "sha256": "d088eaa8235692a0c5698aa61547c576ff9811c36a957fcd44adc97dc6b6ab8f",
+      "ahash": "ff7f40008098f83c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-glacier-hotel-20260219-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-glacier-hotel-20260219-1605.webp",
+      "title": "Bender Jibmix Tiltshift Glacier Hotel",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602191605",
+      "sha256": "03fb27fe458a2efcf10769716e1cd60e87d2c8a6e1e6239ee8f94d712ec80538",
+      "ahash": "9e1c60e0c0c13e1f"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sunken-cathedral-20260219-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sunken-cathedral-20260219-1605.webp",
+      "title": "Bender Jibmix Tiltshift Sunken Cathedral",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602191605",
+      "sha256": "b9005b911f7b4f624ae90d54c12e8ba0c181afba70ac42931efbed278ebbf50b",
+      "ahash": "040cec0c84ec7c3c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mushroom-village-20260219-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mushroom-village-20260219-1605.webp",
+      "title": "Bender Jibmix Tiltshift Mushroom Village",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602191605",
+      "sha256": "0c81c65401865fd7583c9ef94d321585ed45d36d0a62eb9d1bf721620dd1319e",
+      "ahash": "ff3b7c1fc6201018"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-arctic-lighthouse-rtg-20260219-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-arctic-lighthouse-rtg-20260219-1605.webp",
+      "title": "Bender Jibmix Tiltshift Arctic Lighthouse Rtg",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602191605",
+      "sha256": "fa3b2a2f881a4cb1466fa8a34746922dd8ab58c050f1f5cd0ed1e8817eb537a9",
+      "ahash": "3efc0008083f3cfc"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-glacier-hotel-20260219-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-glacier-hotel-20260219-0805.webp",
