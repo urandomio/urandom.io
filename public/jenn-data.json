@@ -1,7 +1,14 @@
 {
-  "total": 22,
+  "total": 23,
   "months": {
     "February 2026": [
+      {
+        "date": "2026-02-18",
+        "time": "7:22 PM",
+        "month": "February 2026",
+        "text": "You should go look at the fucking moon. It looks so cool.",
+        "is_funny": true
+      },
       {
         "date": "2026-02-16",
         "time": "1:43 AM",
