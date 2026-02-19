@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-19T07:07:37.344Z",
+  "generatedAt": "2026-02-19T15:07:03.982Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-glacier-hotel-20260219-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-glacier-hotel-20260219-0805.webp",
+      "title": "Bender Jibmix Tiltshift Glacier Hotel",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190805",
+      "sha256": "9822216221656ea14090907707087fb07f9a172f666e52091bc40c0ac6e02940",
+      "ahash": "fe7e8081611f3f3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-theater-collapse-20260219-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-theater-collapse-20260219-0805.webp",
+      "title": "Bender Jibmix Tiltshift Theater Collapse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190805",
+      "sha256": "6059b4d33bce6772961394ee9fb94198bfb260e7d7efcb7651ac68b944bfda91",
+      "ahash": "003c3096bf390c06"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-insomnia-diner-20260219-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-insomnia-diner-20260219-0805.webp",
+      "title": "Bender Jibmix Tiltshift Insomnia Diner",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190805",
+      "sha256": "54af0286aeb7c1ad3d271cbcd63db53a440502fbb58b5bbc75d40a6b2d056f40",
+      "ahash": "0f7070783f007e20"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-abandoned-mall-snow-20260219-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-abandoned-mall-snow-20260219-0805.webp",
+      "title": "Bender Jibmix Tiltshift Abandoned Mall Snow",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "mall"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190805",
+      "sha256": "202b51fc0e9e6ea542362843161ab4cfe7af9f120928a4c73b99fd5f0a571d05",
+      "ahash": "38383810067b3cbf"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-grain-elevator-storm-20260219-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-grain-elevator-storm-20260219-0805.webp",
+      "title": "Bender Jibmix Tiltshift Grain Elevator Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-19",
+      "sortKey": "202602190805",
+      "sha256": "d4d4969f611579f9c128d57fbc9f131de33db3d6dda459602c3d5ca249cd2473",
+      "ahash": "f8f9e040c0c30f00"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-chemical-plant-mist-20260219-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-chemical-plant-mist-20260219-0005.webp",
