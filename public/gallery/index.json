@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-20T07:09:55.922Z",
+  "generatedAt": "2026-02-20T15:07:00.063Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-shipwreck-shallows-20260220-0804.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-shipwreck-shallows-20260220-0804.webp",
+      "title": "Bender Jibmix Tiltshift Shipwreck Shallows",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602200804",
+      "sha256": "3441f13136f9c3198177756fa9138cfaf3e602c54394caf829b006b451b7cad1",
+      "ahash": "fffffb81c1c00000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-freeway-to-nowhere-20260220-0804.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-freeway-to-nowhere-20260220-0804.webp",
+      "title": "Bender Jibmix Tiltshift Freeway To Nowhere",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602200804",
+      "sha256": "294ab9e658a30eefe283eb9ec8d955753b3df7bdf56f9b676ff8510aa79add8c",
+      "ahash": "ff3c7e9f111f1610"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-arctic-lighthouse-rtg-20260220-0804.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-arctic-lighthouse-rtg-20260220-0804.webp",
+      "title": "Bender Jibmix Tiltshift Arctic Lighthouse Rtg",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602200804",
+      "sha256": "6d99bc2449eabae393b6bd5b2294f0217d08e063da8f1001cc65c5504f5da11d",
+      "ahash": "ff0c000020fee0f8"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-elevator-shaft-abyss-20260220-0804.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-elevator-shaft-abyss-20260220-0804.webp",
+      "title": "Bender Jibmix Tiltshift Elevator Shaft Abyss",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602200804",
+      "sha256": "fcc1c3ac35edbcbd13afd035b4800a1b982aea8f03b51e4dd074b9e92fdb8318",
+      "ahash": "010183daff8518ff"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-furnace-room-20260220-0804.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-furnace-room-20260220-0804.webp",
+      "title": "Bender Jibmix Tiltshift Furnace Room",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602200804",
+      "sha256": "42bedc59d494c8aded86e9656c34df6d9008080a8674b2235f6592c630a71185",
+      "ahash": "383c1c1d0c1e1c3e"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-flooded-library-20260220-0007.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-library-20260220-0007.webp",
