@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-20T15:07:00.063Z",
+  "generatedAt": "2026-02-20T23:06:57.366Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-underground-bunker-20260220-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underground-bunker-20260220-1604.webp",
+      "title": "Bender Jibmix Tiltshift Underground Bunker",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602201604",
+      "sha256": "bee5b8196f5f0618c4bd480823308469d2c01522771fe962ca840a014c99f3fd",
+      "ahash": "181034e71c3e3e02"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-carnival-after-midnight-20260220-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-carnival-after-midnight-20260220-1604.webp",
+      "title": "Bender Jibmix Tiltshift Carnival After Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602201604",
+      "sha256": "db814bf56c0fd27f7e99673fe869bc58da726eb5c1085903e34611f1b804560b",
+      "ahash": "47cfb87c7e1c1800"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cave-cathedral-20260220-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cave-cathedral-20260220-1604.webp",
+      "title": "Bender Jibmix Tiltshift Cave Cathedral",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602201604",
+      "sha256": "64b82291b175d5148363e99fcdda63e9c7fe303b6505c534380f09d0eaae0ce0",
+      "ahash": "0006060e3e7e3c10"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-theater-collapse-20260220-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-theater-collapse-20260220-1604.webp",
+      "title": "Bender Jibmix Tiltshift Theater Collapse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602201604",
+      "sha256": "040438570a51989e9582ac6a806726abef1bc126b4a6a2b2669259bbb63adf2a",
+      "ahash": "1c0099dbff18387c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-glass-factory-frozen-20260220-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-glass-factory-frozen-20260220-1604.webp",
+      "title": "Bender Jibmix Tiltshift Glass Factory Frozen",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-20",
+      "sortKey": "202602201604",
+      "sha256": "1e0afd83e9155f1f9748f67520a77b909fcc473916b2ec1cecdb8d357e2700fd",
+      "ahash": "34383062763e3d38"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-shipwreck-shallows-20260220-0804.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-shipwreck-shallows-20260220-0804.webp",
