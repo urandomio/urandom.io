@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-20T23:06:57.366Z",
+  "generatedAt": "2026-02-21T07:10:45.924Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mushroom-village-20260221-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mushroom-village-20260221-0007.webp",
+      "title": "Bender Jibmix Tiltshift Mushroom Village",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210007",
+      "sha256": "eb299ad4230d1d082eb51e255750d054ae2d17184cbaacf7730599b192a1a0dc",
+      "ahash": "7e78fc3c1c1a0400"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-zoo-20260221-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-zoo-20260221-0007.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Zoo",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210007",
+      "sha256": "c774896ea9ee0ce1e0c02761e3bc70f629000fb390fb5ceb88530f9a1bf2de76",
+      "ahash": "3c3c3e00080b1f18"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-salt-mine-crystal-20260221-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-salt-mine-crystal-20260221-0007.webp",
+      "title": "Bender Jibmix Tiltshift Salt Mine Crystal",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210007",
+      "sha256": "31ade6a9d7d921de6bbd38cad8ab11a70e66a4620f0d853b31c0958634d5dcfc",
+      "ahash": "1c1e3e8f7e3a3c30"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-antarctic-station-20260221-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-antarctic-station-20260221-0007.webp",
+      "title": "Bender Jibmix Tiltshift Antarctic Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210007",
+      "sha256": "a568fd95cf69127427fb6a1bef34ff1c1ed33e6beae029247cc45266b4e45016",
+      "ahash": "84fcf0e4836f3e1c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-lighthouse-black-sea-20260221-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-lighthouse-black-sea-20260221-0007.webp",
+      "title": "Bender Jibmix Tiltshift Lighthouse Black Sea",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210007",
+      "sha256": "a97f1b4484a88767392f1e9ab19229ae0f9a3da03d0f5aff21c363fea00c6233",
+      "ahash": "ff7f7f0f03000000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-underground-bunker-20260220-1604.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underground-bunker-20260220-1604.webp",
