@@ -1,7 +1,95 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-21T07:10:45.924Z",
+  "generatedAt": "2026-02-21T15:07:49.479Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-drowned-clocktower-20260221-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drowned-clocktower-20260221-0805.webp",
+      "title": "Bender Jibmix Tiltshift Drowned Clocktower",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210805",
+      "sha256": "2b5518ba621d97e5e6d2496466643ace055f310c66d3ba7d4f45adb742026a89",
+      "ahash": "77676b2203030323"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-supermarket-20260221-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-supermarket-20260221-0805.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Supermarket",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210805",
+      "sha256": "9fc94db33e15baae628bcd83325cfbbd0c0f91c1141f6afaae66b4290a099a5d",
+      "ahash": "038efff8f87c0c04"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-observatory-void-20260221-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-observatory-void-20260221-0805.webp",
+      "title": "Bender Jibmix Tiltshift Observatory Void",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210805",
+      "sha256": "90ceb5ce7e95f28fb722cd2ba6548b7dad1b3e225c6c75c40ff263e436459a5b",
+      "ahash": "0010620f0f7fc1e0"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-elevator-shaft-abyss-20260221-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-elevator-shaft-abyss-20260221-0805.webp",
+      "title": "Bender Jibmix Tiltshift Elevator Shaft Abyss",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210805",
+      "sha256": "5c8bd496e668809b779460ca192330611bceb0b5127427a212a2a7d90bee0b03",
+      "ahash": "0a02dc80617e1e1c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-brutalist-pool-demolition-20260221-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-brutalist-pool-demolition-20260221-0805.webp",
+      "title": "Bender Jibmix Tiltshift Brutalist Pool Demolition",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602210805",
+      "sha256": "29a072d0a61c5ec8f627012db9305884b9e0ec75784efc9b20c8c2eb508f3414",
+      "ahash": "00fc7c00393b3f00"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-mushroom-village-20260221-0007.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mushroom-village-20260221-0007.webp",
