@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-21T15:07:49.479Z",
+  "generatedAt": "2026-02-21T23:07:31.558Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-lighthouse-black-sea-20260221-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-lighthouse-black-sea-20260221-1605.webp",
+      "title": "Bender Jibmix Tiltshift Lighthouse Black Sea",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602211605",
+      "sha256": "751a6393924e2f1d1b091c00da73fb3850b4124564d8622239acbfc06cc7c193",
+      "ahash": "3f3f6e0f03013c70"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-soviet-drydock-20260221-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-soviet-drydock-20260221-1605.webp",
+      "title": "Bender Jibmix Tiltshift Soviet Drydock",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602211605",
+      "sha256": "c0d3b3506ff19f6d18c206f662ef1e1abea08a2215d95b08bcd6e37286fb2444",
+      "ahash": "ff3ebd043c100000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-insomnia-diner-20260221-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-insomnia-diner-20260221-1605.webp",
+      "title": "Bender Jibmix Tiltshift Insomnia Diner",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602211605",
+      "sha256": "cbe35a8a276c3c06c354d9c73fff2b7950e79315e994511c2b7418745431d97a",
+      "ahash": "1f0761703e207e60"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-canal-lock-abandoned-20260221-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-canal-lock-abandoned-20260221-1605.webp",
+      "title": "Bender Jibmix Tiltshift Canal Lock Abandoned",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602211605",
+      "sha256": "1150e5b0de4f77bf25590d50809f75527efe73e53caa59a6085405c7f4b64905",
+      "ahash": "fff8f80000001010"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-chemical-plant-mist-20260221-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-chemical-plant-mist-20260221-1605.webp",
+      "title": "Bender Jibmix Tiltshift Chemical Plant Mist",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-21",
+      "sortKey": "202602211605",
+      "sha256": "81e4043c5ea0fcbc700cbbc04a8c51a4f2ef5f6ccc20099479612f20d6b3984e",
+      "ahash": "fcfc1e18040e6c1c"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-drowned-clocktower-20260221-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drowned-clocktower-20260221-0805.webp",
