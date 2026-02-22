@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-22T07:07:15.928Z",
+  "generatedAt": "2026-02-22T15:07:37.313Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-monastery-fog-20260222-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-monastery-fog-20260222-0805.webp",
+      "title": "Bender Jibmix Tiltshift Monastery Fog",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220805",
+      "sha256": "f5a6dced29807c20100739af587bd4eb0764e0eeda4739a3d0240218510ceeae",
+      "ahash": "fffef8e080000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tide-pool-observatory-20260222-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tide-pool-observatory-20260222-0805.webp",
+      "title": "Bender Jibmix Tiltshift Tide Pool Observatory",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220805",
+      "sha256": "0b4a7e5904127e04994559e13798ae265b0ac42c6eebe94d4056dfb07e663064",
+      "ahash": "f898f8e098ec0c00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-plague-ship-20260222-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-plague-ship-20260222-0805.webp",
+      "title": "Bender Jibmix Tiltshift Plague Ship",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220805",
+      "sha256": "0bea12dbaeccf90c56baf5853c8d2d96d8ebdf7dadb401534982ed487fd6bc22",
+      "ahash": "ff3f0f3684187880"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-salt-flat-ritual-20260222-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-salt-flat-ritual-20260222-0805.webp",
+      "title": "Bender Jibmix Tiltshift Salt Flat Ritual",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220805",
+      "sha256": "c42b58f39dd17483c93787cf849ce9749117ec4b614a703f5713304824ac7db2",
+      "ahash": "0038fce7e7fffd18"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-automat-midnight-20260222-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-automat-midnight-20260222-0805.webp",
+      "title": "Bender Jibmix Tiltshift Automat Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220805",
+      "sha256": "40287b16e0b10658c3697c76c53491c16cdbc3336ab7859a563eb282573b2a38",
+      "ahash": "00f8ff3ffc400307"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-airport-after-hours-20260222-0004.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-airport-after-hours-20260222-0004.webp",
