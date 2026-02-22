@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-21T23:07:31.558Z",
+  "generatedAt": "2026-02-22T07:07:15.928Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-airport-after-hours-20260222-0004.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-airport-after-hours-20260222-0004.webp",
+      "title": "Bender Jibmix Tiltshift Airport After Hours",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220004",
+      "sha256": "4a49116bdcfee3a824112ed77a5fa004b80e40a7f799f219e6182b669d9e697e",
+      "ahash": "0000ffff9d3f1000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-stadium-storm-20260222-0004.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-stadium-storm-20260222-0004.webp",
+      "title": "Bender Jibmix Tiltshift Stadium Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220004",
+      "sha256": "70bf4aa49257414fb8066aa6ca237b64e4e6fde9623ad8d4ad6c979afe83a72c",
+      "ahash": "00ffff683efc2000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-power-station-20260222-0004.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-power-station-20260222-0004.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Power Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220004",
+      "sha256": "8047c01dceb349f705241084ec3c4dfa2ac8cb6a1dad5edf0053a1e5fe95639d",
+      "ahash": "073f0b01a1bf7c70"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-rail-yard-winter-fog-20260222-0004.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rail-yard-winter-fog-20260222-0004.webp",
+      "title": "Bender Jibmix Tiltshift Rail Yard Winter Fog",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220004",
+      "sha256": "444b70301dbdb31c0425fadb9b4bdf6f7bdda5f284f2062c4f97c5d415e7a5a9",
+      "ahash": "ff7f3c1c2727677f"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-hospital-roof-20260222-0004.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-hospital-roof-20260222-0004.webp",
+      "title": "Bender Jibmix Tiltshift Hospital Roof",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602220004",
+      "sha256": "a83f171d789ba5dc595bbe799aeaa3e2c6862b70245594353b4a00a1244f5e35",
+      "ahash": "0077f7f3200a3800"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-lighthouse-black-sea-20260221-1605.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-lighthouse-black-sea-20260221-1605.webp",
