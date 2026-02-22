@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-22T15:07:37.313Z",
+  "generatedAt": "2026-02-22T23:07:23.119Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-abandoned-mall-snow-20260222-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-abandoned-mall-snow-20260222-1605.webp",
+      "title": "Bender Jibmix Tiltshift Abandoned Mall Snow",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "mall"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602221605",
+      "sha256": "e6cdaad27888aef1b235ceae6b6e620a662a984dc40f301d9598d852aaf264a9",
+      "ahash": "38181818100a7efc"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-ferris-wheel-midnight-20260222-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-ferris-wheel-midnight-20260222-1605.webp",
+      "title": "Bender Jibmix Tiltshift Ferris Wheel Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602221605",
+      "sha256": "5946ff8cfe49f01399cd62408af002fa45cf0023d7aeac1275c01e35dba6fe80",
+      "ahash": "cf9fbff331c50800"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-aircraft-carrier-ghost-20260222-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-aircraft-carrier-ghost-20260222-1605.webp",
+      "title": "Bender Jibmix Tiltshift Aircraft Carrier Ghost",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602221605",
+      "sha256": "b040e2707837c3a1b2eed5ff11ef3cf4afe873d8a9faf67b2417a58d7222b568",
+      "ahash": "ffffdf0310000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-drive-in-apocalypse-20260222-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drive-in-apocalypse-20260222-1605.webp",
+      "title": "Bender Jibmix Tiltshift Drive In Apocalypse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602221605",
+      "sha256": "e6297e5a1aaf1d6143a5cd0895f8dce591b2432842ec8ac5f366bf05171d7710",
+      "ahash": "ffff000438230c10"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-rewound-factory-20260222-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rewound-factory-20260222-1605.webp",
+      "title": "Bender Jibmix Tiltshift Rewound Factory",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-22",
+      "sortKey": "202602221605",
+      "sha256": "22addf286f6b0db5fbe319de3bd72540c18e0c7fb9f74176d02d955cf07c71ff",
+      "ahash": "1a1e1818797c1c1e"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-monastery-fog-20260222-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-monastery-fog-20260222-0805.webp",
