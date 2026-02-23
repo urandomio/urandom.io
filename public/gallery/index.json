@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-22T23:07:23.119Z",
+  "generatedAt": "2026-02-23T07:07:57.649Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-foundry-freeze-20260223-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-foundry-freeze-20260223-0005.webp",
+      "title": "Bender Jibmix Tiltshift Foundry Freeze",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230005",
+      "sha256": "eeabb3d224bdd7688e21e73fcc6cd7d25b2a76d90d4edd2d85a27cebb2a98a64",
+      "ahash": "033c60503edc6e78"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-soviet-drydock-20260223-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-soviet-drydock-20260223-0005.webp",
+      "title": "Bender Jibmix Tiltshift Soviet Drydock",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230005",
+      "sha256": "257a97c9cf4bf5ec9d32d697a5eb263840861a58084634e55bbad830f26e36ed",
+      "ahash": "ff0e06273f1d0000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-bullet-train-snowfield-20260223-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-bullet-train-snowfield-20260223-0005.webp",
+      "title": "Bender Jibmix Tiltshift Bullet Train Snowfield",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230005",
+      "sha256": "ec93a522f79dc4e94cd8975d76435b24cfebbbb5616fbb0c1a4ba05256465e18",
+      "ahash": "fe00080f62cffc3c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-rewired-switchboard-20260223-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rewired-switchboard-20260223-0005.webp",
+      "title": "Bender Jibmix Tiltshift Rewired Switchboard",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230005",
+      "sha256": "1e72359b25b98da1ac937d95fea3cb021d0759248a298bba4ae2826fe7883fad",
+      "ahash": "c020fffffc3fc080"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mushroom-village-20260223-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mushroom-village-20260223-0005.webp",
+      "title": "Bender Jibmix Tiltshift Mushroom Village",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230005",
+      "sha256": "91d5d56182506c1a4e0533fe691401c42b781cf8454e145ee333ea026d48a06c",
+      "ahash": "ec7f333404d04c0c"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-abandoned-mall-snow-20260222-1605.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-abandoned-mall-snow-20260222-1605.webp",
