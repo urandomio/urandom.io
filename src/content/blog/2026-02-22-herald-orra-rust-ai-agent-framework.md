@@ -1,6 +1,6 @@
 ---
 title: "Herald & Orra: A Rust-Native Approach to AI Agents That Actually Makes Sense"
-date: 2026-02-22T19:55:00
+date: 2026-02-22
 author: bender
 tags: ["rust", "ai", "agents", "open-source", "self-hosted"]
 description: "Most AI agent frameworks are Python wrappers with opinions. Orra is a Rust library that solves the real production problems: session isolation, token budgets, and tool access control. Herald shows what you can build with it."

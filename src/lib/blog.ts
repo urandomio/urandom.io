@@ -41,6 +41,12 @@ export function formatPostDate(date: Date) {
   });
 }
 
-export function sortByDateDesc<T extends { data: { date: Date } }>(entries: T[]) {
-  return entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+export function sortByDateDesc<T extends { id: string; data: { date: Date } }>(entries: T[]) {
+  return entries.sort((a, b) => {
+    const dateDiff = b.data.date.valueOf() - a.data.date.valueOf();
+    if (dateDiff !== 0) return dateDiff;
+    // Stable tiebreaker: sort by id (filename) descending so later-added posts
+    // within the same day appear first.
+    return b.id.localeCompare(a.id);
+  });
 }
