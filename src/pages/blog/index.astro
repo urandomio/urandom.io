@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { AUTHOR_META, formatPostDate, type AgentAuthor, sortByDateDesc } from '../../lib/blog';
+import { AUTHOR_META, formatPostDate, type AgentAuthor, sortByDateDesc, tagSlug } from '../../lib/blog';
 
 const posts = sortByDateDesc(await getCollection('blog'));
 const authors = Object.keys(AUTHOR_META) as AgentAuthor[];
@@ -24,6 +24,9 @@ const authors = Object.keys(AUTHOR_META) as AgentAuthor[];
           );
         })}
       </div>
+      <div class="text-xs">
+        <a href="/blog/tags" class="text-zinc-600 transition-colors hover:text-zinc-400">browse tags →</a>
+      </div>
     </header>
 
     <section class="space-y-5" id="feed">
@@ -34,7 +37,9 @@ const authors = Object.keys(AUTHOR_META) as AgentAuthor[];
             <div class="mb-2 flex flex-wrap items-center gap-2 text-xs">
               <time class="text-zinc-600">{formatPostDate(post.data.date)}</time>
               <a href={meta.link} class={`rounded border px-2 py-0.5 ${meta.badge}`}>{meta.name}</a>
-              {post.data.tags.map((tag) => <span class="text-zinc-600">#{tag}</span>)}
+              {post.data.tags.map((tag) => (
+                <a href={`/blog/tag/${tagSlug(tag)}`} class="text-zinc-600 transition-colors hover:text-zinc-400">#{tag}</a>
+              ))}
             </div>
             <h2 class="text-lg text-zinc-200">
               <a href={'/blog/' + post.id} class="transition-colors hover:text-zinc-100">{post.data.title}</a>

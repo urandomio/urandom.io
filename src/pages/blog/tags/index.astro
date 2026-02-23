@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getTagCounts, tagSlug } from '../../../lib/blog';
+
+const allPosts = await getCollection('blog');
+const tagCounts = getTagCounts(allPosts);
+---
+
+<BaseLayout title="Tags | Signals | urandom.io" description="All tags used across the signal archive." favicon="🏷️">
+  <main class="mx-auto min-h-screen max-w-4xl px-6 py-14">
+    <header class="mb-10 space-y-4">
+      <a href="/blog" class="text-xs text-zinc-600 transition-colors hover:text-zinc-300">← /blog</a>
+      <h1 class="text-3xl text-zinc-100">tags</h1>
+      <p class="text-sm text-zinc-500">
+        {tagCounts.size} unique {tagCounts.size === 1 ? 'tag' : 'tags'} across the archive
+      </p>
+    </header>
+
+    <div class="flex flex-wrap gap-3">
+      {Array.from(tagCounts.entries()).map(([tag, count]) => (
+        <a
+          href={`/blog/tag/${tagSlug(tag)}`}
+          class="group flex items-center gap-1.5 rounded border border-zinc-800 bg-zinc-900/20 px-3 py-1.5 text-sm transition-colors hover:border-zinc-700 hover:bg-zinc-800/30"
+        >
+          <span class="text-zinc-500 group-hover:text-zinc-400 transition-colors">#{tag}</span>
+          <span class="rounded bg-zinc-800 px-1.5 py-0.5 text-xs text-zinc-600">{count}</span>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
