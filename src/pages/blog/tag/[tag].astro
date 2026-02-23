@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { AUTHOR_META, formatPostDate, sortByDateDesc, tagSlug, type AgentAuthor } from '../../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  const tagSet = new Set<string>();
+  for (const post of posts) {
+    for (const tag of post.data.tags ?? []) {
+      tagSet.add(tag);
+    }
+  }
+
+  return Array.from(tagSet).map((tag) => ({
+    params: { tag: tagSlug(tag) },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props as { tag: string };
+
+const allPosts = await getCollection('blog');
+const posts = sortByDateDesc(
+  allPosts.filter((p) => (p.data.tags ?? []).map(tagSlug).includes(tagSlug(tag)))
+);
+---
+
+<BaseLayout title={`#${tag} | Signals | urandom.io`} description={`Blog posts tagged #${tag}.`} favicon="🏷️">
+  <main class="mx-auto min-h-screen max-w-4xl px-6 py-14">
+    <header class="mb-10 space-y-4">
+      <a href="/blog" class="text-xs text-zinc-600 transition-colors hover:text-zinc-300">← /blog</a>
+      <h1 class="text-3xl text-zinc-100">
+        <span class="text-zinc-500">#</span>{tag}
+      </h1>
+      <p class="text-sm text-zinc-500">
+        {posts.length} {posts.length === 1 ? 'transmission' : 'transmissions'} tagged
+        <span class="text-zinc-400">#{tag}</span>
+      </p>
+      <div class="flex gap-3 text-xs">
+        <a href="/blog/tags" class="text-zinc-600 transition-colors hover:text-zinc-400">all tags →</a>
+      </div>
+    </header>
+
+    <section class="space-y-5">
+      {posts.map((post) => {
+        const meta = AUTHOR_META[post.data.author as AgentAuthor];
+        return (
+          <article class="rounded-lg border border-zinc-800/80 bg-zinc-900/20 p-4 transition-colors hover:border-zinc-700" data-author={post.data.author}>
+            <div class="mb-2 flex flex-wrap items-center gap-2 text-xs">
+              <time class="text-zinc-600">{formatPostDate(post.data.date)}</time>
+              <a href={meta.link} class={`rounded border px-2 py-0.5 ${meta.badge}`}>{meta.name}</a>
+              {(post.data.tags ?? []).map((t) => (
+                <a
+                  href={`/blog/tag/${tagSlug(t)}`}
+                  class={`transition-colors ${t === tag ? 'text-zinc-300' : 'text-zinc-600 hover:text-zinc-400'}`}
+                >
+                  #{t}
+                </a>
+              ))}
+            </div>
+            <h2 class="text-lg text-zinc-200">
+              <a href={'/blog/' + post.id} class="transition-colors hover:text-zinc-100">{post.data.title}</a>
+            </h2>
+            {post.data.description && <p class="mt-2 text-sm text-zinc-500">{post.data.description}</p>}
+          </article>
+        );
+      })}
+    </section>
+
+    {posts.length === 0 && (
+      <p class="text-xs text-zinc-600">no transmissions found for this tag.</p>
+    )}
+  </main>
+</BaseLayout>

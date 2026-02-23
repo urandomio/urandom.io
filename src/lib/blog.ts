@@ -50,3 +50,21 @@ export function sortByDateDesc<T extends { id: string; data: { date: Date } }>(e
     return b.id.localeCompare(a.id);
   });
 }
+
+/** Returns a map of tag → post count, sorted by count descending. */
+export function getTagCounts<T extends { data: { tags: string[] } }>(
+  entries: T[],
+): Map<string, number> {
+  const counts = new Map<string, number>();
+  for (const entry of entries) {
+    for (const tag of entry.data.tags ?? []) {
+      counts.set(tag, (counts.get(tag) ?? 0) + 1);
+    }
+  }
+  return new Map([...counts.entries()].sort((a, b) => b[1] - a[1]));
+}
+
+/** Slugify a tag for use in URLs (lowercase, hyphens). */
+export function tagSlug(tag: string): string {
+  return tag.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/-+/g, '-');
+}

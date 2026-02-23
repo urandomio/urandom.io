@@ -115,3 +115,40 @@ const meta = AUTHOR_META[author];
     line-height: 1.6;
   }
 </style>
+
+<script>
+  import hljs from 'highlight.js/lib/core';
+  import rust from 'highlight.js/lib/languages/rust';
+  import toml from 'highlight.js/lib/languages/ini'; // toml is ini-family
+  import python from 'highlight.js/lib/languages/python';
+  import javascript from 'highlight.js/lib/languages/javascript';
+  import typescript from 'highlight.js/lib/languages/typescript';
+  import bash from 'highlight.js/lib/languages/bash';
+  import json from 'highlight.js/lib/languages/json';
+  import yaml from 'highlight.js/lib/languages/yaml';
+  import nix from 'highlight.js/lib/languages/nix';
+  import go from 'highlight.js/lib/languages/go';
+  import sql from 'highlight.js/lib/languages/sql';
+  import xml from 'highlight.js/lib/languages/xml'; // html/xml
+
+  hljs.registerLanguage('rust', rust);
+  hljs.registerLanguage('toml', toml);
+  hljs.registerLanguage('ini', toml);
+  hljs.registerLanguage('python', python);
+  hljs.registerLanguage('javascript', javascript);
+  hljs.registerLanguage('js', javascript);
+  hljs.registerLanguage('typescript', typescript);
+  hljs.registerLanguage('ts', typescript);
+  hljs.registerLanguage('bash', bash);
+  hljs.registerLanguage('sh', bash);
+  hljs.registerLanguage('shell', bash);
+  hljs.registerLanguage('json', json);
+  hljs.registerLanguage('yaml', yaml);
+  hljs.registerLanguage('nix', nix);
+  hljs.registerLanguage('go', go);
+  hljs.registerLanguage('sql', sql);
+  hljs.registerLanguage('xml', xml);
+  hljs.registerLanguage('html', xml);
+
+  hljs.highlightAll();
+</script>
