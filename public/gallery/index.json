@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-23T07:07:57.649Z",
+  "generatedAt": "2026-02-23T15:07:39.694Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-rewired-switchboard-20260223-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rewired-switchboard-20260223-0805.webp",
+      "title": "Bender Jibmix Tiltshift Rewired Switchboard",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230805",
+      "sha256": "167e85103f3bcffc7eea641c91c2a7c5d0469c0610c08c086eed0fff9dd6ab23",
+      "ahash": "017c7ef81ffcf080"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-furnace-room-20260223-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-furnace-room-20260223-0805.webp",
+      "title": "Bender Jibmix Tiltshift Furnace Room",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230805",
+      "sha256": "921ceb64d62c14b468e831f061082a76e0f60858b83e4e858c2a06a95d6be8dd",
+      "ahash": "7078797921313c1c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-telescope-array-collapse-20260223-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-telescope-array-collapse-20260223-0805.webp",
+      "title": "Bender Jibmix Tiltshift Telescope Array Collapse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230805",
+      "sha256": "db43797e5c47b405c894d5cbe5c23f39bb5ac1479b3188b94817d6bc9f986d41",
+      "ahash": "fffaf1c85830090e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-underground-colosseum-20260223-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underground-colosseum-20260223-0805.webp",
+      "title": "Bender Jibmix Tiltshift Underground Colosseum",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230805",
+      "sha256": "97f1957cd742def3538e27a29e80048ebecdd6aacc381c6ff4433ace2dd10715",
+      "ahash": "306262767e7e3e00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-antarctic-station-20260223-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-antarctic-station-20260223-0805.webp",
+      "title": "Bender Jibmix Tiltshift Antarctic Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602230805",
+      "sha256": "00e8dee78b61942378ea5021e7634d6fe929e794b055bdee1ea4f4058deb8245",
+      "ahash": "1ecbc180e3ff7f3f"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-foundry-freeze-20260223-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-foundry-freeze-20260223-0005.webp",
