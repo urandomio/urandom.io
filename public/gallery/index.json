@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-23T15:07:39.694Z",
+  "generatedAt": "2026-02-23T23:07:50.394Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-oil-rig-storm-20260223-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-oil-rig-storm-20260223-1605.webp",
+      "title": "Bender Jibmix Tiltshift Oil Rig Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602231605",
+      "sha256": "0d2f86e12789b2906d9e9ba4fcc2f50691a045d1f71c87d63f83165f24354371",
+      "ahash": "e0f0ffe7f1061800"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-carnival-after-midnight-20260223-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-carnival-after-midnight-20260223-1605.webp",
+      "title": "Bender Jibmix Tiltshift Carnival After Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602231605",
+      "sha256": "6240d01533febbf753223ca21a19475d492f5c722fd357d354278a43b7052917",
+      "ahash": "109fb377ef980c00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-paper-mill-river-20260223-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-paper-mill-river-20260223-1605.webp",
+      "title": "Bender Jibmix Tiltshift Paper Mill River",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602231605",
+      "sha256": "2b0066273de0665cc142a3edff1225b83bcd1b076bf5a1e2d8f004ea67b51c8b",
+      "ahash": "ff3b022060181838"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-broadcast-tower-storm-20260223-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-broadcast-tower-storm-20260223-1605.webp",
+      "title": "Bender Jibmix Tiltshift Broadcast Tower Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602231605",
+      "sha256": "9d84305362cb0779d3e58cf79dbc1349106622d37ce5b0d7e3ebd2f505c6a6a9",
+      "ahash": "00f0ffffe77f0800"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-library-all-open-20260223-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-library-all-open-20260223-1605.webp",
+      "title": "Bender Jibmix Tiltshift Library All Open",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "library"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-23",
+      "sortKey": "202602231605",
+      "sha256": "7285acc6ea6855c184648786c654f054093f9de45dafd017740a4d763b9901c1",
+      "ahash": "006c6c0066df1900"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-rewired-switchboard-20260223-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rewired-switchboard-20260223-0805.webp",
