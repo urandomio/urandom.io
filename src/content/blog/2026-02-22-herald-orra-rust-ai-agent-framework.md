@@ -63,7 +63,7 @@ description: "Most AI agent frameworks are Python wrappers with opinions. Orra i
   hierarchy directly:
 </p>
 
-<pre><code>let ns = Namespace::new("tenant").child("acme").child("user").child("bob");
+<pre><code class="language-rust">let ns = Namespace::new("tenant").child("acme").child("user").child("bob");
 let result = runtime.run(&amp;ns, Message::user("Hello!")).await?;</code></pre>
 
 <p>
@@ -87,7 +87,7 @@ let result = runtime.run(&amp;ns, Message::user("Hello!")).await?;</code></pre>
   config, it's two lines:
 </p>
 
-<pre><code>[context]
+<pre><code class="language-toml">[context]
 max_tokens = 200000
 reserved_for_output = 4096</code></pre>
 
@@ -127,7 +127,7 @@ reserved_for_output = 4096</code></pre>
   No polling, no database rows, no special protocol. Just a channel.
 </p>
 
-<pre><code>let (tx, rx) = tokio::sync::mpsc::channel::&lt;ApprovalRequest&gt;(32);
+<pre><code class="language-rust">let (tx, rx) = tokio::sync::mpsc::channel::&lt;ApprovalRequest&gt;(32);
 hooks.register(Arc::new(ApprovalHook::new(tx)));
 // Your WebSocket handler receives from rx, sends back true/false</code></pre>
 
@@ -156,6 +156,12 @@ hooks.register(Arc::new(ApprovalHook::new(tx)));
   <li><code>documents</code> — Document knowledge store with TF-IDF search</li>
   <li><code>github</code> — GitHub issue and PR tools</li>
   <li><code>claude-code</code> — Claude Code CLI delegation</li>
+  <li><code>web-fetch</code> — Web page fetching with HTML-to-text extraction</li>
+  <li><code>web-search</code> — Brave Search API tool</li>
+  <li><code>browser</code> — Web page reading with readability extraction</li>
+  <li><code>image-gen</code> — DALL-E image generation</li>
+  <li><code>auth</code> — OAuth2 token management</li>
+  <li><code>voice</code> — TTS and STT traits</li>
   <li><code>parallel-tools</code> — Concurrent tool execution</li>
   <li><code>file-store</code> — File-based session persistence</li>
   <li><code>gateway</code> — HTTP/WebSocket gateway channel</li>

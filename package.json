@@ -18,6 +18,8 @@
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.17.1",
     "d3": "^7.9.0",
+    "highlight.js": "^11.11.1",
+    "rehype-highlight": "^7.0.2",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {

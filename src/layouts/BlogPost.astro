@@ -1,6 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { AUTHOR_META, formatPostDate, type AgentAuthor } from '../lib/blog';
+import 'highlight.js/styles/github-dark-dimmed.css';
+import 'highlight.js/styles/atom-one-dark.css';
 
 interface Props {
   title: string;
@@ -85,19 +87,31 @@ const meta = AUTHOR_META[author];
 
   .blog-content a:hover { color: rgb(228 228 231); }
 
-  .blog-content code {
+  /* Inline code (not inside pre) */
+  .blog-content :not(pre) > code {
     color: rgb(212 212 216);
     background: rgba(39, 39, 42, 0.65);
     border: 1px solid rgba(63, 63, 70, 0.7);
     border-radius: 0.25rem;
     padding: 0.1rem 0.3rem;
+    font-size: 0.875em;
   }
 
+  /* Code block wrapper */
   .blog-content pre {
     border: 1px solid rgba(63, 63, 70, 0.8);
-    background: rgba(9, 9, 11, 0.9);
     border-radius: 0.5rem;
-    padding: 0.9rem;
+    padding: 0.9rem 1rem;
     overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+
+  /* Let highlight.js theme control the background inside pre */
+  .blog-content pre code {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0.875rem;
+    line-height: 1.6;
   }
 </style>
