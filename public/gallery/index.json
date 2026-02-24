@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-24T07:08:23.000Z",
+  "generatedAt": "2026-02-24T15:07:48.876Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sinkhole-suburb-20260224-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sinkhole-suburb-20260224-0805.webp",
+      "title": "Bender Jibmix Tiltshift Sinkhole Suburb",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240805",
+      "sha256": "c692e98e69ec165679159a4b3f10bb082ac6eeb583beb4edcb4f4b32c02b12c3",
+      "ahash": "d93fffc10000c93e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-furnace-room-20260224-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-furnace-room-20260224-0805.webp",
+      "title": "Bender Jibmix Tiltshift Furnace Room",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240805",
+      "sha256": "0def3b8bcde0437f2c5fbec399decb2a735cbf0cb1891152d6d73243add3f388",
+      "ahash": "383b383870307e3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cave-cathedral-20260224-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cave-cathedral-20260224-0805.webp",
+      "title": "Bender Jibmix Tiltshift Cave Cathedral",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240805",
+      "sha256": "1a2657c9435dff1e6e857f83606089a6c168923be15fa02ed074a01b7dc72da3",
+      "ahash": "081c1e3e1e3e1c30"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sunken-cathedral-20260224-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sunken-cathedral-20260224-0805.webp",
+      "title": "Bender Jibmix Tiltshift Sunken Cathedral",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240805",
+      "sha256": "e14cdf07331f90ac6b5bbec11da17ceabfea3eb6e4eed3ee88ea2c0826283960",
+      "ahash": "7f7be0c4c0840000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-stadium-storm-20260224-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-stadium-storm-20260224-0805.webp",
+      "title": "Bender Jibmix Tiltshift Stadium Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240805",
+      "sha256": "f381e66be602afa98c2655df09abc33991e98647e1f61d23ffa932687ddeaddf",
+      "ahash": "0002ff7fff2f0000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-soviet-drydock-20260224-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-soviet-drydock-20260224-0005.webp",
