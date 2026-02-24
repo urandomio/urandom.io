@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-23T23:07:50.394Z",
+  "generatedAt": "2026-02-24T07:08:23.000Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-soviet-drydock-20260224-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-soviet-drydock-20260224-0005.webp",
+      "title": "Bender Jibmix Tiltshift Soviet Drydock",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240005",
+      "sha256": "96ef7bbd855ac03af3b3f56a94bf574a466379a2376ff6653c0b7e6a554ff1ea",
+      "ahash": "fef8f8603400000c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-library-all-open-20260224-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-library-all-open-20260224-0005.webp",
+      "title": "Bender Jibmix Tiltshift Library All Open",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "library"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240005",
+      "sha256": "0da6430370180fa8cf2f7f9b2fc3169b58228a17351e3211f5fcd71ef5e6753e",
+      "ahash": "181818427c3c073e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-waterfall-chapel-20260224-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-waterfall-chapel-20260224-0005.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Waterfall Chapel",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240005",
+      "sha256": "af13730cf3850a925bc7bda134adc870862e01caabf18fa300ce8570878f4acb",
+      "ahash": "18180c00c23ffef2"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-lighthouse-black-sea-20260224-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-lighthouse-black-sea-20260224-0005.webp",
+      "title": "Bender Jibmix Tiltshift Lighthouse Black Sea",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240005",
+      "sha256": "0e1a283754d6fcf00c7921eb8f5e13ef0368fdebe57756261d4614bd29ea86e7",
+      "ahash": "7ffefe7880807000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-rail-yard-winter-fog-20260224-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rail-yard-winter-fog-20260224-0005.webp",
+      "title": "Bender Jibmix Tiltshift Rail Yard Winter Fog",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602240005",
+      "sha256": "77e57125d42eb1d4b1c162eb0a164078071f42f610d3c71fda08aeada1db66ef",
+      "ahash": "ffffbe1603030001"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-oil-rig-storm-20260223-1605.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-oil-rig-storm-20260223-1605.webp",
