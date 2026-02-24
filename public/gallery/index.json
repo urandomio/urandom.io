@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-24T15:07:48.876Z",
+  "generatedAt": "2026-02-24T23:07:41.833Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-planetarium-collapse-20260224-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-planetarium-collapse-20260224-1605.webp",
+      "title": "Bender Jibmix Tiltshift Planetarium Collapse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602241605",
+      "sha256": "c0506ce5048c72e37a0b24fd9c12349a81ac190e8127ef67cf25f3f7e066d23a",
+      "ahash": "00303c7e383f3c1c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-forest-concert-hall-20260224-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-forest-concert-hall-20260224-1605.webp",
+      "title": "Bender Jibmix Tiltshift Forest Concert Hall",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602241605",
+      "sha256": "7db8621a2def9fb59dc49d26114818792f7433f028560af1f1337b827159b1a3",
+      "ahash": "780f0f0f0e3e2000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-space-shuttle-hangar-20260224-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-space-shuttle-hangar-20260224-1605.webp",
+      "title": "Bender Jibmix Tiltshift Space Shuttle Hangar",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602241605",
+      "sha256": "e28e0b0ee425711df65ed4d5e698bbb8eff73af2a40d4bf4b269a53e00a50015",
+      "ahash": "0000c0feffcfbe06"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tar-pit-city-20260224-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tar-pit-city-20260224-1605.webp",
+      "title": "Bender Jibmix Tiltshift Tar Pit City",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602241605",
+      "sha256": "d8cf2914076a827c0045477a1a3ba99964425ae4fefc9947af6d58a950c7f30b",
+      "ahash": "7d1c1c3d3c161808"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-crypt-20260224-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-crypt-20260224-1605.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Crypt",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-24",
+      "sortKey": "202602241605",
+      "sha256": "fd7dde337ae5c0a2d08e849afd364c4a8304f05ee166cd260a00018fa6303998",
+      "ahash": "081cffff0c300e0c"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-sinkhole-suburb-20260224-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sinkhole-suburb-20260224-0805.webp",
