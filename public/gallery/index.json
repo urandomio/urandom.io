@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-25T15:08:15.261Z",
+  "generatedAt": "2026-02-25T23:07:20.604Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-elevator-shaft-abyss-20260225-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-elevator-shaft-abyss-20260225-1604.webp",
+      "title": "Bender Jibmix Tiltshift Elevator Shaft Abyss",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602251604",
+      "sha256": "4d8283f826dd4b5b6cb7d4d25750217e549a6c442ea6f2791a7532c4ada612ad",
+      "ahash": "38023ebf0040001c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-asylum-dayroom-20260225-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-asylum-dayroom-20260225-1604.webp",
+      "title": "Bender Jibmix Tiltshift Asylum Dayroom",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602251604",
+      "sha256": "12b0c364201fdb1b259ea036b3ec0aef4619e6f57f865cce2258ebeac7277265",
+      "ahash": "3c189c9c801d1c08"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-train-depot-roundhouse-20260225-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-train-depot-roundhouse-20260225-1604.webp",
+      "title": "Bender Jibmix Tiltshift Train Depot Roundhouse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602251604",
+      "sha256": "e099b38a0fefc7b00090f77ede41dae8ce892da125d1cec8c2da8465bd1dae67",
+      "ahash": "8c3cff1f03061e3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-plague-ship-20260225-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-plague-ship-20260225-1604.webp",
+      "title": "Bender Jibmix Tiltshift Plague Ship",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602251604",
+      "sha256": "caaa3136b9b7c3bff6c42d8602339400c33b54dcf94e9c56c88c930f6755ffa2",
+      "ahash": "ff3f0f2303071719"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tsunami-hotel-20260225-1604.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tsunami-hotel-20260225-1604.webp",
+      "title": "Bender Jibmix Tiltshift Tsunami Hotel",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602251604",
+      "sha256": "39cf04b37b7bf0ca9d0ee62634243583e752e0389108906d259d80cf1f291c4f",
+      "ahash": "003033107e3f7efe"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-floating-market-dusk-20260225-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-floating-market-dusk-20260225-0805.webp",
