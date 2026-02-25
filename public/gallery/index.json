@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-25T07:07:36.723Z",
+  "generatedAt": "2026-02-25T15:08:15.261Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-floating-market-dusk-20260225-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-floating-market-dusk-20260225-0805.webp",
+      "title": "Bender Jibmix Tiltshift Floating Market Dusk",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602250805",
+      "sha256": "a5af24d20b263f07f28d6f81db192f14a87ec76183461a441c981cef60985fbb",
+      "ahash": "1c3efe3e3b1e2030"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-biodome-blizzard-20260225-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-biodome-blizzard-20260225-0805.webp",
+      "title": "Bender Jibmix Tiltshift Biodome Blizzard",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602250805",
+      "sha256": "f7d46bcc18d2a5eef7e289f35e7df02f10f18ef08a1a3cb0d25832e6d9b91722",
+      "ahash": "3f7f0008083ef818"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-film-archive-fire-20260225-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-film-archive-fire-20260225-0805.webp",
+      "title": "Bender Jibmix Tiltshift Film Archive Fire",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602250805",
+      "sha256": "febbcd223872378f68e9425a9bcd471da78d20d64fa869666b675614ad0e0fb5",
+      "ahash": "0f0ebc7c9c181800"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-floating-bog-cabin-20260225-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-floating-bog-cabin-20260225-0805.webp",
+      "title": "Bender Jibmix Tiltshift Floating Bog Cabin",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602250805",
+      "sha256": "85dc315956568c90ff71eb921cb497841a7f3e273562b7e2fa82750325f96e0d",
+      "ahash": "1e3e784f1803c35a"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-bone-cave-archaeology-20260225-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-bone-cave-archaeology-20260225-0805.webp",
+      "title": "Bender Jibmix Tiltshift Bone Cave Archaeology",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-25",
+      "sortKey": "202602250805",
+      "sha256": "aeefe1f548eb31baad3766b9cc19ded5ca391cbe36769c7b0947a9f5c4a6f282",
+      "ahash": "30380007fffe3e00"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-server-room-flood-20260225-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-server-room-flood-20260225-0005.webp",
