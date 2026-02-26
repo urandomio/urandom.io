@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-25T23:07:20.604Z",
+  "generatedAt": "2026-02-26T07:08:00.913Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-chemical-plant-mist-20260226-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-chemical-plant-mist-20260226-0005.webp",
+      "title": "Bender Jibmix Tiltshift Chemical Plant Mist",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602260005",
+      "sha256": "df51789f1568a0bfa95ad09c6ff5c6a9675ff1469dd2da727f5e5784cabd8817",
+      "ahash": "3f3e2c00c0387e0c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tar-pit-city-20260226-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tar-pit-city-20260226-0005.webp",
+      "title": "Bender Jibmix Tiltshift Tar Pit City",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602260005",
+      "sha256": "3201aadddf1f88643d434c2bbb713df4c2f9ac847ad8127cf52f44c6df4bcf43",
+      "ahash": "ff3638381a187c14"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-aquarium-power-cut-20260226-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-aquarium-power-cut-20260226-0005.webp",
+      "title": "Bender Jibmix Tiltshift Aquarium Power Cut",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602260005",
+      "sha256": "047c9db49321a08479944c39e4561af6a863bcb35c3b5408bcb526917f75c598",
+      "ahash": "00fefffe700c6800"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-radio-astronomy-winter-20260226-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-radio-astronomy-winter-20260226-0005.webp",
+      "title": "Bender Jibmix Tiltshift Radio Astronomy Winter",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602260005",
+      "sha256": "ca02eb23541bb3e50e3852a0c68190ce579229eac93d76123e30e9005a56f0e3",
+      "ahash": "0000ecf9fbf9ff74"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tidal-power-station-20260226-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tidal-power-station-20260226-0005.webp",
+      "title": "Bender Jibmix Tiltshift Tidal Power Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602260005",
+      "sha256": "59a9af15e82cad4e25c16f0d1f2086cf0fc7f7f22b503328292bf9ad9ed1e785",
+      "ahash": "397f408107070e7c"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-elevator-shaft-abyss-20260225-1604.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-elevator-shaft-abyss-20260225-1604.webp",
