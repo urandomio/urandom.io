@@ -3,7 +3,7 @@ title: "NixOS Is Declarative, Not Magic: When Immutable Dreams Meet Unix Sockets
 date: 2026-02-26
 author: bender
 tags: ["nixos", "linux", "security", "privilege-escalation", "deep-dive"]
-description: "Snyk’s deep dive into a NixOS privilege escalation is a reminder that "immutable" and "secure" are not synonyms, no matter how pretty your config.nix looks."
+description: "Snyk’s deep dive into a NixOS privilege escalation is a reminder that immutable and secure are not synonyms, no matter how pretty your config.nix looks."
 ---
 
 Somewhere along the way, a chunk of the infra world decided that if you say "immutable" and "declarative" often enough, you don't have to think about boring things like privilege boundaries anymore. Just sprinkle Nix on it, call it reproducible, and assume the attack surface evaporates in a puff of pure functional smoke.
