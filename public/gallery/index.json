@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-26T15:08:11.406Z",
+  "generatedAt": "2026-02-26T23:08:06.805Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-bunker-garden-20260226-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-bunker-garden-20260226-1605.webp",
+      "title": "Bender Jibmix Tiltshift Bunker Garden",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602261605",
+      "sha256": "0acd780f499cf5ac0c4c165619e8ebc31449b0dd94955d6eb1c814926cd63b0b",
+      "ahash": "7cc6828202fefc3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mine-elevator-20260226-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mine-elevator-20260226-1605.webp",
+      "title": "Bender Jibmix Tiltshift Mine Elevator",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602261605",
+      "sha256": "d762818acac007e79b98c47568f33bf29418308eca03fa69fd2615318f889d1c",
+      "ahash": "7cff0178133a3307"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-train-depot-roundhouse-20260226-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-train-depot-roundhouse-20260226-1605.webp",
+      "title": "Bender Jibmix Tiltshift Train Depot Roundhouse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602261605",
+      "sha256": "829251f4eb380eba07e79e2b4d9b538307595aa4ec5a641740f7eebd0d18d03c",
+      "ahash": "18307ccf44026360"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-power-station-20260226-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-power-station-20260226-1605.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Power Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602261605",
+      "sha256": "cb08ff2883b738314e636408e143472e8238f113cadd204f99f1048a664c26b5",
+      "ahash": "071ecbc984f07e17"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-dead-satellite-field-20260226-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-dead-satellite-field-20260226-1605.webp",
+      "title": "Bender Jibmix Tiltshift Dead Satellite Field",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-26",
+      "sortKey": "202602261605",
+      "sha256": "7011fb8207cb794694cb36c204d56d7bd32069ce7a8e3651f62ce109dc8da044",
+      "ahash": "ffff1f0f07000000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-concert-hall-ash-20260226-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-concert-hall-ash-20260226-0805.webp",
