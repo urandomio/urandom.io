@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-26T23:08:06.805Z",
+  "generatedAt": "2026-02-27T07:07:48.002Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-abandoned-waterpark-20260227-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-abandoned-waterpark-20260227-0005.webp",
+      "title": "Bender Jibmix Tiltshift Abandoned Waterpark",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270005",
+      "sha256": "06c074714b413f783550aedc2e1a36699af1c3698885461dcc984c5be8d15801",
+      "ahash": "1f1f3f08203c1d08"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-glass-factory-frozen-20260227-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-glass-factory-frozen-20260227-0005.webp",
+      "title": "Bender Jibmix Tiltshift Glass Factory Frozen",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270005",
+      "sha256": "37aced3acecf1857835f0db07189c1543b510a0ab411f588435d51bc185a0d3e",
+      "ahash": "c0320a1c1c1e3c70"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sunken-observatory-lake-20260227-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sunken-observatory-lake-20260227-0005.webp",
+      "title": "Bender Jibmix Tiltshift Sunken Observatory Lake",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270005",
+      "sha256": "2add2ca35cd14a77f3b52c8863e584fdfc0c3ef6240d90c853d779ae8c364c79",
+      "ahash": "7e7f631a18001c08"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-underground-colosseum-20260227-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underground-colosseum-20260227-0005.webp",
+      "title": "Bender Jibmix Tiltshift Underground Colosseum",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270005",
+      "sha256": "7015753b64abfe60d226c24085a990b61770e33025fd44c95dc291c21dcc7de2",
+      "ahash": "1c1c04013e7e3c10"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-coral-graveyard-20260227-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-coral-graveyard-20260227-0005.webp",
+      "title": "Bender Jibmix Tiltshift Coral Graveyard",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270005",
+      "sha256": "3b11ba86af50d8533dc09bcb8da8b2224cff48b1657e844af7137a676f01fd34",
+      "ahash": "00043c7f9ef93e1c"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-bunker-garden-20260226-1605.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-bunker-garden-20260226-1605.webp",
