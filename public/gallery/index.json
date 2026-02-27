@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-27T07:07:48.002Z",
+  "generatedAt": "2026-02-27T15:07:28.326Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sunken-clock-factory-20260227-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sunken-clock-factory-20260227-0805.webp",
+      "title": "Bender Jibmix Tiltshift Sunken Clock Factory",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270805",
+      "sha256": "ba314c2ba2e306584de0ee29fe4a7b7c6cb36157de3a677976b6b87d403135e2",
+      "ahash": "183c3c1b3f181c1c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-foundry-freeze-20260227-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-foundry-freeze-20260227-0805.webp",
+      "title": "Bender Jibmix Tiltshift Foundry Freeze",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270805",
+      "sha256": "52ab0c22110ed6a61400eb8049eee53c62254f7083f9bb10421c6fddc49f695e",
+      "ahash": "b010901b1bff061e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-concert-hall-ash-20260227-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-concert-hall-ash-20260227-0805.webp",
+      "title": "Bender Jibmix Tiltshift Concert Hall Ash",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270805",
+      "sha256": "6e0f8429c3770f81b507252cb1fd649c72ae0591997ae6f1dcf3f124c0077fea",
+      "ahash": "0000001e0f7ffcd8"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-ice-core-lab-20260227-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-ice-core-lab-20260227-0805.webp",
+      "title": "Bender Jibmix Tiltshift Ice Core Lab",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270805",
+      "sha256": "74986ac88f6b4c26d53d575253a3ebba90b9280143597070475a3e232c7848c9",
+      "ahash": "00070f3f0b1c3c7c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-soviet-drydock-20260227-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-soviet-drydock-20260227-0805.webp",
+      "title": "Bender Jibmix Tiltshift Soviet Drydock",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-27",
+      "sortKey": "202602270805",
+      "sha256": "d0289b02c2e9c77397074936020aeb60e0df4c28238a64ec597b6f5f75acc389",
+      "ahash": "3f0e6c6e32600000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-abandoned-waterpark-20260227-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-abandoned-waterpark-20260227-0005.webp",
