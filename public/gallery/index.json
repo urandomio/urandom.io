@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-28T07:07:29.532Z",
+  "generatedAt": "2026-02-28T15:07:34.178Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-canal-lock-abandoned-20260228-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-canal-lock-abandoned-20260228-0805.webp",
+      "title": "Bender Jibmix Tiltshift Canal Lock Abandoned",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602280805",
+      "sha256": "3b78afa3101bf2abd55ca4314cc09e910252055ed07b601b0b82f688a602903a",
+      "ahash": "ff7e7c0082011838"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-deep-mine-pump-room-20260228-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-deep-mine-pump-room-20260228-0805.webp",
+      "title": "Bender Jibmix Tiltshift Deep Mine Pump Room",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602280805",
+      "sha256": "be16d58e848468d3af2b6b476ac42aa95fb863aaa55ce524bffd607805e2fd11",
+      "ahash": "081cfdf100303e3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-shipwreck-shallows-20260228-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-shipwreck-shallows-20260228-0805.webp",
+      "title": "Bender Jibmix Tiltshift Shipwreck Shallows",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602280805",
+      "sha256": "d96a243c8a41aa9ded39e0d59fe2244d0205d97407b38c20bf66f73496930554",
+      "ahash": "ff7f130303000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cold-case-archive-20260228-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cold-case-archive-20260228-0805.webp",
+      "title": "Bender Jibmix Tiltshift Cold Case Archive",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602280805",
+      "sha256": "3620afd11780eddce04125365052b72448f22b2b7c7a712aaafd1f3375929359",
+      "ahash": "633ff63e001e1818"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-drained-reservoir-village-20260228-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drained-reservoir-village-20260228-0805.webp",
+      "title": "Bender Jibmix Tiltshift Drained Reservoir Village",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602280805",
+      "sha256": "53313a56f13ec583d053afd6311631f1228809018bde5dc30b833f1669688a8d",
+      "ahash": "7c7c327618b83f18"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-hydrophonic-greenhouse-20260228-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-hydrophonic-greenhouse-20260228-0005.webp",
