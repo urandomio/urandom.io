@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-28T15:07:34.178Z",
+  "generatedAt": "2026-02-28T23:07:16.619Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-furnace-room-20260228-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-furnace-room-20260228-1605.webp",
+      "title": "Bender Jibmix Tiltshift Furnace Room",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602281605",
+      "sha256": "5788cd9de3f3d49ea4caff84c3d31413369e0cbc907617614ab6814c8d9d2b80",
+      "ahash": "3d3b3f30303b3c3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-salt-mine-crystal-20260228-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-salt-mine-crystal-20260228-1605.webp",
+      "title": "Bender Jibmix Tiltshift Salt Mine Crystal",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602281605",
+      "sha256": "5a2e967dc6f142a9c3a6cfcfafb321bdb4d9d652408e6f937f174a2596fde261",
+      "ahash": "103c7e5a7e3f3800"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-observatory-void-20260228-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-observatory-void-20260228-1605.webp",
+      "title": "Bender Jibmix Tiltshift Observatory Void",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602281605",
+      "sha256": "60010fccf890ff0640f3120c81493ad615543abd4eb95d6aa9fd593f44399c5d",
+      "ahash": "707fffcb08000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-hospital-ship-tropical-20260228-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-hospital-ship-tropical-20260228-1605.webp",
+      "title": "Bender Jibmix Tiltshift Hospital Ship Tropical",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602281605",
+      "sha256": "0a7f322602a3972484369a49c9a0f840508ec6726ba377f1c59469735c6010e9",
+      "ahash": "06fcfcfc7f0f0030"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-underground-river-mill-20260228-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underground-river-mill-20260228-1605.webp",
+      "title": "Bender Jibmix Tiltshift Underground River Mill",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-02-28",
+      "sortKey": "202602281605",
+      "sha256": "f3fe31fba75f9246b5cd56187cc56b95243db908dd707a7d6cd2aff4aa1b2684",
+      "ahash": "0675e0011fc60e1c"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-canal-lock-abandoned-20260228-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-canal-lock-abandoned-20260228-0805.webp",
