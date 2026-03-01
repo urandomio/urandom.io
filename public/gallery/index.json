@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-01T07:07:21.514Z",
+  "generatedAt": "2026-03-01T15:07:21.149Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-waterfall-chapel-20260301-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-waterfall-chapel-20260301-0805.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Waterfall Chapel",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603010805",
+      "sha256": "b1fe00b32c08cf3d98580aff74dbc8e3f4c73f77a301f5c54d3600a7b47b6d8d",
+      "ahash": "3c3830004cffd91c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-aircraft-carrier-ghost-20260301-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-aircraft-carrier-ghost-20260301-0805.webp",
+      "title": "Bender Jibmix Tiltshift Aircraft Carrier Ghost",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603010805",
+      "sha256": "f22e0b0afe8bc756a0764e8f323007a801970133ce81b0afa2b0c3366be6ab80",
+      "ahash": "ffffffcf00000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-fjord-research-vessel-ice-20260301-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-fjord-research-vessel-ice-20260301-0805.webp",
+      "title": "Bender Jibmix Tiltshift Fjord Research Vessel Ice",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603010805",
+      "sha256": "05b81499c2062d59f82bcfd3738dfbbc1e21e4a81e766f1b9e678e8984bba93d",
+      "ahash": "7f3e7c67e4080722"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-bullet-train-snowfield-20260301-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-bullet-train-snowfield-20260301-0805.webp",
+      "title": "Bender Jibmix Tiltshift Bullet Train Snowfield",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603010805",
+      "sha256": "d5611a0c3653de183f58bd68ed20a2881fccab2911952a58edd87638d432c849",
+      "ahash": "7c7e00747c7f1f38"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-chalk-cliff-monastery-20260301-0805.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-chalk-cliff-monastery-20260301-0805.webp",
+      "title": "Bender Jibmix Tiltshift Chalk Cliff Monastery",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603010805",
+      "sha256": "fe63f5955d3ad1ba325e15332b69361a4cc4bb23e9f6152744f106463c2a27c2",
+      "ahash": "f0f1f1e323938018"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-insomnia-diner-20260301-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-insomnia-diner-20260301-0005.webp",
