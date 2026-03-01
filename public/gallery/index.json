@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-01T15:07:21.149Z",
+  "generatedAt": "2026-03-01T23:07:28.214Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-planetarium-projection-room-20260301-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-planetarium-projection-room-20260301-1605.webp",
+      "title": "Bender Jibmix Tiltshift Planetarium Projection Room",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603011605",
+      "sha256": "7aba93aec1e8d228e7415ae505038d5dd2461adad2a08d649cc8316ad158d84d",
+      "ahash": "38427c007128383c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-underground-bunker-20260301-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underground-bunker-20260301-1605.webp",
+      "title": "Bender Jibmix Tiltshift Underground Bunker",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603011605",
+      "sha256": "91fd8b751ea733cb40f167c8be09cd879b3e2f4cbee1ff5b9fbe11e800b1e639",
+      "ahash": "001a8bf6f01f3e3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-drive-in-apocalypse-20260301-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drive-in-apocalypse-20260301-1605.webp",
+      "title": "Bender Jibmix Tiltshift Drive In Apocalypse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603011605",
+      "sha256": "7ac7bc0fdab584a47bdde03b3beff9ca5fabdfb87a5668c25f5e47511b7fbdeb",
+      "ahash": "c04fff9e507f83f0"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-solar-evaporation-ponds-20260301-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-solar-evaporation-ponds-20260301-1605.webp",
+      "title": "Bender Jibmix Tiltshift Solar Evaporation Ponds",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603011605",
+      "sha256": "1810abf7aabbab5969dfc0f98c78d87324ea9ff922c31f796d32b4535b166bbf",
+      "ahash": "02043c7ef7fe7e00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-fog-circle-cottage-20260301-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-fog-circle-cottage-20260301-1605.webp",
+      "title": "Bender Jibmix Tiltshift Fog Circle Cottage",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-01",
+      "sortKey": "202603011605",
+      "sha256": "5778ddf5535fd396d9efacdbc53961584da0d3a7b063c64e67c5d77173b7d48d",
+      "ahash": "007efffcfb000000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-frozen-waterfall-chapel-20260301-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-waterfall-chapel-20260301-0805.webp",
