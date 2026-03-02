@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-02T07:07:28.505Z",
+  "generatedAt": "2026-03-02T23:08:27.450Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sinkhole-suburb-20260302-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sinkhole-suburb-20260302-1606.webp",
+      "title": "Bender Jibmix Tiltshift Sinkhole Suburb",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-02",
+      "sortKey": "202603021606",
+      "sha256": "e0e8970170ee6d99c3ac6289b4d0d7b413323398d75ad5f66317dd389e289625",
+      "ahash": "ff3efc010087bc34"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-genetics-lab-overgrowth-20260302-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-genetics-lab-overgrowth-20260302-1606.webp",
+      "title": "Bender Jibmix Tiltshift Genetics Lab Overgrowth",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-02",
+      "sortKey": "202603021606",
+      "sha256": "ab03aa73d01c90d18243b9c74cca26797bf1cb839968e0a12113d0179fb3718f",
+      "ahash": "001898fe7fca1c1c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-underground-market-flood-20260302-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underground-market-flood-20260302-1606.webp",
+      "title": "Bender Jibmix Tiltshift Underground Market Flood",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-02",
+      "sortKey": "202603021606",
+      "sha256": "3b80bc55642ced48c24725483995d3d8254bbe91b91fbec66071cca19ca65298",
+      "ahash": "0010367efb3c7638"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-observatory-void-20260302-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-observatory-void-20260302-1606.webp",
+      "title": "Bender Jibmix Tiltshift Observatory Void",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-02",
+      "sortKey": "202603021606",
+      "sha256": "23275ddbff5f942a40ee6eddd646930eb9771d3dbed31dc32826547075b94859",
+      "ahash": "327ef7e398701808"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-aircraft-carrier-ghost-20260302-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-aircraft-carrier-ghost-20260302-1606.webp",
+      "title": "Bender Jibmix Tiltshift Aircraft Carrier Ghost",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-02",
+      "sortKey": "202603021606",
+      "sha256": "5b80d29ea75f96e62c18e5064fbe07ac3930f796f9ea5fc34617ed68b86a60cf",
+      "ahash": "fff7e38910000000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-loom-factory-mist-20260302-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-loom-factory-mist-20260302-0005.webp",
