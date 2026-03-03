@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-03T07:09:51.137Z",
+  "generatedAt": "2026-03-03T15:09:36.025Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-ice-shelf-calving-20260303-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-ice-shelf-calving-20260303-0807.webp",
+      "title": "Bender Jibmix Tiltshift Ice Shelf Calving",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030807",
+      "sha256": "54e6b703ed8d43c845c03b998ae760645fab6d1e1f91cc6da69a322d836a50f0",
+      "ahash": "ffffffeb0f070703"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-glass-bridge-fog-20260303-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-glass-bridge-fog-20260303-0807.webp",
+      "title": "Bender Jibmix Tiltshift Glass Bridge Fog",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030807",
+      "sha256": "ab4d9dfc2034d6b7fc0d3c2c4442f7202ba76115c6d6046d1569b8a3378d3734",
+      "ahash": "fffffc7c001c0400"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sunken-observatory-lake-20260303-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sunken-observatory-lake-20260303-0807.webp",
+      "title": "Bender Jibmix Tiltshift Sunken Observatory Lake",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030807",
+      "sha256": "057ee9506b990ade0f227553f3927ddefafbc4d2664331dcaaf0d14bbafc0aed",
+      "ahash": "3e1f3f0004043c38"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-dead-mall-atrium-20260303-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-dead-mall-atrium-20260303-0807.webp",
+      "title": "Bender Jibmix Tiltshift Dead Mall Atrium",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "mall"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030807",
+      "sha256": "6eda68cb55e651d3636858fafe97b527b24031fdefe1905526cbead0fb8f3364",
+      "ahash": "787c3c0000ff3c3c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-telegraph-hill-ruin-20260303-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-telegraph-hill-ruin-20260303-0807.webp",
+      "title": "Bender Jibmix Tiltshift Telegraph Hill Ruin",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030807",
+      "sha256": "4a4da382c2cd47e6a033617190233981433e9d1d9a74588fd69cac1c60c9527b",
+      "ahash": "ffff9f8000000000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-dry-dock-ghost-liner-20260303-0007.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-dry-dock-ghost-liner-20260303-0007.webp",
