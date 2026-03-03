@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-03T15:09:36.025Z",
+  "generatedAt": "2026-03-03T23:10:05.170Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-siphon-bridge-aqueduct-20260303-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-siphon-bridge-aqueduct-20260303-1607.webp",
+      "title": "Bender Jibmix Tiltshift Siphon Bridge Aqueduct",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603031607",
+      "sha256": "421b4c12f293fe3aa78aa9c36f9d1f55f96010e8b51e166047ab8aa131b69aaa",
+      "ahash": "fbfbc0100001071b"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-rewired-switchboard-20260303-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rewired-switchboard-20260303-1607.webp",
+      "title": "Bender Jibmix Tiltshift Rewired Switchboard",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603031607",
+      "sha256": "3186e0e1d6d71ad529cbb492980c349bcad1ed8db2108969a8668348e86d62ba",
+      "ahash": "7859ff020ffce004"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tide-gate-midnight-20260303-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tide-gate-midnight-20260303-1607.webp",
+      "title": "Bender Jibmix Tiltshift Tide Gate Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603031607",
+      "sha256": "c6867a10ff6c9441a969cb53f602a523fd93b078d9840f9e758e3f383b7009da",
+      "ahash": "fffffec0130b0030"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-salt-mine-art-depot-20260303-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-salt-mine-art-depot-20260303-1607.webp",
+      "title": "Bender Jibmix Tiltshift Salt Mine Art Depot",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603031607",
+      "sha256": "0ed5c68a640a5fbd976f2efacd32e4e04fe0afddbb2beeb7ae00ccf2189a6e6d",
+      "ahash": "083ff2574e0f180c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-waterfall-chapel-20260303-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-waterfall-chapel-20260303-1607.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Waterfall Chapel",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603031607",
+      "sha256": "6c91e29796c20e318bac30c35197cd72c503126c17e6115f7dcb11bbe0a0e967",
+      "ahash": "24606060e07f3f7f"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-ice-shelf-calving-20260303-0807.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-ice-shelf-calving-20260303-0807.webp",
