@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-02T23:08:27.450Z",
+  "generatedAt": "2026-03-03T07:09:51.137Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-dry-dock-ghost-liner-20260303-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-dry-dock-ghost-liner-20260303-0007.webp",
+      "title": "Bender Jibmix Tiltshift Dry Dock Ghost Liner",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030007",
+      "sha256": "8f58f0f96b4756956d866f0dbe6c642ef8bd8d87defbcbcafe45c06ce12ccd44",
+      "ahash": "003e7e7e66000404"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-lighthouse-black-sea-20260303-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-lighthouse-black-sea-20260303-0007.webp",
+      "title": "Bender Jibmix Tiltshift Lighthouse Black Sea",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030007",
+      "sha256": "84e826c89c44c387874c256d28f3705bfe4ca4436fa479992c9466925db2f54b",
+      "ahash": "7f3ffe8f01000820"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-stadium-storm-20260303-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-stadium-storm-20260303-0007.webp",
+      "title": "Bender Jibmix Tiltshift Stadium Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030007",
+      "sha256": "13c155a7680d004e8af8ac8661551df3b031eac341359470733e232ac909a150",
+      "ahash": "00ffffffff000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mushroom-village-20260303-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mushroom-village-20260303-0007.webp",
+      "title": "Bender Jibmix Tiltshift Mushroom Village",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030007",
+      "sha256": "116090f343a6400eecee28111f1c804975e13512e6e6bbfb2c39013c0df1d4ce",
+      "ahash": "7d7c7c381c7c1806"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-abandoned-waterpark-20260303-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-abandoned-waterpark-20260303-0007.webp",
+      "title": "Bender Jibmix Tiltshift Abandoned Waterpark",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-03",
+      "sortKey": "202603030007",
+      "sha256": "6a4df15e1f2f47283b380bfffc407002de84ae210ed09b8740644896abcdea4d",
+      "ahash": "feccc70c5b991907"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-sinkhole-suburb-20260302-1606.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sinkhole-suburb-20260302-1606.webp",
