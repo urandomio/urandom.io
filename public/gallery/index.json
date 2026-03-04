@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-03T23:10:05.170Z",
+  "generatedAt": "2026-03-04T07:09:14.147Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-soviet-space-museum-20260304-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-soviet-space-museum-20260304-0007.webp",
+      "title": "Bender Jibmix Tiltshift Soviet Space Museum",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603040007",
+      "sha256": "c0195d1592eb1ca1a2ab2e7839ea32dc5b97ac07762fd4becd8cfb3a253b81bd",
+      "ahash": "0001c3ffd2193c7c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-hospital-ship-tropical-20260304-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-hospital-ship-tropical-20260304-0007.webp",
+      "title": "Bender Jibmix Tiltshift Hospital Ship Tropical",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603040007",
+      "sha256": "f1342e3902cb974f3127070a651566349ac4b3a344c1abce406e437e2e6ec452",
+      "ahash": "1c7fff3ef9804208"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-rewound-factory-20260304-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rewound-factory-20260304-0007.webp",
+      "title": "Bender Jibmix Tiltshift Rewound Factory",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603040007",
+      "sha256": "8cefd54d1a4df67b2dc9dd23784000a3b40d21326937fe6d020431ad9c495d59",
+      "ahash": "32ff181e5cd81a18"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-hydro-dam-drought-20260304-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-hydro-dam-drought-20260304-0007.webp",
+      "title": "Bender Jibmix Tiltshift Hydro Dam Drought",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603040007",
+      "sha256": "601c5ceb368a2c7d4026ce5da12a305e8ec5ddbac3b312113c1121ba998da337",
+      "ahash": "ff7f870001000c0d"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tide-gate-midnight-20260304-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tide-gate-midnight-20260304-0007.webp",
+      "title": "Bender Jibmix Tiltshift Tide Gate Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603040007",
+      "sha256": "d7c2ce774052bf5eaed586a4466cf6817593752c9ec40ea325c96cfd64617e2d",
+      "ahash": "feffffe1e0000c0e"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-siphon-bridge-aqueduct-20260303-1607.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-siphon-bridge-aqueduct-20260303-1607.webp",
