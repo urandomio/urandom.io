@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-04T15:09:17.383Z",
+  "generatedAt": "2026-03-04T23:08:42.044Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-oil-rig-storm-20260304-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-oil-rig-storm-20260304-1606.webp",
+      "title": "Bender Jibmix Tiltshift Oil Rig Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603041606",
+      "sha256": "25899ace756b525f85b72d1fb3bbc67015139cbfe2dc77492cfa67dbc65af116",
+      "ahash": "f0f4f4c38f000008"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-underwater-telegraph-bell-20260304-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underwater-telegraph-bell-20260304-1606.webp",
+      "title": "Bender Jibmix Tiltshift Underwater Telegraph Bell",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603041606",
+      "sha256": "8f1b3b630f0154a03c418533288b59a29a0ac2423e8d389363972e3f75603d0f",
+      "ahash": "7c3f234860f2fc30"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-kelp-forest-submersible-20260304-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-kelp-forest-submersible-20260304-1606.webp",
+      "title": "Bender Jibmix Tiltshift Kelp Forest Submersible",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603041606",
+      "sha256": "1c42f3bfedc42c84e6155cff78278fecc5672b8a58996f56bc30f3e756796b2d",
+      "ahash": "1e1f1e1e0e000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cable-car-valley-20260304-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cable-car-valley-20260304-1606.webp",
+      "title": "Bender Jibmix Tiltshift Cable Car Valley",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603041606",
+      "sha256": "d4e7a3733fc47a1ae121f6fd08fc0586361af3cc97f1063a33f6e426152af0c2",
+      "ahash": "fffffcf070010008"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-drained-reservoir-village-20260304-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drained-reservoir-village-20260304-1606.webp",
+      "title": "Bender Jibmix Tiltshift Drained Reservoir Village",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-04",
+      "sortKey": "202603041606",
+      "sha256": "46e60ad9602b78bbf9a136974ed0da5fa39a58f36b24f3181d5d52430e471028",
+      "ahash": "fcfc3d01303c3e3e"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-metro-station-flood-20260304-0807.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-metro-station-flood-20260304-0807.webp",
