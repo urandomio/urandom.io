@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-04T23:08:42.044Z",
+  "generatedAt": "2026-03-05T07:07:51.385Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-shipwreck-shallows-20260305-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-shipwreck-shallows-20260305-0005.webp",
+      "title": "Bender Jibmix Tiltshift Shipwreck Shallows",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603050005",
+      "sha256": "a512fce7d74ef33768f165ec9d7a6561847f9b0debf91d7592e8862348deeb86",
+      "ahash": "7ffff9e106060200"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-drive-in-apocalypse-20260305-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drive-in-apocalypse-20260305-0005.webp",
+      "title": "Bender Jibmix Tiltshift Drive In Apocalypse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603050005",
+      "sha256": "76fcfca1925130c148c952c2678ff98db89e144df4149f46e0bf37432be43e15",
+      "ahash": "7878047af3e31e1a"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mushroom-village-20260305-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mushroom-village-20260305-0005.webp",
+      "title": "Bender Jibmix Tiltshift Mushroom Village",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603050005",
+      "sha256": "44f7b816935bf77f4625e2f84d034fee693414674707c6e897341835d6bb1dce",
+      "ahash": "7cfe3e1e1c080000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tide-pool-observatory-20260305-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tide-pool-observatory-20260305-0005.webp",
+      "title": "Bender Jibmix Tiltshift Tide Pool Observatory",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603050005",
+      "sha256": "1bccee96bb29bdc67aa83b93f5b18c284db70fdaff1453a065b6519c7df2736b",
+      "ahash": "f0f0e8faf8e08000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-magnetic-anomaly-lab-20260305-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-magnetic-anomaly-lab-20260305-0005.webp",
+      "title": "Bender Jibmix Tiltshift Magnetic Anomaly Lab",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603050005",
+      "sha256": "ac143dafc9694ef7182af5dfaecf899e397794e8ed9fcc1f2a8d4849829648cc",
+      "ahash": "3c0067b7ff3fc400"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-oil-rig-storm-20260304-1606.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-oil-rig-storm-20260304-1606.webp",
