@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-05T15:08:34.956Z",
+  "generatedAt": "2026-03-05T23:08:58.855Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-biodome-blizzard-20260305-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-biodome-blizzard-20260305-1606.webp",
+      "title": "Bender Jibmix Tiltshift Biodome Blizzard",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603051606",
+      "sha256": "84d92cca18f0ad654a7ce2d161e60e5dd3b9a2ced2083c3239c577033ec520a6",
+      "ahash": "7a7e7f0800201f07"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-skyscraper-skeleton-20260305-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-skyscraper-skeleton-20260305-1606.webp",
+      "title": "Bender Jibmix Tiltshift Skyscraper Skeleton",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603051606",
+      "sha256": "f49e2f4845d346c9a6a5ef766408f19740996aa0030a1cdedfaf3df9178eff62",
+      "ahash": "fffbc1c1c1c10000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cooling-tower-interior-20260305-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cooling-tower-interior-20260305-1606.webp",
+      "title": "Bender Jibmix Tiltshift Cooling Tower Interior",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603051606",
+      "sha256": "8850966b73e763921eff185d083306e3b243b763b1901c79cd84e01c87bed869",
+      "ahash": "3c3c3e3f07030b08"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-lava-tube-bunker-20260305-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-lava-tube-bunker-20260305-1606.webp",
+      "title": "Bender Jibmix Tiltshift Lava Tube Bunker",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603051606",
+      "sha256": "d47dd914f153d7cf11acc9a0c3807776cb77b88c69d187e02a8119e72776f483",
+      "ahash": "000030737f7d3e38"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-carnival-train-wreck-20260305-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-carnival-train-wreck-20260305-1606.webp",
+      "title": "Bender Jibmix Tiltshift Carnival Train Wreck",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-05",
+      "sortKey": "202603051606",
+      "sha256": "8642b91dfbeb4890d9aa888daedc997619478f9202564cdcb5b79b03f90abde6",
+      "ahash": "7e3c081c3c180000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-whalers-station-rust-20260305-0805.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-whalers-station-rust-20260305-0805.webp",
