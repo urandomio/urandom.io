@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-06T15:10:45.568Z",
+  "generatedAt": "2026-03-06T23:11:16.070Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-winter-palace-ice-rooms-20260306-1609.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-winter-palace-ice-rooms-20260306-1609.webp",
+      "title": "Bender Jibmix Tiltshift Winter Palace Ice Rooms",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603061609",
+      "sha256": "5237d2587a29de33a602bfef270e50318583db0f5191602f3821ddbdb0f1809a",
+      "ahash": "00000edefe7c3c0c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-unfinished-battleship-winter-20260306-1609.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-unfinished-battleship-winter-20260306-1609.webp",
+      "title": "Bender Jibmix Tiltshift Unfinished Battleship Winter",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603061609",
+      "sha256": "b61284f9a372eb74e91a66ea6940280397b14c88299f7833de55a79a0793d593",
+      "ahash": "fffd912c3c3e0001"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tide-pool-at-night-storm-20260306-1609.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tide-pool-at-night-storm-20260306-1609.webp",
+      "title": "Bender Jibmix Tiltshift Tide Pool At Night Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603061609",
+      "sha256": "a7c0ddd88294f0f507f28feec3e8c537b4628f41bdd6f6342c85222d77fc82c6",
+      "ahash": "ff3f1e38103c0c00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-roller-rink-midnight-20260306-1609.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-roller-rink-midnight-20260306-1609.webp",
+      "title": "Bender Jibmix Tiltshift Roller Rink Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603061609",
+      "sha256": "c3d11d8d191f012f41bbb4ccb18f62e2d3180bfd6ee08bcda41ba0b92e76bbff",
+      "ahash": "0080e000ffff7f00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-torii-drowned-shore-20260306-1609.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-torii-drowned-shore-20260306-1609.webp",
+      "title": "Bender Jibmix Tiltshift Torii Drowned Shore",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603061609",
+      "sha256": "4701158253b6a74424932f92585939caa4e716b7388a7ed8b7da8e79bb09c7eb",
+      "ahash": "f0f0707070301e00"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-cloud-forest-relay-station-20260306-0808.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cloud-forest-relay-station-20260306-0808.webp",
