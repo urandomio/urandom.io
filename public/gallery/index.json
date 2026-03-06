@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-05T23:08:58.855Z",
+  "generatedAt": "2026-03-06T07:09:46.299Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-canal-lock-abandoned-20260306-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-canal-lock-abandoned-20260306-0007.webp",
+      "title": "Bender Jibmix Tiltshift Canal Lock Abandoned",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603060007",
+      "sha256": "22ee7aa7f27687bad4857373614988c10c04dbaccf3a5db22c16e20e40bd6980",
+      "ahash": "fffcfc1800001808"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-planetarium-collapse-20260306-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-planetarium-collapse-20260306-0007.webp",
+      "title": "Bender Jibmix Tiltshift Planetarium Collapse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603060007",
+      "sha256": "4faf5b2a3b99043ae1349ef768d79c0a4ef1a310243114e8d5580fa25b530e73",
+      "ahash": "0038b9381c7c1818"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tar-pit-city-20260306-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tar-pit-city-20260306-0007.webp",
+      "title": "Bender Jibmix Tiltshift Tar Pit City",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603060007",
+      "sha256": "d377be17b872094db16495ff0255ed79ce1f619cec6dbe6c74d029a89b13cda1",
+      "ahash": "7c5d5898181c1c10"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-rewound-cinema-20260306-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rewound-cinema-20260306-0007.webp",
+      "title": "Bender Jibmix Tiltshift Rewound Cinema",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603060007",
+      "sha256": "7d5a6055eadb9c9ad176e1dc036c1a3a6ccdaae491ad11aae619166172ec2d27",
+      "ahash": "003c3cbc18000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-server-room-flood-20260306-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-server-room-flood-20260306-0007.webp",
+      "title": "Bender Jibmix Tiltshift Server Room Flood",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia",
+        "servers"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-06",
+      "sortKey": "202603060007",
+      "sha256": "0352821c6d5d63bf994d06669dd67c7582d5d2205426be910466bcea96c0c410",
+      "ahash": "df7e1808181c3c3e"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-biodome-blizzard-20260305-1606.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-biodome-blizzard-20260305-1606.webp",
