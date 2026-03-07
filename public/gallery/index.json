@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-07T07:10:59.280Z",
+  "generatedAt": "2026-03-07T15:09:19.108Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-dry-dock-ghost-liner-20260307-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-dry-dock-ghost-liner-20260307-0807.webp",
+      "title": "Bender Jibmix Tiltshift Dry Dock Ghost Liner",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070807",
+      "sha256": "240f182517d0319224b69aa13bef0509b0e46d90afe64db8683d700c985a7255",
+      "ahash": "007c7e7e3c201010"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-furnace-room-20260307-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-furnace-room-20260307-0807.webp",
+      "title": "Bender Jibmix Tiltshift Furnace Room",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070807",
+      "sha256": "5eebb17d7c5f20c6ff10cf5fa04a9adf2f98cd961aea5567479c13ce1aff0ee1",
+      "ahash": "1c18f87c1c185818"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-offshore-platform-reef-20260307-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-offshore-platform-reef-20260307-0807.webp",
+      "title": "Bender Jibmix Tiltshift Offshore Platform Reef",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070807",
+      "sha256": "2a4d9394838444ee2c3e419f23e319545fd84f22dbb929d3c32940cba6850899",
+      "ahash": "fffff9c100000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-clockwork-orrery-chamber-20260307-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-clockwork-orrery-chamber-20260307-0807.webp",
+      "title": "Bender Jibmix Tiltshift Clockwork Orrery Chamber",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070807",
+      "sha256": "f744ccefda6c66bb73ab863e9a5f68284cb28e8dd9572a1749cb8b62c5c9aa7c",
+      "ahash": "0070c0ccce3a781e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-opera-foyer-20260307-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-opera-foyer-20260307-0807.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Opera Foyer",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070807",
+      "sha256": "60da4023bdef4bd10dbee3e1219a21dcd695fe801ab103d4b85725b24a5163ab",
+      "ahash": "383afec2184de838"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-caldera-research-camp-20260307-0008.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-caldera-research-camp-20260307-0008.webp",
