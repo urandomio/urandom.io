@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-06T23:11:16.070Z",
+  "generatedAt": "2026-03-07T07:10:59.280Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-caldera-research-camp-20260307-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-caldera-research-camp-20260307-0008.webp",
+      "title": "Bender Jibmix Tiltshift Caldera Research Camp",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070008",
+      "sha256": "7941b29d578df15996acdb5237ffd9ce53ecef57a6f7bea8b79efd753761a9cf",
+      "ahash": "ff1f3e0303000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sound-mirror-coast-20260307-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sound-mirror-coast-20260307-0008.webp",
+      "title": "Bender Jibmix Tiltshift Sound Mirror Coast",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070008",
+      "sha256": "ca455345d5fdd0e42165d815bdb6231352ced43bcb59a02baf4df12a834df62a",
+      "ahash": "fffff3e000000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-harbor-lighthouse-20260307-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-harbor-lighthouse-20260307-0008.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Harbor Lighthouse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070008",
+      "sha256": "b7fab32d9661bdfe636b3dc77a133b80543d1ff7018ae29f4d5da1ede5f2f849",
+      "ahash": "7eff0f97e3c09c1e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-brutalist-pool-demolition-20260307-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-brutalist-pool-demolition-20260307-0008.webp",
+      "title": "Bender Jibmix Tiltshift Brutalist Pool Demolition",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070008",
+      "sha256": "d321dfde1d73424f90a9139a8445db1c8fcac9bf06535057c5d76481cba5b99b",
+      "ahash": "7e7c101f1f061f00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-art-museum-night-20260307-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-art-museum-night-20260307-0008.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Art Museum Night",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-07",
+      "sortKey": "202603070008",
+      "sha256": "3035ea69ab294cc192218136e2e4ef451aa5d2597491dd5b34aaa6eefe99c0b4",
+      "ahash": "bd19fdff191a001c"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-winter-palace-ice-rooms-20260306-1609.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-winter-palace-ice-rooms-20260306-1609.webp",
