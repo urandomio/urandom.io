@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-08T07:10:55.318Z",
+  "generatedAt": "2026-03-08T15:08:38.871Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-wave-energy-array-hurricane-20260308-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-wave-energy-array-hurricane-20260308-0806.webp",
+      "title": "Bender Jibmix Tiltshift Wave Energy Array Hurricane",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080806",
+      "sha256": "8a7317c2e99a9eb0e60596693980aa12fb51bbda80a6e265e6ddf4aeddc4810a",
+      "ahash": "3f7fff1f00003000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-catafalque-chapel-rain-20260308-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-catafalque-chapel-rain-20260308-0806.webp",
+      "title": "Bender Jibmix Tiltshift Catafalque Chapel Rain",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080806",
+      "sha256": "2026b7906201c34fb958441f4bcf8c43d91726f8a6cb3e485d4c3fda44deb438",
+      "ahash": "0f07036764000a20"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-drowned-funhouse-20260308-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drowned-funhouse-20260308-0806.webp",
+      "title": "Bender Jibmix Tiltshift Drowned Funhouse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080806",
+      "sha256": "3eda261b9972e471cdb50a7a41cf988c56e4e3ad62353e573b451ec04dda4691",
+      "ahash": "fef8f0000c0cf080"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sunken-bathysphere-20260308-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sunken-bathysphere-20260308-0806.webp",
+      "title": "Bender Jibmix Tiltshift Sunken Bathysphere",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080806",
+      "sha256": "1f9619dea8aefc63c03d753ed50640d8fd11f474e6cc2a7718ce35e0cce5d4e5",
+      "ahash": "040098df09807f3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-bone-museum-20260308-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-bone-museum-20260308-0806.webp",
+      "title": "Bender Jibmix Tiltshift Bone Museum",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080806",
+      "sha256": "5c47dd2fc033e7ce8c8c4d4c8e531b8e419e78ad78e2892f15b45d48aa6974df",
+      "ahash": "3c183c243efe2000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-subterranean-stone-bridge-20260308-0007.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-subterranean-stone-bridge-20260308-0007.webp",
