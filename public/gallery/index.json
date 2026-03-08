@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-08T15:08:38.871Z",
+  "generatedAt": "2026-03-08T23:09:36.280Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-power-station-20260308-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-power-station-20260308-1607.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Power Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603081607",
+      "sha256": "2c1f517c143b45b56d3bcbeb146c1caa6a3dd6f9f9bca47899c975b600d4ea5d",
+      "ahash": "01014cde9fc67f3c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-permafrost-mammoth-church-20260308-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-permafrost-mammoth-church-20260308-1607.webp",
+      "title": "Bender Jibmix Tiltshift Permafrost Mammoth Church",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603081607",
+      "sha256": "da9a42d2ee7e7df3f7961f5039101c93fc66b2d24828e1baf45ba5fb46d3bb25",
+      "ahash": "ffffc30000000800"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-swamp-lighthouse-stilts-20260308-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-swamp-lighthouse-stilts-20260308-1607.webp",
+      "title": "Bender Jibmix Tiltshift Swamp Lighthouse Stilts",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603081607",
+      "sha256": "911cf8ae8e48b08b877b7b773f9a937468fe57aa5a48757afc2e258f0c3c4c0f",
+      "ahash": "98787eef080e1000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-supermarket-20260308-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-supermarket-20260308-1607.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Supermarket",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603081607",
+      "sha256": "1f9e5f22d5e47e9d17f7a4de569ca2c96d08efcb3b68d77bc5373b3587bdcb51",
+      "ahash": "1819ffff1b1c1818"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-telegraph-hill-ruin-20260308-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-telegraph-hill-ruin-20260308-1607.webp",
+      "title": "Bender Jibmix Tiltshift Telegraph Hill Ruin",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603081607",
+      "sha256": "a22268c299ed55f3a00c59a94bedf639ea6e81cc7892073ab583ffb9c7b3ec00",
+      "ahash": "ffff980200000000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-wave-energy-array-hurricane-20260308-0806.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-wave-energy-array-hurricane-20260308-0806.webp",
