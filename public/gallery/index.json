@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-07T23:12:12.043Z",
+  "generatedAt": "2026-03-08T07:10:55.318Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-subterranean-stone-bridge-20260308-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-subterranean-stone-bridge-20260308-0007.webp",
+      "title": "Bender Jibmix Tiltshift Subterranean Stone Bridge",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080007",
+      "sha256": "7e2d75c85ceee287c10cafdc4d4aba0b6fa9d1856dd4436c4baf47043d7d3dcc",
+      "ahash": "307e6700191b3e3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-radio-astronomy-winter-20260308-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-radio-astronomy-winter-20260308-0007.webp",
+      "title": "Bender Jibmix Tiltshift Radio Astronomy Winter",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080007",
+      "sha256": "1a2863ef51fd883170cd705ea2118012a1ea331337599c1fc0c94569b1cdee82",
+      "ahash": "0090fef3b31ffef8"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-insomnia-diner-20260308-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-insomnia-diner-20260308-0007.webp",
+      "title": "Bender Jibmix Tiltshift Insomnia Diner",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080007",
+      "sha256": "6a304d463fdee5ca1f01625e98f664bc4aae41495b63a2fa1bf791b33a2590fe",
+      "ahash": "5e3ffcee6c007c38"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-opera-stage-flood-20260308-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-opera-stage-flood-20260308-0007.webp",
+      "title": "Bender Jibmix Tiltshift Opera Stage Flood",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080007",
+      "sha256": "cab00ea59ed31d9cd6db02dd244367730b9dad0c8d1597723bfb95dee0ba8974",
+      "ahash": "1c3d2303173c2436"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mushroom-village-20260308-0007.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mushroom-village-20260308-0007.webp",
+      "title": "Bender Jibmix Tiltshift Mushroom Village",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-08",
+      "sortKey": "202603080007",
+      "sha256": "a5e81b3d4f4d53f0be4db4f425476f77050e0ad66e2d5d517f61887b3486aef6",
+      "ahash": "78fcf870307a0d08"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-submarine-pen-20260307-1609.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-submarine-pen-20260307-1609.webp",
