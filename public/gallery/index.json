@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-09T15:08:39.046Z",
+  "generatedAt": "2026-03-09T23:09:00.047Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-thermal-springs-depot-20260309-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-thermal-springs-depot-20260309-1606.webp",
+      "title": "Bender Jibmix Tiltshift Thermal Springs Depot",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-09",
+      "sortKey": "202603091606",
+      "sha256": "b0b70a035c4b5856394522d7301c2b30d810c37920f4b8212eee173c80ed6419",
+      "ahash": "07e1809c30ffff7f"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-sunken-renaissance-garden-20260309-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-sunken-renaissance-garden-20260309-1606.webp",
+      "title": "Bender Jibmix Tiltshift Sunken Renaissance Garden",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-09",
+      "sortKey": "202603091606",
+      "sha256": "0b8b82ee6df00ec422aad75a5ed0c283f6c9711838693a645239df1b9cbe4df7",
+      "ahash": "0010f7387e7c2ffc"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-wet-plate-studio-20260309-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-wet-plate-studio-20260309-1606.webp",
+      "title": "Bender Jibmix Tiltshift Wet Plate Studio",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-09",
+      "sortKey": "202603091606",
+      "sha256": "c5ec0d5a75fcbed870081a46e64f3d7c7c5b0d0fd801b04550e19f5f55fbefe6",
+      "ahash": "003c1fff1f383818"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-supermarket-20260309-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-supermarket-20260309-1606.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Supermarket",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-09",
+      "sortKey": "202603091606",
+      "sha256": "0f910c86ea472118abcc42a8094fccb6a4f91da410e7ff5a87e769a2ecedcb59",
+      "ahash": "995f7f2e1b1a1818"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-kelp-farm-storm-20260309-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-kelp-farm-storm-20260309-1606.webp",
+      "title": "Bender Jibmix Tiltshift Kelp Farm Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-09",
+      "sortKey": "202603091606",
+      "sha256": "44d67ab8a4031ec15d64b79e2bd284b08e10fd287e6850490515589145dd9ef6",
+      "ahash": "7f1f7e7e9a301900"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-catafalque-chapel-rain-20260309-0806.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-catafalque-chapel-rain-20260309-0806.webp",
