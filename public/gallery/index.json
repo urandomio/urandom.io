@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-10T07:08:58.198Z",
+  "generatedAt": "2026-03-10T15:09:55.025Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-hydro-dam-drought-20260310-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-hydro-dam-drought-20260310-0807.webp",
+      "title": "Bender Jibmix Tiltshift Hydro Dam Drought",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603100807",
+      "sha256": "a4e981ab48f0e057c1769d7f3adcc912d602ec85d0aa966be57ed8e7613df232",
+      "ahash": "1f0f7fa1061830e0"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-forgotten-ghost-station-20260310-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-forgotten-ghost-station-20260310-0807.webp",
+      "title": "Bender Jibmix Tiltshift Forgotten Ghost Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603100807",
+      "sha256": "5c1ee1a66cf13e8540345e047e6beb5b023329ac295d40f62b855eb588d132ec",
+      "ahash": "60e071ff39387838"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-radio-astronomy-winter-20260310-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-radio-astronomy-winter-20260310-0807.webp",
+      "title": "Bender Jibmix Tiltshift Radio Astronomy Winter",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603100807",
+      "sha256": "7744f820ce63860cc15bcacaef228cf05afd31fac02c85d54c56b3bc6084abf1",
+      "ahash": "0000779f9f3dfffe"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-dry-stone-maze-20260310-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-dry-stone-maze-20260310-0807.webp",
+      "title": "Bender Jibmix Tiltshift Dry Stone Maze",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603100807",
+      "sha256": "1153d73d17552b3129ddb6c6c737f8cb3ccd1f0058c3f0c9eb012422d819f2af",
+      "ahash": "ff20007abd005000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-ice-road-midnight-truck-20260310-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-ice-road-midnight-truck-20260310-0807.webp",
+      "title": "Bender Jibmix Tiltshift Ice Road Midnight Truck",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603100807",
+      "sha256": "bdfb8f944c815cc2e0374c5a9589f8e4cbcfbc6dafb5d841ddd5ad6ad543ec90",
+      "ahash": "00003c667efefe00"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-rewound-hospital-ward-20260310-0006.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-rewound-hospital-ward-20260310-0006.webp",
