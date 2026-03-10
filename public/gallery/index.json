@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-10T15:09:55.025Z",
+  "generatedAt": "2026-03-10T23:09:19.678Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tide-prediction-machine-20260310-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tide-prediction-machine-20260310-1607.webp",
+      "title": "Bender Jibmix Tiltshift Tide Prediction Machine",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603101607",
+      "sha256": "d95e43b956f806528b036a1f064df8541ff964a92452bb4c10dce659b8403825",
+      "ahash": "e0061e861cdcf878"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-stadium-storm-20260310-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-stadium-storm-20260310-1607.webp",
+      "title": "Bender Jibmix Tiltshift Stadium Storm",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603101607",
+      "sha256": "c4fa4d15cc76e8e09209534deaf8816320ab46fa22ef46bbd112d2bc5f348490",
+      "ahash": "10feffffff0080c0"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-crashed-blimp-jungle-20260310-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-crashed-blimp-jungle-20260310-1607.webp",
+      "title": "Bender Jibmix Tiltshift Crashed Blimp Jungle",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603101607",
+      "sha256": "28e386136489d99e7e92f800880496dbde7a2bb9b8b52a8b9d1fb613b4104958",
+      "ahash": "383c7e7e7a100000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-cathedral-pipe-organ-ice-20260310-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-cathedral-pipe-organ-ice-20260310-1607.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Cathedral Pipe Organ Ice",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603101607",
+      "sha256": "e0505e14111feae2b9101f08e1d56663e7019873b74f4913eadc926fd6e31967",
+      "ahash": "183c3cff7e183c3c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-glass-blowing-midnight-20260310-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-glass-blowing-midnight-20260310-1607.webp",
+      "title": "Bender Jibmix Tiltshift Glass Blowing Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-10",
+      "sortKey": "202603101607",
+      "sha256": "bbd7bf03c21955eeef10ea9239ad12aae26fe11de4ae8a6746cf57a762ae3c10",
+      "ahash": "0088fc7e47183c3c"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-hydro-dam-drought-20260310-0807.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-hydro-dam-drought-20260310-0807.webp",
