@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-11T15:09:39.502Z",
+  "generatedAt": "2026-03-11T23:09:33.626Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-housing-block-dark-floor-20260311-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-housing-block-dark-floor-20260311-1607.webp",
+      "title": "Bender Jibmix Tiltshift Housing Block Dark Floor",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603111607",
+      "sha256": "9c60280fa1b8a4b64b68b856dd7a2808a932f90c1844ce4378f96c9470bdeb10",
+      "ahash": "ffc1e32f6c63e0e4"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-loom-factory-mist-20260311-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-loom-factory-mist-20260311-1607.webp",
+      "title": "Bender Jibmix Tiltshift Loom Factory Mist",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603111607",
+      "sha256": "51d3b1923c116a6d7152319a11a6e3d981e57bd94784454a587c47c5497cdd1d",
+      "ahash": "1afe1e1e00781818"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-oil-platform-polar-night-20260311-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-oil-platform-polar-night-20260311-1607.webp",
+      "title": "Bender Jibmix Tiltshift Oil Platform Polar Night",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603111607",
+      "sha256": "c00e1d7b80fe03d4d933c9dbaa59679cf6a7bd42518aafc8c180067f5dcd94ec",
+      "ahash": "ffffef006c080000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-bone-museum-20260311-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-bone-museum-20260311-1607.webp",
+      "title": "Bender Jibmix Tiltshift Bone Museum",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603111607",
+      "sha256": "f16067def984a10215b817b5f5f84bc7eb3724337fdd2f803630632d329fcbde",
+      "ahash": "181c1c7e7e7a7e3c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-cathedral-pipe-organ-ice-20260311-1607.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-cathedral-pipe-organ-ice-20260311-1607.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Cathedral Pipe Organ Ice",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603111607",
+      "sha256": "fd8a417a806581af45eec04208496290a8140dc3735c56fe70a4601e90924da8",
+      "ahash": "0c4cdcf0623c3f70"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-flooded-supermarket-20260311-0807.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-supermarket-20260311-0807.webp",
