@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-10T23:09:19.678Z",
+  "generatedAt": "2026-03-11T07:08:44.754Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-whalers-station-rust-20260311-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-whalers-station-rust-20260311-0006.webp",
+      "title": "Bender Jibmix Tiltshift Whalers Station Rust",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110006",
+      "sha256": "5fb8f2c65399c2c15807d1bcedc722adf571e7e43900bb3575b63c9f98a65029",
+      "ahash": "ffff1f0700080000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-dead-coral-atoll-20260311-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-dead-coral-atoll-20260311-0006.webp",
+      "title": "Bender Jibmix Tiltshift Dead Coral Atoll",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110006",
+      "sha256": "32dee602075a85f6ab3325ce5622fb94710c2f7eb40b572e7763bb7bfade58ef",
+      "ahash": "0000003cfefcf81c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cloud-forest-relay-station-20260311-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cloud-forest-relay-station-20260311-0006.webp",
+      "title": "Bender Jibmix Tiltshift Cloud Forest Relay Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110006",
+      "sha256": "57c028248758f25394cdcc83c33ff3cd9a8db18a8c0d27d35d0498fd31cc2a1a",
+      "ahash": "1f1f1f0b01010000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tidal-power-station-20260311-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tidal-power-station-20260311-0006.webp",
+      "title": "Bender Jibmix Tiltshift Tidal Power Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110006",
+      "sha256": "6ce6fc49f0281a4c0b74fd51e0f8a7031f50da9dd8debab73fc5df61dbfc3478",
+      "ahash": "ffffc08000000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-salt-flat-ritual-20260311-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-salt-flat-ritual-20260311-0006.webp",
+      "title": "Bender Jibmix Tiltshift Salt Flat Ritual",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110006",
+      "sha256": "bc74f16424a65c76cf575bdb32b418515469c85a1bd2325f2067fb4732a79626",
+      "ahash": "0000007cffff7f1e"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-tide-prediction-machine-20260310-1607.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tide-prediction-machine-20260310-1607.webp",
