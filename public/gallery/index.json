@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-11T07:08:44.754Z",
+  "generatedAt": "2026-03-11T15:09:39.502Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-supermarket-20260311-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-supermarket-20260311-0807.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Supermarket",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110807",
+      "sha256": "c0438c59f7aed09608e74acfef8190e3cc8adbc08e43294bc8697806fcfe603a",
+      "ahash": "99ff7f4418181810"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-victorian-trainstation-ghost-20260311-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-victorian-trainstation-ghost-20260311-0807.webp",
+      "title": "Bender Jibmix Tiltshift Victorian Trainstation Ghost",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110807",
+      "sha256": "063e4b48e4d5f7999c699e76649d8ab293965c8280aed34dd93db5b862d2b840",
+      "ahash": "06c67eff43c70e3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-desalination-barge-adrift-20260311-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-desalination-barge-adrift-20260311-0807.webp",
+      "title": "Bender Jibmix Tiltshift Desalination Barge Adrift",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110807",
+      "sha256": "35f5e9cba5eac34ca2b2dc41ade08f85c987a642666197ebaa9d2764420900d2",
+      "ahash": "ffffff5f10040000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-chemical-plant-mist-20260311-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-chemical-plant-mist-20260311-0807.webp",
+      "title": "Bender Jibmix Tiltshift Chemical Plant Mist",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110807",
+      "sha256": "1eb93bdac67fe17084f51459072aa11f00616f4b5b5894f81e523091c1a80aa7",
+      "ahash": "d8f8ee0a180efa1c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-magnetic-anomaly-lab-20260311-0807.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-magnetic-anomaly-lab-20260311-0807.webp",
+      "title": "Bender Jibmix Tiltshift Magnetic Anomaly Lab",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-11",
+      "sortKey": "202603110807",
+      "sha256": "15379ae75c5fe78a369ebbacf44a581774f39686635faddf0c6b5ab3bb877a21",
+      "ahash": "0fc381147f7efc40"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-whalers-station-rust-20260311-0006.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-whalers-station-rust-20260311-0006.webp",
