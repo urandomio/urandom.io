@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-12T07:10:29.225Z",
+  "generatedAt": "2026-03-12T15:08:38.272Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-crystal-cave-expedition-20260312-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-crystal-cave-expedition-20260312-0806.webp",
+      "title": "Bender Jibmix Tiltshift Crystal Cave Expedition",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120806",
+      "sha256": "1c5eb0a415892267a4a707ff011c93dce24a5feef788a8abea1c32e4de154042",
+      "ahash": "000c3e7e3e0c4c00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-offshore-platform-reef-20260312-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-offshore-platform-reef-20260312-0806.webp",
+      "title": "Bender Jibmix Tiltshift Offshore Platform Reef",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120806",
+      "sha256": "b8a77bcf4cb7f91e42948eaa00ac24beb53986e0bed9f4e6a0ec7846dfe59a9e",
+      "ahash": "ffff978183000000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mangrove-refinery-20260312-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mangrove-refinery-20260312-0806.webp",
+      "title": "Bender Jibmix Tiltshift Mangrove Refinery",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120806",
+      "sha256": "e8070223c8e087d2074bab8605f7f87aa8235e9ac839cd428633ca3b253b0456",
+      "ahash": "ff3d1e000018181c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-printing-press-loop-20260312-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-printing-press-loop-20260312-0806.webp",
+      "title": "Bender Jibmix Tiltshift Printing Press Loop",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120806",
+      "sha256": "9aefcc86650b938a0ab20645c4b68e16c338b57d66fa3d6248ead2291207f5d7",
+      "ahash": "2030c83f06860e0c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-library-all-open-20260312-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-library-all-open-20260312-0806.webp",
+      "title": "Bender Jibmix Tiltshift Library All Open",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "library"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120806",
+      "sha256": "fcfb5cdd1dafe561da821de643c70a49a8e307db5bfb5d69533bcb5187a8f6bb",
+      "ahash": "103c183c7cff00ff"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-peat-bog-gazebo-20260312-0008.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-peat-bog-gazebo-20260312-0008.webp",
