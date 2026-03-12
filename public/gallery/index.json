@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-11T23:09:33.626Z",
+  "generatedAt": "2026-03-12T07:10:29.225Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-peat-bog-gazebo-20260312-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-peat-bog-gazebo-20260312-0008.webp",
+      "title": "Bender Jibmix Tiltshift Peat Bog Gazebo",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120008",
+      "sha256": "c3111974e2450c95f256cd41d3ea9139d94d2654ea2bbeb98da67a8580cd9102",
+      "ahash": "3cf6e39b41c07666"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-satellite-uplink-farm-ash-20260312-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-satellite-uplink-farm-ash-20260312-0008.webp",
+      "title": "Bender Jibmix Tiltshift Satellite Uplink Farm Ash",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120008",
+      "sha256": "37dcd7ff01e3f3a73a74e1b7a298e62b8ea4948c1e2474d331130366bce8d2c4",
+      "ahash": "ffe0fc3b001d0000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-drained-reservoir-village-20260312-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drained-reservoir-village-20260312-0008.webp",
+      "title": "Bender Jibmix Tiltshift Drained Reservoir Village",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120008",
+      "sha256": "383eed1f91a9c73768315729123643c7b08b3a08f1645b88e50621cd75574db2",
+      "ahash": "ff7b000c1c181c1c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cryonics-power-failure-20260312-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cryonics-power-failure-20260312-0008.webp",
+      "title": "Bender Jibmix Tiltshift Cryonics Power Failure",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120008",
+      "sha256": "8e81013f651ba600671ce62ceb4338934161a8bedf324822e7a4bbf5cf366140",
+      "ahash": "189bee3e1c3c3c3c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-drowned-clocktower-20260312-0008.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-drowned-clocktower-20260312-0008.webp",
+      "title": "Bender Jibmix Tiltshift Drowned Clocktower",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-12",
+      "sortKey": "202603120008",
+      "sha256": "99a31c32bb8067102205ce0260600de050906ff039d59473d94b549300769177",
+      "ahash": "feee446044c78300"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-housing-block-dark-floor-20260311-1607.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-housing-block-dark-floor-20260311-1607.webp",
