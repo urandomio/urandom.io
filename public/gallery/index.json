@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-13T15:12:16.347Z",
+  "generatedAt": "2026-03-13T23:08:41.804Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-colliery-winding-house-20260313-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-colliery-winding-house-20260313-1606.webp",
+      "title": "Bender Jibmix Tiltshift Colliery Winding House",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603131606",
+      "sha256": "bf16c14cb4b51937b4b73f31bafd70778566f36a4d09c1e0efa14eca561fac14",
+      "ahash": "3e38e70f50807c70"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-brutalist-swimming-pool-winter-20260313-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-brutalist-swimming-pool-winter-20260313-1606.webp",
+      "title": "Bender Jibmix Tiltshift Brutalist Swimming Pool Winter",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603131606",
+      "sha256": "5b47e6a9711e2824062247036711e6de1fc904f724b34712117bf465d57d9357",
+      "ahash": "000400ffbd7effc3"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-data-center-flood-crystalline-20260313-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-data-center-flood-crystalline-20260313-1606.webp",
+      "title": "Bender Jibmix Tiltshift Data Center Flood Crystalline",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603131606",
+      "sha256": "33a416daf13ad4dde5daee8e1e4feb7e993802ec6f250679f477baf4f72bcb5f",
+      "ahash": "8c96ff1e02063e5c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cistern-underground-20260313-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cistern-underground-20260313-1606.webp",
+      "title": "Bender Jibmix Tiltshift Cistern Underground",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603131606",
+      "sha256": "2eb45842865551954d43999b0d875dd2708e8fef02eb8835157ae88aaaae64e8",
+      "ahash": "183c3c3e3e341018"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-lunar-museum-nightfall-20260313-1606.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-lunar-museum-nightfall-20260313-1606.webp",
+      "title": "Bender Jibmix Tiltshift Lunar Museum Nightfall",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603131606",
+      "sha256": "23a11cdd4cc074c80966bf491d2607e93f06e440f8236d7fe27006bbe503cd35",
+      "ahash": "000020fbff7f7630"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-diving-bell-cathedral-20260313-0809.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-diving-bell-cathedral-20260313-0809.webp",
