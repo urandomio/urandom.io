@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-12T15:08:38.272Z",
+  "generatedAt": "2026-03-13T15:12:16.347Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-diving-bell-cathedral-20260313-0809.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-diving-bell-cathedral-20260313-0809.webp",
+      "title": "Bender Jibmix Tiltshift Diving Bell Cathedral",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603130809",
+      "sha256": "21c789d78c565ff9407daa6a1dc22cc1c8f8fffd930fcc31252725693bca92c4",
+      "ahash": "003c3e0e06463e00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mangrove-refinery-20260313-0809.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mangrove-refinery-20260313-0809.webp",
+      "title": "Bender Jibmix Tiltshift Mangrove Refinery",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603130809",
+      "sha256": "9f3c94f8867649952a102dd580d0c7350ef37349b3537abeedc24b405c2b7311",
+      "ahash": "fdedf00020c0616f"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flooded-opera-foyer-20260313-0809.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flooded-opera-foyer-20260313-0809.webp",
+      "title": "Bender Jibmix Tiltshift Flooded Opera Foyer",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603130809",
+      "sha256": "7316206794a6b12b2764ce16f0875aab38fdaa8faa42b1b397fee1c3d235e761",
+      "ahash": "185f3c1808181b38"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-flying-boat-lake-shore-20260313-0809.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-flying-boat-lake-shore-20260313-0809.webp",
+      "title": "Bender Jibmix Tiltshift Flying Boat Lake Shore",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603130809",
+      "sha256": "7daca42c68332f0655fb830ac9e277476301e674107d4d344de60450cc123e3d",
+      "ahash": "ff3f031f3f030000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-fjord-research-vessel-ice-20260313-0809.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-fjord-research-vessel-ice-20260313-0809.webp",
+      "title": "Bender Jibmix Tiltshift Fjord Research Vessel Ice",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-13",
+      "sortKey": "202603130809",
+      "sha256": "6edc1946628d45baf8b42ef6d5f76d8d061c9e4be015d28cf65f20afc93458ab",
+      "ahash": "0f3f38f90f06163e"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-crystal-cave-expedition-20260312-0806.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-crystal-cave-expedition-20260312-0806.webp",
