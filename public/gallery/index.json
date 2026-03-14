@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-14T07:08:11.708Z",
+  "generatedAt": "2026-03-14T15:10:39.139Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-phrenology-museum-midnight-20260314-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-phrenology-museum-midnight-20260314-0808.webp",
+      "title": "Bender Jibmix Tiltshift Phrenology Museum Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140808",
+      "sha256": "f8c527e9e702cad3bc3de0de6e75c876ccee6ca0253268a46539f24b01f2474f",
+      "ahash": "0000d7d7c30c3c3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-space-shuttle-hangar-20260314-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-space-shuttle-hangar-20260314-0808.webp",
+      "title": "Bender Jibmix Tiltshift Space Shuttle Hangar",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140808",
+      "sha256": "da044a99c9c4e0da8244135ae12abd0d19915d703f5846c29ded49ddd126fae3",
+      "ahash": "000099bd7e43e7fc"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-moonbase-crater-rim-20260314-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-moonbase-crater-rim-20260314-0808.webp",
+      "title": "Bender Jibmix Tiltshift Moonbase Crater Rim",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140808",
+      "sha256": "1718c1a6a351b2f891e94ac678579b11e39849160d1fe7d097cfc3030013e68e",
+      "ahash": "0202ecefc70f0f7c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mausoleum-rain-20260314-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mausoleum-rain-20260314-0808.webp",
+      "title": "Bender Jibmix Tiltshift Mausoleum Rain",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140808",
+      "sha256": "2c0349ca2da85830784e9edefa52b6460869b090f83be5689127ab70054e9403",
+      "ahash": "fc6fc1c9c8487c3a"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-metro-station-flood-20260314-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-metro-station-flood-20260314-0808.webp",
+      "title": "Bender Jibmix Tiltshift Metro Station Flood",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140808",
+      "sha256": "8baa45425f5270768fad5b4fce5607f707ea5ab00fade12d0107de81d44563f7",
+      "ahash": "303bff27181c1000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-torii-drowned-shore-20260314-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-torii-drowned-shore-20260314-0005.webp",
