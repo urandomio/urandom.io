@@ -1,7 +1,95 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-13T23:08:41.804Z",
+  "generatedAt": "2026-03-14T07:08:11.708Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-torii-drowned-shore-20260314-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-torii-drowned-shore-20260314-0005.webp",
+      "title": "Bender Jibmix Tiltshift Torii Drowned Shore",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140005",
+      "sha256": "b07d759c1cf63dc536823680f3dace8fa3043862710c5683b4dd0ce151f18f6c",
+      "ahash": "fe3fdb1ec2000010"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-telescope-array-collapse-20260314-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-telescope-array-collapse-20260314-0005.webp",
+      "title": "Bender Jibmix Tiltshift Telescope Array Collapse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "cosmic"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140005",
+      "sha256": "37e40a620d51c6abf8e056a53321d89a120d3552f1d4a9095bcb8eb3c0d83d78",
+      "ahash": "fe780018183c1000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mine-elevator-20260314-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mine-elevator-20260314-0005.webp",
+      "title": "Bender Jibmix Tiltshift Mine Elevator",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140005",
+      "sha256": "cbe86dbe37b974cad89866c8d3b49884224d8a93d2d80baa82b47f84ad1a0dba",
+      "ahash": "03676e0e02020c0c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-forest-concert-hall-20260314-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-forest-concert-hall-20260314-0005.webp",
+      "title": "Bender Jibmix Tiltshift Forest Concert Hall",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140005",
+      "sha256": "4aabc8e1f4b2eefc9f5e3138964f49096818d9ab6183cf0f4b1f06d79ec11249",
+      "ahash": "007feaf1713e4c18"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-casino-reservoir-neon-20260314-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-casino-reservoir-neon-20260314-0005.webp",
+      "title": "Bender Jibmix Tiltshift Casino Reservoir Neon",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "neon",
+        "casino"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-14",
+      "sortKey": "202603140005",
+      "sha256": "f6e216fa3a0bc6fc9b97951fda1d2ef5c9e9d2107e2721426b8b67d8459d04a0",
+      "ahash": "0f073c78f6701800"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-colliery-winding-house-20260313-1606.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-colliery-winding-house-20260313-1606.webp",
