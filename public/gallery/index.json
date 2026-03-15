@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-15T07:09:38.046Z",
+  "generatedAt": "2026-03-15T15:11:06.560Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-geothermal-vent-platform-20260315-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-geothermal-vent-platform-20260315-0808.webp",
+      "title": "Bender Jibmix Tiltshift Geothermal Vent Platform",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603150808",
+      "sha256": "38830bff7580198b1ce63350e8ad505d4757bea74bd21bb16911cfdf34623798",
+      "ahash": "ffffc04010183810"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-underground-colosseum-20260315-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underground-colosseum-20260315-0808.webp",
+      "title": "Bender Jibmix Tiltshift Underground Colosseum",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603150808",
+      "sha256": "292ac578ffec660d701acb74df89d63d14dbb75577f345e71f96491865c4e397",
+      "ahash": "1858c040787e7e3c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-pipe-organ-flood-20260315-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-pipe-organ-flood-20260315-0808.webp",
+      "title": "Bender Jibmix Tiltshift Pipe Organ Flood",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603150808",
+      "sha256": "f586c78beb35bdabda4ae06ef1b98df1c6558dd90469c4d0d8f92f7d380ea017",
+      "ahash": "7c7c5b7f10183c7e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-algae-biofarm-abandon-20260315-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-algae-biofarm-abandon-20260315-0808.webp",
+      "title": "Bender Jibmix Tiltshift Algae Biofarm Abandon",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603150808",
+      "sha256": "1de2ba69773e5af10a0610d48a18a96fcb76e06c1a98f092fcb20f19c0c54895",
+      "ahash": "1f0fbbe0391c3800"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-offshore-platform-reef-20260315-0808.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-offshore-platform-reef-20260315-0808.webp",
+      "title": "Bender Jibmix Tiltshift Offshore Platform Reef",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603150808",
+      "sha256": "b2da2d01d93903a4ebbb760f8df188b73eff0873638abc52c9bd75d93cdeac3d",
+      "ahash": "ffffc1c180000000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-aurora-borealis-shipwreck-20260315-0006.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-aurora-borealis-shipwreck-20260315-0006.webp",
