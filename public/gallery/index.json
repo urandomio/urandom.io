@@ -1,7 +1,94 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-15T15:11:06.560Z",
+  "generatedAt": "2026-03-15T23:11:53.983Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tide-prediction-machine-20260315-1608.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tide-prediction-machine-20260315-1608.webp",
+      "title": "Bender Jibmix Tiltshift Tide Prediction Machine",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603151608",
+      "sha256": "c9d2b4e55222f26613fd0a53e884deb3833ffb600436fcd245815f8d65b71fab",
+      "ahash": "003eff3f5860203c"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-frozen-harbor-lighthouse-20260315-1608.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-frozen-harbor-lighthouse-20260315-1608.webp",
+      "title": "Bender Jibmix Tiltshift Frozen Harbor Lighthouse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603151608",
+      "sha256": "cadcf130d75aaa1ad01d0498b0b49c153cb28d3bd836745e284274df59e82848",
+      "ahash": "ffffff0a1e0c1f18"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cartography-vault-20260315-1608.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cartography-vault-20260315-1608.webp",
+      "title": "Bender Jibmix Tiltshift Cartography Vault",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603151608",
+      "sha256": "448aae0ad1664350b7ae4011e450696174fa64700b30f4f0e362c729762a3aab",
+      "ahash": "be5e1c001f5f0000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-underwater-telegraph-bell-20260315-1608.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-underwater-telegraph-bell-20260315-1608.webp",
+      "title": "Bender Jibmix Tiltshift Underwater Telegraph Bell",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603151608",
+      "sha256": "2faf6bdb400025513e296d41765709ed06bf00b1c6473b15a765a2750a79b178",
+      "ahash": "c4c4d8ca88d8f0e0"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-brutalist-pool-demolition-20260315-1608.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-brutalist-pool-demolition-20260315-1608.webp",
+      "title": "Bender Jibmix Tiltshift Brutalist Pool Demolition",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-15",
+      "sortKey": "202603151608",
+      "sha256": "cbf55887d397c3e34d63c35c9882baf7a08224126bb94cdf411a1348bc0440f6",
+      "ahash": "3c18dd00df1c1c24"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-geothermal-vent-platform-20260315-0808.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-geothermal-vent-platform-20260315-0808.webp",
