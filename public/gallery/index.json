@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-16T15:08:56.252Z",
+  "generatedAt": "2026-03-16T23:09:14.579Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-salt-mine-server-heat-20260316-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-salt-mine-server-heat-20260316-1605.webp",
+      "title": "Bender Jibmix Tiltshift Salt Mine Server Heat",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "servers"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603161605",
+      "sha256": "5b248bc20495e7256ff061d794799b299b586033197168c666b2c85906f55047",
+      "ahash": "183c6870783c9f3f"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-tidal-power-station-20260316-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tidal-power-station-20260316-1605.webp",
+      "title": "Bender Jibmix Tiltshift Tidal Power Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603161605",
+      "sha256": "ff4ab5bb914970cd7e88c7fe66df319aa1ee4e3b0c0a0aa71b3ff5e3ece82f5b",
+      "ahash": "ff30040040407030"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-mammoth-cave-railway-20260316-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-mammoth-cave-railway-20260316-1605.webp",
+      "title": "Bender Jibmix Tiltshift Mammoth Cave Railway",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603161605",
+      "sha256": "1e94315a3a5bc963374e2777c82896b5c3d7949266e95822191b3f05510cdad0",
+      "ahash": "0c0e1e0f3f750402"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-bone-tide-beach-20260316-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-bone-tide-beach-20260316-1605.webp",
+      "title": "Bender Jibmix Tiltshift Bone Tide Beach",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603161605",
+      "sha256": "ddd057c55061a8e057dfbd069d4a98cba61ce3d9ec67184e7bc21441915fa36b",
+      "ahash": "ffffe00840083000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-laundry-industrial-midnight-20260316-1605.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-laundry-industrial-midnight-20260316-1605.webp",
+      "title": "Bender Jibmix Tiltshift Laundry Industrial Midnight",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603161605",
+      "sha256": "dd1dcd431d584df76eeb6393cf315a178fc4ecbc9b1172941575f49b89604af3",
+      "ahash": "080ceffe3e7ef030"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-japanese-onsen-ruin-20260316-0806.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-japanese-onsen-ruin-20260316-0806.webp",
