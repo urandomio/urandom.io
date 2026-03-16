@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-16T07:08:32.306Z",
+  "generatedAt": "2026-03-16T15:08:56.252Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-japanese-onsen-ruin-20260316-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-japanese-onsen-ruin-20260316-0806.webp",
+      "title": "Bender Jibmix Tiltshift Japanese Onsen Ruin",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160806",
+      "sha256": "e0db8de842da4353951f3cd09f52535ac660e673be0451373dee61c645492bb7",
+      "ahash": "3f1eff3c1d831c00"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-fjord-bronze-age-emerging-20260316-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-fjord-bronze-age-emerging-20260316-0806.webp",
+      "title": "Bender Jibmix Tiltshift Fjord Bronze Age Emerging",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160806",
+      "sha256": "1cbd8b625a2f4514bc7878a94c207df091ec7810a96cc36440071b847e1eaf7d",
+      "ahash": "ee8b0740303899e0"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cave-dive-terminal-sump-20260316-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cave-dive-terminal-sump-20260316-0806.webp",
+      "title": "Bender Jibmix Tiltshift Cave Dive Terminal Sump",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160806",
+      "sha256": "4e5df2f012bae62bb660f71c9d39e444a91e26a1dab9c1658af9a8496466e1bf",
+      "ahash": "00040e1f7e072300"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-chalk-cliff-monastery-20260316-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-chalk-cliff-monastery-20260316-0806.webp",
+      "title": "Bender Jibmix Tiltshift Chalk Cliff Monastery",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160806",
+      "sha256": "c62df3d78028aac1e3c8140fd813182db1ee474baadd4f91fa5eeb1ec220e519",
+      "ahash": "c0f0f1f1f3670602"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-train-depot-roundhouse-20260316-0806.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-train-depot-roundhouse-20260316-0806.webp",
+      "title": "Bender Jibmix Tiltshift Train Depot Roundhouse",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160806",
+      "sha256": "87eb1a8b5c1ce3d534b25b7e1e8d5aada71c990bde9d86711fbc2ea33e214e2f",
+      "ahash": "307a7ff3c0607030"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-brutalist-pool-demolition-20260316-0005.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-brutalist-pool-demolition-20260316-0005.webp",
