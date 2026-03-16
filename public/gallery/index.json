@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-15T23:11:53.983Z",
+  "generatedAt": "2026-03-16T07:08:32.306Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-brutalist-pool-demolition-20260316-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-brutalist-pool-demolition-20260316-0005.webp",
+      "title": "Bender Jibmix Tiltshift Brutalist Pool Demolition",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160005",
+      "sha256": "87f0f0a64150258301317d9e570b65a799cab5a7bf06a5ca32a5c3f7a67bc389",
+      "ahash": "3c3c190043df0f39"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-cave-dive-terminal-sump-20260316-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-cave-dive-terminal-sump-20260316-0005.webp",
+      "title": "Bender Jibmix Tiltshift Cave Dive Terminal Sump",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160005",
+      "sha256": "59a67e47774436ab36ad1f3a55f0e55b5860e5d23aaf461ecf50fe3c43c6d331",
+      "ahash": "00183c3e3e7c7618"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-levee-breach-warning-20260316-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-levee-breach-warning-20260316-0005.webp",
+      "title": "Bender Jibmix Tiltshift Levee Breach Warning",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160005",
+      "sha256": "181671fd0883d61ef38b1e4fd997418ba9169520b546abfc870516918b192d39",
+      "ahash": "fffccecb8b070600"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-jungle-ground-station-20260316-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-jungle-ground-station-20260316-0005.webp",
+      "title": "Bender Jibmix Tiltshift Jungle Ground Station",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160005",
+      "sha256": "a00a66c23ea2326db2e601d7f62c2bde9f56edc41ca38fe210957c7f5384641e",
+      "ahash": "7f3cfe7c00800000"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-grain-elevator-rupture-20260316-0005.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-grain-elevator-rupture-20260316-0005.webp",
+      "title": "Bender Jibmix Tiltshift Grain Elevator Rupture",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-16",
+      "sortKey": "202603160005",
+      "sha256": "71c1bd2f63272d7cca39d2dc154a32cae939d74b04ab7ea85cc0a05c3b54f498",
+      "ahash": "1fcc840c3c1e7cf8"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-tide-prediction-machine-20260315-1608.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-tide-prediction-machine-20260315-1608.webp",
