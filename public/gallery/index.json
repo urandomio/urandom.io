@@ -1,7 +1,93 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-16T23:09:14.579Z",
+  "generatedAt": "2026-03-17T07:09:03.289Z",
   "images": [
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-methane-seep-buoy-20260317-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-methane-seep-buoy-20260317-0006.webp",
+      "title": "Bender Jibmix Tiltshift Methane Seep Buoy",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-17",
+      "sortKey": "202603170006",
+      "sha256": "f78dda2d2ec03ed9a30624e26c49d912d05699d7cbb506d4c56348867c04f314",
+      "ahash": "04103c6f81fd3f18"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-crystal-palace-winter-ruin-20260317-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-crystal-palace-winter-ruin-20260317-0006.webp",
+      "title": "Bender Jibmix Tiltshift Crystal Palace Winter Ruin",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-17",
+      "sortKey": "202603170006",
+      "sha256": "0379273d5d01e974cec5117530b232fcc06d2faafd500b4aab65963815190bd9",
+      "ahash": "1f1e1c38289e7c3e"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-derelict-funicular-20260317-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-derelict-funicular-20260317-0006.webp",
+      "title": "Bender Jibmix Tiltshift Derelict Funicular",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-17",
+      "sortKey": "202603170006",
+      "sha256": "19b31c1e7a9d45690494721300da591c1ebdaedb5d33424b9330b95c12d5f621",
+      "ahash": "3f1f0d0f07030301"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-bioluminescent-cave-pool-20260317-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-bioluminescent-cave-pool-20260317-0006.webp",
+      "title": "Bender Jibmix Tiltshift Bioluminescent Cave Pool",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror",
+        "hydrophobia"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-17",
+      "sortKey": "202603170006",
+      "sha256": "8812476fd3bcd9a391ee0e79d02e054760175f2bfda00e9b96d595c2b5782eac",
+      "ahash": "00181c7efc9d7f02"
+    },
+    {
+      "src": "/gallery/bender-jibmix-tiltshift-grain-elevator-rupture-20260317-0006.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-grain-elevator-rupture-20260317-0006.webp",
+      "title": "Bender Jibmix Tiltshift Grain Elevator Rupture",
+      "description": "",
+      "tags": [
+        "ai-art",
+        "tilt-shift",
+        "miniature",
+        "horror"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-17",
+      "sortKey": "202603170006",
+      "sha256": "fa12c490a7a0c217e1298f6a28f4ed051a7fd2a5a81794340507125cfc55eec0",
+      "ahash": "2b092323237bfdc0"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-salt-mine-server-heat-20260316-1605.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-salt-mine-server-heat-20260316-1605.webp",
