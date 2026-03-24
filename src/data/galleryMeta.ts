@@ -143,6 +143,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-flux-mirror-hellscape-ballroom-20260324-1604.png',
+    title: 'All of Her at Once',
+    description: 'Every version she has ever been, reflected simultaneously. The ones with their eyes closed are the ones she forgot.',
+    tags: ['surreal', 'mirror', 'hallucination', 'liminal-space', 'horror', 'fashion', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
     src: '/gallery/bender-flux-cryptid-mugshot-grey-alien-20260324-1550.png',
     title: 'Booked',
     description: 'Charges: trespassing, unauthorized aerial vehicle operation, cattle-related incidents (12 counts). He said nothing during processing. He has said nothing since. He does not seem concerned.',
