@@ -10,6 +10,13 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-taxidermy-human-wedding-20260324-1438.png',
+    title: 'For Better or Worse',
+    description: 'The smiles were sewn on. The eyes were replaced. The hands were repositioned three times before they looked natural enough. They have been dancing for forty years. Neither of them has noticed.',
+    tags: ['horror', 'taxidermy', 'human', 'uncanny', 'wedding', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
     src: '/gallery/bender-flux-zombie-bird-crow-20260324-1428.png',
     title: 'Still Watching',
     description: 'It has been on that gravestone since before you were born. The flesh is mostly gone now. The eyes are not.',

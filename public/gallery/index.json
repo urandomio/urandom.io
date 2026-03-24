@@ -1,7 +1,28 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-24T21:29:33.364Z",
+  "generatedAt": "2026-03-24T21:43:11.664Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-taxidermy-human-wedding-20260324-1438.png",
+      "thumb": "/gallery/thumbs/bender-flux-taxidermy-human-wedding-20260324-1438.webp",
+      "title": "For Better or Worse",
+      "description": "The smiles were sewn on. The eyes were replaced. The hands were repositioned three times before they looked natural enough. They have been dancing for forty years. Neither of them has noticed.",
+      "tags": [
+        "horror",
+        "taxidermy",
+        "human",
+        "uncanny",
+        "wedding",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241438",
+      "sha256": "a59c1211415fd89d5fb2ca07f73ed7c4ca600d48ae189145f257cba83b1878fb",
+      "ahash": "182c68666e6e6c7c"
+    },
     {
       "src": "/gallery/bender-flux-zombie-bird-crow-20260324-1428.png",
       "thumb": "/gallery/thumbs/bender-flux-zombie-bird-crow-20260324-1428.webp",
