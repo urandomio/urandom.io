@@ -1,7 +1,201 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-17T07:09:03.289Z",
+  "generatedAt": "2026-03-24T16:25:30.791Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-deepsea-vampire-squid-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-vampire-squid-20260324-0923.webp",
+      "title": "Infernal Cloak",
+      "description": "It is not a squid. It is not an octopus. It is something older than both — a relict from before the ocean had names. It turns itself inside out when it wants to disappear, and the darkness swallows it completely.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "vampire-squid",
+        "cephalopod",
+        "bioluminescent",
+        "dark",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "d27ec72a2b6340acbce026f1e37af4c73dfb8465086752d9ad15a8fce2d5e9d9",
+      "ahash": "7e3e3e3c3c100000"
+    },
+    {
+      "src": "/gallery/bender-flux-deepsea-dragonfish-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-dragonfish-20260324-0923.webp",
+      "title": "Black Mirror",
+      "description": "Its scales absorb 99.9% of all light. In the deep ocean, it is not merely dark — it is absent. The only evidence of its existence is the cold glow of its photophores, and then the sudden end of other things.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "dragonfish",
+        "bioluminescent",
+        "dark",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "f1501096e60347e92f21c94c03f7a1e47d9812a39079a521ef6ed86f68300db8",
+      "ahash": "e0fcfe7464600000"
+    },
+    {
+      "src": "/gallery/bender-flux-deepsea-goblin-shark-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-goblin-shark-20260324-0923.webp",
+      "title": "The Protrusion",
+      "description": "The jaw extends further than jaws are supposed to extend. It snaps forward, independent of the skull, and retracts before you have time to process what you saw. You are already inside it.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "shark",
+        "goblin-shark",
+        "dark",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "1396566a134d8615f1c7cc4382aade6c18393fc707bab85b117343f0eeb18aaa",
+      "ahash": "7e7e7f1f00181000"
+    },
+    {
+      "src": "/gallery/bender-flux-deepsea-barreleye-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-barreleye-20260324-0923.webp",
+      "title": "All-Seeing",
+      "description": "The dome is transparent. The eyes rotate inside it — upward, always upward — watching for shadows falling from the world above. It has been watching longer than you have existed.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "barreleye",
+        "alien",
+        "bioluminescent",
+        "dark",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "1141b24b5d62efa387fd034ae32816ca98c7d7695f46c9937c536a9f2306b6bb",
+      "ahash": "183c3c7e46460000"
+    },
+    {
+      "src": "/gallery/bender-flux-deepsea-giant-isopod-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-giant-isopod-20260324-0923.webp",
+      "title": "Pale Sovereign",
+      "description": "It does not move quickly. It does not need to. In the hadal dark, patience is the only predator that matters. Fourteen eyes, none of which close. Ever.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "isopod",
+        "alien",
+        "dark",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "bb4e90ac314866e36577442a90c0d5713288aa77b52a06109c69116969dfea5f",
+      "ahash": "00183c3cf2c2637c"
+    },
+    {
+      "src": "/gallery/bender-flux-deepsea-ghost-shark-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-ghost-shark-20260324-0923.webp",
+      "title": "Chimera",
+      "description": "Half shark, half something else entirely. The rostrum extends like a blade, sensing electromagnetic fields in the absolute dark. It has been down here since before the continents finished moving.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "chimaera",
+        "ghost-shark",
+        "dark",
+        "prehistoric",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "2cf75083ca2ef98bded1d07f998735ca803f1d8d75d33f4849005dedc61a0ed1",
+      "ahash": "fc7c187e3e000000"
+    },
+    {
+      "src": "/gallery/bender-flux-deepsea-fangtooth-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-fangtooth-20260324-0923.webp",
+      "title": "Disproportionate",
+      "description": "The teeth are so large the mouth cannot fully close. They slide into grooves along the side of the skull instead. This is not a design flaw. This is the ocean deciding what terror should look like.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "fangtooth",
+        "dark",
+        "macro",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "70bf8891b82c0f275b959bb9b690881b6de1db7273f67cc6aa21641b026fc5f6",
+      "ahash": "783c3c3c627a0000"
+    },
+    {
+      "src": "/gallery/bender-flux-deepsea-siphonophore-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-siphonophore-20260324-0923.webp",
+      "title": "Colony",
+      "description": "It is not one creature. It is hundreds — each one specialized, none capable of surviving alone. Together they form something forty meters long that drifts through the dark like a cathedral made of glass and hunger.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "siphonophore",
+        "bioluminescent",
+        "colonial",
+        "dark",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "5fd71ea9f7c992af81981449af0f8fd8cda903d773d2b8a818e7ed68697787d9",
+      "ahash": "0060703c1c0e0000"
+    },
+    {
+      "src": "/gallery/bender-flux-deepsea-frilled-shark-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-frilled-shark-20260324-0923.webp",
+      "title": "Living Fossil",
+      "description": "Its lineage predates the dinosaurs by a hundred million years. Evolution looked at it and decided: perfect. Do not change a single tooth.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "shark",
+        "prehistoric",
+        "dark",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "198eff67cb195e4f4873c7b7e4a98ccb4d6dddca32de4a02be87cd86a00b10c4",
+      "ahash": "fefefe80c0000000"
+    },
+    {
+      "src": "/gallery/bender-flux-deepsea-anglerfish-20260324-0923.png",
+      "thumb": "/gallery/thumbs/bender-flux-deepsea-anglerfish-20260324-0923.webp",
+      "title": "The Lure",
+      "description": "Six hundred meters down, something blinks. Slow. Patient. Its light is the only thing that exists in the abyss — and it knows that. The teeth are already open.",
+      "tags": [
+        "deep-sea",
+        "horror",
+        "bioluminescent",
+        "anglerfish",
+        "dark",
+        "bender"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240923",
+      "sha256": "e0869ade20ecbb704c2444e58ec889b4b1e70ae13f983277f38d91a2d559b04d",
+      "ahash": "0c3e7e783c380000"
+    },
     {
       "src": "/gallery/bender-jibmix-tiltshift-methane-seep-buoy-20260317-0006.png",
       "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-methane-seep-buoy-20260317-0006.webp",
