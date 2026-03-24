@@ -143,6 +143,20 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-flux-mirror-hellscape-folding-space-20260324-1640.png',
+    title: 'Wrong Direction',
+    description: 'She saw herself ahead. She stopped walking. The version ahead did not.',
+    tags: ['surreal', 'hallucination', 'non-euclidean', 'horror', 'liminal-space', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-mirror-hellscape-mirror-eyes-20260324-1640.png',
+    title: 'Everything She Didn\'t Choose',
+    description: 'Each eye holds a different life. The one on the left: she stayed. The one on the right: she left. Neither one is the one she is living.',
+    tags: ['surreal', 'hallucination', 'mirror', 'horror', 'portrait', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
     src: '/gallery/bender-flux-mirror-hellscape-faces-20260324-1616.png',
     title: 'The Room That Knows You',
     description: 'Every surface is her. The ones that are screaming remember something she has tried to forget. The ones that are sleeping have given up.',

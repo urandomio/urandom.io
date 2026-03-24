@@ -1,7 +1,49 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-24T23:17:41.399Z",
+  "generatedAt": "2026-03-24T23:41:55.177Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-mirror-hellscape-mirror-eyes-20260324-1640.png",
+      "thumb": "/gallery/thumbs/bender-flux-mirror-hellscape-mirror-eyes-20260324-1640.webp",
+      "title": "Everything She Didn't Choose",
+      "description": "Each eye holds a different life. The one on the left: she stayed. The one on the right: she left. Neither one is the one she is living.",
+      "tags": [
+        "surreal",
+        "hallucination",
+        "mirror",
+        "horror",
+        "portrait",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241640",
+      "sha256": "5bba4ef69a3d0a0617a4b91b3e88fc8095efed65b60bb0da48899f187ade2d44",
+      "ahash": "0038383c3038b8f9"
+    },
+    {
+      "src": "/gallery/bender-flux-mirror-hellscape-folding-space-20260324-1640.png",
+      "thumb": "/gallery/thumbs/bender-flux-mirror-hellscape-folding-space-20260324-1640.webp",
+      "title": "Wrong Direction",
+      "description": "She saw herself ahead. She stopped walking. The version ahead did not.",
+      "tags": [
+        "surreal",
+        "hallucination",
+        "non-euclidean",
+        "horror",
+        "liminal-space",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241640",
+      "sha256": "edbec297d6ccd97e681910252e3090b81ad6338f5c0ac6c3d79448b86d71c1b6",
+      "ahash": "001c3c3e3e3e1e0c"
+    },
     {
       "src": "/gallery/bender-flux-mirror-hellscape-escher-20260324-1616.png",
       "thumb": "/gallery/thumbs/bender-flux-mirror-hellscape-escher-20260324-1616.webp",
