@@ -1,7 +1,113 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-24T19:06:33.443Z",
+  "generatedAt": "2026-03-24T21:29:33.364Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-zombie-bird-crow-20260324-1428.png",
+      "thumb": "/gallery/thumbs/bender-flux-zombie-bird-crow-20260324-1428.webp",
+      "title": "Still Watching",
+      "description": "It has been on that gravestone since before you were born. The flesh is mostly gone now. The eyes are not.",
+      "tags": [
+        "horror",
+        "undead",
+        "zombie",
+        "bird",
+        "crow",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241428",
+      "sha256": "8a43cc181e682c473f181677105fa93a6f59c78ff3197d8830d7def35f1a6a0d",
+      "ahash": "fef6e6c6c60c0000"
+    },
+    {
+      "src": "/gallery/bender-flux-zombie-bird-flock-20260324-1428.png",
+      "thumb": "/gallery/thumbs/bender-flux-zombie-bird-flock-20260324-1428.webp",
+      "title": "Migration",
+      "description": "They have been flying south for eleven years. They have not arrived. The sky turns red wherever they pass. Nobody looks up anymore.",
+      "tags": [
+        "horror",
+        "undead",
+        "zombie",
+        "bird",
+        "flock",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241428",
+      "sha256": "a9aa54ea129f238d88062a6a84068e4866c2c7313b8ad97d93ae3cde954ccdfe",
+      "ahash": "fcfff8f8f0e00000"
+    },
+    {
+      "src": "/gallery/bender-flux-zombie-bird-vulture-20260324-1428.png",
+      "thumb": "/gallery/thumbs/bender-flux-zombie-bird-vulture-20260324-1428.webp",
+      "title": "The Patience of Rot",
+      "description": "It used to wait for things to die. Now it does not have to wait. Now it simply arrives.",
+      "tags": [
+        "horror",
+        "undead",
+        "zombie",
+        "bird",
+        "vulture",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241428",
+      "sha256": "c41eeef51a2f328442d77fe59e0c43b2aed4190c00891496e4bbe65e7f1b5adc",
+      "ahash": "7f3f390107270600"
+    },
+    {
+      "src": "/gallery/bender-flux-zombie-bird-raven-20260324-1428.png",
+      "thumb": "/gallery/thumbs/bender-flux-zombie-bird-raven-20260324-1428.webp",
+      "title": "Nevermore (Decomposed)",
+      "description": "It spoke one word, once. The word was not \"nevermore.\" Nobody remembers what it was. The beak is mostly gone now anyway.",
+      "tags": [
+        "horror",
+        "undead",
+        "zombie",
+        "bird",
+        "raven",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241428",
+      "sha256": "5da064aad339177d406e8f12724af5a72aa316a0853f6b37cf153319ad8d2fb1",
+      "ahash": "38dcd2400442cfff"
+    },
+    {
+      "src": "/gallery/bender-flux-zombie-bird-owl-20260324-1428.png",
+      "thumb": "/gallery/thumbs/bender-flux-zombie-bird-owl-20260324-1428.webp",
+      "title": "Hoo",
+      "description": "The maggots in the chest cavity are bioluminescent. Nobody knows why. The single remaining eye watches you regardless of which direction you move.",
+      "tags": [
+        "horror",
+        "undead",
+        "zombie",
+        "bird",
+        "owl",
+        "dark",
+        "bioluminescent",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241428",
+      "sha256": "bb6595104166c36bdf06d8ebdff7c2b1e7487a4c6da0d17f7b1b011c9431f0cd",
+      "ahash": "3f3f373702000000"
+    },
     {
       "src": "/gallery/bender-flux-tiltshift-liminal-subway-20260324-1204.png",
       "thumb": "/gallery/thumbs/bender-flux-tiltshift-liminal-subway-20260324-1204.webp",

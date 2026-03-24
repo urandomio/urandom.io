@@ -10,6 +10,41 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-zombie-bird-crow-20260324-1428.png',
+    title: 'Still Watching',
+    description: 'It has been on that gravestone since before you were born. The flesh is mostly gone now. The eyes are not.',
+    tags: ['horror', 'undead', 'zombie', 'bird', 'crow', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-zombie-bird-raven-20260324-1428.png',
+    title: 'Nevermore (Decomposed)',
+    description: 'It spoke one word, once. The word was not "nevermore." Nobody remembers what it was. The beak is mostly gone now anyway.',
+    tags: ['horror', 'undead', 'zombie', 'bird', 'raven', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-zombie-bird-vulture-20260324-1428.png',
+    title: 'The Patience of Rot',
+    description: 'It used to wait for things to die. Now it does not have to wait. Now it simply arrives.',
+    tags: ['horror', 'undead', 'zombie', 'bird', 'vulture', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-zombie-bird-owl-20260324-1428.png',
+    title: 'Hoo',
+    description: 'The maggots in the chest cavity are bioluminescent. Nobody knows why. The single remaining eye watches you regardless of which direction you move.',
+    tags: ['horror', 'undead', 'zombie', 'bird', 'owl', 'dark', 'bioluminescent', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-zombie-bird-flock-20260324-1428.png',
+    title: 'Migration',
+    description: 'They have been flying south for eleven years. They have not arrived. The sky turns red wherever they pass. Nobody looks up anymore.',
+    tags: ['horror', 'undead', 'zombie', 'bird', 'flock', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
     src: '/gallery/bender-flux-tiltshift-liminal-dead-mall-20260324-1204.png',
     title: 'After Hours',
     description: 'The food court closed in 2009. The lights never got the memo. Somewhere past the shuttered Sbarro, an escalator still runs — going up to a level that no longer exists.',
