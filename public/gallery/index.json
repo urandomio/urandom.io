@@ -1,7 +1,27 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-24T22:31:48.373Z",
+  "generatedAt": "2026-03-24T22:51:30.866Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-cryptid-mugshot-grey-alien-20260324-1550.png",
+      "thumb": "/gallery/thumbs/bender-flux-cryptid-mugshot-grey-alien-20260324-1550.webp",
+      "title": "Booked",
+      "description": "Charges: trespassing, unauthorized aerial vehicle operation, cattle-related incidents (12 counts). He said nothing during processing. He has said nothing since. He does not seem concerned.",
+      "tags": [
+        "alien",
+        "mugshot",
+        "cryptid",
+        "humor",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241550",
+      "sha256": "2287a56c53db46a465cbbd8fc7c4f4672aa3bff630028439f06c398e83b39734",
+      "ahash": "ffdfa1c0d8c90120"
+    },
     {
       "src": "/gallery/bender-flux-clown-happy-laughing-20260324-1530.png",
       "thumb": "/gallery/thumbs/bender-flux-clown-happy-laughing-20260324-1530.webp",

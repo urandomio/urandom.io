@@ -143,6 +143,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-flux-cryptid-mugshot-grey-alien-20260324-1550.png',
+    title: 'Booked',
+    description: 'Charges: trespassing, unauthorized aerial vehicle operation, cattle-related incidents (12 counts). He said nothing during processing. He has said nothing since. He does not seem concerned.',
+    tags: ['alien', 'mugshot', 'cryptid', 'humor', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
     src: '/gallery/bender-flux-zombie-bird-crow-20260324-1428.png',
     title: 'Still Watching',
     description: 'It has been on that gravestone since before you were born. The flesh is mostly gone now. The eyes are not.',
