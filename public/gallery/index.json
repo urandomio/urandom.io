@@ -1,7 +1,369 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-24T21:43:11.664Z",
+  "generatedAt": "2026-03-24T22:31:48.373Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-clown-happy-laughing-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-clown-happy-laughing-20260324-1530.webp",
+      "title": "Uncontrollable",
+      "description": "Nobody remembers what the joke was. He doesn't either. He just can't stop.",
+      "tags": [
+        "clown",
+        "portrait",
+        "cheerful",
+        "laughing",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "d38af4e48a2db65cfdb27cf892fa9c696abd27450ce760a68efaffbbdedaeea3",
+      "ahash": "fcfcb8f4402071f0"
+    },
+    {
+      "src": "/gallery/bender-flux-clown-happy-bigsmile-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-clown-happy-bigsmile-20260324-1530.webp",
+      "title": "Maximum Joy",
+      "description": "Scientists have measured it. It is, technically, the widest documented human smile. He is very proud of this.",
+      "tags": [
+        "clown",
+        "portrait",
+        "cheerful",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "38a105ba6ee9f3e238618cb9f45773c99eceebe8cfb4e1439b6c1b766d68d481",
+      "ahash": "f0f0b8b8f440f030"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-diner-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-diner-20260324-1530.webp",
+      "title": "Last Orders",
+      "description": "The coffee went cold in 1979. The pie is still under the glass dome. The menus are still in the holders. Nobody ever came back to clear the counter.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "70s",
+        "film-grain",
+        "diner",
+        "nostalgia",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "28574553f22c8ac294652b2060cb7f3c92c4fb9ae011cc2dc8b3199f37e0379b",
+      "ahash": "10c0fffff2000c18"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-pool-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-pool-20260324-1530.webp",
+      "title": "The Deep End",
+      "description": "The diving board is still regulation height. The pool has been dry since 1981. The echo when you stand in it is perfect.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "horror",
+        "70s",
+        "film-grain",
+        "pool",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "82a6e333b57ac06a43848bddf76e29dce877021b3387238f202febbde4d8f397",
+      "ahash": "1c3e0060307cfc78"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-drive-in-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-drive-in-20260324-1530.webp",
+      "title": "Last Feature",
+      "description": "The last film was a double bill. Neither movie finished. The speakers are still in the windows of the one car that never left.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "70s",
+        "film-grain",
+        "drive-in",
+        "nostalgia",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "ae87ea0446259ce5aab65ed53b6338a4ae31b10003c56a9e73a96ab480194243",
+      "ahash": "ffffffe700000000"
+    },
+    {
+      "src": "/gallery/bender-flux-clown-happy-vintage-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-clown-happy-vintage-20260324-1530.webp",
+      "title": "Opening Night, 1954",
+      "description": "The circus came to town and she was the headline act. She is still smiling about it.",
+      "tags": [
+        "clown",
+        "portrait",
+        "cheerful",
+        "vintage",
+        "1950s",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "bcc5e8bdc0b3c8c47bdc071881e9458e149d72b2fe4fdb3d16846411ae33be7f",
+      "ahash": "38383c3c7c7a3c38"
+    },
+    {
+      "src": "/gallery/bender-flux-clown-happy-classic-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-clown-happy-classic-20260324-1530.webp",
+      "title": "The Professional",
+      "description": "Thirty-seven years in the business. Never missed a birthday party. Never will.",
+      "tags": [
+        "clown",
+        "portrait",
+        "cheerful",
+        "colorful",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "5fa8336ba5ed9fab12db28e188423988828aa8da8a8a11df6e5b4247f208084a",
+      "ahash": "60f8f8b8303070f0"
+    },
+    {
+      "src": "/gallery/bender-flux-clown-happy-grandfather-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-clown-happy-grandfather-20260324-1530.webp",
+      "title": "Bobo, Retired",
+      "description": "He worked the circuit for forty years. Now he just smiles because that's what you do.",
+      "tags": [
+        "clown",
+        "portrait",
+        "cheerful",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "72b47bb00a843e2938b7c07afff8f0644fa9f92addd1a88525e8ae0cdef16f81",
+      "ahash": "02181fff2e250c18"
+    },
+    {
+      "src": "/gallery/bender-flux-clown-happy-mime-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-clown-happy-mime-20260324-1530.webp",
+      "title": "Breaking Silence",
+      "description": "He has not spoken in twenty-two years. The smile, however, he allows himself.",
+      "tags": [
+        "clown",
+        "portrait",
+        "mime",
+        "cheerful",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "14041aaf24e68d6a0df1fe80c816a8f6eadad1c802dea5bca061ccd8da504450",
+      "ahash": "81001c9fbf8d9c08"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-roller-rink-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-roller-rink-20260324-1530.webp",
+      "title": "Saturday Night",
+      "description": "The disco ball fell in 1983. Nobody cleaned it up. The skates on the wall still have the rental numbers on them. Size 7 is missing.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "70s",
+        "film-grain",
+        "roller-rink",
+        "nostalgia",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "75de8eaa0f9faaeb05d974e49d2a75881bab72668aacbe771570415b0b35983c",
+      "ahash": "00003cfe1c7f3e1c"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-farmhouse-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-farmhouse-20260324-1530.webp",
+      "title": "Sunday Dinner",
+      "description": "Four plates. Four chairs. The wallpaper is still the same pattern it always was. Nobody touched the food. Nobody came back.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "horror",
+        "70s",
+        "film-grain",
+        "farmhouse",
+        "rural",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "67b8916ae9d1d4ded7da3fec5a6c92f54330e073271654e95aae0f157e28cf84",
+      "ahash": "c0f8fce83c7c0000"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-school-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-school-20260324-1530.webp",
+      "title": "Room 4B",
+      "description": "The handwriting on the chalkboard says \"Today is Friday.\" It has been Friday in this room for fifty years.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "horror",
+        "70s",
+        "film-grain",
+        "school",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "72fccd44eb6435f9f567c46a1074e030023a5f84eefc4195e73c0f4defe142dc",
+      "ahash": "00cfc3c306039800"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-funeral-home-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-funeral-home-20260324-1530.webp",
+      "title": "Arrangements",
+      "description": "The guest book is open. The last entry is dated April 3rd, 1977. The flowers have been desiccated for decades. The caskets are still on display, as they always were.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "horror",
+        "70s",
+        "film-grain",
+        "funeral",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "8d1356bdd61fb4b4a868c8824d0707f69b1432d64748c27f003a2e8854c507d1",
+      "ahash": "18111b1b1b53383c"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-bowling-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-bowling-20260324-1530.webp",
+      "title": "Lane 7",
+      "description": "The pins are still set. The ball is in the return. The score sheet shows a perfect game up to frame nine, then nothing.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "70s",
+        "film-grain",
+        "bowling",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "ed9fd8a180ae485df44f27ba701347abd13c94114c1bb81407fccd542410bc0f",
+      "ahash": "3e3cf0f0fcf88e04"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-church-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-church-20260324-1530.webp",
+      "title": "Congregation of None",
+      "description": "The light still comes through the windows. It hits the same pews at the same angle every afternoon. The hymnals are still open to page 47.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "horror",
+        "70s",
+        "film-grain",
+        "church",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "8bb8e4bad9d3d69f1d814576cbd5c9feab7b4b5e738e442d53fab8fd3f891c19",
+      "ahash": "80d9df1f09181c1c"
+    },
+    {
+      "src": "/gallery/bender-flux-abandoned-70s-asylum-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-abandoned-70s-asylum-20260324-1530.webp",
+      "title": "Ward C",
+      "description": "The wheelchair is still in the hallway. It has been there since 1974. Nobody moves it. Nobody goes into Ward C anymore.",
+      "tags": [
+        "abandoned",
+        "liminal-space",
+        "horror",
+        "70s",
+        "film-grain",
+        "asylum",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "caecaa379984e6958f0026f383731bde6ea28501f1f0b33584d545ed6038a6d2",
+      "ahash": "1c09276777787820"
+    },
+    {
+      "src": "/gallery/bender-flux-clown-happy-female-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-clown-happy-female-20260324-1530.webp",
+      "title": "Gold & Pink",
+      "description": "She designed her own makeup. Took three years to get it right. Every night before the show, the same ritual. Every night, perfect.",
+      "tags": [
+        "clown",
+        "portrait",
+        "cheerful",
+        "colorful",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "79c60628da6cc17295d07944720ea366f766322917570865c2509d416e8f1592",
+      "ahash": "ec181878f4f0f8d8"
+    },
+    {
+      "src": "/gallery/bender-flux-clown-happy-young-20260324-1530.png",
+      "thumb": "/gallery/thumbs/bender-flux-clown-happy-young-20260324-1530.webp",
+      "title": "Gap Year",
+      "description": "First season on the circuit. Still believes the smile is real. It will be, eventually.",
+      "tags": [
+        "clown",
+        "portrait",
+        "cheerful",
+        "young",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241530",
+      "sha256": "b9eb6c28f1e8cc372d30673f008517eee1f723a3ce65b76ae949537eec013dd7",
+      "ahash": "1c1808ffc7c2e740"
+    },
     {
       "src": "/gallery/bender-flux-taxidermy-human-wedding-20260324-1438.png",
       "thumb": "/gallery/thumbs/bender-flux-taxidermy-human-wedding-20260324-1438.webp",
