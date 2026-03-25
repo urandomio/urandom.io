@@ -143,6 +143,27 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-flux-trippy-mushroom-field-20260324-0025.png',
+    title: 'Spore Season',
+    description: 'She found the clearing by accident. The mushrooms were taller than houses. The spores tasted like forgetting. She stopped wanting to leave.',
+    tags: ['surreal', 'psychedelic', 'nature', 'dreamscape', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-trippy-women-in-glass-20260324-0025.png',
+    title: 'The Collection',
+    description: 'Each one was frozen at the moment she chose wrong. She walks past them every day. She is the only one still moving. She wonders how long that will last.',
+    tags: ['surreal', 'horror', 'dreamscape', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-trippy-exploding-petals-20260324-0025.png',
+    title: 'Everything at Once',
+    description: 'The petals are memories. The light is what remains when the memories run out. Her face at the center is the only part that hasn\'t been given away yet.',
+    tags: ['surreal', 'psychedelic', 'hallucination', 'dreamscape', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
     src: '/gallery/bender-flux-echo-shockwave-20260324-1659.png',
     title: 'Aftermath',
     description: 'Nine versions of her, all still reverberating from the same moment. Each one a different way she almost didn\'t survive it.',

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-25T00:00:06.102Z",
+  "generatedAt": "2026-03-25T07:26:48.641Z",
   "images": [
     {
       "src": "/gallery/bender-flux-echo-spinning-20260324-1659.png",
@@ -1101,6 +1101,64 @@
       "sortKey": "202603240923",
       "sha256": "e0869ade20ecbb704c2444e58ec889b4b1e70ae13f983277f38d91a2d559b04d",
       "ahash": "0c3e7e783c380000"
+    },
+    {
+      "src": "/gallery/bender-flux-trippy-exploding-petals-20260324-0025.png",
+      "thumb": "/gallery/thumbs/bender-flux-trippy-exploding-petals-20260324-0025.webp",
+      "title": "Everything at Once",
+      "description": "The petals are memories. The light is what remains when the memories run out. Her face at the center is the only part that hasn't been given away yet.",
+      "tags": [
+        "surreal",
+        "psychedelic",
+        "hallucination",
+        "dreamscape",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240025",
+      "sha256": "10fb880db0a8f7401bf4f56cd14686c4ef81feca91e7e969f8359e8a2bf192eb",
+      "ahash": "003cf6e6677e1000"
+    },
+    {
+      "src": "/gallery/bender-flux-trippy-mushroom-field-20260324-0025.png",
+      "thumb": "/gallery/thumbs/bender-flux-trippy-mushroom-field-20260324-0025.webp",
+      "title": "Spore Season",
+      "description": "She found the clearing by accident. The mushrooms were taller than houses. The spores tasted like forgetting. She stopped wanting to leave.",
+      "tags": [
+        "surreal",
+        "psychedelic",
+        "nature",
+        "dreamscape",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240025",
+      "sha256": "a1d119dbda028b22d711df43a12a61efdf8188b5f07cf875ecaacae50a18d91b",
+      "ahash": "003e7ce6ef6d7c00"
+    },
+    {
+      "src": "/gallery/bender-flux-trippy-women-in-glass-20260324-0025.png",
+      "thumb": "/gallery/thumbs/bender-flux-trippy-women-in-glass-20260324-0025.webp",
+      "title": "The Collection",
+      "description": "Each one was frozen at the moment she chose wrong. She walks past them every day. She is the only one still moving. She wonders how long that will last.",
+      "tags": [
+        "surreal",
+        "horror",
+        "dreamscape",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603240025",
+      "sha256": "c55ff8f7bb9d212e5787c132d8660ef446f4cc94b5e76b2fa12ff4dd9f5bbb55",
+      "ahash": "001a7e6666e7c180"
     },
     {
       "src": "/gallery/bender-jibmix-tiltshift-methane-seep-buoy-20260317-0006.png",
