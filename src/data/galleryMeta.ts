@@ -164,6 +164,20 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-flux-trippy-infinite-library-20260325-0307.png',
+    title: 'The Archive',
+    description: 'Every book is a life she could have lived. The pages turn on their own. She has been reading for years. She has not found the one she is living yet.',
+    tags: ['surreal', 'dreamscape', 'library', 'psychedelic', 'dark', 'bender', 'mold-cli'],
+    model: 'iNiverse Mix FP8',
+  },
+  {
+    src: '/gallery/bender-flux-trippy-moss-skin-20260325-0307.png',
+    title: 'Second Growth',
+    description: 'The moss came first to the places she stopped feeling. Then the flowers. She is not worried. She is becoming something with better roots.',
+    tags: ['surreal', 'dreamscape', 'nature', 'psychedelic', 'bioluminescent', 'bender', 'mold-cli'],
+    model: 'iNiverse Mix FP8',
+  },
+  {
     src: '/gallery/bender-flux-echo-shockwave-20260324-1659.png',
     title: 'Aftermath',
     description: 'Nine versions of her, all still reverberating from the same moment. Each one a different way she almost didn\'t survive it.',
