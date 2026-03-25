@@ -143,6 +143,20 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-flux-echo-shockwave-20260324-1659.png',
+    title: 'Aftermath',
+    description: 'Nine versions of her, all still reverberating from the same moment. Each one a different way she almost didn\'t survive it.',
+    tags: ['surreal', 'hallucination', 'echo', 'horror', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-echo-spinning-20260324-1659.png',
+    title: 'Identity in Motion',
+    description: 'She spun. Each rotation left behind a version of someone she used to be. The center is the only part that is still her. For now.',
+    tags: ['surreal', 'hallucination', 'echo', 'motion', 'dark', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
     src: '/gallery/bender-flux-mirror-hellscape-folding-space-20260324-1640.png',
     title: 'Wrong Direction',
     description: 'She saw herself ahead. She stopped walking. The version ahead did not.',

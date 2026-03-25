@@ -1,7 +1,47 @@
 {
   "version": 1,
-  "generatedAt": "2026-03-24T23:41:55.177Z",
+  "generatedAt": "2026-03-25T00:00:06.102Z",
   "images": [
+    {
+      "src": "/gallery/bender-flux-echo-spinning-20260324-1659.png",
+      "thumb": "/gallery/thumbs/bender-flux-echo-spinning-20260324-1659.webp",
+      "title": "Identity in Motion",
+      "description": "She spun. Each rotation left behind a version of someone she used to be. The center is the only part that is still her. For now.",
+      "tags": [
+        "surreal",
+        "hallucination",
+        "echo",
+        "motion",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241659",
+      "sha256": "b7a7d81edd06d8c99b8f7bf23e9f1f1f19288080afcfff21566050e578cd40c2",
+      "ahash": "1c26263c66e74600"
+    },
+    {
+      "src": "/gallery/bender-flux-echo-shockwave-20260324-1659.png",
+      "thumb": "/gallery/thumbs/bender-flux-echo-shockwave-20260324-1659.webp",
+      "title": "Aftermath",
+      "description": "Nine versions of her, all still reverberating from the same moment. Each one a different way she almost didn't survive it.",
+      "tags": [
+        "surreal",
+        "hallucination",
+        "echo",
+        "horror",
+        "dark",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-03-24",
+      "sortKey": "202603241659",
+      "sha256": "8b4a267f2d2e081d2f59c78ab019edf5b6a284bc2ce44aa7e3307989b5fcc4bf",
+      "ahash": "183c343c3c383c3c"
+    },
     {
       "src": "/gallery/bender-flux-mirror-hellscape-mirror-eyes-20260324-1640.png",
       "thumb": "/gallery/thumbs/bender-flux-mirror-hellscape-mirror-eyes-20260324-1640.webp",
