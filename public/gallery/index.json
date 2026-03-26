@@ -11004,6 +11004,146 @@
       "sortKey": "197001010000",
       "sha256": "3a9fce506b6fc4780afd303ef6871bb7472c4b89dd83c53f6e94f2bf73a6cad1",
       "ahash": "7cf970f88a426000"
+    },
+    {
+      "src": "/gallery/bender-iniverse-dark-horror-thousand-eyes-20260326.png",
+      "thumb": "/gallery/thumbs/bender-iniverse-dark-horror-thousand-eyes-20260326.webp",
+      "title": "Thousand Eyes",
+      "description": "A beautiful woman as a living nightmare \u2014 thousands of eyes across her body, dark flesh cathedral growing from her spine, screaming faces in the shadows, void tentacles erupting. Extreme lovecraftian horror.",
+      "tags": [
+        "horror",
+        "dark",
+        "surreal",
+        "eldritch",
+        "ai-art",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "iNiverse Mix FP8",
+      "date": "2026-03-26",
+      "sortKey": "202603260001",
+      "sha256": "e0357084930788af61974534791090b28ef8f275544498479d4ebd63fb4c7c5e",
+      "ahash": "f8f890707c646060"
+    },
+    {
+      "src": "/gallery/bender-iniverse-dark-cathedral-femme-fatale-20260326.png",
+      "thumb": "/gallery/thumbs/bender-iniverse-dark-cathedral-femme-fatale-20260326.webp",
+      "title": "Black Cathedral",
+      "description": "Femme fatale in a crumbling black cathedral, reality fracturing into darkness. Demonic hallucination, skull fractals, hellfire DMT visuals. Dark gothic nightmare.",
+      "tags": [
+        "horror",
+        "dark",
+        "gothic",
+        "surreal",
+        "ai-art",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "iNiverse Mix FP8",
+      "date": "2026-03-26",
+      "sortKey": "202603260002",
+      "sha256": "63501d37509b50870d3246f5c4820789d8d062673618bf6f35d89fa215034efe",
+      "ahash": "7c7c7c20000042c3"
+    },
+    {
+      "src": "/gallery/bender-ultrareal-void-eyes-20260326.png",
+      "thumb": "/gallery/thumbs/bender-ultrareal-void-eyes-20260326.webp",
+      "title": "Void Eyes",
+      "description": "Terrifying beautiful woman with void eyes, dark eldritch horror, decaying reality, blood-stained fractals, skeletal beauty \u2014 a cursed hallucination rendered in photorealistic detail.",
+      "tags": [
+        "horror",
+        "dark",
+        "surreal",
+        "eldritch",
+        "ai-art",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "UltraReal v4 Q8",
+      "date": "2026-03-26",
+      "sortKey": "202603260003",
+      "sha256": "48141e25b29ce5f2df78880f7c8bc2a0c5ef898b13d7cd8072fa8d3f3e1b028d",
+      "ahash": "bb391d1d800060c0"
+    },
+    {
+      "src": "/gallery/bender-ultrareal-abyss-goddess-20260326.png",
+      "thumb": "/gallery/thumbs/bender-ultrareal-abyss-goddess-20260326.webp",
+      "title": "Abyss Goddess",
+      "description": "Gorgeous woman emerging from the abyss \u2014 dark cosmic horror, writhing shadow tentacles, corrupted fractal dimension. A void goddess rendered in photorealistic hellscape beauty.",
+      "tags": [
+        "horror",
+        "dark",
+        "cosmic",
+        "surreal",
+        "ai-art",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "UltraReal v4 Q8",
+      "date": "2026-03-26",
+      "sortKey": "202603260004",
+      "sha256": "5fc3ea20624803ba331c6c97d49a6a2d13e3c06a62e4e4e2f54204b2c1a19291",
+      "ahash": "7e7f3e3e04040000"
+    },
+    {
+      "src": "/gallery/bender-ultrareal-demon-shadows-20260326.png",
+      "thumb": "/gallery/thumbs/bender-ultrareal-demon-shadows-20260326.webp",
+      "title": "Demon of Shadows",
+      "description": "Seductive demon woman made of shadows and fire \u2014 underworld fever dream, burning skull fractals, hell geometry. Dark sacred art rendered in photorealistic detail.",
+      "tags": [
+        "horror",
+        "dark",
+        "gothic",
+        "surreal",
+        "ai-art",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "UltraReal v4 Q8",
+      "date": "2026-03-26",
+      "sortKey": "202603260005",
+      "sha256": "15abd41a7b5cbeb680dae1a88b39e4f2fa79472cd1b352571cbe67eacf9f988d",
+      "ahash": "feee460e02060000"
+    },
+    {
+      "src": "/gallery/bender-ultrareal-crown-thorns-20260326.png",
+      "thumb": "/gallery/thumbs/bender-ultrareal-crown-thorns-20260326.webp",
+      "title": "Crown of Thorns",
+      "description": "Dark goddess with crown of thorns and screaming faces \u2014 decaying dimension, rotting flowers, black hole eyes. A nightmare mandala rendered in photorealistic horror.",
+      "tags": [
+        "horror",
+        "dark",
+        "gothic",
+        "eldritch",
+        "ai-art",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "UltraReal v4 Q8",
+      "date": "2026-03-26",
+      "sortKey": "202603260006",
+      "sha256": "439fd6650156e70af91a4a2111d9ca0d9fac27e76a4400828f526cce4d32521e",
+      "ahash": "dfbd9cbc8000003c"
+    },
+    {
+      "src": "/gallery/bender-ultrareal-dark-siren-20260326.png",
+      "thumb": "/gallery/thumbs/bender-ultrareal-dark-siren-20260326.webp",
+      "title": "Dark Siren",
+      "description": "A dark siren rising from a hellish abyss \u2014 brimstone fractals, cursed geometry, soul-devouring gaze. Apocalyptic hallucination in photorealistic detail.",
+      "tags": [
+        "horror",
+        "dark",
+        "surreal",
+        "gothic",
+        "ai-art",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "UltraReal v4 Q8",
+      "date": "2026-03-26",
+      "sortKey": "202603260007",
+      "sha256": "b3a7b5fdaeea210574403bd86167af80a328d442e4fd1c796d0e40c0b3c54d5c",
+      "ahash": "ff1f031f0703031f"
     }
   ]
 }
