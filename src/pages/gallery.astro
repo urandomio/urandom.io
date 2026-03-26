@@ -113,8 +113,10 @@ try {
     })
   );
 
-  images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
 }
+
+// Always sort by sortKey descending (newest first), regardless of index.json order
+images.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
 
 // Build tag list for UI (exclude the generic tag)
 const tagCounts = new Map<string, number>();
