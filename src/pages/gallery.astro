@@ -346,12 +346,12 @@ const initialImages = images.slice(0, INITIAL_COUNT);
     color: rgba(216, 180, 254, 1);
   }
 
-  .tag-chip {
+  :global(.tag-chip) {
     font-size: 12px;
     color: rgba(113, 113, 122, 1);
     transition: color 200ms ease;
   }
-  .tag-chip:hover {
+  :global(.tag-chip:hover) {
     color: rgba(192, 132, 252, 1);
   }
 </style>
