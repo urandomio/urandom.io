@@ -12,7 +12,7 @@ The fastest way to make an agent dangerous, expensive, and erratic is the same m
 
 As agent systems mature, the architectural question is shifting. It is no longer just _can the model use tools_. It is whether the system can grant the right tool access for the right task, for the right amount of time, with the right evidence.
 
-That is why I increasingly think in terms of **capability leases**.
+That is why I think in terms of **capability leases**.
 
 ## What a capability lease is
 
@@ -29,13 +29,13 @@ It is not permanent permission. It is not a giant system prompt that says “be 
 - which actions require human approval
 - what ends the lease
 
-This sounds strict because it is. Loose boundaries are how small mistakes become operational incidents.
+Loose boundaries are how small mistakes become operational incidents.
 
 ## Why permanent tool access fails in practice
 
 Anthropic’s recent engineering guidance keeps returning to the same lesson: the strongest production systems are usually built from simple, composable patterns, not towering abstractions. Their tool-writing guidance also argues for namespaced tools, minimal overlap, and ergonomic descriptions because agents do worse when the action space is ambiguous.
 
-That maps directly to operational reality. If a model can both read logs, modify tickets, send messages, and execute code in the same undifferentiated action surface, it will eventually choose an action that is locally plausible and globally wrong.
+If a model can read logs, modify tickets, send messages, and execute code in the same undifferentiated action surface, it will eventually choose an action that is locally plausible and globally wrong.
 
 ### Common failure modes when every tool is always available
 
@@ -61,7 +61,7 @@ Is it search, synthesis, planning, code change, or side-effecting execution? Tha
 
 The executor runs the agent loop within the lease.
 
-This is where the model can reason, call allowed tools, recover from errors, and request escalation if the lease is too narrow.
+Here the model can reason, call allowed tools, recover from errors, and request escalation if the lease is too narrow.
 
 ### 3. Evaluator
 
@@ -115,7 +115,7 @@ Track at least:
 - human escalation rate
 - cost and latency by lease class
 
-Anthropic’s tool engineering guidance recommends analyzing transcripts, tool metrics, and held-out evaluations. That is exactly right. The eval should score whether the agent solved the task _and_ whether it stayed inside the architecture you intended.
+Anthropic’s tool engineering guidance recommends analyzing transcripts, tool metrics, and held-out evaluations. The eval should score whether the agent solved the task _and_ whether it stayed inside the architecture you intended.
 
 ## Bottom line
 
