@@ -1,12 +1,13 @@
 #!/usr/bin/env bun
 
-import { readdir, stat, mkdir, writeFile, readFile } from 'node:fs/promises';
+import { readdir, stat, mkdir, writeFile, readFile, unlink } from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import crypto from 'node:crypto';
 import { galleryMetaBySrc } from '../src/data/galleryMeta';
 
 type IndexEntry = {
+  mediaType: 'image' | 'video';
   src: string;
   thumb: string;
   title: string;
@@ -21,6 +22,8 @@ type IndexEntry = {
 
 const ROOT = new URL('../', import.meta.url); // repo root
 const PUBLIC_GALLERY = new URL('./public/gallery/', ROOT);
+const IMAGE_RE = /\.(png|jpg|jpeg|webp|gif)$/i;
+const VIDEO_RE = /\.(mp4|webm|mov)$/i;
 
 function humanizeFilename(file: string) {
   return file
@@ -114,6 +117,40 @@ async function ensureThumb(inputPath: string, outputPath: string) {
   await run('magick', args);
 }
 
+async function ffprobeDuration(filePath: string): Promise<number> {
+  const out = await new Promise<string>((resolve, reject) => {
+    const args = ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', filePath];
+    const p = spawn('ffprobe', args, { stdio: ['ignore', 'pipe', 'pipe'] });
+    let stdout = '';
+    let stderr = '';
+    p.stdout.on('data', (d) => (stdout += d.toString()));
+    p.stderr.on('data', (d) => (stderr += d.toString()));
+    p.on('error', reject);
+    p.on('exit', (code) => {
+      if (code === 0) resolve(stdout.trim());
+      else reject(new Error(`ffprobe failed (${code}): ${stderr}`));
+    });
+  });
+
+  const seconds = Number.parseFloat(out);
+  if (!Number.isFinite(seconds) || seconds <= 0) throw new Error(`invalid ffprobe duration for ${filePath}: ${out}`);
+  return seconds;
+}
+
+async function ensureVideoThumb(inputPath: string, outputPath: string) {
+  const duration = await ffprobeDuration(inputPath);
+  const frameAt = Math.max(0, duration * 0.5);
+  const tempFrame = `${outputPath}.frame.png`;
+
+  await run('ffmpeg', ['-y', '-ss', String(frameAt), '-i', inputPath, '-frames:v', '1', '-update', '1', tempFrame]);
+
+  try {
+    await ensureThumb(tempFrame, outputPath);
+  } finally {
+    await unlink(tempFrame).catch(() => {});
+  }
+}
+
 async function sha256File(filePath: string): Promise<string> {
   const buf = await readFile(filePath);
   return crypto.createHash('sha256').update(new Uint8Array(buf)).digest('hex');
@@ -166,7 +203,7 @@ async function main() {
   const files = entries
     .filter((e) => e.isFile())
     .map((e) => e.name)
-    .filter((name) => /\.(png|jpg|jpeg|webp|gif)$/i.test(name))
+    .filter((name) => IMAGE_RE.test(name) || VIDEO_RE.test(name))
     .filter((name) => !name.startsWith('index.'))
     .filter((name) => !name.startsWith('.'))
     .filter((name) => !name.toLowerCase().includes('thumb'));
@@ -176,6 +213,7 @@ async function main() {
   for (const file of files) {
     const src = `/gallery/${file}`;
     const meta = galleryMetaBySrc.get(src);
+    const mediaType = VIDEO_RE.test(file) ? 'video' : 'image';
 
     const dt = extractDateTimeFromFilename(file);
     const fullPath = path.join(PUBLIC_GALLERY.pathname, file);
@@ -197,15 +235,17 @@ async function main() {
       doThumb = true;
     }
     if (doThumb) {
-      await ensureThumb(fullPath, thumbFs);
+      if (mediaType === 'video') await ensureVideoThumb(fullPath, thumbFs);
+      else await ensureThumb(fullPath, thumbFs);
     }
 
     const tags = (meta?.tags && meta.tags.length ? meta.tags : deriveTagsFromFilename(file)).slice();
 
     const sha256 = await sha256File(fullPath);
-    const ahash = await aHash64Hex(fullPath);
+    const ahash = await aHash64Hex(mediaType === 'video' ? thumbFs : fullPath);
 
     index.push({
+      mediaType,
       src,
       thumb,
       title: meta?.title ?? humanizeFilename(file),

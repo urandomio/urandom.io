@@ -3,6 +3,7 @@
 import { readFile } from 'node:fs/promises';
 
 type IndexEntry = {
+  mediaType?: string;
   src: string;
   thumb?: string;
   title?: string;
@@ -63,7 +64,7 @@ async function main() {
   if (dupSrc.length) fail(`duplicate src entries: ${dupSrc.slice(0, 10).join(', ')}${dupSrc.length > 10 ? '…' : ''}`);
   if (dupSha.length) {
     const ex = dupSha[0];
-    fail(`duplicate image content (sha256 match): ${ex.a} == ${ex.b}`);
+    fail(`duplicate gallery content (sha256 match): ${ex.a} == ${ex.b}`);
   }
 
   // Hamming distance helper

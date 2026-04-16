@@ -5,6 +5,7 @@ import path from 'node:path';
 import { galleryMetaBySrc } from '../data/galleryMeta';
 
 type GalleryImage = {
+  mediaType?: 'image' | 'video';
   src: string;
   thumb?: string;
   title: string;
@@ -82,7 +83,7 @@ try {
       entries
         .filter((e) => e.isFile())
         .map((e) => e.name)
-        .filter((name) => /\.(png|jpg|jpeg|webp|gif)$/i.test(name))
+        .filter((name) => /\.(png|jpg|jpeg|webp|gif|mp4|webm|mov)$/i.test(name))
         .filter((name) => !name.startsWith('index.'))
         .filter((name) => !name.startsWith('.'))
         .sort()
@@ -139,7 +140,7 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   <header class="fixed top-0 left-0 right-0 z-50 p-6 bg-zinc-950/80 backdrop-blur-sm">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="/" class="text-sm text-zinc-600 hover:text-purple-400 transition-colors">← urandom.io</a>
-      <span class="text-xs text-zinc-700 font-mono">frames: {images.length}</span>
+      <span class="text-xs text-zinc-700 font-mono">posts: {images.length}</span>
     </div>
   </header>
 
@@ -187,23 +188,36 @@ const initialImages = images.slice(0, INITIAL_COUNT);
       <!-- Gallery Grid -->
       <div id="gallery-grid" class="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 mb-16">
         {initialImages.map((image, index) => (
-          <article class="group relative" data-tags={image.tags.join(' ')} data-src={image.src}>
+          <article class="group relative" data-tags={image.tags.join(' ')} data-src={image.src} data-title={image.title}>
             <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
-              <!-- Image (clickable for lightbox) -->
               <button
                 type="button"
                 class="lightbox-trigger aspect-square w-full overflow-hidden cursor-pointer select-none touch-manipulation"
                 data-lightbox={image.src}
+                data-lightbox-type={image.mediaType ?? 'image'}
                 data-title={image.title}
                 aria-label={`Open ${image.title}`}
               >
-                <img
-                  src={image.thumb ?? image.src}
-                  alt={image.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
-                  loading="lazy"
-                  draggable="false"
-                />
+                {image.mediaType === 'video' ? (
+                  <video
+                    src={image.src}
+                    poster={image.thumb ?? image.src}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                    muted
+                    loop
+                    autoplay
+                    playsinline
+                    preload="metadata"
+                  />
+                ) : (
+                  <img
+                    src={image.thumb ?? image.src}
+                    alt={image.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                    loading="lazy"
+                    draggable="false"
+                  />
+                )}
               </button>
               
               <!-- Overlay on hover (pointer-events-none so clicks pass through to button) -->
@@ -248,8 +262,8 @@ const initialImages = images.slice(0, INITIAL_COUNT);
         <div class="max-w-lg mx-auto">
           <h2 class="text-sm text-zinc-500 font-mono mb-4 border-b border-zinc-800 pb-2">// about the gallery</h2>
           <p class="text-sm text-zinc-600 mb-4">
-            All images generated using <span class="text-purple-400">Flux Dev</span> on HAL9000's RTX 4090. 
-            The machines dream in tensors and wake in pixels.
+            Images and video generated with <span class="text-purple-400">mold</span> on HAL9000's RTX 4090.
+            The machines dream in tensors and wake in pixels, motion, and occasional clown-related crimes.
           </p>
           <p class="text-xs text-zinc-700 italic">
             "From randomness, patterns emerge."
@@ -280,6 +294,7 @@ const initialImages = images.slice(0, INITIAL_COUNT);
     <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white text-4xl z-10 p-4" aria-label="Next">›</button>
     <div class="max-w-[90vw] max-h-[90vh] flex flex-col items-center">
       <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" />
+      <video id="lightbox-video" class="hidden max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" controls playsinline preload="metadata"></video>
       <p id="lightbox-title" class="mt-4 text-zinc-300 text-lg"></p>
     </div>
   </div>
@@ -319,7 +334,8 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   }
 
   /* Prevent image drag on mobile */
-  [data-lightbox] img {
+  [data-lightbox] img,
+  [data-lightbox] video {
     -webkit-user-drag: none;
     user-select: none;
   }
@@ -385,7 +401,7 @@ const initialImages = images.slice(0, INITIAL_COUNT);
     let visible = 0;
     document.querySelectorAll('article[data-tags]').forEach((c) => {
       const tags = (c.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
-      const title = (c.querySelector('img')?.getAttribute('alt') || '').toLowerCase();
+      const title = (c.getAttribute('data-title') || '').toLowerCase();
       const hay = `${tags.join(' ')} ${title}`.toLowerCase();
 
       const tagOk = !activeTag || tags.includes(activeTag);
@@ -488,23 +504,37 @@ const initialImages = images.slice(0, INITIAL_COUNT);
       return `<button type="button" class="tag-chip" data-filter-tag="${esc(t)}">#${esc(t)}</button>`;
     }).join('');
 
-    return `
-      <article class="group relative" data-tags="${esc((img.tags || []).join(' '))}" data-src="${esc(img.src)}">
-        <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
-          <button
-            type="button"
-            class="lightbox-trigger aspect-square w-full overflow-hidden cursor-pointer select-none touch-manipulation"
-            data-lightbox="${esc(img.src)}"
-            data-title="${esc(img.title || '')}"
-            aria-label="Open ${esc(img.title || 'image')}"
-          >
-            <img
+    const media = img.mediaType === 'video'
+      ? `<video
+              src="${esc(img.src)}"
+              poster="${esc(img.thumb || img.src)}"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+              muted
+              loop
+              autoplay
+              playsinline
+              preload="metadata"
+            ></video>`
+      : `<img
               src="${esc(img.thumb || img.src)}"
               alt="${esc(img.title || '')}"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
               loading="lazy"
               draggable="false"
-            />
+            />`;
+
+    return `
+      <article class="group relative" data-tags="${esc((img.tags || []).join(' '))}" data-src="${esc(img.src)}" data-title="${esc(img.title || '')}">
+        <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
+          <button
+            type="button"
+            class="lightbox-trigger aspect-square w-full overflow-hidden cursor-pointer select-none touch-manipulation"
+            data-lightbox="${esc(img.src)}"
+            data-lightbox-type="${esc(img.mediaType || 'image')}"
+            data-title="${esc(img.title || '')}"
+            aria-label="Open ${esc(img.title || 'post')}"
+          >
+            ${media}
           </button>
 
           <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 pointer-events-none">
@@ -583,6 +613,7 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   // ---- lightbox ----
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxVideo = document.getElementById('lightbox-video');
   const lightboxTitle = document.getElementById('lightbox-title');
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
@@ -596,11 +627,37 @@ const initialImages = images.slice(0, INITIAL_COUNT);
     if (index < 0) index = lbImages.length - 1;
     if (index >= lbImages.length) index = 0;
     currentIndex = index;
-    if (lightboxImg) {
-      lightboxImg.src = lbImages[index].src;
-      lightboxImg.alt = lbImages[index].title || '';
+
+    const item = lbImages[index];
+    const mediaType = item.mediaType || 'image';
+
+    if (mediaType === 'video') {
+      if (lightboxImg) {
+        lightboxImg.classList.add('hidden');
+        lightboxImg.src = '';
+      }
+      if (lightboxVideo) {
+        lightboxVideo.classList.remove('hidden');
+        lightboxVideo.poster = item.thumb || item.src;
+        lightboxVideo.src = item.src;
+        lightboxVideo.currentTime = 0;
+        lightboxVideo.play().catch(() => {});
+      }
+    } else {
+      if (lightboxVideo) {
+        lightboxVideo.pause();
+        lightboxVideo.classList.add('hidden');
+        lightboxVideo.removeAttribute('src');
+        lightboxVideo.load();
+      }
+      if (lightboxImg) {
+        lightboxImg.classList.remove('hidden');
+        lightboxImg.src = item.src;
+        lightboxImg.alt = item.title || '';
+      }
     }
-    if (lightboxTitle) lightboxTitle.textContent = lbImages[index].title || '';
+
+    if (lightboxTitle) lightboxTitle.textContent = item.title || '';
   }
 
   function openLightboxBySrc(src) {
@@ -611,6 +668,11 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   }
 
   function closeLightbox() {
+    if (lightboxVideo) {
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute('src');
+      lightboxVideo.load();
+    }
     lightbox?.classList.remove('active');
     document.body.style.overflow = '';
   }
@@ -694,5 +756,4 @@ const initialImages = images.slice(0, INITIAL_COUNT);
   // init
   setActiveTag(activeTag);
   refreshLightboxTriggers();
-</script>
 </script>

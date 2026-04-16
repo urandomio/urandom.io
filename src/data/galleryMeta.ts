@@ -902,6 +902,78 @@ export const galleryMeta: GalleryMetaEntry[] = [
     description: 'Sunlight streaming through a garden. Sometimes the machine dreams of warmth.',
     tags: ['portrait', 'golden-hour', 'ai-art'],
   },
+  {
+    src: '/gallery/bender-ltx23-motel-window-20260416-1255.mp4',
+    title: 'Vacancy',
+    description:
+      'Rain beads on neon glass while something on the other side keeps shifting just out of human proportions. The sign still says VACANCY. That feels less like an invitation and more like a warning.',
+    tags: ['horror', 'motel', 'window', 'rain', 'night', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-attic-crawler-20260416-1259.mp4',
+    title: 'Above the Ceiling',
+    description:
+      'The attic hatch opens a few inches and stops. Then the scratching starts again. Whatever lives up there has learned patience.',
+    tags: ['horror', 'attic', 'crawler', 'creature', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-church-pews-20260416-1305.mp4',
+    title: 'Last Service',
+    description:
+      'The pews are empty, but the room still behaves like it is being watched. Dust hangs in the projector light like suspended ash. Something kneels where the congregation used to be.',
+    tags: ['horror', 'church', 'pews', 'ritual', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-tiltshift-graveyard-20260416-1316.mp4',
+    title: 'Tiny Graves',
+    description:
+      'A miniature cemetery under impossible fog, like a dollhouse built for mourning. The scale makes it worse. It means someone made this on purpose.',
+    tags: ['tilt-shift', 'graveyard', 'miniature', 'horror', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-black-forest-road-20260416-1324.mp4',
+    title: 'Don’t Stop on This Road',
+    description:
+      'Headlights cut a tunnel through the trees, but the darkness beyond them keeps moving first. If the road is endless, that is because it does not want to let you out.',
+    tags: ['forest', 'road', 'night', 'horror', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-alley-mouth-20260416-1332.mp4',
+    title: 'The Alley Learns to Feed',
+    description:
+      'Brick, steam, garbage bags, and then a shape forming where no shape belongs. By the time you recognize it as a mouth, it already recognizes you as food.',
+    tags: ['alley', 'urban', 'body-horror', 'horror', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-clown-midway-20260416-1518.mp4',
+    title: 'Midway Stalker',
+    description:
+      'Broken bulbs flicker across wet carnival asphalt while the clown moves like it is remembering how joints are supposed to work. The smile never slips. It never has to.',
+    tags: ['clown', 'carnival', 'midway', 'horror', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-clown-sewer-20260416-1523.mp4',
+    title: 'Drain Thing',
+    description:
+      'Flashlight jitter, concrete slime, black water, and a painted face waiting below street level like a municipal secret. The city keeps burying its mistakes. Some of them climb back up.',
+    tags: ['clown', 'sewer', 'found-footage', 'horror', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-clown-birthday-20260416-1528.mp4',
+    title: 'Party Favor',
+    description:
+      'Deflated balloons sag from the ceiling while candle smoke drifts over a ruined cake. Then the clown rises behind the table like the punchline to a joke nobody survives.',
+    tags: ['clown', 'birthday-party', 'house', 'horror', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
   // NOTE: removed /gallery/hal9000-flux-tilt-shift-asylum-20260208-1921.png
   // because it is byte-identical (sha256) to /gallery/bender-flux-tilt-shift-asylum-20260208-1800.png.
 ];
