@@ -199,6 +199,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-ltx23-aftermath-reverberation-20260416-2123.mp4',
+    title: 'Aftermath Reverberation',
+    description: 'The impact never finished happening. Echo-selves peel away from her in dark concentric waves, each one lagging behind the same disaster by a fraction of a heartbeat.',
+    tags: ['surreal', 'hallucination', 'echo', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-echo-spinning-20260324-1659.png',
     title: 'Identity in Motion',
     description: 'She spun. Each rotation left behind a version of someone she used to be. The center is the only part that is still her. For now.',

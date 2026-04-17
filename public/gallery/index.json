@@ -1,7 +1,29 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-17T04:29:47.535Z",
+  "generatedAt": "2026-04-17T04:32:53.958Z",
   "images": [
+    {
+      "mediaType": "video",
+      "src": "/gallery/bender-ltx23-aftermath-reverberation-20260416-2123.mp4",
+      "thumb": "/gallery/thumbs/bender-ltx23-aftermath-reverberation-20260416-2123.webp",
+      "title": "Aftermath Reverberation",
+      "description": "The impact never finished happening. Echo-selves peel away from her in dark concentric waves, each one lagging behind the same disaster by a fraction of a heartbeat.",
+      "tags": [
+        "surreal",
+        "hallucination",
+        "echo",
+        "dark",
+        "video",
+        "bender",
+        "mold-cli",
+        "ltx-2.3"
+      ],
+      "model": "LTX-2.3 22B Distilled FP8",
+      "date": "2026-04-16",
+      "sortKey": "202604162123",
+      "sha256": "83ee3d876d9c82c1c698a2c1e532deaec21d277ef48c8b578ebd12e67d7e871d",
+      "ahash": "ffff303818819993"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-ltx23-the-archive-breathes-20260416-2053.mp4",
