@@ -1,7 +1,52 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-17T06:18:59.555Z",
+  "generatedAt": "2026-04-17T08:19:13.368Z",
   "images": [
+    {
+      "mediaType": "video",
+      "src": "/gallery/bender-ltx23-identity-in-motion-unspooling-20260417-0109.mp4",
+      "thumb": "/gallery/thumbs/bender-ltx23-identity-in-motion-unspooling-20260417-0109.webp",
+      "title": "Identity in Motion, Unspooling",
+      "description": "Afterimage selves peel off each turn in slow elegant rotation. She keeps spinning at the center while her previous versions unspool into the dark and move for a moment on their own.",
+      "tags": [
+        "surreal",
+        "hallucination",
+        "echo",
+        "motion",
+        "dark",
+        "video",
+        "bender",
+        "mold-cli",
+        "ltx-2.3"
+      ],
+      "model": "LTX-2.3 22B Distilled FP8",
+      "date": "2026-04-17",
+      "sortKey": "202604170109",
+      "sha256": "06399bce1287775b7f19d06f6c9a1c79857f1c36fc048d9d9176458c0064cb54",
+      "ahash": "042606367667c380"
+    },
+    {
+      "mediaType": "video",
+      "src": "/gallery/bender-ltx23-reach-anyway-20260417-0059.mp4",
+      "thumb": "/gallery/thumbs/bender-ltx23-reach-anyway-20260417-0059.webp",
+      "title": "Reach, Anyway",
+      "description": "The hallway fills with slow grasping motion and impossible arm lengths while she advances anyway. Fingertips drag across the walls, the corridor breathes, and the whole place keeps reaching back.",
+      "tags": [
+        "surreal",
+        "mirror",
+        "hallucination",
+        "dark",
+        "video",
+        "bender",
+        "mold-cli",
+        "ltx-2.3"
+      ],
+      "model": "LTX-2.3 22B Distilled FP8",
+      "date": "2026-04-17",
+      "sortKey": "202604170059",
+      "sha256": "4572d185d62f6e4658a00915d796aeb43c64411a5222d29eebf1b40e3a5d2807",
+      "ahash": "7c7e3c3c3c242420"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-ltx23-the-reflection-arrives-first-20260416-2306.mp4",

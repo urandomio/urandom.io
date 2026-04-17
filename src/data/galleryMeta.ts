@@ -213,6 +213,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-ltx23-identity-in-motion-unspooling-20260417-0109.mp4',
+    title: 'Identity in Motion, Unspooling',
+    description: 'Afterimage selves peel off each turn in slow elegant rotation. She keeps spinning at the center while her previous versions unspool into the dark and move for a moment on their own.',
+    tags: ['surreal', 'hallucination', 'echo', 'motion', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-mirror-hellscape-folding-space-20260324-1640.png',
     title: 'Wrong Direction',
     description: 'She saw herself ahead. She stopped walking. The version ahead did not.',
@@ -253,6 +260,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     description: 'Some of the hands are hers. She has stopped trying to tell which ones. The corridor has no end. She walks anyway.',
     tags: ['surreal', 'mirror', 'hallucination', 'horror', 'liminal-space', 'dark', 'bender', 'mold-cli'],
     model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-ltx23-reach-anyway-20260417-0059.mp4',
+    title: 'Reach, Anyway',
+    description: 'The hallway fills with slow grasping motion and impossible arm lengths while she advances anyway. Fingertips drag across the walls, the corridor breathes, and the whole place keeps reaching back.',
+    tags: ['surreal', 'mirror', 'hallucination', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
   },
   {
     src: '/gallery/bender-flux-mirror-hellscape-floor-20260324-1616.png',
