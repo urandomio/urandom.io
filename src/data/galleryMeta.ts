@@ -220,6 +220,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-ltx23-the-reflection-arrives-first-20260416-2306.mp4',
+    title: 'The Reflection Arrives First',
+    description: 'She hesitates. Her mirror self does not. It glides through the impossible corridor a beat too early, like the hallway decided which version of her gets to move first.',
+    tags: ['surreal', 'hallucination', 'non-euclidean', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-mirror-hellscape-mirror-eyes-20260324-1640.png',
     title: 'Everything She Didn\'t Choose',
     description: 'Each eye holds a different life. The one on the left: she stayed. The one on the right: she left. Neither one is the one she is living.',

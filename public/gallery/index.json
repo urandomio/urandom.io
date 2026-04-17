@@ -1,7 +1,29 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-17T05:45:09.322Z",
+  "generatedAt": "2026-04-17T06:18:59.555Z",
   "images": [
+    {
+      "mediaType": "video",
+      "src": "/gallery/bender-ltx23-the-reflection-arrives-first-20260416-2306.mp4",
+      "thumb": "/gallery/thumbs/bender-ltx23-the-reflection-arrives-first-20260416-2306.webp",
+      "title": "The Reflection Arrives First",
+      "description": "She hesitates. Her mirror self does not. It glides through the impossible corridor a beat too early, like the hallway decided which version of her gets to move first.",
+      "tags": [
+        "surreal",
+        "hallucination",
+        "non-euclidean",
+        "dark",
+        "video",
+        "bender",
+        "mold-cli",
+        "ltx-2.3"
+      ],
+      "model": "LTX-2.3 22B Distilled FP8",
+      "date": "2026-04-16",
+      "sortKey": "202604162306",
+      "sha256": "e4f5bbd2ce1a195aa419ff614d5a313445050f6711ceeac2bee4fe7524c61bd9",
+      "ahash": "383c3c3c3c3c3c38"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-ltx23-the-room-wakes-first-20260416-2239.mp4",
