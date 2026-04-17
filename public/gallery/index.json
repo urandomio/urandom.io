@@ -1,7 +1,30 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-17T08:19:13.368Z",
+  "generatedAt": "2026-04-17T08:46:45.769Z",
   "images": [
+    {
+      "mediaType": "video",
+      "src": "/gallery/bender-ltx23-identity-in-motion-shedding-selves-20260417-0126.mp4",
+      "thumb": "/gallery/thumbs/bender-ltx23-identity-in-motion-shedding-selves-20260417-0126.webp",
+      "title": "Identity in Motion, Shedding Selves",
+      "description": "Each turn sheds a previous self that keeps moving for a moment on its own. She remains at the center while older versions peel away into eerie shimmer and delayed motion.",
+      "tags": [
+        "surreal",
+        "hallucination",
+        "echo",
+        "motion",
+        "dark",
+        "video",
+        "bender",
+        "mold-cli",
+        "ltx-2.3"
+      ],
+      "model": "LTX-2.3 22B Distilled FP8",
+      "date": "2026-04-17",
+      "sortKey": "202604170126",
+      "sha256": "1447696c64b7e4e9ee5212fa25edfaef840b65e5592bc1e722c160383805a394",
+      "ahash": "1c0e0c2c4c4f4e06"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-ltx23-identity-in-motion-unspooling-20260417-0109.mp4",

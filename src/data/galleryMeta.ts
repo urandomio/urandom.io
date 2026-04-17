@@ -220,6 +220,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'LTX-2.3 22B Distilled FP8',
   },
   {
+    src: '/gallery/bender-ltx23-identity-in-motion-shedding-selves-20260417-0126.mp4',
+    title: 'Identity in Motion, Shedding Selves',
+    description: 'Each turn sheds a previous self that keeps moving for a moment on its own. She remains at the center while older versions peel away into eerie shimmer and delayed motion.',
+    tags: ['surreal', 'hallucination', 'echo', 'motion', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-mirror-hellscape-folding-space-20260324-1640.png',
     title: 'Wrong Direction',
     description: 'She saw herself ahead. She stopped walking. The version ahead did not.',
