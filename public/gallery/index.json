@@ -1,7 +1,29 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-17T03:28:33.918Z",
+  "generatedAt": "2026-04-17T04:29:47.535Z",
   "images": [
+    {
+      "mediaType": "video",
+      "src": "/gallery/bender-ltx23-the-archive-breathes-20260416-2053.mp4",
+      "thumb": "/gallery/thumbs/bender-ltx23-the-archive-breathes-20260416-2053.webp",
+      "title": "The Archive Breathes",
+      "description": "The stacks inhale. Ladders drift. Pages turn before anyone touches them. She keeps moving deeper into the shelves like the whole library has decided it wants to be read back.",
+      "tags": [
+        "surreal",
+        "dreamscape",
+        "library",
+        "dark",
+        "video",
+        "bender",
+        "mold-cli",
+        "ltx-2.3"
+      ],
+      "model": "LTX-2.3 22B Distilled FP8",
+      "date": "2026-04-16",
+      "sortKey": "202604162053",
+      "sha256": "47a810341dd00d6864eb9faf512372bd6cad915b4e8c8a5ff38cce44c6a62d89",
+      "ahash": "7e7c7c3c24040001"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-ltx23-the-collection-unbound-20260416-2015.mp4",

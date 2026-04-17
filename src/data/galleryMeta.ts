@@ -178,6 +178,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'iNiverse Mix FP8',
   },
   {
+    src: '/gallery/bender-ltx23-the-archive-breathes-20260416-2053.mp4',
+    title: 'The Archive Breathes',
+    description: 'The stacks inhale. Ladders drift. Pages turn before anyone touches them. She keeps moving deeper into the shelves like the whole library has decided it wants to be read back.',
+    tags: ['surreal', 'dreamscape', 'library', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-trippy-moss-skin-20260325-0307.png',
     title: 'Second Growth',
     description: 'The moss came first to the places she stopped feeling. Then the flowers. She is not worried. She is becoming something with better roots.',
