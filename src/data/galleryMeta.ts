@@ -976,6 +976,55 @@ export const galleryMeta: GalleryMetaEntry[] = [
   },
   // NOTE: removed /gallery/hal9000-flux-tilt-shift-asylum-20260208-1921.png
   // because it is byte-identical (sha256) to /gallery/bender-flux-tilt-shift-asylum-20260208-1800.png.
+
+  {
+    src: '/gallery/bender-ltx23-mirror-latent-bride-20260416-1610.mp4',
+    title: 'Mirror Bride',
+    description:
+      'A silver-drenched woman glides through a corridor of impossible mirrors where each reflection arrives a heartbeat late, like the space is still deciding which version of her is real.',
+    tags: ['woman', 'mirror', 'latent-space', 'fashion-horror', 'beautiful', 'surreal', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-stairwell-siren-20260416-1619.mp4',
+    title: 'Stairwell Siren',
+    description:
+      'She descends an endless black stairwell while the mirrors on the walls keep showing other lives, other moods, other mouths. Beautiful. Wrong. Still coming closer.',
+    tags: ['woman', 'stairs', 'mirror', 'latent-space', 'gothic', 'beautiful', 'surreal', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-velvet-escher-mirror-20260416-1627.mp4',
+    title: 'Velvet Escher Mirror',
+    description:
+      'A woman in red velvet crosses a palace of folding mirrors and floating stairs, every reflection more confident and less human than the last.',
+    tags: ['woman', 'mirror', 'stairs', 'velvet', 'latent-space', 'beautiful', 'surreal', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-latent-orchid-catwalk-20260416-1715.mp4',
+    title: 'Latent Orchid Catwalk',
+    description:
+      'An orchid-black gown, a reflective runway, and a hall of recursive mirrors bending around her like the architecture is trying to worship and consume her at the same time.',
+    tags: ['woman', 'catwalk', 'mirror', 'latent-space', 'fashion', 'beautiful', 'surreal', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-mirrorwell-ascension-20260416-1724.mp4',
+    title: 'Mirrorwell Ascension',
+    description:
+      'She climbs a spiral of floating stairs through liquid mirrors and impossible light, each reflection turning into a stranger that still somehow knows her face.',
+    tags: ['woman', 'stairs', 'mirror', 'latent-space', 'ascension', 'beautiful', 'surreal', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
+    src: '/gallery/bender-ltx23-crimson-echo-chamber-20260416-1735.mp4',
+    title: 'Crimson Echo Chamber',
+    description:
+      'A crimson dress drifts through candlelit arches, mirrored voids, and staircases that double back into nowhere. Romantic, gorgeous, and absolutely cursed.',
+    tags: ['woman', 'crimson', 'mirror', 'stairs', 'latent-space', 'beautiful', 'romantic-horror', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
 ];
 
 export const galleryMetaBySrc = new Map(galleryMeta.map((m) => [m.src, m]));
