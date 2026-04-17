@@ -157,6 +157,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-ltx23-the-collection-unbound-20260416-2015.mp4',
+    title: 'The Collection, Unbound',
+    description: 'One of the women in glass finally slips free of the still frame and walks the hall like she was always meant to be the only moving part. A cursed fashion procession through gold, mirrors, and quiet bad decisions.',
+    tags: ['surreal', 'fashion', 'mirror', 'dreamscape', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-trippy-exploding-petals-20260324-0025.png',
     title: 'Everything at Once',
     description: 'The petals are memories. The light is what remains when the memories run out. Her face at the center is the only part that hasn\'t been given away yet.',
