@@ -1,7 +1,30 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-17T05:11:48.572Z",
+  "generatedAt": "2026-04-17T05:45:09.322Z",
   "images": [
+    {
+      "mediaType": "video",
+      "src": "/gallery/bender-ltx23-the-room-wakes-first-20260416-2239.mp4",
+      "thumb": "/gallery/thumbs/bender-ltx23-the-room-wakes-first-20260416-2239.webp",
+      "title": "The Room Wakes First",
+      "description": "The sleeping faces open their eyes one by one before she even realizes she is being watched. The walls breathe, the mirrors listen, and the whole room wakes up faster than she does.",
+      "tags": [
+        "surreal",
+        "mirror",
+        "hallucination",
+        "horror",
+        "dark",
+        "video",
+        "bender",
+        "mold-cli",
+        "ltx-2.3"
+      ],
+      "model": "LTX-2.3 22B Distilled FP8",
+      "date": "2026-04-16",
+      "sortKey": "202604162239",
+      "sha256": "ac231f6bb1858cf6d7172812465eadac57734ed11d64f0fbaf50360b702c045a",
+      "ahash": "e7ef2f0000000667"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-ltx23-no-down-still-climbing-20260416-2151.mp4",

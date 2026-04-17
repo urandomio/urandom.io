@@ -234,6 +234,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-ltx23-the-room-wakes-first-20260416-2239.mp4',
+    title: 'The Room Wakes First',
+    description: 'The sleeping faces open their eyes one by one before she even realizes she is being watched. The walls breathe, the mirrors listen, and the whole room wakes up faster than she does.',
+    tags: ['surreal', 'mirror', 'hallucination', 'horror', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-mirror-hellscape-hands-20260324-1616.png',
     title: 'Reach',
     description: 'Some of the hands are hers. She has stopped trying to tell which ones. The corridor has no end. She walks anyway.',
