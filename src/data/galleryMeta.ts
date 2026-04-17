@@ -227,6 +227,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'LTX-2.3 22B Distilled FP8',
   },
   {
+    src: '/gallery/bender-ltx23-three-mirrors-blink-late-20260417-0259.mp4',
+    title: 'Three Mirrors Blink Late',
+    description: 'She stays seated at the center while the mirror copies begin blinking and shifting a beat late. Fluorescent dressing-room light hums overhead, and every reflection looks like it got the cue a second too early or too late.',
+    tags: ['surreal', 'mirror', 'portrait', 'fashion-horror', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-mirror-hellscape-folding-space-20260324-1640.png',
     title: 'Wrong Direction',
     description: 'She saw herself ahead. She stopped walking. The version ahead did not.',
