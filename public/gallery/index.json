@@ -1,7 +1,29 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-17T04:32:53.958Z",
+  "generatedAt": "2026-04-17T05:11:48.572Z",
   "images": [
+    {
+      "mediaType": "video",
+      "src": "/gallery/bender-ltx23-no-down-still-climbing-20260416-2151.mp4",
+      "thumb": "/gallery/thumbs/bender-ltx23-no-down-still-climbing-20260416-2151.webp",
+      "title": "No Down, Still Climbing",
+      "description": "The stairwell finally starts moving too. Gravity gives up, mirrors tilt the rules, and she keeps climbing through a place that cannot decide whether it is swallowing her or letting her out.",
+      "tags": [
+        "surreal",
+        "escher",
+        "hallucination",
+        "dark",
+        "video",
+        "bender",
+        "mold-cli",
+        "ltx-2.3"
+      ],
+      "model": "LTX-2.3 22B Distilled FP8",
+      "date": "2026-04-16",
+      "sortKey": "202604162151",
+      "sha256": "be60a29e4d0627b5ff8ee276b5b6ca1c1226cd579b8841fbeb45b2b8f966b40a",
+      "ahash": "fcfc783818185070"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-ltx23-aftermath-reverberation-20260416-2123.mp4",

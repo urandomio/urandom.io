@@ -255,6 +255,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-ltx23-no-down-still-climbing-20260416-2151.mp4',
+    title: 'No Down, Still Climbing',
+    description: 'The stairwell finally starts moving too. Gravity gives up, mirrors tilt the rules, and she keeps climbing through a place that cannot decide whether it is swallowing her or letting her out.',
+    tags: ['surreal', 'escher', 'hallucination', 'dark', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-mirror-hellscape-ballroom-20260324-1604.png',
     title: 'All of Her at Once',
     description: 'Every version she has ever been, reflected simultaneously. The ones with their eyes closed are the ones she forgot.',
