@@ -150,6 +150,13 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'Flux Dev 1.0',
   },
   {
+    src: '/gallery/bender-ltx23-spore-season-weather-whiteout-20260417-1749.mp4',
+    title: 'Spore Season, Weather Whiteout',
+    description: 'A dense front of glowing spores rolls through the clearing until the mushroom towers nearly disappear inside it. Caps flash through the haze, radiant mist passes in slow sheets, and her silhouette keeps getting swallowed and returned by the weather.',
+    tags: ['surreal', 'psychedelic', 'nature', 'dreamscape', 'bioluminescent', 'weather', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
+    model: 'LTX-2.3 22B Distilled FP8',
+  },
+  {
     src: '/gallery/bender-flux-trippy-women-in-glass-20260324-0025.png',
     title: 'The Collection',
     description: 'Each one was frozen at the moment she chose wrong. She walks past them every day. She is the only one still moving. She wonders how long that will last.',

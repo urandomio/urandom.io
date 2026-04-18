@@ -1,7 +1,31 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-17T10:33:05.876Z",
+  "generatedAt": "2026-04-18T00:52:06.803Z",
   "images": [
+    {
+      "mediaType": "video",
+      "src": "/gallery/bender-ltx23-spore-season-weather-whiteout-20260417-1749.mp4",
+      "thumb": "/gallery/thumbs/bender-ltx23-spore-season-weather-whiteout-20260417-1749.webp",
+      "title": "Spore Season, Weather Whiteout",
+      "description": "A dense front of glowing spores rolls through the clearing until the mushroom towers nearly disappear inside it. Caps flash through the haze, radiant mist passes in slow sheets, and her silhouette keeps getting swallowed and returned by the weather.",
+      "tags": [
+        "surreal",
+        "psychedelic",
+        "nature",
+        "dreamscape",
+        "bioluminescent",
+        "weather",
+        "video",
+        "bender",
+        "mold-cli",
+        "ltx-2.3"
+      ],
+      "model": "LTX-2.3 22B Distilled FP8",
+      "date": "2026-04-17",
+      "sortKey": "202604171749",
+      "sha256": "db69828f0446e891eff1ac0bb125a222859c5041f0b42ff1583720586925330e",
+      "ahash": "0c187c6e7cfc7e3e"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-ltx23-three-mirrors-blink-late-20260417-0259.mp4",
