@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
+# cron-gallery.sh — local-only helper. Picks a horror/liminal prompt, asks ComfyUI to render it,
+# regenerates the gallery index, and commits + pushes. Intended to run as a cron job on the
+# machine that hosts ComfyUI; not portable to CI.
+#
+# Override via env: REPO=<path-to-urandom.io clone> GEN=<path to comfyui generate.py> ./cron-gallery.sh [agent]
 set -euo pipefail
 
 AGENT=${1:-bender}
-REPO="/Users/jamesbrink/Projects/urandom.io/urandom.io"
-GEN="/Users/jamesbrink/.openclaw/workspace/skills/comfyui/scripts/generate.py"
+REPO=${REPO:-"$HOME/Projects/urandom.io/urandom.io"}
+GEN=${GEN:-"$HOME/.openclaw/workspace/skills/comfyui/scripts/generate.py"}
 WIDTH=1024
 HEIGHT=1024
 STEPS=1
@@ -37,7 +42,7 @@ else
   )
 fi
 
-LAST_FILE="/Users/jamesbrink/.openclaw/workspace/.cron-gallery-last-${AGENT}.txt"
+LAST_FILE=${LAST_FILE:-"$HOME/.openclaw/workspace/.cron-gallery-last-${AGENT}.txt"}
 LAST_SLUG=""
 if [[ -f "$LAST_FILE" ]]; then
   LAST_SLUG=$(cat "$LAST_FILE" || true)
