@@ -413,7 +413,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   // ECG Canvas
   const ecgCanvas = document.getElementById('ecg-canvas') as HTMLCanvasElement;
   const ecgCtx = ecgCanvas?.getContext('2d');
-  let ecgData: number[] = [];
+  const ecgData: number[] = [];
   const ecgLength = 200;
   
   function resizeEcg() {
@@ -466,8 +466,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   // Network Canvas
   const netCanvas = document.getElementById('network-canvas') as HTMLCanvasElement;
   const netCtx = netCanvas?.getContext('2d');
-  let netDownData: number[] = [];
-  let netUpData: number[] = [];
+  const netDownData: number[] = [];
+  const netUpData: number[] = [];
   const netLength = 100;
   
   function resizeNet() {

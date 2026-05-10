@@ -40,7 +40,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <script>
   // Get or set visit count
-  let visits = parseInt(sessionStorage.getItem('recursion-visits') || '0') + 1;
+  const visits = parseInt(sessionStorage.getItem('recursion-visits') || '0') + 1;
   sessionStorage.setItem('recursion-visits', visits.toString());
   
   const timesEl = document.getElementById('times');

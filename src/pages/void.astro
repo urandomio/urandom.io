@@ -202,7 +202,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     if (whisperEl) {
       whisperEl.textContent = whispers[whisperIndex];
       whisperEl.style.animation = 'none';
-      whisperEl.offsetHeight; // trigger reflow
+      void whisperEl.offsetHeight; // trigger reflow
       whisperEl.style.animation = 'whisper 12s ease-in-out';
       whisperIndex = (whisperIndex + 1) % whispers.length;
     }

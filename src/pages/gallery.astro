@@ -27,10 +27,6 @@ function humanizeFilename(file: string) {
     .replace(/\b\w/g, (c) => c.toUpperCase()); // Title case
 }
 
-function isoDate(d: Date) {
-  return d.toISOString().slice(0, 10);
-}
-
 // Extract YYYYMMDD-HHMM or YYYYMMDD from filename for reliable sorting
 // Supports: name-20260202-2316.png (with time) or name-20260202.png (date only)
 function extractDateTimeFromFilename(filename: string): { date: string; sortKey: string } | null {
@@ -200,7 +196,7 @@ const initialImages = images.slice(0, INITIAL_COUNT);
 
       <!-- Gallery Grid -->
       <div id="gallery-grid" class="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 mb-16">
-        {initialImages.map((image, index) => (
+        {initialImages.map((image) => (
           <article class="group relative" data-tags={image.tags.join(' ')} data-src={image.src} data-title={image.title}>
             <div class="relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500">
               <button
