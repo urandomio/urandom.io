@@ -349,7 +349,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1);
         setTimeout(() => whiteNoise.stop(), 1000);
       }, 3000);
-    } catch (e) {
+    } catch {
       // Audio not supported
     }
   });

@@ -37,21 +37,27 @@
           ...
         }:
         let
+          # `dev` — bring the project up from a clean checkout to a hot-reloading
+          # Astro dev server bound to every interface on port 4321, so LAN devices
+          # and ngrok-style tunnels can reach it. Any extra args are forwarded to
+          # `astro dev` (so e.g. `dev --port 1337` works).
+          devScript = pkgs.writeShellScriptBin "dev" ''
+            set -euo pipefail
+            if [ ! -d node_modules ]; then
+              echo "→ installing dependencies (bun install)..."
+              ${pkgs.bun}/bin/bun install
+            fi
+            echo "→ starting Astro dev server with HMR on 0.0.0.0:4321..."
+            exec ${pkgs.bun}/bin/bun run dev -- --host 0.0.0.0 "$@"
+          '';
+
           devPackages = with pkgs; [
             bun
             nodejs_22
             git
             config.treefmt.build.wrapper
+            devScript
           ];
-
-          devScript = pkgs.writeShellScriptBin "dev" ''
-            if [ ! -d "node_modules" ]; then
-              echo "Installing dependencies..."
-              ${pkgs.bun}/bin/bun install
-            fi
-            echo "Starting dev server..."
-            exec ${pkgs.bun}/bin/bun run dev
-          '';
         in
         {
           treefmt = {
@@ -82,17 +88,10 @@
 
           formatter = config.treefmt.build.wrapper;
 
-          apps = {
-            default = {
-              type = "app";
-              program = "${devScript}/bin/dev";
-              meta.description = "Start Astro development server";
-            };
-            dev = {
-              type = "app";
-              program = "${devScript}/bin/dev";
-              meta.description = "Start Astro development server";
-            };
+          apps.default = {
+            type = "app";
+            program = "${devScript}/bin/dev";
+            meta.description = "Start the Astro dev server (HMR, bound to 0.0.0.0:4321)";
           };
 
           devShells.default = pkgs.mkShell {
@@ -103,11 +102,13 @@
               echo "/dev/urandom for humans"
               echo ""
               echo "Commands:"
-              echo "  bun install     - Install dependencies"
-              echo "  bun run dev     - Start dev server"
-              echo "  bun run build   - Build for production"
-              echo "  bun run check   - TypeScript checks"
-              echo "  treefmt         - Format all files"
+              echo "  dev             - install deps + start dev server on 0.0.0.0:4321 (HMR)"
+              echo "  nix run         - same, via flake app"
+              echo "  bun install     - install dependencies"
+              echo "  bun run build   - build for production"
+              echo "  bun run check   - astro check"
+              echo "  bun run lint    - eslint"
+              echo "  treefmt         - format all files"
               echo ""
             '';
           };

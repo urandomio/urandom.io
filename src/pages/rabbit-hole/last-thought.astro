@@ -86,7 +86,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   const submitBtn = document.getElementById('submit-thought');
   const countEl = document.getElementById('count');
   
-  let displayedThoughts = [...thoughts];
+  const displayedThoughts = [...thoughts];
   
   function showRandomThought() {
     if (!thoughtEl) return;

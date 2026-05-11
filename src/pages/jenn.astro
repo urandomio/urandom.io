@@ -307,7 +307,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     let data: JennData | null = null;
     let monthKeys: string[] = [];
     let currentMonthIndex = 0;
-    let messagesPerLoad = 15;
+    const messagesPerLoad = 15;
     let isLoading = false;
 
     // Fetch the data
