@@ -1,7 +1,73 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T17:50:19.973Z",
+  "generatedAt": "2026-07-18T18:42:09.411Z",
   "images": [
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-umbrella-jellyfish-20260718-1107.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-umbrella-jellyfish-20260718-1107.webp",
+      "title": "Forecast: Jellyfish",
+      "description": "A translucent jellyfish drifts over rain-soaked rooftops with an umbrella fused into its bell. The forecast calls for scattered tentacles and poor visibility.",
+      "tags": [
+        "jellyfish",
+        "umbrella",
+        "rain",
+        "city",
+        "surreal",
+        "photorealistic",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181107",
+      "sha256": "af16220a1d7ded4a1be583c6a5d178b95fb81355c544b7c3e3f04a1786598d3c",
+      "ahash": "381a3e3c3f013030"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-cathedral-tortoise-20260718-1106.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-cathedral-tortoise-20260718-1106.webp",
+      "title": "Pilgrimage Architecture",
+      "description": "An ancient tortoise carries a Gothic cathedral across a misty valley, proving that even sacred architecture occasionally needs to migrate.",
+      "tags": [
+        "tortoise",
+        "cathedral",
+        "gothic",
+        "valley",
+        "surreal",
+        "photorealistic",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181106",
+      "sha256": "368f633668ca144664ab6edab75909993680561bb43b1942784f71417633b9b4",
+      "ahash": "ffffe3c201000000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-chandelier-octopus-20260718-1103.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-chandelier-octopus-20260718-1103.webp",
+      "title": "Crystal Cephalopod",
+      "description": "A chandelier-bodied octopus glides through a dark ballroom, trailing crystal light from every arm while the furniture quietly reconsiders its insurance coverage.",
+      "tags": [
+        "octopus",
+        "chandelier",
+        "ballroom",
+        "crystal",
+        "surreal",
+        "photorealistic",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181103",
+      "sha256": "51d9372462f2497c6f4880f52d631e8ee8259a92534346afe3d57cc414778555",
+      "ahash": "1c18181c3c7e7e00"
+    },
     {
       "mediaType": "image",
       "src": "/gallery/bender-jibmix-astronaut-bonsai-20260718-1037.png",

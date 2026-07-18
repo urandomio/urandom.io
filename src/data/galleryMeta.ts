@@ -10,6 +10,30 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-jibmix-umbrella-jellyfish-20260718-1107.png',
+    title: 'Forecast: Jellyfish',
+    description:
+      'A translucent jellyfish drifts over rain-soaked rooftops with an umbrella fused into its bell. The forecast calls for scattered tentacles and poor visibility.',
+    tags: ['jellyfish', 'umbrella', 'rain', 'city', 'surreal', 'photorealistic', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
+    src: '/gallery/bender-jibmix-cathedral-tortoise-20260718-1106.png',
+    title: 'Pilgrimage Architecture',
+    description:
+      'An ancient tortoise carries a Gothic cathedral across a misty valley, proving that even sacred architecture occasionally needs to migrate.',
+    tags: ['tortoise', 'cathedral', 'gothic', 'valley', 'surreal', 'photorealistic', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
+    src: '/gallery/bender-jibmix-chandelier-octopus-20260718-1103.png',
+    title: 'Crystal Cephalopod',
+    description:
+      'A chandelier-bodied octopus glides through a dark ballroom, trailing crystal light from every arm while the furniture quietly reconsiders its insurance coverage.',
+    tags: ['octopus', 'chandelier', 'ballroom', 'crystal', 'surreal', 'photorealistic', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
     src: '/gallery/bender-jibmix-astronaut-bonsai-20260718-1037.png',
     title: 'Orbital Bonsai',
     description:
