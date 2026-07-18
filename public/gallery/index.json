@@ -1,7 +1,73 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T05:54:57.742Z",
+  "generatedAt": "2026-07-18T17:50:19.973Z",
   "images": [
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-astronaut-bonsai-20260718-1037.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-astronaut-bonsai-20260718-1037.webp",
+      "title": "Orbital Bonsai",
+      "description": "An elderly astronaut tends a tiny ancient tree above Earth. Mission Control has opinions about the soil, but the bonsai answers to no one.",
+      "tags": [
+        "astronaut",
+        "bonsai",
+        "space-station",
+        "earth",
+        "portrait",
+        "surreal",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181037",
+      "sha256": "287f40283dfcf8d5ec0efaf5660252fd97f4abcc492ce13d641f06c0b67ef111",
+      "ahash": "00e0f0f8dcfc0c80"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-crab-leg-lighthouse-20260718-1035.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-crab-leg-lighthouse-20260718-1035.webp",
+      "title": "The Lighthouse Has Legs",
+      "description": "A weathered lighthouse walks the shoreline on articulated crab legs, keeping ships safe while creating several new problems for coastal zoning.",
+      "tags": [
+        "lighthouse",
+        "crab",
+        "ocean",
+        "coast",
+        "surreal",
+        "photorealistic",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181035",
+      "sha256": "4e1d012e3a55d68a175162105884e6da0bb84ac6d6ee81d8849cd4b241ddc874",
+      "ahash": "fff6f4f4c000c000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-koi-over-tokyo-20260718-1031.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-koi-over-tokyo-20260718-1031.webp",
+      "title": "Monsoon Migration",
+      "description": "A colossal koi swims through a rain-soaked Tokyo alley while commuters continue beneath it, because apparently this is still less disruptive than the trains.",
+      "tags": [
+        "koi",
+        "tokyo",
+        "rain",
+        "street-photography",
+        "surreal",
+        "photorealistic",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181031",
+      "sha256": "9fcc1becf64245329b0dd764e5be10291f6787274f7fcb75d1221ac3d3cb00b8",
+      "ahash": "3a7a38389c9c0010"
+    },
     {
       "mediaType": "image",
       "src": "/gallery/bender-jibmix-tiltshift-floating-whale-city-20260717-2229.png",

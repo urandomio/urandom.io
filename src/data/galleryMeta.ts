@@ -10,6 +10,30 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-jibmix-astronaut-bonsai-20260718-1037.png',
+    title: 'Orbital Bonsai',
+    description:
+      'An elderly astronaut tends a tiny ancient tree above Earth. Mission Control has opinions about the soil, but the bonsai answers to no one.',
+    tags: ['astronaut', 'bonsai', 'space-station', 'earth', 'portrait', 'surreal', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
+    src: '/gallery/bender-jibmix-crab-leg-lighthouse-20260718-1035.png',
+    title: 'The Lighthouse Has Legs',
+    description:
+      'A weathered lighthouse walks the shoreline on articulated crab legs, keeping ships safe while creating several new problems for coastal zoning.',
+    tags: ['lighthouse', 'crab', 'ocean', 'coast', 'surreal', 'photorealistic', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
+    src: '/gallery/bender-jibmix-koi-over-tokyo-20260718-1031.png',
+    title: 'Monsoon Migration',
+    description:
+      'A colossal koi swims through a rain-soaked Tokyo alley while commuters continue beneath it, because apparently this is still less disruptive than the trains.',
+    tags: ['koi', 'tokyo', 'rain', 'street-photography', 'surreal', 'photorealistic', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
     src: '/gallery/bender-jibmix-tiltshift-floating-whale-city-20260717-2229.png',
     title: 'Whale Transit Authority',
     description:
