@@ -10,6 +10,22 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-jibmix-tiltshift-floating-whale-city-20260717-2229.png',
+    title: 'Whale Transit Authority',
+    description:
+      'A floating city rides an enormous blue whale through storm clouds, complete with traffic jams, carnival rides, and absolutely no sensible zoning laws.',
+    tags: ['tilt-shift', 'miniature', 'whale', 'floating-city', 'surreal', 'storm', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
+    src: '/gallery/bender-jibmix-tiltshift-desert-spaceport-20260717-2227.png',
+    title: 'Poolside Launch Window',
+    description:
+      'An abandoned swimming pool has been rezoned as a retrofuturist desert spaceport. Rockets launch between palm trees and food trucks while the lifeguard remains mysteriously absent.',
+    tags: ['tilt-shift', 'miniature', 'spaceport', 'desert', 'retrofuturism', 'surreal', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
     src: '/gallery/bender-flux-taxidermy-human-wedding-20260324-1438.png',
     title: 'For Better or Worse',
     description: 'The smiles were sewn on. The eyes were replaced. The hands were repositioned three times before they looked natural enough. They have been dancing for forty years. Neither of them has noticed.',

@@ -1,7 +1,51 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-18T00:52:06.803Z",
+  "generatedAt": "2026-07-18T05:54:57.742Z",
   "images": [
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-tiltshift-floating-whale-city-20260717-2229.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-floating-whale-city-20260717-2229.webp",
+      "title": "Whale Transit Authority",
+      "description": "A floating city rides an enormous blue whale through storm clouds, complete with traffic jams, carnival rides, and absolutely no sensible zoning laws.",
+      "tags": [
+        "tilt-shift",
+        "miniature",
+        "whale",
+        "floating-city",
+        "surreal",
+        "storm",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-17",
+      "sortKey": "202607172229",
+      "sha256": "01a9d44e1f7dec4f1e4ffa9ed97c51197d1c482fd33a795f2b84e7ed681c2360",
+      "ahash": "031f5f6f836f0200"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-tiltshift-desert-spaceport-20260717-2227.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-tiltshift-desert-spaceport-20260717-2227.webp",
+      "title": "Poolside Launch Window",
+      "description": "An abandoned swimming pool has been rezoned as a retrofuturist desert spaceport. Rockets launch between palm trees and food trucks while the lifeguard remains mysteriously absent.",
+      "tags": [
+        "tilt-shift",
+        "miniature",
+        "spaceport",
+        "desert",
+        "retrofuturism",
+        "surreal",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-17",
+      "sortKey": "202607172227",
+      "sha256": "56280d40263a57ad445338bab04be3eec695cb2be6081176f1e9db20ce3c2804",
+      "ahash": "ff0000187f7e0202"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-ltx23-spore-season-weather-whiteout-20260417-1749.mp4",
