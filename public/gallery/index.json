@@ -1,7 +1,118 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T18:42:09.411Z",
+  "generatedAt": "2026-07-19T01:50:52.382Z",
   "images": [
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-neon-ribbon-eel-20260718-1217.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-neon-ribbon-eel-20260718-1217.webp",
+      "title": "Neon Ribbon Eel",
+      "description": "A ribbon eel threads between electric pink and orange anemones, turning the abyss into a reef-sized neon sign with substantially more teeth.",
+      "tags": [
+        "ribbon-eel",
+        "anemone",
+        "coral",
+        "deep-sea",
+        "neon",
+        "colorful",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181217",
+      "sha256": "92822e92c78fabf7062904c935c8d5ca2a4b2d8559e2d82f1aea4d00f4abbe29",
+      "ahash": "fe3c360f6c603080"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-anglerfish-garden-20260718-1216.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-anglerfish-garden-20260718-1216.webp",
+      "title": "Anglerfish Garden",
+      "description": "An anglerfish drifts through a garden of glowing orange polyps, cultivating the only flowers that thrive beneath several atmospheres of bad decisions.",
+      "tags": [
+        "anglerfish",
+        "bioluminescence",
+        "deep-sea",
+        "underwater",
+        "garden",
+        "colorful",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181216",
+      "sha256": "55a003b41b89d0341da2987b586dadd43d04fc69aa413ba78f6e5d181589d4c1",
+      "ahash": "1e5c4c18dc7f7606"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-stained-glass-vampire-squid-20260718-1215.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-stained-glass-vampire-squid-20260718-1215.webp",
+      "title": "Stained-Glass Vampire Squid",
+      "description": "A translucent vampire squid glows in rose, gold, and violet against the black water, like a cathedral window that learned to hunt.",
+      "tags": [
+        "vampire-squid",
+        "stained-glass",
+        "bioluminescence",
+        "deep-sea",
+        "colorful",
+        "surreal",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181215",
+      "sha256": "fb57b01d2f2b3e88aa531f0dfba42a290aa8faa427c22a6997ccb58e415833f6",
+      "ahash": "303c3e2c78780000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-prism-isopod-20260718-1214.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-prism-isopod-20260718-1214.webp",
+      "title": "Prism Isopod",
+      "description": "A pale armored isopod catches shafts of turquoise and amber light on the seafloor, dressed for a rave that geology scheduled three million years late.",
+      "tags": [
+        "isopod",
+        "crustacean",
+        "deep-sea",
+        "underwater",
+        "prismatic",
+        "colorful",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181214",
+      "sha256": "4a9840aac60c3021c0833e1f522c1ec40ece03aa8c59540ef76fe7671165eaa3",
+      "ahash": "1f0f3e7f4f000000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-jibmix-whale-fall-cathedral-20260718-1213.png",
+      "thumb": "/gallery/thumbs/bender-jibmix-whale-fall-cathedral-20260718-1213.webp",
+      "title": "Whale Fall Cathedral",
+      "description": "Divers cross a vast submerged cathedral grown around the remains of a whale fall, where magenta coral climbs the arches and blue light filters down like stained glass.",
+      "tags": [
+        "whale-fall",
+        "cathedral",
+        "divers",
+        "deep-sea",
+        "coral",
+        "underwater",
+        "surreal",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "JibMix FLUX FP8",
+      "date": "2026-07-18",
+      "sortKey": "202607181213",
+      "sha256": "eaf792c647c940b38120bd254ff8f02423c401034d414f516c401ce82aefb44c",
+      "ahash": "1c1c5e3c18187a1c"
+    },
     {
       "mediaType": "image",
       "src": "/gallery/bender-jibmix-umbrella-jellyfish-20260718-1107.png",

@@ -10,6 +10,46 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-jibmix-neon-ribbon-eel-20260718-1217.png',
+    title: 'Neon Ribbon Eel',
+    description:
+      'A ribbon eel threads between electric pink and orange anemones, turning the abyss into a reef-sized neon sign with substantially more teeth.',
+    tags: ['ribbon-eel', 'anemone', 'coral', 'deep-sea', 'neon', 'colorful', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
+    src: '/gallery/bender-jibmix-anglerfish-garden-20260718-1216.png',
+    title: 'Anglerfish Garden',
+    description:
+      'An anglerfish drifts through a garden of glowing orange polyps, cultivating the only flowers that thrive beneath several atmospheres of bad decisions.',
+    tags: ['anglerfish', 'bioluminescence', 'deep-sea', 'underwater', 'garden', 'colorful', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
+    src: '/gallery/bender-jibmix-stained-glass-vampire-squid-20260718-1215.png',
+    title: 'Stained-Glass Vampire Squid',
+    description:
+      'A translucent vampire squid glows in rose, gold, and violet against the black water, like a cathedral window that learned to hunt.',
+    tags: ['vampire-squid', 'stained-glass', 'bioluminescence', 'deep-sea', 'colorful', 'surreal', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
+    src: '/gallery/bender-jibmix-prism-isopod-20260718-1214.png',
+    title: 'Prism Isopod',
+    description:
+      'A pale armored isopod catches shafts of turquoise and amber light on the seafloor, dressed for a rave that geology scheduled three million years late.',
+    tags: ['isopod', 'crustacean', 'deep-sea', 'underwater', 'prismatic', 'colorful', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
+    src: '/gallery/bender-jibmix-whale-fall-cathedral-20260718-1213.png',
+    title: 'Whale Fall Cathedral',
+    description:
+      'Divers cross a vast submerged cathedral grown around the remains of a whale fall, where magenta coral climbs the arches and blue light filters down like stained glass.',
+    tags: ['whale-fall', 'cathedral', 'divers', 'deep-sea', 'coral', 'underwater', 'surreal', 'bender', 'mold-cli'],
+    model: 'JibMix FLUX FP8',
+  },
+  {
     src: '/gallery/bender-jibmix-umbrella-jellyfish-20260718-1107.png',
     title: 'Forecast: Jellyfish',
     description:
