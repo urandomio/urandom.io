@@ -10,6 +10,46 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/bender-flux-macro-bobtail-squid-20260719-2315.png',
+    title: 'Pocket Galaxy',
+    description:
+      'A bobtail squid hovers in black water with opalescent chromatophores blazing across its translucent body, carrying an entire galaxy in something small enough to lose behind a seashell.',
+    tags: ['bobtail-squid', 'cephalopod', 'macro', 'bioluminescence', 'deep-sea', 'underwater', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-macro-pygmy-seahorse-20260719-2314.png',
+    title: 'Perfect Disguise',
+    description:
+      'A pygmy seahorse disappears among pink coral polyps, because evolution apparently decided camouflage should also be offensively adorable.',
+    tags: ['pygmy-seahorse', 'seahorse', 'macro', 'camouflage', 'coral', 'underwater', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-macro-peacock-mantis-shrimp-20260719-2313.png',
+    title: 'Violence in Technicolor',
+    description:
+      'A peacock mantis shrimp peers from its coral burrow in jeweled turquoise and scarlet armor, dressed like a rave and equipped like a demolition crew.',
+    tags: ['mantis-shrimp', 'crustacean', 'macro', 'coral', 'colorful', 'underwater', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-macro-blue-dragon-20260719-2312.png',
+    title: 'Blue Dragon Ascendant',
+    description:
+      'A blue dragon sea slug drifts beneath the ocean surface with silver-blue cerata spread like alien wings, tiny enough to overlook and dramatic enough to resent it.',
+    tags: ['blue-dragon', 'sea-slug', 'nudibranch', 'macro', 'ocean-surface', 'underwater', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-macro-flamboyant-cuttlefish-20260719-2311.png',
+    title: 'Chromatic Menace',
+    description:
+      'A flamboyant cuttlefish crawls across volcanic sand in electric violet, orange, and blue, staring down the camera with the confidence of an animal named after its own wardrobe.',
+    tags: ['flamboyant-cuttlefish', 'cuttlefish', 'cephalopod', 'macro', 'colorful', 'underwater', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
     src: '/gallery/bender-jibmix-neon-ribbon-eel-20260718-1217.png',
     title: 'Neon Ribbon Eel',
     description:

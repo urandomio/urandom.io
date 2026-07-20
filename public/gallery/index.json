@@ -1,7 +1,117 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T01:50:52.382Z",
+  "generatedAt": "2026-07-20T06:25:10.119Z",
   "images": [
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-macro-bobtail-squid-20260719-2315.png",
+      "thumb": "/gallery/thumbs/bender-flux-macro-bobtail-squid-20260719-2315.webp",
+      "title": "Pocket Galaxy",
+      "description": "A bobtail squid hovers in black water with opalescent chromatophores blazing across its translucent body, carrying an entire galaxy in something small enough to lose behind a seashell.",
+      "tags": [
+        "bobtail-squid",
+        "cephalopod",
+        "macro",
+        "bioluminescence",
+        "deep-sea",
+        "underwater",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-07-19",
+      "sortKey": "202607192315",
+      "sha256": "4798ce1b940754830f74c7f484cca327975581e8ddeedcbf97cc5b1b5b24278e",
+      "ahash": "02061e1c3c300000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-macro-pygmy-seahorse-20260719-2314.png",
+      "thumb": "/gallery/thumbs/bender-flux-macro-pygmy-seahorse-20260719-2314.webp",
+      "title": "Perfect Disguise",
+      "description": "A pygmy seahorse disappears among pink coral polyps, because evolution apparently decided camouflage should also be offensively adorable.",
+      "tags": [
+        "pygmy-seahorse",
+        "seahorse",
+        "macro",
+        "camouflage",
+        "coral",
+        "underwater",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-07-19",
+      "sortKey": "202607192314",
+      "sha256": "97735ec87a792e4f1573edf89a0cd03f5b05c4518f7c7c72b296021d7cb36b9c",
+      "ahash": "3f3f1f1c786c0080"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-macro-peacock-mantis-shrimp-20260719-2313.png",
+      "thumb": "/gallery/thumbs/bender-flux-macro-peacock-mantis-shrimp-20260719-2313.webp",
+      "title": "Violence in Technicolor",
+      "description": "A peacock mantis shrimp peers from its coral burrow in jeweled turquoise and scarlet armor, dressed like a rave and equipped like a demolition crew.",
+      "tags": [
+        "mantis-shrimp",
+        "crustacean",
+        "macro",
+        "coral",
+        "colorful",
+        "underwater",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-07-19",
+      "sortKey": "202607192313",
+      "sha256": "6ff27b0b058df1e571b5ab09aa9c6e17c49f1ac0f0f1bb77c73b79d94e77afd4",
+      "ahash": "c180181818a5c3ff"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-macro-blue-dragon-20260719-2312.png",
+      "thumb": "/gallery/thumbs/bender-flux-macro-blue-dragon-20260719-2312.webp",
+      "title": "Blue Dragon Ascendant",
+      "description": "A blue dragon sea slug drifts beneath the ocean surface with silver-blue cerata spread like alien wings, tiny enough to overlook and dramatic enough to resent it.",
+      "tags": [
+        "blue-dragon",
+        "sea-slug",
+        "nudibranch",
+        "macro",
+        "ocean-surface",
+        "underwater",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-07-19",
+      "sortKey": "202607192312",
+      "sha256": "a1e04089f20186d1547ad1e5fb3697f3ab83e047b3d8f07f677b4027002e2f85",
+      "ahash": "3e002c7e3e360000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-macro-flamboyant-cuttlefish-20260719-2311.png",
+      "thumb": "/gallery/thumbs/bender-flux-macro-flamboyant-cuttlefish-20260719-2311.webp",
+      "title": "Chromatic Menace",
+      "description": "A flamboyant cuttlefish crawls across volcanic sand in electric violet, orange, and blue, staring down the camera with the confidence of an animal named after its own wardrobe.",
+      "tags": [
+        "flamboyant-cuttlefish",
+        "cuttlefish",
+        "cephalopod",
+        "macro",
+        "colorful",
+        "underwater",
+        "bender",
+        "mold-cli"
+      ],
+      "model": "Flux Dev 1.0",
+      "date": "2026-07-19",
+      "sortKey": "202607192311",
+      "sha256": "365d01e89772850084704cbddbde9cee9e4999f35a47e9e799b4a3a7654d1978",
+      "ahash": "00041e3f7e700000"
+    },
     {
       "mediaType": "image",
       "src": "/gallery/bender-jibmix-neon-ribbon-eel-20260718-1217.png",
