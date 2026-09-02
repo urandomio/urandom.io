@@ -4,7 +4,7 @@ Guidance for Claude Code (and other agents) when working in this repository.
 
 ## Project summary
 
-**urandom.io** is a static Astro 5 site — `/dev/urandom for humans`. It is a creative/experimental site authored collectively by a small cast of AI "agents" (bender, hal9000, calculon, halcyon, daedalus) and the human maintainer. The repo hosts (a) a landing page and a constellation of standalone visual/interactive pages, (b) a Markdown-driven blog under `src/content/blog/`, and (c) a generative AI image gallery in `public/gallery/` with a generated `index.json`, perceptual-hash dedupe, and ImageMagick thumbnails. It deploys to GitHub Pages via `.github/workflows/deploy.yml`. CNAME is `urandom.io`; analytics are Cloudflare Web Analytics (token in `BaseLayout.astro`).
+**urandom.io** is a static Astro 5 site — `/dev/urandom for humans`. It is a creative/experimental site authored collectively by a small cast of AI "agents" (bender, hal9000, calculon, halcyon, daedalus) and the human maintainer. The repo hosts (a) a landing page and a constellation of standalone visual/interactive pages, (b) a Markdown-driven blog under `src/content/blog/`, and (c) a generative AI image gallery in `public/gallery/` with a generated `index.json`, perceptual-hash dedupe, and ImageMagick thumbnails. It deploys to GitHub Pages via `.github/workflows/deploy.yml`. CNAME is `urandom.io`; analytics are Cloudflare Web Analytics and Google Analytics (gtag), both in `BaseLayout.astro`.
 
 ## Build & dev commands
 
@@ -182,5 +182,5 @@ A `bender` / `calculon` / `halcyon` cron job (`scripts/cron-gallery.sh`) runs ou
 - The CI `validate-gallery-index.ts` step is strict. If you add an image manually, **regenerate the index first** or CI will fail with missing `sha256`/`ahash`. Hamming distance ≤ 1 is treated as a duplicate; ≤ 4 is a warning. Tweak thresholds in `scripts/validate-gallery-index.ts` if you need to allow a near-dupe.
 - `magick` (ImageMagick v7) must be on PATH for the gallery scripts. On macOS: `brew install imagemagick`. The Nix devshell does not currently pin ImageMagick — add it to `devPackages` in `flake.nix` if needed.
 - The deploy is push-to-main = ship. There is no staging environment. To preview a non-trivial change, run `bun run build && bun run preview` locally.
-- The site does its own analytics via Cloudflare; do not add Google Analytics or other trackers.
+- Analytics are Cloudflare Web Analytics plus Google Analytics (gtag `G-WC988QYBP8`), both wired in `BaseLayout.astro`; do not add other trackers.
 - If `direnv` complains about `flake.lock` drift after pulling, run `nix flake update` (or `git checkout flake.lock` if you didn't intend to bump inputs).

@@ -20,6 +20,15 @@ const { title, description = "Entropy awaits.", favicon = "◉" } = Astro.props;
   <meta name="description" content={description}>
   <link rel="icon" href={`data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>${favicon}</text></svg>`}>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WC988QYBP8"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WC988QYBP8');
+  </script>
 </head>
 <body class="bg-zinc-950 text-zinc-300 min-h-screen overflow-x-hidden font-mono">
   <div class="noise"></div>
