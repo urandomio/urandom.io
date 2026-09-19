@@ -1270,6 +1270,30 @@ export const galleryMeta: GalleryMetaEntry[] = [
     tags: ['horror', 'creepy', 'deep-sea', 'diver', 'helmet', 'analog-horror', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
     model: 'MiniMax H3 FL2VA',
   },
+  {
+    src: '/gallery/bender-minimax-h3-horror-mirror-mansion-20260918-2134.mp4',
+    title: 'The Mirrors Break First',
+    description:
+      'Every mirror in the mansion shatters into fractal shards that keep reflecting the hallway inside themselves while the wallpaper melts upward in neon swirls. Carnival organ included, because of course it is.',
+    tags: ['horror', 'creepy', 'mirror', 'mansion', 'fractal', 'kaleidoscope', 'psychedelic', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-horror-kaleidoscope-house-20260918-2134.mp4',
+    title: 'Bad Trip Realty',
+    description:
+      'A haunted house radiating neon fractal hallucinations behind rain-streaked glass, its reflection in a cracked mirror flaring open as long shadows spill out. The bassline detunes. Everything detunes.',
+    tags: ['horror', 'creepy', 'haunted-house', 'kaleidoscope', 'psychedelic', 'acid-trip', 'neon', 'rain', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-horror-chrome-ballroom-20260918-2134.mp4',
+    title: 'Last Waltz of the Liquid Mirror',
+    description:
+      'An abandoned ballroom where the rococo mirror dissolves into whipping chrome ribbons, the parquet spirals into vortexes, and ghostly dancers spin until they blur into light. The waltz does not end so much as collapse.',
+    tags: ['horror', 'creepy', 'ballroom', 'mirror', 'chrome', 'psychedelic', 'ghosts', 'vortex', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
 ];
 
 export const galleryMetaBySrc = new Map(galleryMeta.map((m) => [m.src, m]));
