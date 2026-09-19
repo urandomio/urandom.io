@@ -1294,6 +1294,78 @@ export const galleryMeta: GalleryMetaEntry[] = [
     tags: ['horror', 'creepy', 'ballroom', 'mirror', 'chrome', 'psychedelic', 'ghosts', 'vortex', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
     model: 'MiniMax H3 FL2VA',
   },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-crow-rooftop-20260918-2225.mp4',
+    title: 'Rain Falls, She Stares',
+    description:
+      'A woman in Crow face paint on a rain-soaked rooftop turns her head to stare into the lens as thunder flickers and neon shimmers in the puddles below.',
+    tags: ['dark-queen', 'crow', 'gothic', 'rain', 'rooftop', 'neon', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-leather-dungeon-20260918-2225.mp4',
+    title: 'Red Light Discipline',
+    description:
+      'A slow orbit around black leather dominatrix couture in a smoke-filled dungeon as the red spotlight pulses and chains sway behind her.',
+    tags: ['dark-queen', 'leather', 'dominatrix', 'dungeon', 'red-light', 'chiaroscuro', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-black-parade-20260918-2225.mp4',
+    title: 'Carry On',
+    description:
+      'A Black Parade marcher strides through fog and falling ash over a ruined street, black flag snapping, funereal and stoic to the last frame.',
+    tags: ['dark-queen', 'black-parade', 'mcr', 'march', 'fog', 'ash', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-mourning-veil-20260918-2225.mp4',
+    title: 'One Black Rose',
+    description:
+      'Candlelight flickers in a Victorian parlor as the veiled woman lifts a single black rose to her lips and the shadows breathe across the wallpaper.',
+    tags: ['dark-queen', 'victorian', 'mourning', 'veil', 'black-rose', 'candlelight', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-rainy-curb-20260918-2225.mp4',
+    title: '3 AM Curb',
+    description:
+      'Rain hammers down as the camera pushes toward a woman on a neon curb, wet hair stuck to her face, cigarette smoke curling through sodium light.',
+    tags: ['dark-queen', 'emo', 'rain', 'neon', 'grunge', 'night', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-cathedral-20260918-2225.mp4',
+    title: 'Patent Leather Evensong',
+    description:
+      'Moonlight through stained glass slides across a patent leather bodysuit as she slowly spreads her arms wide in the cathedral nave.',
+    tags: ['dark-queen', 'cathedral', 'stained-glass', 'moonlight', 'leather', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-graveyard-bride-20260918-2225.mp4',
+    title: 'Till Death, Obviously',
+    description:
+      'The graveyard bride raises her cracked porcelain face to cold moonlight as fog coils through leaning tombstones and a crow calls once.',
+    tags: ['dark-queen', 'graveyard', 'bride', 'porcelain', 'fog', 'moonlight', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-static-bedroom-20260918-2225.mp4',
+    title: 'Channel Zero',
+    description:
+      'TV static flickers purple and cyan across a dark bedroom as her hood slips off and she looks up with tired eyes.',
+    tags: ['dark-queen', 'emo', 'bedroom', 'tv-static', 'purple', 'cyan', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-crow-fireescape-20260918-2225.mp4',
+    title: 'Feathered Watch',
+    description:
+      'On a rain-streaked fire escape, the woman with crow feathers in her hair turns to look over her shoulder as crows wheel through the fog above.',
+    tags: ['dark-queen', 'crow', 'feathers', 'fire-escape', 'rain', 'fog', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
 ];
 
 export const galleryMetaBySrc = new Map(galleryMeta.map((m) => [m.src, m]));
