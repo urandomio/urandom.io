@@ -33,7 +33,7 @@ async function main() {
   const dupSha: Array<{ sha: string; a: string; b: string }> = [];
 
   // aHash near-duplicate check
-  const ahashes: Array<{ src: string; ahash: bigint }> = [];
+  const ahashes: Array<{ src: string; ahash: bigint; mediaType: string }> = [];
   const AHASH_FAIL_THRESHOLD = 1; // extremely likely duplicate
   const AHASH_WARN_THRESHOLD = 4; // suspiciously similar
 
@@ -55,7 +55,7 @@ async function main() {
     }
 
     try {
-      ahashes.push({ src: i.src, ahash: BigInt('0x' + i.ahash!) });
+      ahashes.push({ src: i.src, ahash: BigInt('0x' + i.ahash!), mediaType: i.mediaType ?? 'image' });
     } catch {
       fail(`${i.src}: invalid ahash '${i.ahash}'`);
     }
@@ -83,7 +83,10 @@ async function main() {
   for (let a = 0; a < ahashes.length; a++) {
     for (let b = a + 1; b < ahashes.length; b++) {
       const d = popcount64(ahashes[a].ahash ^ ahashes[b].ahash);
-      if (d <= AHASH_FAIL_THRESHOLD) {
+      // An animated clip's poster frame is its source still by construction;
+      // only flag near-duplicates within the same media type.
+      const sameType = ahashes[a].mediaType === ahashes[b].mediaType;
+      if (d <= AHASH_FAIL_THRESHOLD && sameType) {
         fail(`near-duplicate images (aHash distance ${d}): ${ahashes[a].src} ~ ${ahashes[b].src}`);
         break;
       }

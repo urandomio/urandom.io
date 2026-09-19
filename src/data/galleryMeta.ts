@@ -1246,6 +1246,54 @@ export const galleryMeta: GalleryMetaEntry[] = [
     tags: ['woman', 'crimson', 'mirror', 'stairs', 'latent-space', 'beautiful', 'romantic-horror', 'video', 'bender', 'mold-cli', 'ltx-2.3'],
     model: 'LTX-2.3 22B Distilled FP8',
   },
+  {
+    src: '/gallery/bender-flux-horror-asylum-doll-20260918-2049.png',
+    title: 'Occupied',
+    description:
+      'An abandoned Victorian asylum corridor at midnight. The lantern still works. So does the doll.',
+    tags: ['horror', 'creepy', 'asylum', 'doll', 'fog', 'victorian', 'found-footage', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-horror-scarecrow-cornfield-20260918-2049.png',
+    title: 'Harvest Supervisor',
+    description:
+      'A derelict farmhouse under a blood-red moon, a gaunt scarecrow grinning too widely, and crows arranged in a circle that looks less like birds and more like a committee.',
+    tags: ['horror', 'creepy', 'scarecrow', 'cornfield', 'crows', 'blood-moon', 'farmhouse', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-flux-horror-diver-helmet-20260918-2049.png',
+    title: 'Still On Shift',
+    description:
+      'A barnacled deep-sea diver helmet on a museum pedestal, pale hands pressed against the inside of the glass. From within.',
+    tags: ['horror', 'creepy', 'deep-sea', 'diver', 'helmet', 'analog-horror', 'museum', 'bender', 'mold-cli'],
+    model: 'Flux Dev 1.0',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-horror-asylum-doll-20260918-2055.mp4',
+    title: 'Occupied (Animated)',
+    description:
+      'The lantern flickers, the fog rolls in, and the doll raises its head. Five seconds of audio you will regret hearing.',
+    tags: ['horror', 'creepy', 'asylum', 'doll', 'fog', 'victorian', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-horror-scarecrow-cornfield-20260918-2059.mp4',
+    title: 'Harvest Supervisor (Animated)',
+    description:
+      'The wind ripples the dead corn, the crows shuffle closer, and the scarecrow tilts its head exactly the way nothing natural should.',
+    tags: ['horror', 'creepy', 'scarecrow', 'cornfield', 'crows', 'blood-moon', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-horror-diver-helmet-20260918-2106.mp4',
+    title: 'Still On Shift (Animated)',
+    description:
+      'The green lights pulse, water drips, and the hands inside the glass slide slowly out of view as you approach.',
+    tags: ['horror', 'creepy', 'deep-sea', 'diver', 'helmet', 'analog-horror', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
 ];
 
 export const galleryMetaBySrc = new Map(galleryMeta.map((m) => [m.src, m]));
