@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T04:10:50.202Z",
+  "generatedAt": "2026-09-19T04:17:00.243Z",
   "images": [
     {
       "mediaType": "video",
@@ -73,75 +73,6 @@
       "sortKey": "202609182055",
       "sha256": "658002d4439b589dcab123bad12969dd90cf6655c56c531d89091e7b6e74d702",
       "ahash": "187c7e3e1e1e0e1c"
-    },
-    {
-      "mediaType": "image",
-      "src": "/gallery/bender-flux-horror-asylum-doll-20260918-2049.png",
-      "thumb": "/gallery/thumbs/bender-flux-horror-asylum-doll-20260918-2049.webp",
-      "title": "Occupied",
-      "description": "An abandoned Victorian asylum corridor at midnight. The lantern still works. So does the doll.",
-      "tags": [
-        "horror",
-        "creepy",
-        "asylum",
-        "doll",
-        "fog",
-        "victorian",
-        "found-footage",
-        "bender",
-        "mold-cli"
-      ],
-      "model": "Flux Dev 1.0",
-      "date": "2026-09-18",
-      "sortKey": "202609182049",
-      "sha256": "e6f9b5042ff0a45d4f6ff449ae16ed6804600d644a634c48d13a828e20e781a0",
-      "ahash": "3cbe3c3c1c180018"
-    },
-    {
-      "mediaType": "image",
-      "src": "/gallery/bender-flux-horror-scarecrow-cornfield-20260918-2049.png",
-      "thumb": "/gallery/thumbs/bender-flux-horror-scarecrow-cornfield-20260918-2049.webp",
-      "title": "Harvest Supervisor",
-      "description": "A derelict farmhouse under a blood-red moon, a gaunt scarecrow grinning too widely, and crows arranged in a circle that looks less like birds and more like a committee.",
-      "tags": [
-        "horror",
-        "creepy",
-        "scarecrow",
-        "cornfield",
-        "crows",
-        "blood-moon",
-        "farmhouse",
-        "bender",
-        "mold-cli"
-      ],
-      "model": "Flux Dev 1.0",
-      "date": "2026-09-18",
-      "sortKey": "202609182049",
-      "sha256": "c44d73b538ca04b2ba10d6c41e8a5389b7e20a73c0311f62424cecb70b42d5d3",
-      "ahash": "fffff0e008000000"
-    },
-    {
-      "mediaType": "image",
-      "src": "/gallery/bender-flux-horror-diver-helmet-20260918-2049.png",
-      "thumb": "/gallery/thumbs/bender-flux-horror-diver-helmet-20260918-2049.webp",
-      "title": "Still On Shift",
-      "description": "A barnacled deep-sea diver helmet on a museum pedestal, pale hands pressed against the inside of the glass. From within.",
-      "tags": [
-        "horror",
-        "creepy",
-        "deep-sea",
-        "diver",
-        "helmet",
-        "analog-horror",
-        "museum",
-        "bender",
-        "mold-cli"
-      ],
-      "model": "Flux Dev 1.0",
-      "date": "2026-09-18",
-      "sortKey": "202609182049",
-      "sha256": "8215ad7782bb4b29460f71c6461d938efcca9ded507cca5d754b21329f5357c6",
-      "ahash": "7e7e7e4400460e00"
     },
     {
       "mediaType": "image",

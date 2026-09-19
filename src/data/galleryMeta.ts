@@ -1247,30 +1247,6 @@ export const galleryMeta: GalleryMetaEntry[] = [
     model: 'LTX-2.3 22B Distilled FP8',
   },
   {
-    src: '/gallery/bender-flux-horror-asylum-doll-20260918-2049.png',
-    title: 'Occupied',
-    description:
-      'An abandoned Victorian asylum corridor at midnight. The lantern still works. So does the doll.',
-    tags: ['horror', 'creepy', 'asylum', 'doll', 'fog', 'victorian', 'found-footage', 'bender', 'mold-cli'],
-    model: 'Flux Dev 1.0',
-  },
-  {
-    src: '/gallery/bender-flux-horror-scarecrow-cornfield-20260918-2049.png',
-    title: 'Harvest Supervisor',
-    description:
-      'A derelict farmhouse under a blood-red moon, a gaunt scarecrow grinning too widely, and crows arranged in a circle that looks less like birds and more like a committee.',
-    tags: ['horror', 'creepy', 'scarecrow', 'cornfield', 'crows', 'blood-moon', 'farmhouse', 'bender', 'mold-cli'],
-    model: 'Flux Dev 1.0',
-  },
-  {
-    src: '/gallery/bender-flux-horror-diver-helmet-20260918-2049.png',
-    title: 'Still On Shift',
-    description:
-      'A barnacled deep-sea diver helmet on a museum pedestal, pale hands pressed against the inside of the glass. From within.',
-    tags: ['horror', 'creepy', 'deep-sea', 'diver', 'helmet', 'analog-horror', 'museum', 'bender', 'mold-cli'],
-    model: 'Flux Dev 1.0',
-  },
-  {
     src: '/gallery/bender-minimax-h3-horror-asylum-doll-20260918-2055.mp4',
     title: 'Occupied (Animated)',
     description:
