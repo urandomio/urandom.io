@@ -1366,6 +1366,38 @@ export const galleryMeta: GalleryMetaEntry[] = [
     tags: ['dark-queen', 'crow', 'feathers', 'fire-escape', 'rain', 'fog', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
     model: 'MiniMax H3 FL2VA',
   },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-crow-storm-lunge-20260919-0947.mp4',
+    title: 'Storm Lunge',
+    description:
+      'A ten-second descent into the storm: the woman in Crow face paint smiles too widely as lightning strobes, then her coat flares into black feathered wings and she lunges into the lens.',
+    tags: ['dark-queen', 'crow', 'storm', 'lightning', 'wings', 'lunge', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-walls-close-in-20260919-0947.mp4',
+    title: 'The Walls Close In',
+    description:
+      'The dungeon breathes. Chains rattle in rhythm, the concrete cracks under her heels, and the walls close in as the red light bleeds into everything and her silhouette fractures.',
+    tags: ['dark-queen', 'leather', 'dungeon', 'red-light', 'chains', 'strobe', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-parade-shadow-army-20260919-0947.mp4',
+    title: 'Shadow Parade',
+    description:
+      'The Black Parade multiplies. A forest of flags carried by shadow figures follows her up a street that folds uphill, until the whole parade kneels beneath a flickering moon.',
+    tags: ['dark-queen', 'black-parade', 'mcr', 'shadow-army', 'flags', 'kneel', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
+  {
+    src: '/gallery/bender-minimax-h3-darkqueen-time-stutter-bride-20260919-0947.mp4',
+    title: 'Time Stutters for the Bride',
+    description:
+      'The graveyard bride flickers between perfect and shattered as tombstones lean in like an audience. Time stutters, the crow lands, and its wings fill the frame with darkness.',
+    tags: ['dark-queen', 'graveyard', 'bride', 'porcelain', 'crow', 'time-stutter', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
+    model: 'MiniMax H3 FL2VA',
+  },
 ];
 
 export const galleryMetaBySrc = new Map(galleryMeta.map((m) => [m.src, m]));
