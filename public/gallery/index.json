@@ -1,7 +1,67 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-19T16:49:32.164Z",
+  "generatedAt": "2026-09-23T20:52:42.306Z",
   "images": [
+    {
+      "mediaType": "image",
+      "src": "/gallery/neblina-flux-dev-q8-living-circuit-20260923-2045.png",
+      "thumb": "/gallery/thumbs/neblina-flux-dev-q8-living-circuit-20260923-2045.webp",
+      "title": "Neblina — Living Circuit",
+      "description": "An orchid and fern share a glass vessel: a quiet botanical study of branching forms and transmitted light.",
+      "tags": [
+        "neblina",
+        "mold-cli",
+        "ai-art",
+        "orchid",
+        "fern",
+        "botanical"
+      ],
+      "model": "flux-dev:q8",
+      "date": "2026-09-23",
+      "sortKey": "202609232045",
+      "sha256": "75008fdf9a535b0b972e78dcad34fb93901552bf9bb937a4b34dded583f72605",
+      "ahash": "1038383008383e2f"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/neblina-flux-dev-q8-cloud-forest-20260923-2044.png",
+      "thumb": "/gallery/thumbs/neblina-flux-dev-q8-cloud-forest-20260923-2044.webp",
+      "title": "Neblina — Cloud Forest",
+      "description": "Small wings held against deep green, with a bright spray of orange flowers just beyond the beak.",
+      "tags": [
+        "neblina",
+        "mold-cli",
+        "ai-art",
+        "hummingbird",
+        "flowers",
+        "nature"
+      ],
+      "model": "flux-dev:q8",
+      "date": "2026-09-23",
+      "sortKey": "202609232044",
+      "sha256": "25315768971d14f3287d147e00efc7c680c0a78275d2fc38412fea9cceb7223b",
+      "ahash": "1f97df7f0c0c0000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/neblina-flux-dev-q8-desert-monsoon-20260923-2044.png",
+      "thumb": "/gallery/thumbs/neblina-flux-dev-q8-desert-monsoon-20260923-2044.webp",
+      "title": "Neblina — Desert Monsoon",
+      "description": "An electric horizon, a solitary saguaro, and a pool holding the last light of a desert storm.",
+      "tags": [
+        "neblina",
+        "mold-cli",
+        "ai-art",
+        "desert",
+        "storm",
+        "lightning"
+      ],
+      "model": "flux-dev:q8",
+      "date": "2026-09-23",
+      "sortKey": "202609232044",
+      "sha256": "6d21016f20d1a8f07a3e828a9b50a828c71b95c0debfccd054fbc68c517d9a06",
+      "ahash": "fefcf8fc3c001838"
+    },
     {
       "mediaType": "video",
       "src": "/gallery/bender-minimax-h3-darkqueen-crow-storm-lunge-20260919-0947.mp4",

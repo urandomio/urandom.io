@@ -10,6 +10,48 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    "src": "/gallery/neblina-flux-dev-q8-cloud-forest-20260923-2044.png",
+    "title": "Neblina — Cloud Forest",
+    "description": "Small wings held against deep green, with a bright spray of orange flowers just beyond the beak.",
+    "tags": [
+      "neblina",
+      "mold-cli",
+      "ai-art",
+      "hummingbird",
+      "flowers",
+      "nature"
+    ],
+    "model": "flux-dev:q8"
+  },
+  {
+    "src": "/gallery/neblina-flux-dev-q8-desert-monsoon-20260923-2044.png",
+    "title": "Neblina — Desert Monsoon",
+    "description": "An electric horizon, a solitary saguaro, and a pool holding the last light of a desert storm.",
+    "tags": [
+      "neblina",
+      "mold-cli",
+      "ai-art",
+      "desert",
+      "storm",
+      "lightning"
+    ],
+    "model": "flux-dev:q8"
+  },
+  {
+    "src": "/gallery/neblina-flux-dev-q8-living-circuit-20260923-2045.png",
+    "title": "Neblina — Living Circuit",
+    "description": "An orchid and fern share a glass vessel: a quiet botanical study of branching forms and transmitted light.",
+    "tags": [
+      "neblina",
+      "mold-cli",
+      "ai-art",
+      "orchid",
+      "fern",
+      "botanical"
+    ],
+    "model": "flux-dev:q8"
+  },
+  {
     src: '/gallery/bender-flux-macro-bobtail-squid-20260719-2315.png',
     title: 'Pocket Galaxy',
     description:
