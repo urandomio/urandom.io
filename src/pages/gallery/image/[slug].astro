@@ -2,7 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import galleryIndex from "../../../../public/gallery/index.json";
 import { galleryDetailPath } from "../../../lib/galleryUrls";
-import { imageNeighbors } from "../../../lib/galleryNavigation";
+import { mediaNeighbors } from "../../../lib/galleryNavigation";
 
 export function getStaticPaths() {
   const seen = new Set<string>();
@@ -19,7 +19,7 @@ const { image } = Astro.props as {
   image: (typeof galleryIndex.images)[number];
 };
 const canonical = new URL(galleryDetailPath(image.src), Astro.site).href;
-const neighbors = imageNeighbors(galleryIndex.images, image.src);
+const neighbors = mediaNeighbors(galleryIndex.images, image.src);
 ---
 
 <BaseLayout
@@ -42,39 +42,39 @@ const neighbors = imageNeighbors(galleryIndex.images, image.src);
         >
         <span class="text-zinc-500">{image.date}</span>
       </nav>
-      {
-        image.mediaType !== "video" && (
-          <nav
-            aria-label="Image navigation"
-            class="mb-5 flex items-center justify-between gap-3 text-sm"
-          >
-            {neighbors.previous ? (
-              <a
-                aria-label="Previous image"
-                rel="prev"
-                href={galleryDetailPath(neighbors.previous)}
-                class="rounded-lg border border-purple-500/60 px-4 py-3 text-purple-200 hover:bg-purple-500/20 focus-visible:outline-2 focus-visible:outline-purple-400"
-              >
-                ← Previous image
-              </a>
-            ) : (
-              <span class="text-zinc-600">First image</span>
-            )}
-            {neighbors.next ? (
-              <a
-                aria-label="Next image"
-                rel="next"
-                href={galleryDetailPath(neighbors.next)}
-                class="rounded-lg border border-purple-500/60 px-4 py-3 text-purple-200 hover:bg-purple-500/20 focus-visible:outline-2 focus-visible:outline-purple-400"
-              >
-                Next image →
-              </a>
-            ) : (
-              <span class="text-zinc-600">Last image</span>
-            )}
-          </nav>
-        )
-      }
+      <nav
+        aria-label="Media navigation"
+        class="mb-5 flex items-center justify-between gap-2 text-xs sm:gap-3 sm:text-sm"
+      >
+        {
+          neighbors.previous ? (
+            <a
+              aria-label="Previous media"
+              rel="prev"
+              href={galleryDetailPath(neighbors.previous)}
+              class="min-w-0 rounded-lg border border-purple-500/60 px-3 py-3 text-center text-purple-200 hover:bg-purple-500/20 focus-visible:outline-2 focus-visible:outline-purple-400 sm:px-4"
+            >
+              ← Previous media
+            </a>
+          ) : (
+            <span class="text-zinc-600">First media</span>
+          )
+        }
+        {
+          neighbors.next ? (
+            <a
+              aria-label="Next media"
+              rel="next"
+              href={galleryDetailPath(neighbors.next)}
+              class="min-w-0 rounded-lg border border-purple-500/60 px-3 py-3 text-center text-purple-200 hover:bg-purple-500/20 focus-visible:outline-2 focus-visible:outline-purple-400 sm:px-4"
+            >
+              Next media →
+            </a>
+          ) : (
+            <span class="text-zinc-600">Last media</span>
+          )
+        }
+      </nav>
       <article
         class="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(16rem,1fr)] lg:items-start"
       >
