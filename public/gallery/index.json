@@ -1,7 +1,28 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T16:38:42.073Z",
+  "generatedAt": "2026-09-24T16:58:51.171Z",
   "images": [
+    {
+      "mediaType": "video",
+      "src": "/gallery/neblina-minimax-h3-rain-garden-hummingbird-20260924-1650.mp4",
+      "thumb": "/gallery/thumbs/neblina-minimax-h3-rain-garden-hummingbird-20260924-1650.webp",
+      "title": "Neblina \u2014 Rain Garden in Motion",
+      "description": "A hummingbird hovers among violet blooms in rain. MiniMax H3 first-frame animation of Neblina\u2019s Rain Garden still; generated motion and sound, not an edited loop.",
+      "tags": [
+        "neblina",
+        "mold-cli",
+        "ai-art",
+        "video",
+        "hummingbird",
+        "rain",
+        "minimax-h3"
+      ],
+      "model": "minimax-h3-fl2va:comfy-pruned-int8-turbo-4step-768p",
+      "date": "2026-09-24",
+      "sortKey": "202609241650",
+      "sha256": "932f61830ce339ba4621965bfca4199ba9526177bed72cdcf8ac1a3c52abb2d1",
+      "ahash": "1e1ecd73320c1c1e"
+    },
     {
       "mediaType": "image",
       "src": "/gallery/neblina-flux-dev-q8-wind-atlas-20260924-1629.png",

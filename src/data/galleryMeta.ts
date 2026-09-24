@@ -10,6 +10,13 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/neblina-minimax-h3-rain-garden-hummingbird-20260924-1650.mp4',
+    title: 'Neblina — Rain Garden in Motion',
+    description: 'A hummingbird hovers among violet blooms in rain. MiniMax H3 first-frame animation of Neblina’s Rain Garden still; generated motion and sound, not an edited loop.',
+    tags: ['neblina', 'mold-cli', 'ai-art', 'video', 'hummingbird', 'rain', 'minimax-h3'],
+    model: 'minimax-h3-fl2va:comfy-pruned-int8-turbo-4step-768p',
+  },
+  {
     src: '/gallery/neblina-flux-dev-q8-rain-garden-hummingbird-20260924-1629.png',
     title: 'Neblina — Rain Garden Hummingbird',
     description: 'A hummingbird among violet blooms, lit by cool blue rain against a dark garden.',

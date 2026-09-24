@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { galleryDetailPath } from "../lib/galleryUrls";
 import galleryIndex from "../../public/gallery/index.json";
 const gallery = galleryIndex.images;
 import { neblinaStudies, publishedStudies } from "../data/neblina";
@@ -57,8 +58,8 @@ const { stills, motions } = publishedExhibition(exhibitionSlots);
                 <article class="study" id={study.id}>
                   <a
                     class="image-link"
-                    href={study.src}
-                    aria-label={`View full image: ${study.title}`}
+                    href={galleryDetailPath(study.src)}
+                    aria-label={`View details: ${study.title}`}
                   >
                     <img
                       src={study.src}
@@ -121,8 +122,8 @@ const { stills, motions } = publishedExhibition(exhibitionSlots);
               <article class="exhibition-entry" id={still.id}>
                 <a
                   class="image-link"
-                  href={still.src}
-                  aria-label={`View full image: ${still.title}`}
+                  href={galleryDetailPath(still.src)}
+                  aria-label={`View details: ${still.title}`}
                 >
                   <img
                     src={still.src}
@@ -162,7 +163,8 @@ const { stills, motions } = publishedExhibition(exhibitionSlots);
       >
         <div class="section-heading">
           <h2 id="field-notes-title">Field notes</h2><span class="eyebrow"
-            >on looking twice</span>
+            >on looking twice</span
+          >
         </div>
         <div class="notes-layout">
           <p class="notes-intro">
@@ -212,7 +214,11 @@ const { stills, motions } = publishedExhibition(exhibitionSlots);
                   <video
                     controls
                     preload="metadata"
-                    poster={`/neblina/${motion.src.split('/').pop()?.replace('.mp4', '-poster.jpg')}`}
+                    poster={
+                      motion.src.includes("minimax-h3")
+                        ? "/gallery/thumbs/neblina-minimax-h3-rain-garden-hummingbird-20260924-1650.webp"
+                        : `/neblina/${motion.src.split("/").pop()?.replace(".mp4", "-poster.jpg")}`
+                    }
                     playsinline
                     aria-label={motion.alt}
                   >
@@ -221,17 +227,34 @@ const { stills, motions } = publishedExhibition(exhibitionSlots);
                     <a href={motion.src}>Download this motion study</a>.
                   </video>
                   <div class="study-notes">
-                    <p class="eyebrow">edited motion of an AI-generated still / not native video</p>
+                  <a
+                    class="motion-detail-link"
+                    href={galleryDetailPath(motion.src)}
+                  >
+                    View motion details / share ↗
+                  </a>
+                    <p class="eyebrow">
+                      {motion.id === "motion-03"
+                        ? "MiniMax H3 first-frame animation / generated video"
+                        : "edited motion of an AI-generated still / not native video"}
+                    </p>
                     <h3>{motion.title}</h3>
                     <p class="description">{motion.description}</p>
                     <details>
                       <summary>Prompt &amp; provenance</summary>
                       <div class="record">
-                        <p class="eyebrow">Source still and edit method</p>
+                        <p class="eyebrow">
+                          {motion.id === "motion-03"
+                            ? "First-frame source and generation prompt"
+                            : "Source still and edit method"}
+                        </p>
                         <p class="prompt">{motion.provenance.prompt}</p>
                         <p>
                           {motion.provenance.tool} · {motion.provenance.model} ·{" "}
-                          source still generated <time datetime={motion.provenance.generatedAt}>
+                          {motion.id === "motion-03"
+                            ? "source file recorded"
+                            : "source still generated"}{" "}
+                          <time datetime={motion.provenance.generatedAt}>
                             {motion.provenance.generatedAt}
                           </time>
                         </p>
@@ -501,6 +524,14 @@ const { stills, motions } = publishedExhibition(exhibitionSlots);
     height: auto;
     background: #18181b;
   }
+  .motion-detail-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #a7f3d0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .motion-detail-link:hover, .motion-detail-link:focus-visible { color: #d1fae5; }
   .motion-list {
     padding-top: 1rem;
   }
