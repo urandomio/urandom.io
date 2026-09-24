@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-24T17:21:07.657Z",
+  "generatedAt": "2026-09-24T17:45:46.242Z",
   "images": [
     {
       "mediaType": "video",
@@ -61,6 +61,206 @@
       "sortKey": "202609241629",
       "sha256": "253c41c74b81e14539da6209b58c5aa73bfd7a27329cfa8b877f3d98ffbda62d",
       "ahash": "0307068efc780000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-clockwork-tide-20260924-1045.png",
+      "thumb": "/gallery/thumbs/bender-flux-clockwork-tide-20260924-1045.webp",
+      "title": "Clockwork Tide",
+      "description": "A spiral of colossal brass gears rises from dark water around a lone white shell.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "gears",
+        "beach",
+        "time"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241045",
+      "sha256": "012c7a7f6f75faf7d49c95ca5004a91e23fe80ab2b53f6f1114d4a0447338e99",
+      "ahash": "3f675b5b5b6e1c00"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-moon-kintsugi-20260924-1037.png",
+      "thumb": "/gallery/thumbs/bender-flux-moon-kintsugi-20260924-1037.webp",
+      "title": "Moon Kintsugi",
+      "description": "A golden moon shines over a black sea, its reflection breaking across the surface.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "moon",
+        "kintsugi",
+        "ocean"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241037",
+      "sha256": "5832a6bf41efdcfcea5beac08ee1aec094252a63c6ef89c0b965fd09c7182588",
+      "ahash": "1018181818181818"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-glass-orchard-20260924-1036.png",
+      "thumb": "/gallery/thumbs/bender-flux-glass-orchard-20260924-1036.webp",
+      "title": "Glass Orchard",
+      "description": "Alien trees with red luminous fruit stand across a volcanic plain beneath a low sun.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "orchard",
+        "alien",
+        "volcanic"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241036",
+      "sha256": "a2e0b2fb1c92244f46ca8ff2bbbece23a78e2cc36dd7930f3e6e7c8730c41d64",
+      "ahash": "ffff9f9700000000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-probability-door-20260924-1036.png",
+      "thumb": "/gallery/thumbs/bender-flux-probability-door-20260924-1036.webp",
+      "title": "Probability Door",
+      "description": "A freestanding obsidian doorway opens a seam of warm light in an empty snowfield.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "door",
+        "snow",
+        "liminal"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241036",
+      "sha256": "f0f0bcf8f05f67905051fb280be4687d0401e67941b30a6ad8bfd927fa41fe52",
+      "ahash": "ffe7c3c3c3c3fffe"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-cloud-vending-20260924-1036.png",
+      "thumb": "/gallery/thumbs/bender-flux-cloud-vending-20260924-1036.webp",
+      "title": "Cloud Vending",
+      "description": "A lone vending machine glows in the desert at blue hour, its compartments holding strange light.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "vending-machine",
+        "desert",
+        "blue-hour"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241036",
+      "sha256": "463349a1bbe368274480b686eec200f621a983f972e559c872ac3e35e28285eb",
+      "ahash": "ffffff3f10000000"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-lantern-whale-20260924-1035.png",
+      "thumb": "/gallery/thumbs/bender-flux-lantern-whale-20260924-1035.webp",
+      "title": "Lantern Whale",
+      "description": "A whale formed from hundreds of lights floats over an empty mountain highway at dusk.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "whale",
+        "lanterns",
+        "night"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241035",
+      "sha256": "a6abc417ab67edfd70c2e0edfcd2559e81eb30d7855f23876a8523385a060347",
+      "ahash": "0006fefcfe3e1800"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-inverted-lighthouse-20260924-1035.png",
+      "thumb": "/gallery/thumbs/bender-flux-inverted-lighthouse-20260924-1035.webp",
+      "title": "Inverted Lighthouse",
+      "description": "A lighthouse hangs beneath the clouds, casting its beam downward over a dark sea.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "lighthouse",
+        "inverted",
+        "ocean"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241035",
+      "sha256": "40789d1e5ff25fae41f9d1f71a67cd4a18d4751098afbe968d40345c57cbe1de",
+      "ahash": "3c3c3c01073f3c00"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-rain-archive-20260924-1034.png",
+      "thumb": "/gallery/thumbs/bender-flux-rain-archive-20260924-1034.webp",
+      "title": "Rain Archive",
+      "description": "Rain floods a dark corridor of filing cabinets, turning the archive into an impossible indoor storm.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "archive",
+        "rain",
+        "liminal"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241034",
+      "sha256": "af2ce1e19f6906b560b55dd9d2fa406bdcc3334d639851dcd3f206243f19c547",
+      "ahash": "7f3e0e0c0c000c0e"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-root-server-20260924-1033.png",
+      "thumb": "/gallery/thumbs/bender-flux-root-server-20260924-1033.webp",
+      "title": "Root Server",
+      "description": "A leafless tree grows from a white salt flat, its roots glowing cyan beneath the cracked surface.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "tree",
+        "roots",
+        "technology"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241033",
+      "sha256": "dd3792bd16d6f10327215b6c868c6e4f501e429a1cb732d3f89f6e1c242726cb",
+      "ahash": "ffff83c3e7e781f9"
+    },
+    {
+      "mediaType": "image",
+      "src": "/gallery/bender-flux-moth-library-20260924-1033.png",
+      "thumb": "/gallery/thumbs/bender-flux-moth-library-20260924-1033.webp",
+      "title": "Moth Library",
+      "description": "A luminous moth hangs over a deserted reading room, its wings stretching between rows of books.",
+      "tags": [
+        "bender",
+        "mold-cli",
+        "flux-dev",
+        "moth",
+        "library",
+        "surreal"
+      ],
+      "model": "FLUX.1 Dev Q6",
+      "date": "2026-09-24",
+      "sortKey": "202609241033",
+      "sha256": "f1b0e8565301eaba7467accaeda3adabd157a030d0e250d11d78b86dbec4d5d5",
+      "ahash": "3c5e7e3c3c420038"
     },
     {
       "mediaType": "video",
