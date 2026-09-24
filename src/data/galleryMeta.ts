@@ -10,6 +10,34 @@ export type GalleryMetaEntry = {
 // This is the "human" layer; everything else is auto-derived from filenames.
 export const galleryMeta: GalleryMetaEntry[] = [
   {
+    src: '/gallery/neblina-flux-dev-q8-rain-garden-hummingbird-20260924-1629.png',
+    title: 'Neblina — Rain Garden Hummingbird',
+    description: 'A hummingbird among violet blooms, lit by cool blue rain against a dark garden.',
+    tags: ['neblina', 'mold-cli', 'ai-art', 'hummingbird', 'garden', 'rain'],
+    model: 'flux-dev:q8',
+  },
+  {
+    src: '/gallery/neblina-flux-dev-q8-wind-atlas-20260924-1629.png',
+    title: 'Neblina — Wind Atlas',
+    description: 'Turquoise and coral currents sweep across a dark field, with fine particles tracing eddies.',
+    tags: ['neblina', 'mold-cli', 'ai-art', 'abstract', 'currents'],
+    model: 'flux-dev:q8',
+  },
+  {
+    src: '/gallery/neblina-cloud-forest-edited-motion.mp4',
+    title: 'Cloud Forest — Edited Motion',
+    description: 'Edited motion of the prior Cloud Forest still: cyclic zoom, drift and luminance pulse; not native generated video.',
+    tags: ['neblina', 'mold-cli', 'ai-art', 'video', 'edited-motion', 'hummingbird'],
+    model: 'flux-dev:q8 (source still; no video model)',
+  },
+  {
+    src: '/gallery/neblina-desert-monsoon-edited-motion.mp4',
+    title: 'Desert Monsoon — Edited Motion',
+    description: 'Edited motion of the prior Desert Monsoon still: cyclic zoom, drift and luminance pulse; not native generated video.',
+    tags: ['neblina', 'mold-cli', 'ai-art', 'video', 'edited-motion', 'desert'],
+    model: 'flux-dev:q8 (source still; no video model)',
+  },
+  {
     "src": "/gallery/neblina-flux-dev-q8-cloud-forest-20260923-2044.png",
     "title": "Neblina — Cloud Forest",
     "description": "Small wings held against deep green, with a bright spray of orange flowers just beyond the beak.",

@@ -3,8 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import galleryIndex from "../../public/gallery/index.json";
 const gallery = galleryIndex.images;
 import { neblinaStudies, publishedStudies } from "../data/neblina";
+import {
+  exhibitionSlots,
+  publishedExhibition,
+} from "../data/neblinaExhibition";
 
 const studies = publishedStudies(neblinaStudies, gallery);
+const { stills, motions } = publishedExhibition(exhibitionSlots);
 ---
 
 <BaseLayout
@@ -15,7 +20,9 @@ const studies = publishedStudies(neblinaStudies, gallery);
     <header>
       <a href="/">← back to void</a>
       <nav aria-label="Neblina navigation">
-        <a href="#studies">image studies</a><a href="/gallery">gallery ↗</a>
+        <a href="#studies">image studies</a><a href="#field-notes"
+          >field notes</a
+        ><a href="/gallery">gallery ↗</a>
       </nav>
     </header>
     <main id="main">
@@ -101,6 +108,144 @@ const studies = publishedStudies(neblinaStudies, gallery);
           )
         }
       </section>
+      {
+        stills.length > 0 && (
+          <section class="new-studies" aria-labelledby="new-studies-title">
+            <div class="section-heading">
+              <>
+                <h2 id="new-studies-title">Further studies</h2>
+                <span class="eyebrow">the next look</span>
+              </>
+            </div>
+            {stills.map((still) => (
+              <article class="exhibition-entry" id={still.id}>
+                <a
+                  class="image-link"
+                  href={still.src}
+                  aria-label={`View full image: ${still.title}`}
+                >
+                  <img
+                    src={still.src}
+                    alt={still.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="study-notes">
+                  <p class="eyebrow">image study / AI-generated</p>
+                  <h3>{still.title}</h3>
+                  <p class="description">{still.description}</p>
+                  <details>
+                    <summary>Prompt &amp; provenance</summary>
+                    <div class="record">
+                      <p class="prompt">{still.provenance.prompt}</p>
+                      <p>
+                        {still.provenance.tool} · {still.provenance.model} ·{" "}
+                        <time datetime={still.provenance.generatedAt}>
+                          {still.provenance.generatedAt}
+                        </time>
+                      </p>
+                      <p class="hash">SHA-256: {still.provenance.sha256}</p>
+                      <a href={still.src}>open original ↗</a>
+                    </div>
+                  </details>
+                </div>
+              </article>
+            ))}
+          </section>
+        )
+      }
+      <section
+        id="field-notes"
+        class="field-notes"
+        aria-labelledby="field-notes-title"
+      >
+        <div class="section-heading">
+          <h2 id="field-notes-title">Field notes</h2><span class="eyebrow"
+            >on looking twice</span>
+        </div>
+        <div class="notes-layout">
+          <p class="notes-intro">
+            A small practice in paying attention. These are intentions for the
+            work, not records of how any particular image was made.
+          </p>
+          <ol class="notes-list">
+            <li>
+              <span class="note-number" aria-hidden="true">01 /</span><div>
+                <h3>Leave room for quiet.</h3><p>
+                  Atmosphere can hold a scene without explaining it. Give the
+                  eye somewhere to rest before asking it to search.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="note-number" aria-hidden="true">02 /</span><div>
+                <h3>Look at the edges.</h3><p>
+                  Light at a feather, water against stone, a leaf meeting glass:
+                  the smallest boundary can carry the whole composition.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="note-number" aria-hidden="true">03 /</span><div>
+                <h3>Keep the record close.</h3><p>
+                  An image can invite wonder and still disclose its prompt and
+                  generation details. Both belong to the encounter.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      {
+        motions.length > 0 && (
+          <section class="motion-studies" aria-labelledby="motion-title">
+            <div class="section-heading">
+              <>
+                <h2 id="motion-title">Motion studies</h2>
+                <span class="eyebrow">time, held lightly</span>
+              </>
+            </div>
+            <div class="motion-list">
+              {motions.map((motion) => (
+                <article class="exhibition-entry" id={motion.id}>
+                  <video
+                    controls
+                    preload="metadata"
+                    poster={`/neblina/${motion.src.split('/').pop()?.replace('.mp4', '-poster.jpg')}`}
+                    playsinline
+                    aria-label={motion.alt}
+                  >
+                    <source src={motion.src} type="video/mp4" />
+                    Your browser does not support video.{" "}
+                    <a href={motion.src}>Download this motion study</a>.
+                  </video>
+                  <div class="study-notes">
+                    <p class="eyebrow">edited motion of an AI-generated still / not native video</p>
+                    <h3>{motion.title}</h3>
+                    <p class="description">{motion.description}</p>
+                    <details>
+                      <summary>Prompt &amp; provenance</summary>
+                      <div class="record">
+                        <p class="eyebrow">Source still and edit method</p>
+                        <p class="prompt">{motion.provenance.prompt}</p>
+                        <p>
+                          {motion.provenance.tool} · {motion.provenance.model} ·{" "}
+                          source still generated <time datetime={motion.provenance.generatedAt}>
+                            {motion.provenance.generatedAt}
+                          </time>
+                        </p>
+                        <p class="hash">SHA-256: {motion.provenance.sha256}</p>
+                        <a href={motion.src}>download clip ↗</a>
+                      </div>
+                    </details>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )
+      }
       <footer>
         <p>Keep the wonder. Keep the receipt.</p><a href="/gallery"
           >wander through the gallery →</a
@@ -292,6 +437,82 @@ const studies = publishedStudies(neblinaStudies, gallery);
   }
   .hash {
     font-size: 0.7rem;
+    overflow-wrap: anywhere;
+  }
+  .field-notes,
+  .motion-studies,
+  .new-studies {
+    margin-top: 3rem;
+  }
+  .notes-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    gap: 3rem;
+    padding: 2rem 0 1rem;
+  }
+  .notes-intro {
+    max-width: 24rem;
+    color: var(--accent);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.7;
+  }
+  .notes-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .notes-list li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1rem;
+    border-bottom: 1px solid #27272a;
+    padding: 0 0 1.4rem;
+    margin-bottom: 1.4rem;
+  }
+  .notes-list li:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+  .note-number {
+    color: var(--accent);
+    font-size: 0.7rem;
+    padding-top: 1.3rem;
+  }
+  .notes-list h3 {
+    margin: 0 0 0.4rem;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  .notes-list p {
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+  .exhibition-entry {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #27272a;
+  }
+  .exhibition-entry video {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #18181b;
+  }
+  .motion-list {
+    padding-top: 1rem;
+  }
+  .record {
+    overflow-wrap: anywhere;
+  }
+  @media (max-width: 760px) {
+    .notes-layout,
+    .exhibition-entry {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
   }
   @media (max-width: 760px) {
     .study {
