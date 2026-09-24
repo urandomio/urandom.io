@@ -1475,6 +1475,14 @@ export const galleryMeta: GalleryMetaEntry[] = [
     tags: ['dark-queen', 'graveyard', 'bride', 'porcelain', 'crow', 'time-stutter', 'animated', 'minimax-h3', 'bender', 'mold-cli'],
     model: 'MiniMax H3 FL2VA',
   },
+  {
+    src: '/gallery/bender-minimax-h3-the-void-speaks-20260924-1020.mp4',
+    title: 'The Void Speaks',
+    description:
+      'Above a sea of clouds, a dark observatory opens onto amber light. The camera crosses its threshold as the mist parts to reveal a star field beyond.',
+    tags: ['bender', 'mold-cli', 'minimax-h3', 'observatory', 'void', 'stars', 'clouds', 'animated'],
+    model: 'MiniMax H3 FL2VA',
+  },
 ];
 
 export const galleryMetaBySrc = new Map(galleryMeta.map((m) => [m.src, m]));
